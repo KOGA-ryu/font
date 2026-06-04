@@ -24,6 +24,9 @@ class Glyph:
     cell_size: int = CELL_SIZE
     features: dict[str, Any] = field(default_factory=dict)
     constraints: dict[str, Any] = field(default_factory=dict)
+    source_glyph_id: str | None = None
+    transform_chain: list[str] = field(default_factory=list)
+    generated: bool = False
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Glyph":
@@ -38,10 +41,13 @@ class Glyph:
             cell_size=int(data.get("cell_size", CELL_SIZE)),
             features=data.get("features", {}),
             constraints=data.get("constraints", {}),
+            source_glyph_id=data.get("source_glyph_id"),
+            transform_chain=data.get("transform_chain", []),
+            generated=bool(data.get("generated", False)),
         )
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        data = {
             "id": self.id,
             "token": self.token,
             "index": self.index,
@@ -53,6 +59,11 @@ class Glyph:
             "features": self.features,
             "constraints": self.constraints,
         }
+        if self.generated:
+            data["source_glyph_id"] = self.source_glyph_id
+            data["transform_chain"] = self.transform_chain
+            data["generated"] = True
+        return data
 
 
 def load_glyphs(path: str | Path) -> list[Glyph]:

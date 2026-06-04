@@ -8,6 +8,36 @@ contact sheet, and compiled from an ASCII control grid into PNG proof layers.
 
 This is not an Aseprite plugin, Blender tool, or font editor.
 
+## Transform and equivalence model
+
+The transform slice reduces glyph authoring by making one seed stamp generate
+measured variants:
+
+```text
+seed glyph -> transforms -> variants -> measured features -> selected active pack
+```
+
+`glyph_lab.transforms` supports 4x4 stamp operations:
+
+- `rotate_90`, `rotate_180`, `rotate_270`
+- `flip_horizontal`, `flip_vertical`
+- `shift(dx, dy)` with clipping at the 4x4 cell boundary
+- `normalize_to_top_left` for texture/noise-style stamps
+- `stamp_to_bitmask` and `bitmask_to_stamp`
+
+`glyph_lab.equivalence` canonicalizes stamps by transform group:
+
+- `exact`
+- `rotations`
+- `mirrors`
+- `dihedral8`
+- `translations_normalized`
+
+Generated variants keep lineage metadata in a separate file instead of changing
+the active glyph pack. Each generated record includes `source_glyph_id`,
+`transform_chain`, and `generated: true`, while inheriting role, family, layer,
+and palette role unless a demo variant explicitly overrides one.
+
 ## Setup
 
 ```sh
@@ -26,6 +56,7 @@ Writes:
 - `packs/stone_architecture_4x4/atlas.png`
 - `packs/stone_architecture_4x4/contact_sheet.png`
 - `packs/stone_architecture_4x4/features.json`
+- `packs/stone_architecture_4x4/generated_variants.json`
 
 ## Compile the example grid
 

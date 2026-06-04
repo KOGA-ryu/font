@@ -9,6 +9,7 @@ from PIL import Image
 
 from .measure import measure_stamp
 from .schema import ATLAS_COLUMNS, CELL_SIZE, Glyph, save_glyphs
+from .transforms import flip_horizontal, rotate_90, rotate_180, rotate_270, stamp_to_bitmask
 
 
 PALETTE: dict[str, tuple[int, int, int, int]] = {
@@ -112,6 +113,7 @@ def generate_pack(pack_dir: str | Path, overwrite: bool = True) -> None:
     with (pack / "features.json").open("w", encoding="utf-8") as handle:
         json.dump({"features": features}, handle, indent=2)
         handle.write("\n")
+    save_generated_variants(pack / "generated_variants.json")
 
 
 def load_atlas_stamps(atlas_path: str | Path, glyphs: list[Glyph]) -> dict[str, Image.Image]:
@@ -122,6 +124,51 @@ def load_atlas_stamps(atlas_path: str | Path, glyphs: list[Glyph]) -> dict[str, 
         y = (glyph.index // ATLAS_COLUMNS) * glyph.cell_size
         stamps[glyph.token] = atlas.crop((x, y, x + glyph.cell_size, y + glyph.cell_size))
     return stamps
+
+
+def generated_variant_demo() -> list[Glyph]:
+    glyphs = {glyph.index: glyph for glyph in default_glyphs()}
+    specs = [
+        (16, ["flip_horizontal"], flip_horizontal, {"token": "\\", "id_name": "diagonal_fall"}),
+        (18, ["rotate_90"], rotate_90, {"token": "c", "id_name": "corner_top_right"}),
+        (18, ["rotate_270"], rotate_270, {"token": "u", "id_name": "corner_bottom_left"}),
+        (18, ["rotate_180"], rotate_180, {"token": "n", "id_name": "corner_bottom_right"}),
+        (14, ["rotate_90"], rotate_90, {"token": "|", "family": "vertical", "id_name": "vertical_edge"}),
+    ]
+    variants = []
+    next_index = 1000
+    for source_index, chain, transform, overrides in specs:
+        source = glyphs[source_index]
+        stamp = transform(stamp_for_index(source.index, source.palette_role))
+        id_name = overrides.get("id_name", f"{source.index}_{'_'.join(chain)}")
+        features = measure_stamp(stamp)
+        features["bitmask"] = stamp_to_bitmask(stamp)
+        variants.append(
+            Glyph(
+                id=f"{source.id}.generated.{id_name}",
+                token=overrides.get("token", source.token),
+                index=next_index,
+                role=overrides.get("role", source.role),
+                family=overrides.get("family", source.family),
+                layer=overrides.get("layer", source.layer),
+                palette_role=overrides.get("palette_role", source.palette_role),
+                cell_size=source.cell_size,
+                features=features,
+                constraints=source.constraints,
+                source_glyph_id=source.id,
+                transform_chain=chain,
+                generated=True,
+            )
+        )
+        next_index += 1
+    return variants
+
+
+def save_generated_variants(path: str | Path) -> None:
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    with Path(path).open("w", encoding="utf-8") as handle:
+        json.dump({"generated_variants": [glyph.to_dict() for glyph in generated_variant_demo()]}, handle, indent=2)
+        handle.write("\n")
 
 
 def _constraints(layer: str) -> dict:

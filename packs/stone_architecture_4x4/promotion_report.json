@@ -1,0 +1,14 @@
+{
+  "promoted_count": 1,
+  "rejected_count": 0,
+  "promoted_candidate_ids": [
+    "4.stone.primitive.point.dot_1_2_2000"
+  ],
+  "rejected_candidate_ids": [],
+  "token_assignments": {
+    "4.stone.primitive.point.dot_1_2_2000": "A"
+  },
+  "apply": false,
+  "backup_path": null,
+  "output_path": "packs/stone_architecture_4x4/glyphs.promoted.json"
+}

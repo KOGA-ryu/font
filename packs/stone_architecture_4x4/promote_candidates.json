@@ -1,0 +1,8 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.primitive.point.dot_1_2_2000",
+      "notes": "Promote a small primitive damage dot after review."
+    }
+  ]
+}

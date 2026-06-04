@@ -27,6 +27,13 @@ class Glyph:
     source_glyph_id: str | None = None
     transform_chain: list[str] = field(default_factory=list)
     generated: bool = False
+    source: str | None = None
+    primitive_family: str | None = None
+    primitive_params: dict[str, Any] = field(default_factory=dict)
+    source_candidate_id: str | None = None
+    promoted_from: str | None = None
+    promoted_at_version: str | None = None
+    notes: str | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Glyph":
@@ -44,6 +51,13 @@ class Glyph:
             source_glyph_id=data.get("source_glyph_id"),
             transform_chain=data.get("transform_chain", []),
             generated=bool(data.get("generated", False)),
+            source=data.get("source"),
+            primitive_family=data.get("primitive_family"),
+            primitive_params=data.get("primitive_params", {}),
+            source_candidate_id=data.get("source_candidate_id"),
+            promoted_from=data.get("promoted_from"),
+            promoted_at_version=data.get("promoted_at_version"),
+            notes=data.get("notes"),
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -63,6 +77,20 @@ class Glyph:
             data["source_glyph_id"] = self.source_glyph_id
             data["transform_chain"] = self.transform_chain
             data["generated"] = True
+        if self.source is not None:
+            data["source"] = self.source
+        if self.primitive_family is not None:
+            data["primitive_family"] = self.primitive_family
+        if self.primitive_params:
+            data["primitive_params"] = self.primitive_params
+        if self.source_candidate_id is not None:
+            data["source_candidate_id"] = self.source_candidate_id
+        if self.promoted_from is not None:
+            data["promoted_from"] = self.promoted_from
+        if self.promoted_at_version is not None:
+            data["promoted_at_version"] = self.promoted_at_version
+        if self.notes is not None:
+            data["notes"] = self.notes
         return data
 
 

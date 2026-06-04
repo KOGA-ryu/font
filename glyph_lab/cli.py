@@ -8,6 +8,7 @@ from .compiler import compile_grid
 from .contact_sheet import generate_contact_sheet
 from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
+from .promotion import promote_candidates
 from .review_export import generate_review_contact_sheet
 
 
@@ -34,6 +35,11 @@ def main() -> None:
 
     primitive_parser = subparsers.add_parser("generate-primitives", help="generate primitive candidate review artifacts")
     primitive_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+
+    promote_parser = subparsers.add_parser("promote-candidates", help="promote reviewed candidates")
+    promote_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    promote_parser.add_argument("--request", required=True)
+    promote_parser.add_argument("--apply", action="store_true")
 
     args = parser.parse_args()
     pack = Path(getattr(args, "pack", DEFAULT_PACK))
@@ -62,6 +68,10 @@ def main() -> None:
 
     if args.command == "generate-primitives":
         write_primitive_review(pack)
+        return
+
+    if args.command == "promote-candidates":
+        promote_candidates(pack, args.request, apply=args.apply)
 
 
 if __name__ == "__main__":

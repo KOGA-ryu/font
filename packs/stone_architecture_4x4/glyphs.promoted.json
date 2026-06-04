@@ -1,0 +1,1723 @@
+{
+  "glyphs": [
+    {
+      "id": "4.stone.void.none.empty_00",
+      "token": ".",
+      "index": 0,
+      "role": "void",
+      "family": "none",
+      "layer": "base_fill",
+      "palette_role": "transparent",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0,
+        "bounding_box": null,
+        "centroid_x": null,
+        "centroid_y": null,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 0,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.solid.solid_01",
+      "token": "#",
+      "index": 1,
+      "role": "fill",
+      "family": "solid",
+      "layer": "base_fill",
+      "palette_role": "stone_mid",
+      "cell_size": 4,
+      "features": {
+        "density": 1.0,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 1.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.half.top_half_02",
+      "token": "^",
+      "index": 2,
+      "role": "fill",
+      "family": "half",
+      "layer": "base_fill",
+      "palette_role": "stone_light",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.half.bottom_half_03",
+      "token": "_",
+      "index": 3,
+      "role": "fill",
+      "family": "half",
+      "layer": "base_fill",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 1.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.half.left_half_04",
+      "token": "[",
+      "index": 4,
+      "role": "fill",
+      "family": "half",
+      "layer": "base_fill",
+      "palette_role": "stone_mid",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.0,
+          "bottom_left": 1.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.half.right_half_05",
+      "token": "]",
+      "index": 5,
+      "role": "fill",
+      "family": "half",
+      "layer": "base_fill",
+      "palette_role": "stone_mid",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.quarter.top_left_quarter_06",
+      "token": "q",
+      "index": 6,
+      "role": "fill",
+      "family": "quarter",
+      "layer": "base_fill",
+      "palette_role": "stone_light",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 1
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.quarter.top_right_quarter_07",
+      "token": "p",
+      "index": 7,
+      "role": "fill",
+      "family": "quarter",
+      "layer": "base_fill",
+      "palette_role": "stone_light",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.quarter.bottom_left_quarter_08",
+      "token": "b",
+      "index": 8,
+      "role": "fill",
+      "family": "quarter",
+      "layer": "base_fill",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 1.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.quarter.bottom_right_quarter_09",
+      "token": "d",
+      "index": 9,
+      "role": "fill",
+      "family": "quarter",
+      "layer": "base_fill",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 2,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.texture.light_fill_sparse_10",
+      "token": ",",
+      "index": 10,
+      "role": "fill",
+      "family": "texture",
+      "layer": "base_fill",
+      "palette_role": "stone_light",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.texture.mid_fill_checker_11",
+      "token": ":",
+      "index": 11,
+      "role": "fill",
+      "family": "texture",
+      "layer": "base_fill",
+      "palette_role": "stone_mid",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 8,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "base_fill"
+        ],
+        "allowed_regions": [
+          "interior",
+          "surface"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.fill.texture.dark_fill_dense_12",
+      "token": ";",
+      "index": 12,
+      "role": "fill",
+      "family": "texture",
+      "layer": "shadow",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.75,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "shadow"
+        ],
+        "allowed_regions": [
+          "interior",
+          "occlusion",
+          "bevel"
+        ],
+        "forbidden_regions": [
+          "empty_background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.shadow.ambient.deep_shadow_13",
+      "token": "S",
+      "index": 13,
+      "role": "shadow",
+      "family": "ambient",
+      "layer": "shadow",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.8,
+        "centroid_y": 2.1,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 1.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "shadow"
+        ],
+        "allowed_regions": [
+          "interior",
+          "occlusion",
+          "bevel"
+        ],
+        "forbidden_regions": [
+          "empty_background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.horizontal.horizontal_edge_14",
+      "token": "-",
+      "index": 14,
+      "role": "edge",
+      "family": "horizontal",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.vertical.vertical_edge_15",
+      "token": "|",
+      "index": 15,
+      "role": "edge",
+      "family": "vertical",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.diagonal.diagonal_rise_16",
+      "token": "/",
+      "index": 16,
+      "role": "edge",
+      "family": "diagonal",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.2857142857142858,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.diagonal.diagonal_fall_17",
+      "token": "\\",
+      "index": 17,
+      "role": "edge",
+      "family": "diagonal",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.7142857142857142,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.corner.corner_top_left_18",
+      "token": "a",
+      "index": 18,
+      "role": "edge",
+      "family": "corner",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 0.8571428571428571,
+        "centroid_y": 0.8571428571428571,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.corner.corner_top_right_19",
+      "token": "c",
+      "index": 19,
+      "role": "edge",
+      "family": "corner",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 0.8571428571428571,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.corner.corner_bottom_left_20",
+      "token": "u",
+      "index": 20,
+      "role": "edge",
+      "family": "corner",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 0.8571428571428571,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.corner.corner_bottom_right_21",
+      "token": "n",
+      "index": 21,
+      "role": "edge",
+      "family": "corner",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.junction.tee_up_22",
+      "token": "T",
+      "index": 22,
+      "role": "edge",
+      "family": "junction",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.2,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.junction.tee_down_23",
+      "token": "t",
+      "index": 23,
+      "role": "edge",
+      "family": "junction",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.8,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.junction.tee_left_24",
+      "token": "<",
+      "index": 24,
+      "role": "edge",
+      "family": "junction",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.2,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.75,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.junction.tee_right_25",
+      "token": ">",
+      "index": 25,
+      "role": "edge",
+      "family": "junction",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.8,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.edge.junction.cross_26",
+      "token": "+",
+      "index": 26,
+      "role": "edge",
+      "family": "junction",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.75,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.highlight.bevel.bevel_highlight_27",
+      "token": "h",
+      "index": 27,
+      "role": "highlight",
+      "family": "bevel",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "centerline",
+          "damage"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.shadow.bevel.bevel_shadow_28",
+      "token": "s",
+      "index": 28,
+      "role": "shadow",
+      "family": "bevel",
+      "layer": "shadow",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.8333333333333333,
+        "centroid_y": 2.6666666666666665,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "shadow"
+        ],
+        "allowed_regions": [
+          "interior",
+          "occlusion",
+          "bevel"
+        ],
+        "forbidden_regions": [
+          "empty_background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.detail.damage.chip_dot_29",
+      "token": "*",
+      "index": 29,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "centerline",
+          "damage"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.detail.damage.crack_short_30",
+      "token": "x",
+      "index": 30,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "centerline",
+          "damage"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.guide.centerline.centerline_marker_31",
+      "token": "C",
+      "index": 31,
+      "role": "guide",
+      "family": "centerline",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "centerline",
+          "damage"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      }
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.dot_1_2_2000_32",
+      "token": "A",
+      "index": 32,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 1,
+          "top": 2,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 512
+      },
+      "constraints": {},
+      "generated": true,
+      "source": "primitive",
+      "primitive_family": "point",
+      "primitive_params": {
+        "x": 1,
+        "y": 2
+      },
+      "source_candidate_id": "4.stone.primitive.point.dot_1_2_2000",
+      "promoted_from": "primitive_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote a small primitive damage dot after review."
+    }
+  ]
+}

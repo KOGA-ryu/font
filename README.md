@@ -60,8 +60,8 @@ similar to already accepted glyphs.
 
 `glyph_lab.primitives` can create deterministic 4x4 candidates from point, line,
 block, corner, crack, fill, and bevel primitive families. These candidates are
-measured and reviewed, but they are not promoted into `glyphs.json` in this
-slice.
+measured and reviewed, but they are only promoted into `glyphs.json` through an
+explicit dry-run-first promotion request.
 
 ## Setup
 
@@ -110,6 +110,59 @@ Writes review-only primitive artifacts:
 - `packs/stone_architecture_4x4/primitive_accepted_candidates.json`
 - `packs/stone_architecture_4x4/primitive_rejected_candidates.json`
 - `packs/stone_architecture_4x4/primitive_review_contact_sheet.png`
+
+## Promote reviewed candidates
+
+Promotion is dry-run first. Write a request file such as
+`packs/stone_architecture_4x4/promote_candidates.json`:
+
+```json
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.primitive.point.dot_1_2_2000",
+      "notes": "Promote a small damage mark."
+    }
+  ]
+}
+```
+
+Run the dry-run:
+
+```sh
+python3 -m glyph_lab.cli promote-candidates \
+  --pack packs/stone_architecture_4x4 \
+  --request packs/stone_architecture_4x4/promote_candidates.json
+```
+
+Writes:
+
+- `packs/stone_architecture_4x4/glyphs.promoted.json`
+- `packs/stone_architecture_4x4/promotion_report.json`
+
+Apply only after inspecting those files:
+
+```sh
+python3 -m glyph_lab.cli promote-candidates \
+  --pack packs/stone_architecture_4x4 \
+  --request packs/stone_architecture_4x4/promote_candidates.json \
+  --apply
+```
+
+The safe workflow is:
+
+```text
+generate candidates
+-> review contact sheet
+-> write promote_candidates.json
+-> dry-run promotion
+-> inspect glyphs.promoted.json and promotion_report.json
+-> apply promotion
+-> regenerate atlas/features/contact sheet
+```
+
+Dry-run does not mutate `glyphs.json`. `--apply` backs up the old file as
+`glyphs.backup.<timestamp>.json` before writing the promoted pack.
 
 ## Compile the example grid
 

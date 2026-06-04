@@ -27,6 +27,20 @@ glyph pack
 -> proof PNG + layer PNGs + manifest
 ```
 
+The first image probe keeps the same proof-first model:
+
+```text
+pixels are evidence
+-> image_probe measures basic masks/maps
+-> layered glyph grid records proof
+-> compositor renders proof
+```
+
+It is a small evidence extractor, not object recognition. It converts a
+grayscale or RGB image into mass, value, and edge evidence layers, maps those
+layers to existing glyph tokens, and compiles the generated layered grid through
+the same compositor.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -248,6 +262,33 @@ Layered rules:
 - Space means no glyph on that layer.
 - Unknown tokens report layer name, row, column, and character.
 - Layer constraint mismatches are recorded as manifest warnings.
+
+## Probe an image into layered glyphs
+
+```sh
+python3 -m glyph_lab.cli probe-image \
+  --pack packs/stone_architecture_4x4 \
+  --image examples/probe_input.png \
+  --out out_probe \
+  --grid-size 32
+```
+
+Writes:
+
+- `out_probe/generated_layered_grid.json`
+- `out_probe/probe_measurements.json`
+- `out_probe/proof_128.png`
+- `out_probe/layers/*.png`
+- `out_probe/manifest.json`
+
+The probe:
+
+- loads the image with Pillow
+- converts it to grayscale luminance
+- auto-crops the non-white area
+- samples a 32x32 measurement grid
+- extracts a mass mask, value bands, and Sobel-like edge evidence
+- maps those evidence layers to active glyph tokens by metadata
 
 ## Tests
 

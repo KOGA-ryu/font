@@ -7,6 +7,7 @@ from .atlas import generate_pack
 from .compiler import compile_grid
 from .contact_sheet import generate_contact_sheet
 from .candidate_filter import write_candidate_review
+from .generate_candidates import write_primitive_review
 from .review_export import generate_review_contact_sheet
 
 
@@ -31,6 +32,9 @@ def main() -> None:
     review_parser = subparsers.add_parser("review-candidates", help="score generated variants")
     review_parser.add_argument("--pack", default=str(DEFAULT_PACK))
 
+    primitive_parser = subparsers.add_parser("generate-primitives", help="generate primitive candidate review artifacts")
+    primitive_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+
     args = parser.parse_args()
     pack = Path(getattr(args, "pack", DEFAULT_PACK))
 
@@ -54,6 +58,10 @@ def main() -> None:
             result["rejected_candidates"],
             pack / "review_contact_sheet.png",
         )
+        return
+
+    if args.command == "generate-primitives":
+        write_primitive_review(pack)
 
 
 if __name__ == "__main__":

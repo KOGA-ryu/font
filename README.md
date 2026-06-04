@@ -23,9 +23,11 @@ The review pipeline is:
 seed glyph
 -> transforms
 -> generated variants
+-> primitive generation
 -> measured features
 -> scoring/rejection
--> accepted active brush pack
+-> reviewed candidates
+-> future active pack promotion
 -> compiler
 ```
 
@@ -55,6 +57,11 @@ and `review_tags` fields from measured features. `glyph_lab.candidate_filter`
 rejects empty non-empty roles, solid non-solid roles, disconnected non-texture
 shapes, weak edge/corner connectors, duplicate canonical IDs, and candidates too
 similar to already accepted glyphs.
+
+`glyph_lab.primitives` can create deterministic 4x4 candidates from point, line,
+block, corner, crack, fill, and bevel primitive families. These candidates are
+measured and reviewed, but they are not promoted into `glyphs.json` in this
+slice.
 
 ## Setup
 
@@ -88,6 +95,21 @@ Writes:
 - `packs/stone_architecture_4x4/accepted_candidates.json`
 - `packs/stone_architecture_4x4/rejected_candidates.json`
 - `packs/stone_architecture_4x4/review_contact_sheet.png`
+
+## Generate primitive candidates
+
+```sh
+python3 -m glyph_lab.cli generate-primitives \
+  --pack packs/stone_architecture_4x4
+```
+
+Writes review-only primitive artifacts:
+
+- `packs/stone_architecture_4x4/primitive_candidates.json`
+- `packs/stone_architecture_4x4/primitive_candidate_scores.json`
+- `packs/stone_architecture_4x4/primitive_accepted_candidates.json`
+- `packs/stone_architecture_4x4/primitive_rejected_candidates.json`
+- `packs/stone_architecture_4x4/primitive_review_contact_sheet.png`
 
 ## Compile the example grid
 

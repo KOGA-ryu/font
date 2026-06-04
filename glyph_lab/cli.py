@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from .atlas import generate_pack
@@ -11,6 +12,7 @@ from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
+from .object_hints import write_object_hints
 from .profiles import measure_profile_image
 from .promotion import promote_candidates
 from .review_export import generate_review_contact_sheet
@@ -55,6 +57,12 @@ def main() -> None:
     rhythm_parser.add_argument("--out", default="out_rhythm")
     rhythm_parser.add_argument("--grid-size", type=int, default=32)
 
+    hint_parser = subparsers.add_parser("hint-object", help="fuse measurements into object-family hints")
+    hint_parser.add_argument("--profile")
+    hint_parser.add_argument("--rhythm")
+    hint_parser.add_argument("--probe")
+    hint_parser.add_argument("--out", default="out_hint")
+
     review_parser = subparsers.add_parser("review-candidates", help="score generated variants")
     review_parser.add_argument("--pack", default=str(DEFAULT_PACK))
 
@@ -98,6 +106,15 @@ def main() -> None:
         measure_rhythm_image(args.image, args.out, grid_size=args.grid_size)
         return
 
+    if args.command == "hint-object":
+        write_object_hints(
+            _load_json(args.profile) if args.profile else None,
+            _load_json(args.rhythm) if args.rhythm else None,
+            args.out,
+            probe=_load_json(args.probe) if args.probe else None,
+        )
+        return
+
     if args.command == "review-candidates":
         result = write_candidate_review(pack)
         generate_review_contact_sheet(
@@ -113,6 +130,11 @@ def main() -> None:
 
     if args.command == "promote-candidates":
         promote_candidates(pack, args.request, apply=args.apply)
+
+
+def _load_json(path: str) -> dict:
+    with Path(path).open("r", encoding="utf-8") as handle:
+        return json.load(handle)
 
 
 if __name__ == "__main__":

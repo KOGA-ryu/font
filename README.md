@@ -69,6 +69,22 @@ Repeated vertical grooves are flute/rib/fold evidence. Horizontal bands are
 moulding/rail/trim evidence. Rhythm measurements help later passes infer known
 object families without doing ornament inference or ML.
 
+The first fusion pass combines measured evidence:
+
+```text
+profile measurements
+-> rhythm measurements
+-> fused feature flags
+-> object family hints
+```
+
+Profile measures shape. Rhythm measures repeated construction. Fusion combines
+that evidence into flags such as `tall`, `tapered`, `symmetric`,
+`repeated_vertical_grooves`, and `moulding_stack`. Object hints compare those
+flags against explicit rules for `fluted_column`, `simple_column`,
+`banded_block`, `rail_segment`, `panel`, and `unknown`. There is no ML in this
+step.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -358,6 +374,23 @@ spacing variance, average groove length, groove region bounds, rhythm
 confidence, `likely_repeated_grooves`, and `likely_moulding_stack`. The overlay
 grid uses `|` for groove centerlines, `=` for bands, `+` for crossings, and `.`
 for mass/fill.
+
+## Fuse Measurements Into Object Hints
+
+```sh
+python3 -m glyph_lab.cli hint-object \
+  --profile out_profile/profile_measurements.json \
+  --rhythm out_rhythm/rhythm_measurements.json \
+  --out out_hint
+```
+
+Writes:
+
+- `out_hint/fused_features.json`
+- `out_hint/object_family_hints.json`
+
+Each object hint includes a family, confidence, reasons, missing evidence, and
+the measurement sources used.
 
 ## Tests
 

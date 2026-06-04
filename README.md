@@ -17,6 +17,18 @@ measured variants:
 seed glyph -> transforms -> variants -> measured features -> selected active pack
 ```
 
+The review pipeline is:
+
+```text
+seed glyph
+-> transforms
+-> generated variants
+-> measured features
+-> scoring/rejection
+-> accepted active brush pack
+-> compiler
+```
+
 `glyph_lab.transforms` supports 4x4 stamp operations:
 
 - `rotate_90`, `rotate_180`, `rotate_270`
@@ -38,6 +50,12 @@ the active glyph pack. Each generated record includes `source_glyph_id`,
 `transform_chain`, and `generated: true`, while inheriting role, family, layer,
 and palette role unless a demo variant explicitly overrides one.
 
+`glyph_lab.scoring` assigns deterministic `usefulness_score`, `rejection_reason`,
+and `review_tags` fields from measured features. `glyph_lab.candidate_filter`
+rejects empty non-empty roles, solid non-solid roles, disconnected non-texture
+shapes, weak edge/corner connectors, duplicate canonical IDs, and candidates too
+similar to already accepted glyphs.
+
 ## Setup
 
 ```sh
@@ -57,6 +75,19 @@ Writes:
 - `packs/stone_architecture_4x4/contact_sheet.png`
 - `packs/stone_architecture_4x4/features.json`
 - `packs/stone_architecture_4x4/generated_variants.json`
+
+## Score generated candidates
+
+```sh
+python3 -m glyph_lab.cli review-candidates
+```
+
+Writes:
+
+- `packs/stone_architecture_4x4/candidate_scores.json`
+- `packs/stone_architecture_4x4/accepted_candidates.json`
+- `packs/stone_architecture_4x4/rejected_candidates.json`
+- `packs/stone_architecture_4x4/review_contact_sheet.png`
 
 ## Compile the example grid
 

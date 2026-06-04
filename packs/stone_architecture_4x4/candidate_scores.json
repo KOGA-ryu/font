@@ -1,0 +1,355 @@
+{
+  "candidate_scores": [
+    {
+      "id": "4.stone.edge.diagonal.diagonal_rise_16.generated.diagonal_fall",
+      "token": "\\",
+      "index": 1000,
+      "role": "edge",
+      "family": "diagonal",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.7142857142857142,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 35939
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "source_glyph_id": "4.stone.edge.diagonal.diagonal_rise_16",
+      "transform_chain": [
+        "flip_horizontal"
+      ],
+      "generated": true,
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "connector",
+        "contacts:4",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "mirrors",
+      "canonical_id": 4972,
+      "duplicate_of": "4.stone.edge.diagonal.diagonal_fall_17"
+    },
+    {
+      "id": "4.stone.edge.corner.corner_top_left_18.generated.corner_top_right",
+      "token": "c",
+      "index": 1001,
+      "role": "edge",
+      "family": "corner",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 0.8571428571428571,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 34959
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "source_glyph_id": "4.stone.edge.corner.corner_top_left_18",
+      "transform_chain": [
+        "rotate_90"
+      ],
+      "generated": true,
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "connector",
+        "contacts:4",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "dihedral8",
+      "canonical_id": 4383,
+      "duplicate_of": "4.stone.edge.corner.corner_bottom_right_21"
+    },
+    {
+      "id": "4.stone.edge.corner.corner_top_left_18.generated.corner_bottom_left",
+      "token": "u",
+      "index": 1002,
+      "role": "edge",
+      "family": "corner",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 0.8571428571428571,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 61713
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "source_glyph_id": "4.stone.edge.corner.corner_top_left_18",
+      "transform_chain": [
+        "rotate_270"
+      ],
+      "generated": true,
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "connector",
+        "contacts:4",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "dihedral8",
+      "canonical_id": 4383,
+      "duplicate_of": "4.stone.edge.corner.corner_bottom_right_21"
+    },
+    {
+      "id": "4.stone.edge.corner.corner_top_left_18.generated.corner_bottom_right",
+      "token": "n",
+      "index": 1003,
+      "role": "edge",
+      "family": "corner",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 63624
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "source_glyph_id": "4.stone.edge.corner.corner_top_left_18",
+      "transform_chain": [
+        "rotate_180"
+      ],
+      "generated": true,
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "connector",
+        "contacts:4",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "dihedral8",
+      "canonical_id": 4383,
+      "duplicate_of": "4.stone.edge.corner.corner_bottom_right_21"
+    },
+    {
+      "id": "4.stone.edge.horizontal.horizontal_edge_14.generated.vertical_edge",
+      "token": "|",
+      "index": 1004,
+      "role": "edge",
+      "family": "vertical",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 26214
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "allowed_regions": [
+          "silhouette_boundary",
+          "panel_boundary"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "source_glyph_id": "4.stone.edge.horizontal.horizontal_edge_14",
+      "transform_chain": [
+        "rotate_90"
+      ],
+      "generated": true,
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "connector",
+        "symmetric",
+        "contacts:2",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "rotations",
+      "canonical_id": 4080,
+      "duplicate_of": "4.stone.edge.vertical.vertical_edge_15"
+    }
+  ]
+}

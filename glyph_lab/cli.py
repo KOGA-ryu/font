@@ -6,6 +6,8 @@ from pathlib import Path
 from .atlas import generate_pack
 from .compiler import compile_grid
 from .contact_sheet import generate_contact_sheet
+from .candidate_filter import write_candidate_review
+from .review_export import generate_review_contact_sheet
 
 
 DEFAULT_PACK = Path("packs/stone_architecture_4x4")
@@ -26,6 +28,9 @@ def main() -> None:
     compile_parser.add_argument("--grid", default="examples/stone_post_grid.txt")
     compile_parser.add_argument("--out", default="out")
 
+    review_parser = subparsers.add_parser("review-candidates", help="score generated variants")
+    review_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+
     args = parser.parse_args()
     pack = Path(getattr(args, "pack", DEFAULT_PACK))
 
@@ -40,6 +45,15 @@ def main() -> None:
 
     if args.command == "compile":
         compile_grid(pack / "atlas.png", pack / "glyphs.json", args.grid, args.out)
+        return
+
+    if args.command == "review-candidates":
+        result = write_candidate_review(pack)
+        generate_review_contact_sheet(
+            result["accepted_candidates"],
+            result["rejected_candidates"],
+            pack / "review_contact_sheet.png",
+        )
 
 
 if __name__ == "__main__":

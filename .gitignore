@@ -2,5 +2,6 @@
 out/
 out_layered/
 out_probe/
+out_profile/
 __pycache__/
 *.pyc

@@ -41,6 +41,20 @@ grayscale or RGB image into mass, value, and edge evidence layers, maps those
 layers to existing glyph tokens, and compiles the generated layered grid through
 the same compositor.
 
+The first profile measurement pass stays grid-based:
+
+```text
+silhouette
+-> boundary
+-> profiles
+-> dimensions
+-> simple shape classification
+```
+
+It extracts contour cells, left/right row profiles, width profiles, basic
+dimensions, taper, symmetry error, bulge/neck rows, and a simple
+`rectangle`/`circle_or_ellipse`/`taper_column`/`unknown` classification.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -289,6 +303,26 @@ The probe:
 - samples a 32x32 measurement grid
 - extracts a mass mask, value bands, and Sobel-like edge evidence
 - maps those evidence layers to active glyph tokens by metadata
+
+## Measure a silhouette profile
+
+```sh
+python3 -m glyph_lab.cli measure-profile \
+  --image examples/probe_taper_column.png \
+  --out out_profile \
+  --grid-size 32
+```
+
+Writes:
+
+- `out_profile/profile_measurements.json`
+- `out_profile/profile_overlay_grid.txt`
+- `out_profile/profile_overlay.png`
+
+The profile pass measures the mass mask from a sampled image. It records the
+crop box, occupied cell bounds, centerline estimate, left/right/width profiles,
+top/middle/bottom widths, taper ratio, symmetry error, row width variance,
+likely shape, bulge rows, and neck rows.
 
 ## Tests
 

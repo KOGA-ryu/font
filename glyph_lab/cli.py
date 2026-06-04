@@ -10,6 +10,7 @@ from .contact_sheet import generate_contact_sheet
 from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
 from .image_to_layers import probe_image_to_layers
+from .profiles import measure_profile_image
 from .promotion import promote_candidates
 from .review_export import generate_review_contact_sheet
 
@@ -42,6 +43,11 @@ def main() -> None:
     probe_parser.add_argument("--image", required=True)
     probe_parser.add_argument("--out", default="out_probe")
     probe_parser.add_argument("--grid-size", type=int, default=32)
+
+    profile_parser = subparsers.add_parser("measure-profile", help="measure a silhouette profile from an image")
+    profile_parser.add_argument("--image", required=True)
+    profile_parser.add_argument("--out", default="out_profile")
+    profile_parser.add_argument("--grid-size", type=int, default=32)
 
     review_parser = subparsers.add_parser("review-candidates", help="score generated variants")
     review_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -76,6 +82,10 @@ def main() -> None:
 
     if args.command == "probe-image":
         probe_image_to_layers(args.image, pack, args.out, grid_size=args.grid_size)
+        return
+
+    if args.command == "measure-profile":
+        measure_profile_image(args.image, args.out, grid_size=args.grid_size)
         return
 
     if args.command == "review-candidates":

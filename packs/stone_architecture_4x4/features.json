@@ -1,0 +1,1087 @@
+{
+  "features": {
+    ".": {
+      "index": 0,
+      "id": "4.stone.void.none.empty_00",
+      "features": {
+        "density": 0.0,
+        "bounding_box": null,
+        "centroid_x": null,
+        "centroid_y": null,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 0,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      }
+    },
+    "#": {
+      "index": 1,
+      "id": "4.stone.fill.solid.solid_01",
+      "features": {
+        "density": 1.0,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 1.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      }
+    },
+    "^": {
+      "index": 2,
+      "id": "4.stone.fill.half.top_half_02",
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "_": {
+      "index": 3,
+      "id": "4.stone.fill.half.bottom_half_03",
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 1.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "[": {
+      "index": 4,
+      "id": "4.stone.fill.half.left_half_04",
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.0,
+          "bottom_left": 1.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "]": {
+      "index": 5,
+      "id": "4.stone.fill.half.right_half_05",
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "q": {
+      "index": 6,
+      "id": "4.stone.fill.quarter.top_left_quarter_06",
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 1
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      }
+    },
+    "p": {
+      "index": 7,
+      "id": "4.stone.fill.quarter.top_right_quarter_07",
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      }
+    },
+    "b": {
+      "index": 8,
+      "id": "4.stone.fill.quarter.bottom_left_quarter_08",
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 1.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      }
+    },
+    "d": {
+      "index": 9,
+      "id": "4.stone.fill.quarter.bottom_right_quarter_09",
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 2,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      }
+    },
+    ",": {
+      "index": 10,
+      "id": "4.stone.fill.texture.light_fill_sparse_10",
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    ":": {
+      "index": 11,
+      "id": "4.stone.fill.texture.mid_fill_checker_11",
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 8,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      }
+    },
+    ";": {
+      "index": 12,
+      "id": "4.stone.fill.texture.dark_fill_dense_12",
+      "features": {
+        "density": 0.75,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      }
+    },
+    "S": {
+      "index": 13,
+      "id": "4.stone.shadow.ambient.deep_shadow_13",
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.8,
+        "centroid_y": 2.1,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 1.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "-": {
+      "index": 14,
+      "id": "4.stone.edge.horizontal.horizontal_edge_14",
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "|": {
+      "index": 15,
+      "id": "4.stone.edge.vertical.vertical_edge_15",
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "/": {
+      "index": 16,
+      "id": "4.stone.edge.diagonal.diagonal_rise_16",
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.2857142857142858,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      }
+    },
+    "\\": {
+      "index": 17,
+      "id": "4.stone.edge.diagonal.diagonal_fall_17",
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.7142857142857142,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      }
+    },
+    "a": {
+      "index": 18,
+      "id": "4.stone.edge.corner.corner_top_left_18",
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 0.8571428571428571,
+        "centroid_y": 0.8571428571428571,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      }
+    },
+    "c": {
+      "index": 19,
+      "id": "4.stone.edge.corner.corner_top_right_19",
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 0.8571428571428571,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      }
+    },
+    "u": {
+      "index": 20,
+      "id": "4.stone.edge.corner.corner_bottom_left_20",
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 0.8571428571428571,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        }
+      }
+    },
+    "n": {
+      "index": 21,
+      "id": "4.stone.edge.corner.corner_bottom_right_21",
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        }
+      }
+    },
+    "T": {
+      "index": 22,
+      "id": "4.stone.edge.junction.tee_up_22",
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.2,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "t": {
+      "index": 23,
+      "id": "4.stone.edge.junction.tee_down_23",
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.8,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "<": {
+      "index": 24,
+      "id": "4.stone.edge.junction.tee_left_24",
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.2,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.75,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    ">": {
+      "index": 25,
+      "id": "4.stone.edge.junction.tee_right_25",
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.8,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "+": {
+      "index": 26,
+      "id": "4.stone.edge.junction.cross_26",
+      "features": {
+        "density": 0.75,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      }
+    },
+    "h": {
+      "index": 27,
+      "id": "4.stone.highlight.bevel.bevel_highlight_27",
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "s": {
+      "index": 28,
+      "id": "4.stone.shadow.bevel.bevel_shadow_28",
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.8333333333333333,
+        "centroid_y": 2.6666666666666665,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "*": {
+      "index": 29,
+      "id": "4.stone.detail.damage.chip_dot_29",
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        }
+      }
+    },
+    "x": {
+      "index": 30,
+      "id": "4.stone.detail.damage.crack_short_30",
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    },
+    "C": {
+      "index": 31,
+      "id": "4.stone.guide.centerline.centerline_marker_31",
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        }
+      }
+    }
+  }
+}

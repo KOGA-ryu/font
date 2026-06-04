@@ -17,6 +17,7 @@ from .object_hints import write_object_hints
 from .profiles import measure_profile_image
 from .promotion import promote_candidates
 from .review_export import generate_review_contact_sheet
+from .scaffold import measure_scaffold_image
 
 
 DEFAULT_PACK = Path("packs/stone_architecture_4x4")
@@ -57,6 +58,11 @@ def main() -> None:
     rhythm_parser.add_argument("--image", required=True)
     rhythm_parser.add_argument("--out", default="out_rhythm")
     rhythm_parser.add_argument("--grid-size", type=int, default=32)
+
+    scaffold_parser = subparsers.add_parser("measure-scaffold", help="measure a construction support scaffold")
+    scaffold_parser.add_argument("--image", required=True)
+    scaffold_parser.add_argument("--out", default="out_scaffold")
+    scaffold_parser.add_argument("--grid-size", type=int, default=32)
 
     hint_parser = subparsers.add_parser("hint-object", help="fuse measurements into object-family hints")
     hint_parser.add_argument("--profile")
@@ -115,6 +121,10 @@ def main() -> None:
 
     if args.command == "measure-rhythm":
         measure_rhythm_image(args.image, args.out, grid_size=args.grid_size)
+        return
+
+    if args.command == "measure-scaffold":
+        measure_scaffold_image(args.image, args.out, grid_size=args.grid_size)
         return
 
     if args.command == "hint-object":

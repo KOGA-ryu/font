@@ -106,6 +106,22 @@ source layers, source measurements, method notes, and confidence.
 not provide real-world depth without scale, light, and camera data, so v0 writes
 relative hints unless a later calibrated reference exists.
 
+The construction scaffold pass models a drawing workflow:
+
+```text
+find the largest simple support line
+-> attach smaller difficult lines to it
+-> measure angles against the support line
+-> work from center outward
+-> scale the whole construction to fit the target grid
+-> add detail
+```
+
+This is not object-family inference. It extracts a deterministic grid-based
+support graph with a `primary_support_line`, anchor points, attached lines,
+angle measurements, and a scale fit warning when the form should be drawn
+smaller before detail is added.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -432,6 +448,25 @@ Writes:
 The command accepts missing probe/profile/rhythm/layered inputs. Missing inputs
 produce lower-confidence measurements with missing-evidence notes instead of
 pretending the evidence exists.
+
+## Measure a construction scaffold
+
+```sh
+python3 -m glyph_lab.cli measure-scaffold \
+  --image examples/probe_taper_column.png \
+  --out out_scaffold \
+  --grid-size 32
+```
+
+Writes:
+
+- `out_scaffold/scaffold_measurements.json`
+- `out_scaffold/scaffold_overlay_grid.txt`
+- `out_scaffold/scaffold_overlay.png`
+
+The overlay uses `|` for the primary vertical support line, `-` for horizontal
+attached lines, `+` for anchors, `.` for occupied mass, and `?` for uncertain
+attached lines.
 
 ## Tests
 

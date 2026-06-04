@@ -8,6 +8,25 @@ contact sheet, and compiled from an ASCII control grid into PNG proof layers.
 
 This is not an Aseprite plugin, Blender tool, or font editor.
 
+## Flat and layered grids
+
+A flat grid is one token per output cell. It is useful for quick proofs where a
+single glyph stamp owns each 4x4 cell.
+
+A layered grid is multiple brush passes per output cell. Separate semantic
+layers can place mass/base fill, shadow, highlight, edge, detail, ornament, and
+measurement glyphs into the same cell; the compositor renders them in a
+deterministic layer order.
+
+The layered proof pipeline is:
+
+```text
+glyph pack
+-> layered control grid
+-> deterministic layer compositor
+-> proof PNG + layer PNGs + manifest
+```
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -188,6 +207,47 @@ Rules:
 - Unknown tokens raise an error with row, column, and character.
 - Each control-grid character expands to one 4x4 stamp.
 - A 32x32 grid outputs a 128x128 PNG.
+
+## Compile the layered example
+
+```sh
+python3 -m glyph_lab.cli compile-layered \
+  --pack packs/stone_architecture_4x4 \
+  --input examples/layered_stone_post.json \
+  --out out_layered
+```
+
+Layer order:
+
+1. `background`
+2. `mass`
+3. `base_fill`
+4. `shadow`
+5. `highlight`
+6. `edge`
+7. `detail`
+8. `ornament`
+9. `measurement`
+
+Writes:
+
+- `out_layered/proof_128.png`
+- `out_layered/layers/mass.png`
+- `out_layered/layers/base_fill.png`
+- `out_layered/layers/shadow.png`
+- `out_layered/layers/highlight.png`
+- `out_layered/layers/edge.png`
+- `out_layered/layers/detail.png`
+- `out_layered/layers/ornament.png`
+- `out_layered/layers/measurement.png`
+- `out_layered/manifest.json`
+
+Layered rules:
+
+- All layer grids must have the declared width and height.
+- Space means no glyph on that layer.
+- Unknown tokens report layer name, row, column, and character.
+- Layer constraint mismatches are recorded as manifest warnings.
 
 ## Tests
 

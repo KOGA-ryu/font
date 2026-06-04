@@ -5,6 +5,7 @@ from pathlib import Path
 
 from .atlas import generate_pack
 from .compiler import compile_grid
+from .compositor import compile_layered_grid
 from .contact_sheet import generate_contact_sheet
 from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
@@ -29,6 +30,11 @@ def main() -> None:
     compile_parser.add_argument("--pack", default=str(DEFAULT_PACK))
     compile_parser.add_argument("--grid", default="examples/stone_post_grid.txt")
     compile_parser.add_argument("--out", default="out")
+
+    layered_parser = subparsers.add_parser("compile-layered", help="compile a layered control grid to PNG layers")
+    layered_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    layered_parser.add_argument("--input", default="examples/layered_stone_post.json")
+    layered_parser.add_argument("--out", default="out_layered")
 
     review_parser = subparsers.add_parser("review-candidates", help="score generated variants")
     review_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -55,6 +61,10 @@ def main() -> None:
 
     if args.command == "compile":
         compile_grid(pack / "atlas.png", pack / "glyphs.json", args.grid, args.out)
+        return
+
+    if args.command == "compile-layered":
+        compile_layered_grid(pack / "atlas.png", pack / "glyphs.json", args.input, args.out)
         return
 
     if args.command == "review-candidates":

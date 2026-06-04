@@ -5,5 +5,6 @@ out_probe/
 out_profile/
 out_rhythm/
 out_hint/
+out_measure_art/
 __pycache__/
 *.pyc

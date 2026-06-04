@@ -85,6 +85,27 @@ flags against explicit rules for `fluted_column`, `simple_column`,
 `banded_block`, `rail_segment`, `panel`, and `unknown`. There is no ML in this
 step.
 
+The art-pass-first measurement path corrects the measurement direction:
+
+```text
+rough image measurement
+-> art glyph passes
+-> cleaned layered proof
+-> measuring glyph pass
+-> deductions / dimensions / confidence
+```
+
+Pixels are rough evidence. Rough measurement can find crop, silhouette, coarse
+bounds, and centerline, but final measurements should be read from organized
+art evidence. Art glyph passes separate that evidence into linework,
+value-gradient, shadow, highlight, colour/material, and texture/detail layers.
+Measuring glyphs operate after those passes and final records carry provenance,
+source layers, source measurements, method notes, and confidence.
+
+`shadow_depth_hint` is deliberately relative. A single uncalibrated image does
+not provide real-world depth without scale, light, and camera data, so v0 writes
+relative hints unless a later calibrated reference exists.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -391,6 +412,26 @@ Writes:
 
 Each object hint includes a family, confidence, reasons, missing evidence, and
 the measurement sources used.
+
+## Measure from art passes
+
+```sh
+python3 -m glyph_lab.cli measure-from-art-passes \
+  --probe out_probe/probe_measurements.json \
+  --profile out_profile/profile_measurements.json \
+  --rhythm out_rhythm/rhythm_measurements.json \
+  --layered out_probe/generated_layered_grid.json \
+  --out out_measure_art
+```
+
+Writes:
+
+- `out_measure_art/final_measurements.json`
+- `out_measure_art/art_pass_summary.json`
+
+The command accepts missing probe/profile/rhythm/layered inputs. Missing inputs
+produce lower-confidence measurements with missing-evidence notes instead of
+pretending the evidence exists.
 
 ## Tests
 

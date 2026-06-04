@@ -12,6 +12,7 @@ from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
+from .measurement_pass import write_art_pass_measurements
 from .object_hints import write_object_hints
 from .profiles import measure_profile_image
 from .promotion import promote_candidates
@@ -63,6 +64,16 @@ def main() -> None:
     hint_parser.add_argument("--probe")
     hint_parser.add_argument("--out", default="out_hint")
 
+    art_measure_parser = subparsers.add_parser(
+        "measure-from-art-passes",
+        help="create final measurements from organized art-pass evidence",
+    )
+    art_measure_parser.add_argument("--probe")
+    art_measure_parser.add_argument("--profile")
+    art_measure_parser.add_argument("--rhythm")
+    art_measure_parser.add_argument("--layered")
+    art_measure_parser.add_argument("--out", default="out_measure_art")
+
     review_parser = subparsers.add_parser("review-candidates", help="score generated variants")
     review_parser.add_argument("--pack", default=str(DEFAULT_PACK))
 
@@ -112,6 +123,16 @@ def main() -> None:
             _load_json(args.rhythm) if args.rhythm else None,
             args.out,
             probe=_load_json(args.probe) if args.probe else None,
+        )
+        return
+
+    if args.command == "measure-from-art-passes":
+        write_art_pass_measurements(
+            args.out,
+            probe=_load_json(args.probe) if args.probe else None,
+            profile=_load_json(args.profile) if args.profile else None,
+            rhythm=_load_json(args.rhythm) if args.rhythm else None,
+            layered=_load_json(args.layered) if args.layered else None,
         )
         return
 

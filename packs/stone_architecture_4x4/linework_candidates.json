@@ -1,0 +1,3042 @@
+{
+  "linework_candidates": [
+    {
+      "id": "4.stone.linework.line.horizontal_top_thin_3000",
+      "token": "",
+      "index": 3000,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 0
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 15
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "top"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top"
+      ],
+      "thickness": 1,
+      "variant": "top",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.linework.line.horizontal_middle_thin_3001",
+      "token": "",
+      "index": 3001,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 240
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "middle"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.linework.line.horizontal_bottom_thin_3002",
+      "token": "",
+      "index": 3002,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 3,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 3.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 61440
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "bottom"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "bottom",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.linework.line.horizontal_middle_thick_3003",
+      "token": "",
+      "index": 3003,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 255
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "middle",
+        "thickness": 2
+      },
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 2,
+      "variant": "middle",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.linework.line.horizontal_broken_3004",
+      "token": "",
+      "index": 3004,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 176
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "middle",
+        "broken": true
+      },
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.linework.line.vertical_left_thin_3005",
+      "token": "",
+      "index": 3005,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 3
+        },
+        "centroid_x": 0.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 4369
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "vertical",
+        "offset": "left"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top",
+        "bottom",
+        "left"
+      ],
+      "thickness": 1,
+      "variant": "left",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.linework.line.vertical_center_thin_3006",
+      "token": "",
+      "index": 3006,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8738
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "vertical",
+        "offset": "center"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "center",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.linework.line.vertical_right_thin_3007",
+      "token": "",
+      "index": 3007,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 3,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 3.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 34952
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "vertical",
+        "offset": "right"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top",
+        "bottom",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "right",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.linework.line.vertical_middle_thick_3008",
+      "token": "",
+      "index": 3008,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.0,
+          "bottom_left": 1.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 13107
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "vertical",
+        "offset": "center",
+        "thickness": 2
+      },
+      "linework_kind": "line",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top",
+        "bottom"
+      ],
+      "thickness": 2,
+      "variant": "center",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.linework.line.vertical_broken_3009",
+      "token": "",
+      "index": 3009,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8226
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "vertical",
+        "offset": "center",
+        "broken": true
+      },
+      "linework_kind": "line",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "center",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_rise_left_3010",
+      "token": "",
+      "index": 3010,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 292
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "offset": "left"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 45.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "left",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_rise_middle_3011",
+      "token": "",
+      "index": 3011,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 4680
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "offset": "middle"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 45.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_rise_right_3012",
+      "token": "",
+      "index": 3012,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 9344
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "offset": "right"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 45.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "right",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_rise_thick_3013",
+      "token": "",
+      "index": 3013,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.2857142857142858,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 4972
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "offset": "middle",
+        "thickness": 2
+      },
+      "linework_kind": "line",
+      "angle_degrees": 45.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 2,
+      "variant": "middle",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_rise_broken_3014",
+      "token": "",
+      "index": 3014,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 4104
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "offset": "middle",
+        "broken": true
+      },
+      "linework_kind": "line",
+      "angle_degrees": 45.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_fall_left_3015",
+      "token": "",
+      "index": 3015,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 16912
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "offset": "left"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 135.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "left",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_fall_middle_3016",
+      "token": "",
+      "index": 3016,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 33825
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "offset": "middle"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 135.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_fall_right_3017",
+      "token": "",
+      "index": 3017,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 2.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 2114
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "offset": "right"
+      },
+      "linework_kind": "line",
+      "angle_degrees": 135.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "right",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_fall_thick_3018",
+      "token": "",
+      "index": 3018,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.7142857142857142,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 35939
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "offset": "middle",
+        "thickness": 2
+      },
+      "linework_kind": "line",
+      "angle_degrees": 135.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 2,
+      "variant": "middle",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.line.diagonal_fall_broken_3019",
+      "token": "",
+      "index": 3019,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 33825
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "offset": "middle",
+        "broken": true
+      },
+      "linework_kind": "line",
+      "angle_degrees": 135.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_bottom_left_sharp_3020",
+      "token": "",
+      "index": 3020,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 0.8571428571428571,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 61713
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "bottom_left",
+        "radius": "sharp"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "bottom",
+        "left"
+      ],
+      "thickness": 1,
+      "variant": "sharp",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_bottom_left_soft_3021",
+      "token": "",
+      "index": 3021,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 57617
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "bottom_left",
+        "radius": "soft"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "bottom",
+        "left"
+      ],
+      "thickness": 1,
+      "variant": "soft",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_bottom_right_sharp_3022",
+      "token": "",
+      "index": 3022,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 2.142857142857143,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 63624
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "bottom_right",
+        "radius": "sharp"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "bottom",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "sharp",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_bottom_right_soft_3023",
+      "token": "",
+      "index": 3023,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 30856
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "bottom_right",
+        "radius": "soft"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "bottom",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "soft",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_top_left_sharp_3024",
+      "token": "",
+      "index": 3024,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 0.8571428571428571,
+        "centroid_y": 0.8571428571428571,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 4383
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "top_left",
+        "radius": "sharp"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "top",
+        "left"
+      ],
+      "thickness": 1,
+      "variant": "sharp",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_top_left_soft_3025",
+      "token": "",
+      "index": 3025,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 4382
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "top_left",
+        "radius": "soft"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "top",
+        "left"
+      ],
+      "thickness": 1,
+      "variant": "soft",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_top_right_sharp_3026",
+      "token": "",
+      "index": 3026,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.142857142857143,
+        "centroid_y": 0.8571428571428571,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 34959
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "top_right",
+        "radius": "sharp"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "top",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "sharp",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.corner.corner_top_right_soft_3027",
+      "token": "",
+      "index": 3027,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 34951
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "position": "top_right",
+        "radius": "soft"
+      },
+      "linework_kind": "corner",
+      "angle_degrees": null,
+      "connector_sides": [
+        "top",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "soft",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.linework.cap.cap_horizontal_left_3028",
+      "token": "",
+      "index": 3028,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 1
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 112
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "side": "left"
+      },
+      "linework_kind": "cap",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left"
+      ],
+      "thickness": 1,
+      "variant": "horizontal_left",
+      "ascii_fallback": "'"
+    },
+    {
+      "id": "4.stone.linework.cap.cap_horizontal_right_3029",
+      "token": "",
+      "index": 3029,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 2.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 224
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "side": "right"
+      },
+      "linework_kind": "cap",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "horizontal_right",
+      "ascii_fallback": "'"
+    },
+    {
+      "id": "4.stone.linework.cap.cap_vertical_top_3030",
+      "token": "",
+      "index": 3030,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 546
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "vertical",
+        "side": "top"
+      },
+      "linework_kind": "cap",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top"
+      ],
+      "thickness": 1,
+      "variant": "vertical_top",
+      "ascii_fallback": "'"
+    },
+    {
+      "id": "4.stone.linework.cap.cap_vertical_bottom_3031",
+      "token": "",
+      "index": 3031,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8736
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "vertical",
+        "side": "bottom"
+      },
+      "linework_kind": "cap",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "vertical_bottom",
+      "ascii_fallback": "'"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_horizontal_light_3032",
+      "token": "",
+      "index": 3032,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 240
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "horizontal",
+        "density": "light"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 0.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "light",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_horizontal_medium_3033",
+      "token": "",
+      "index": 3033,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3855
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "horizontal",
+        "density": "medium"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 0.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_horizontal_dense_3034",
+      "token": "",
+      "index": 3034,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.75,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 4095
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "horizontal",
+        "density": "dense"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 0.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "dense",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_vertical_light_3035",
+      "token": "",
+      "index": 3035,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8738
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "vertical",
+        "density": "light"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 90.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "light",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_vertical_medium_3036",
+      "token": "",
+      "index": 3036,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 21845
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "vertical",
+        "density": "medium"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 90.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_vertical_dense_3037",
+      "token": "",
+      "index": 3037,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.75,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.5,
+          "bottom_left": 1.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 30583
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "vertical",
+        "density": "dense"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 90.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "dense",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_diagonal_rise_light_3038",
+      "token": "",
+      "index": 3038,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 4680
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "diagonal_rise",
+        "density": "light"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 45.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "light",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_diagonal_rise_medium_3039",
+      "token": "",
+      "index": 3039,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 1.1666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 6,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 4698
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "diagonal_rise",
+        "density": "medium"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 45.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "medium",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_diagonal_rise_dense_3040",
+      "token": "",
+      "index": 3040,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.1111111111111112,
+        "centroid_y": 1.1111111111111112,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 4990
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "diagonal_rise",
+        "density": "dense"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 45.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "dense",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_diagonal_fall_light_3041",
+      "token": "",
+      "index": 3041,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 33825
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "diagonal_fall",
+        "density": "light"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 135.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "light",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_diagonal_fall_medium_3042",
+      "token": "",
+      "index": 3042,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 1.8333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 6,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 42273
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "diagonal_fall",
+        "density": "medium"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 135.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "medium",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_diagonal_fall_dense_3043",
+      "token": "",
+      "index": 3043,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 52851
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "diagonal_fall",
+        "density": "dense"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": 135.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "dense",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_cross_light_3044",
+      "token": "",
+      "index": 3044,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 5,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 38505
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "cross",
+        "density": "light"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": null,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "light",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_cross_medium_3045",
+      "token": "",
+      "index": 3045,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.75,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.5,
+          "bottom_left": 1.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 46971
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "cross",
+        "density": "medium"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": null,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.linework.hatch.hatch_cross_dense_3046",
+      "token": "",
+      "index": 3046,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.4285714285714286,
+        "centroid_y": 1.4285714285714286,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 57215
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "kind": "cross",
+        "density": "dense"
+      },
+      "linework_kind": "hatch",
+      "angle_degrees": null,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "dense",
+      "ascii_fallback": "x"
+    }
+  ]
+}

@@ -122,6 +122,25 @@ support graph with a `primary_support_line`, anchor points, attached lines,
 angle measurements, and a scale fit warning when the form should be drawn
 smaller before detail is added.
 
+The linework glyph kit is the bridge between normal ASCII rendering and custom
+glyph drawing. The image-to-ASCII workbench can still emit character grids, but
+those characters become bridge keys for 4x4 glyph stamps:
+
+```text
+math line primitives
+-> 4x4 linework glyph candidates
+-> review/scoring
+-> ASCII bridge palettes
+-> image-to-ASCII rough grid
+-> custom glyph layered proof
+```
+
+This keeps 4x4 linework manageable. Straight lines, offsets, diagonals, caps,
+corners, hatching, and crosshatching are generated from geometry instead of
+being hand-authored one at a time. Normal ASCII characters such as `-`, `|`,
+`/`, `\`, `+`, and temporary bridge keys can piggyback on the ASCII engine while
+the rendered mark comes from the custom glyph pack.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -224,6 +243,46 @@ Writes review-only primitive artifacts:
 - `packs/stone_architecture_4x4/primitive_accepted_candidates.json`
 - `packs/stone_architecture_4x4/primitive_rejected_candidates.json`
 - `packs/stone_architecture_4x4/primitive_review_contact_sheet.png`
+
+## Generate linework candidates
+
+```sh
+python3 -m glyph_lab.cli generate-linework \
+  --pack packs/stone_architecture_4x4
+```
+
+Writes review-only linework artifacts:
+
+- `packs/stone_architecture_4x4/linework_candidates.json`
+- `packs/stone_architecture_4x4/linework_candidate_scores.json`
+- `packs/stone_architecture_4x4/linework_accepted_candidates.json`
+- `packs/stone_architecture_4x4/linework_rejected_candidates.json`
+- `packs/stone_architecture_4x4/linework_review_contact_sheet.png`
+- `packs/stone_architecture_4x4/ascii_linework_palette.txt`
+- `packs/stone_architecture_4x4/ascii_shade_palette.txt`
+- `packs/stone_architecture_4x4/ascii_glyph_mapping.json`
+
+The palette files are meant for
+`/Users/kogaryu/gameguy-3d-lab/image_to_ascii_workbench_v3`. Use them with
+`--palette custom --custom-palette ...` so the ASCII output can act as a rough
+glyph-control grid. The mapping JSON records which ASCII bridge key points to
+which active or review-only glyph.
+
+When passing the linework palette on the command line, use the equals form
+because the palette may begin with `-`:
+
+```sh
+PALETTE="$(tr -d '\n' < packs/stone_architecture_4x4/ascii_linework_palette.txt)"
+python3 -m image_to_ascii_workbench.cli input.png \
+  --width 32 \
+  --height 32 \
+  --palette custom \
+  --custom-palette="$PALETTE" \
+  --edge-mode sobel-hybrid
+```
+
+The mapping also aliases the workbench's Unicode Sobel edge output, such as `│`
+and `─`, back to the active custom vertical and horizontal glyphs.
 
 ## Promote reviewed candidates
 

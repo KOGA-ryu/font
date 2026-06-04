@@ -12,6 +12,7 @@ from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
+from .linework_candidates import write_linework_review
 from .measurement_pass import write_art_pass_measurements
 from .object_hints import write_object_hints
 from .profiles import measure_profile_image
@@ -86,6 +87,9 @@ def main() -> None:
     primitive_parser = subparsers.add_parser("generate-primitives", help="generate primitive candidate review artifacts")
     primitive_parser.add_argument("--pack", default=str(DEFAULT_PACK))
 
+    linework_parser = subparsers.add_parser("generate-linework", help="generate linework glyph kit review artifacts")
+    linework_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+
     promote_parser = subparsers.add_parser("promote-candidates", help="promote reviewed candidates")
     promote_parser.add_argument("--pack", default=str(DEFAULT_PACK))
     promote_parser.add_argument("--request", required=True)
@@ -157,6 +161,10 @@ def main() -> None:
 
     if args.command == "generate-primitives":
         write_primitive_review(pack)
+        return
+
+    if args.command == "generate-linework":
+        write_linework_review(pack)
         return
 
     if args.command == "promote-candidates":

@@ -3,5 +3,6 @@ out/
 out_layered/
 out_probe/
 out_profile/
+out_rhythm/
 __pycache__/
 *.pyc

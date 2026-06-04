@@ -55,6 +55,20 @@ It extracts contour cells, left/right row profiles, width profiles, basic
 dimensions, taper, symmetry error, bulge/neck rows, and a simple
 `rectangle`/`circle_or_ellipse`/`taper_column`/`unknown` classification.
 
+The first rhythm pass measures repeated construction evidence:
+
+```text
+sampled image grid
+-> vertical groove evidence
+-> horizontal band evidence
+-> spacing/rhythm measurements
+-> overlay grid
+```
+
+Repeated vertical grooves are flute/rib/fold evidence. Horizontal bands are
+moulding/rail/trim evidence. Rhythm measurements help later passes infer known
+object families without doing ornament inference or ML.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -323,6 +337,27 @@ The profile pass measures the mass mask from a sampled image. It records the
 crop box, occupied cell bounds, centerline estimate, left/right/width profiles,
 top/middle/bottom widths, taper ratio, symmetry error, row width variance,
 likely shape, bulge rows, and neck rows.
+
+## Measure repeated grooves and bands
+
+```sh
+python3 -m glyph_lab.cli measure-rhythm \
+  --image examples/probe_fluted_column.png \
+  --out out_rhythm \
+  --grid-size 32
+```
+
+Writes:
+
+- `out_rhythm/rhythm_measurements.json`
+- `out_rhythm/rhythm_overlay_grid.txt`
+- `out_rhythm/rhythm_overlay.png`
+
+The rhythm pass records vertical grooves, horizontal bands, average spacing,
+spacing variance, average groove length, groove region bounds, rhythm
+confidence, `likely_repeated_grooves`, and `likely_moulding_stack`. The overlay
+grid uses `|` for groove centerlines, `=` for bands, `+` for crossings, and `.`
+for mass/fill.
 
 ## Tests
 

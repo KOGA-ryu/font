@@ -284,6 +284,10 @@ python3 -m image_to_ascii_workbench.cli input.png \
 The mapping also aliases the workbench's Unicode Sobel edge output, such as `│`
 and `─`, back to the active custom vertical and horizontal glyphs.
 
+`examples/probe_linework_stress.png` is a deterministic high-contrast linework
+fixture for this loop. It stresses horizontal bands, broken bands, top cap
+lines, broken vertical grooves, and diagonal scratches.
+
 ## Import ASCII as custom glyph layers
 
 After the external image-to-ASCII workbench writes a text grid, import it into

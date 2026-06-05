@@ -439,7 +439,7 @@
       ],
       "thickness": 1,
       "variant": "horizontal_left",
-      "ascii_fallback": "'",
+      "ascii_fallback": "-",
       "usefulness_score": 0.7563,
       "rejection_reason": null,
       "review_tags": [
@@ -512,7 +512,7 @@
       ],
       "thickness": 1,
       "variant": "horizontal_right",
-      "ascii_fallback": "'",
+      "ascii_fallback": "-",
       "usefulness_score": 0.7563,
       "rejection_reason": null,
       "review_tags": [
@@ -3336,7 +3336,7 @@
       ],
       "thickness": 1,
       "variant": "vertical_top",
-      "ascii_fallback": "'",
+      "ascii_fallback": "|",
       "usefulness_score": 0.25,
       "rejection_reason": "duplicate-canonical-id",
       "review_tags": [
@@ -3412,7 +3412,7 @@
       ],
       "thickness": 1,
       "variant": "vertical_bottom",
-      "ascii_fallback": "'",
+      "ascii_fallback": "|",
       "usefulness_score": 0.25,
       "rejection_reason": "duplicate-canonical-id",
       "review_tags": [

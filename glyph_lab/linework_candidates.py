@@ -147,7 +147,7 @@ def _ascii_fallback(spec: dict[str, Any], metadata: dict[str, Any]) -> str:
     if spec["kind"] == "hatch":
         return "/" if spec["params"]["kind"] == "diagonal_rise" else "\\" if spec["params"]["kind"] == "diagonal_fall" else "x"
     if spec["kind"] == "cap":
-        return LINEWORK_ASCII_FALLBACKS["cap"]
+        return "-" if spec["params"]["direction"] == "horizontal" else "|"
     return metadata.get("variant", "?")[:1]
 
 

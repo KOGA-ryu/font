@@ -1914,7 +1914,7 @@
       ],
       "thickness": 1,
       "variant": "horizontal_left",
-      "ascii_fallback": "'"
+      "ascii_fallback": "-"
     },
     {
       "id": "4.stone.linework.cap.cap_horizontal_right_3029",
@@ -1978,7 +1978,7 @@
       ],
       "thickness": 1,
       "variant": "horizontal_right",
-      "ascii_fallback": "'"
+      "ascii_fallback": "-"
     },
     {
       "id": "4.stone.linework.cap.cap_vertical_top_3030",
@@ -2042,7 +2042,7 @@
       ],
       "thickness": 1,
       "variant": "vertical_top",
-      "ascii_fallback": "'"
+      "ascii_fallback": "|"
     },
     {
       "id": "4.stone.linework.cap.cap_vertical_bottom_3031",
@@ -2106,7 +2106,7 @@
       ],
       "thickness": 1,
       "variant": "vertical_bottom",
-      "ascii_fallback": "'"
+      "ascii_fallback": "|"
     },
     {
       "id": "4.stone.linework.hatch.hatch_horizontal_light_3032",

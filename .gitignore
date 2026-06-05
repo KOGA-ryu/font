@@ -8,5 +8,6 @@ out_hint/
 out_measure_art/
 out_scaffold/
 out_ascii_bridge/
+out_linework_stress/
 __pycache__/
 *.pyc

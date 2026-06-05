@@ -208,7 +208,7 @@
       "layer": "edge",
       "palette_role": "ink",
       "source": "geometry",
-      "ascii_fallback": "'",
+      "ascii_fallback": "-",
       "bridge_only": true
     },
     "H": {
@@ -219,7 +219,7 @@
       "layer": "edge",
       "palette_role": "ink",
       "source": "geometry",
-      "ascii_fallback": "'",
+      "ascii_fallback": "-",
       "bridge_only": true
     },
     ".": {

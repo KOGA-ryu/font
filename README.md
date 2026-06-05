@@ -284,6 +284,39 @@ python3 -m image_to_ascii_workbench.cli input.png \
 The mapping also aliases the workbench's Unicode Sobel edge output, such as `│`
 and `─`, back to the active custom vertical and horizontal glyphs.
 
+## Import ASCII as custom glyph layers
+
+After the external image-to-ASCII workbench writes a text grid, import it into
+`glyph_lab`:
+
+```sh
+python3 -m glyph_lab.cli import-ascii-grid \
+  --pack packs/stone_architecture_4x4 \
+  --ascii out_linework_ascii.txt \
+  --mapping packs/stone_architecture_4x4/ascii_glyph_mapping.json \
+  --out out_ascii_bridge
+```
+
+Writes:
+
+- `out_ascii_bridge/generated_layered_grid.json`
+- `out_ascii_bridge/proof_128.png`
+- `out_ascii_bridge/layers/*.png`
+- `out_ascii_bridge/manifest.json`
+
+For v0, review-only linework bridge keys resolve through their `ascii_fallback`
+to active glyph tokens. That means an unpromoted bridge key like `A` can still
+render as `-` until the candidate is promoted into `glyphs.json`. The manifest
+records those fallbacks so the accuracy loop is visible:
+
+```text
+ASCII rough grid
+-> active custom glyph proof
+-> inspect fallback warnings
+-> promote missing line glyphs
+-> rerun proof
+```
+
 ## Promote reviewed candidates
 
 Promotion is dry-run first. Write a request file such as

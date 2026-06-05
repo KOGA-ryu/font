@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .ascii_bridge import import_ascii_grid
 from .atlas import generate_pack
 from .compiler import compile_grid
 from .compositor import compile_layered_grid
@@ -90,6 +91,12 @@ def main() -> None:
     linework_parser = subparsers.add_parser("generate-linework", help="generate linework glyph kit review artifacts")
     linework_parser.add_argument("--pack", default=str(DEFAULT_PACK))
 
+    ascii_parser = subparsers.add_parser("import-ascii-grid", help="import ASCII output as a layered glyph grid")
+    ascii_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    ascii_parser.add_argument("--ascii", required=True)
+    ascii_parser.add_argument("--mapping", required=True)
+    ascii_parser.add_argument("--out", default="out_ascii_bridge")
+
     promote_parser = subparsers.add_parser("promote-candidates", help="promote reviewed candidates")
     promote_parser.add_argument("--pack", default=str(DEFAULT_PACK))
     promote_parser.add_argument("--request", required=True)
@@ -165,6 +172,10 @@ def main() -> None:
 
     if args.command == "generate-linework":
         write_linework_review(pack)
+        return
+
+    if args.command == "import-ascii-grid":
+        import_ascii_grid(pack, args.ascii, args.mapping, args.out)
         return
 
     if args.command == "promote-candidates":

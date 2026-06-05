@@ -429,6 +429,41 @@ python3 -m glyph_lab.cli import-ascii-grid \
 This proves whether fallback warnings disappear before mutating the active
 `glyphs.json`.
 
+Compare the active proof against the promoted proof:
+
+```sh
+python3 -m glyph_lab.cli compare-ascii-fallbacks \
+  --before out_brush_texture_smoke/manifest.json \
+  --after out_brush_texture_promoted/manifest.json \
+  --out out_brush_compare \
+  --mapping packs/stone_architecture_4x4/ascii_brush_mapping.json \
+  --accepted packs/stone_architecture_4x4/brush_accepted_candidates.json \
+  --base-glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --limit 8
+```
+
+Writes:
+
+- `out_brush_compare/fallback_compare.json`
+- `out_brush_compare/next_promote_candidates.json` when mapping and accepted
+  files are provided
+
+The comparison report records fallback totals before/after, reduction
+percentage, fixed bridge keys, top remaining fallback keys, unmapped counts,
+and the next evidence-driven promotion request.
+
+Generate a contact sheet for only promoted glyphs:
+
+```sh
+python3 -m glyph_lab.cli promoted-contact-sheet \
+  --glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --atlas packs/stone_architecture_4x4/atlas.promoted.png \
+  --out packs/stone_architecture_4x4/promoted_contact_sheet.png
+```
+
+The promoted sheet groups linework and brush glyphs so the dry-run pack can be
+reviewed without scanning the full active atlas.
+
 ## Promote reviewed candidates
 
 Promotion is dry-run first. Write a request file such as

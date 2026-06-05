@@ -1,0 +1,79 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_vertical_dense_broken_4011",
+      "token": "M",
+      "notes": "Promote ASCII bridge key 'M'; used 16 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.crosshatch.crosshatch_x_dense_4026",
+      "token": "f",
+      "notes": "Promote ASCII bridge key 'f'; used 15 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal.charcoal_bottom_light_4060",
+      "token": "&",
+      "notes": "Promote ASCII bridge key '&'; used 11 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_diagonal_fall_medium_broken_4021",
+      "token": "W",
+      "notes": "Promote ASCII bridge key 'W'; used 10 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_diagonal_fall_dense_4022",
+      "token": "X",
+      "notes": "Promote ASCII bridge key 'X'; used 10 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.dry_brush.dry_brush_diagonal_fall_light_4075",
+      "token": "@",
+      "notes": "Promote ASCII bridge key '@'; used 10 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_diagonal_fall_dense_broken_4023",
+      "token": "Y",
+      "notes": "Promote ASCII bridge key 'Y'; used 10 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal.charcoal_chunk_light_4063",
+      "token": ")",
+      "notes": "Promote ASCII bridge key ')'; used 10 times as ASCII bridge fallback."
+    }
+  ],
+  "metadata": {
+    "source": "ascii_bridge_fallback_warnings",
+    "fallback_counts": {
+      "M": 16,
+      "f": 15,
+      "&": 11,
+      "W": 10,
+      "X": 10,
+      "@": 10,
+      "Y": 10,
+      ")": 10,
+      "O": 9,
+      "g": 9,
+      "Z": 9,
+      "6": 8,
+      "k": 8,
+      "R": 8,
+      "Q": 7,
+      "4": 7,
+      "8": 7,
+      "m": 6,
+      "K": 6,
+      "!": 6,
+      "'": 5,
+      "7": 5,
+      "5": 5,
+      "P": 3,
+      "G": 2,
+      "J": 2,
+      "l": 1,
+      "9": 1,
+      "%": 1
+    },
+    "skipped": []
+  }
+}

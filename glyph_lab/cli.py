@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from .ascii_bridge import import_ascii_grid
+from .ascii_compare import compare_ascii_fallbacks
 from .ascii_promotion import write_ascii_promotion_request
 from .atlas import generate_pack
 from .brush_candidates import write_brush_review
@@ -20,6 +21,7 @@ from .measurement_pass import write_art_pass_measurements
 from .object_hints import write_object_hints
 from .profiles import measure_profile_image
 from .promotion import promote_candidates
+from .promoted_contact_sheet import generate_promoted_contact_sheet
 from .promoted_atlas import build_promoted_atlas
 from .review_export import generate_review_contact_sheet
 from .scaffold import measure_scaffold_image
@@ -109,6 +111,26 @@ def main() -> None:
     promoted_atlas_parser.add_argument("--pack", default=str(DEFAULT_PACK))
     promoted_atlas_parser.add_argument("--glyphs", required=True)
     promoted_atlas_parser.add_argument("--out", required=True)
+
+    promoted_sheet_parser = subparsers.add_parser(
+        "promoted-contact-sheet",
+        help="generate a contact sheet for promoted glyphs only",
+    )
+    promoted_sheet_parser.add_argument("--glyphs", required=True)
+    promoted_sheet_parser.add_argument("--atlas", required=True)
+    promoted_sheet_parser.add_argument("--out", required=True)
+
+    compare_parser = subparsers.add_parser(
+        "compare-ascii-fallbacks",
+        help="compare ASCII bridge fallback warnings before and after promotion",
+    )
+    compare_parser.add_argument("--before", required=True)
+    compare_parser.add_argument("--after", required=True)
+    compare_parser.add_argument("--out", required=True)
+    compare_parser.add_argument("--mapping")
+    compare_parser.add_argument("--accepted")
+    compare_parser.add_argument("--limit", type=int)
+    compare_parser.add_argument("--base-glyphs")
 
     suggest_parser = subparsers.add_parser(
         "suggest-ascii-promotions",
@@ -210,6 +232,22 @@ def main() -> None:
 
     if args.command == "build-promoted-atlas":
         build_promoted_atlas(pack / "atlas.png", args.glyphs, args.out)
+        return
+
+    if args.command == "promoted-contact-sheet":
+        generate_promoted_contact_sheet(args.glyphs, args.atlas, args.out)
+        return
+
+    if args.command == "compare-ascii-fallbacks":
+        compare_ascii_fallbacks(
+            args.before,
+            args.after,
+            args.out,
+            mapping_path=args.mapping,
+            accepted_path=args.accepted,
+            limit=args.limit,
+            base_glyphs_path=args.base_glyphs,
+        )
         return
 
     if args.command == "suggest-ascii-promotions":

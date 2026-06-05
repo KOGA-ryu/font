@@ -1,12 +1,13 @@
 {
-  "promoted_count": 5,
+  "promoted_count": 6,
   "rejected_count": 0,
   "promoted_candidate_ids": [
     "4.stone.linework.line.horizontal_broken_3004",
     "4.stone.linework.line.horizontal_middle_thick_3003",
     "4.stone.linework.line.horizontal_top_thin_3000",
     "4.stone.linework.line.vertical_broken_3009",
-    "4.stone.linework.line.horizontal_middle_thin_3001"
+    "4.stone.linework.line.horizontal_middle_thin_3001",
+    "4.stone.linework.cap.cap_horizontal_right_3029"
   ],
   "rejected_candidate_ids": [],
   "token_assignments": {
@@ -14,7 +15,8 @@
     "4.stone.linework.line.horizontal_middle_thick_3003": "D",
     "4.stone.linework.line.horizontal_top_thin_3000": "A",
     "4.stone.linework.line.vertical_broken_3009": "F",
-    "4.stone.linework.line.horizontal_middle_thin_3001": "B"
+    "4.stone.linework.line.horizontal_middle_thin_3001": "B",
+    "4.stone.linework.cap.cap_horizontal_right_3029": "H"
   },
   "apply": false,
   "backup_path": null,

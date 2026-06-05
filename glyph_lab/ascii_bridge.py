@@ -93,6 +93,8 @@ def resolve_ascii_char(
     token = entry.get("token")
     if token and token in active_tokens:
         return {"token": token, "layer": entry.get("layer", "detail"), "used_fallback": False}
+    if char in active_tokens:
+        return {"token": char, "layer": entry.get("layer", "detail"), "used_fallback": False}
     fallback = entry.get("ascii_fallback")
     if fallback and fallback in entries:
         fallback_entry = entries[fallback]
@@ -113,22 +115,28 @@ def import_ascii_grid(
     ascii_path: str | Path,
     mapping_path: str | Path,
     output_dir: str | Path,
+    glyphs_path: str | Path | None = None,
+    atlas_path: str | Path | None = None,
 ) -> dict[str, Any]:
     pack = Path(pack_dir)
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
+    glyphs_file = Path(glyphs_path) if glyphs_path is not None else pack / "glyphs.json"
+    atlas_file = Path(atlas_path) if atlas_path is not None else pack / "atlas.png"
     ascii_text = Path(ascii_path).read_text(encoding="utf-8").rstrip("\n")
     mapping = _load_json(mapping_path)
-    active_tokens = {glyph.token for glyph in load_glyphs(pack / "glyphs.json")}
+    active_tokens = {glyph.token for glyph in load_glyphs(glyphs_file)}
     layered = ascii_grid_to_layered(ascii_text, mapping, active_tokens)
     layered["metadata"]["input_paths"] = {
         "pack": str(pack),
+        "atlas": str(atlas_file),
+        "glyphs": str(glyphs_file),
         "ascii": str(ascii_path),
         "mapping": str(mapping_path),
     }
     layered_path = out / "generated_layered_grid.json"
     _write_json(layered_path, layered)
-    manifest = compile_layered_grid(pack / "atlas.png", pack / "glyphs.json", layered_path, out)
+    manifest = compile_layered_grid(atlas_file, glyphs_file, layered_path, out)
     manifest["ascii_bridge"] = layered["metadata"]
     _write_json(out / "manifest.json", manifest)
     return {"layered": layered, "manifest": manifest}

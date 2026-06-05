@@ -19,6 +19,7 @@ from .measurement_pass import write_art_pass_measurements
 from .object_hints import write_object_hints
 from .profiles import measure_profile_image
 from .promotion import promote_candidates
+from .promoted_atlas import build_promoted_atlas
 from .review_export import generate_review_contact_sheet
 from .scaffold import measure_scaffold_image
 
@@ -96,7 +97,14 @@ def main() -> None:
     ascii_parser.add_argument("--pack", default=str(DEFAULT_PACK))
     ascii_parser.add_argument("--ascii", required=True)
     ascii_parser.add_argument("--mapping", required=True)
+    ascii_parser.add_argument("--glyphs")
+    ascii_parser.add_argument("--atlas")
     ascii_parser.add_argument("--out", default="out_ascii_bridge")
+
+    promoted_atlas_parser = subparsers.add_parser("build-promoted-atlas", help="build an atlas for promoted glyphs")
+    promoted_atlas_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    promoted_atlas_parser.add_argument("--glyphs", required=True)
+    promoted_atlas_parser.add_argument("--out", required=True)
 
     suggest_parser = subparsers.add_parser(
         "suggest-ascii-promotions",
@@ -187,7 +195,11 @@ def main() -> None:
         return
 
     if args.command == "import-ascii-grid":
-        import_ascii_grid(pack, args.ascii, args.mapping, args.out)
+        import_ascii_grid(pack, args.ascii, args.mapping, args.out, glyphs_path=args.glyphs, atlas_path=args.atlas)
+        return
+
+    if args.command == "build-promoted-atlas":
+        build_promoted_atlas(pack / "atlas.png", args.glyphs, args.out)
         return
 
     if args.command == "suggest-ascii-promotions":

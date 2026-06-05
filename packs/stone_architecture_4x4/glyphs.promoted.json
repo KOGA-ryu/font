@@ -2014,6 +2014,74 @@
       "thickness": 1,
       "variant": "middle",
       "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.promoted.edge.linework.cap_horizontal_right_3029_37",
+      "token": "H",
+      "index": 37,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 2.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 224
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "side": "right"
+      },
+      "source_candidate_id": "4.stone.linework.cap.cap_horizontal_right_3029",
+      "promoted_from": "linework_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote linework bridge key 'H'; used 14 times as ASCII bridge fallback in probe_linework_stress.",
+      "linework_kind": "cap",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "horizontal_right",
+      "ascii_fallback": "-"
     }
   ]
 }

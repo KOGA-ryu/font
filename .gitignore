@@ -9,5 +9,6 @@ out_measure_art/
 out_scaffold/
 out_ascii_bridge/
 out_linework_stress/
+out_linework_stress_promoted/
 __pycache__/
 *.pyc

@@ -343,6 +343,31 @@ python3 -m glyph_lab.cli promote-candidates \
 This writes `glyphs.promoted.json` without mutating `glyphs.json`. Use `--apply`
 only after inspecting the promoted pack and report.
 
+Build an atlas for the dry-run promoted pack:
+
+```sh
+python3 -m glyph_lab.cli build-promoted-atlas \
+  --pack packs/stone_architecture_4x4 \
+  --glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --out packs/stone_architecture_4x4/atlas.promoted.png
+```
+
+Then rerun the ASCII import using the promoted glyph metadata and promoted
+atlas:
+
+```sh
+python3 -m glyph_lab.cli import-ascii-grid \
+  --pack packs/stone_architecture_4x4 \
+  --glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --atlas packs/stone_architecture_4x4/atlas.promoted.png \
+  --ascii out_linework_stress/input_ascii.txt \
+  --mapping packs/stone_architecture_4x4/ascii_glyph_mapping.json \
+  --out out_linework_stress_promoted
+```
+
+This proves whether fallback warnings disappear before mutating the active
+`glyphs.json`.
+
 ## Promote reviewed candidates
 
 Promotion is dry-run first. Write a request file such as

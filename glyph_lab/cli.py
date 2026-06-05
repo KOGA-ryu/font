@@ -7,6 +7,7 @@ from pathlib import Path
 from .ascii_bridge import import_ascii_grid
 from .ascii_promotion import write_ascii_promotion_request
 from .atlas import generate_pack
+from .brush_candidates import write_brush_review
 from .compiler import compile_grid
 from .compositor import compile_layered_grid
 from .contact_sheet import generate_contact_sheet
@@ -92,6 +93,9 @@ def main() -> None:
 
     linework_parser = subparsers.add_parser("generate-linework", help="generate linework glyph kit review artifacts")
     linework_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+
+    brush_parser = subparsers.add_parser("generate-brushes", help="generate texture brush glyph review artifacts")
+    brush_parser.add_argument("--pack", default=str(DEFAULT_PACK))
 
     ascii_parser = subparsers.add_parser("import-ascii-grid", help="import ASCII output as a layered glyph grid")
     ascii_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -192,6 +196,10 @@ def main() -> None:
 
     if args.command == "generate-linework":
         write_linework_review(pack)
+        return
+
+    if args.command == "generate-brushes":
+        write_brush_review(pack)
         return
 
     if args.command == "import-ascii-grid":

@@ -141,6 +141,22 @@ being hand-authored one at a time. Normal ASCII characters such as `-`, `|`,
 `/`, `\`, `+`, and temporary bridge keys can piggyback on the ASCII engine while
 the rendered mark comes from the custom glyph pack.
 
+The brush glyph kit applies the same idea to digital-painting brush behavior:
+
+```text
+brush tip / shape
+-> spacing and broken stroke variants
+-> scatter / spray
+-> grain and texture
+-> reviewable 4x4 glyph candidates
+-> ASCII texture and spray palettes
+```
+
+The generated brush families are `hatch`, `crosshatch`, `stipple`, `spray`,
+`charcoal`, `dry_brush`, and `grain`. These are modeled after common digital
+brush controls: tip shape, density, scatter direction, roughness, coverage, and
+grain. They are still deterministic 4x4 glyph stamps, not a paint engine.
+
 ## Transform and equivalence model
 
 The transform slice reduces glyph authoring by making one seed stamp generate
@@ -267,6 +283,27 @@ The palette files are meant for
 `--palette custom --custom-palette ...` so the ASCII output can act as a rough
 glyph-control grid. The mapping JSON records which ASCII bridge key points to
 which active or review-only glyph.
+
+## Generate brush candidates
+
+```sh
+python3 -m glyph_lab.cli generate-brushes \
+  --pack packs/stone_architecture_4x4
+```
+
+Writes review-only brush artifacts:
+
+- `packs/stone_architecture_4x4/brush_candidates.json`
+- `packs/stone_architecture_4x4/brush_candidate_scores.json`
+- `packs/stone_architecture_4x4/brush_accepted_candidates.json`
+- `packs/stone_architecture_4x4/brush_rejected_candidates.json`
+- `packs/stone_architecture_4x4/brush_review_contact_sheet.png`
+- `packs/stone_architecture_4x4/ascii_texture_palette.txt`
+- `packs/stone_architecture_4x4/ascii_spray_palette.txt`
+- `packs/stone_architecture_4x4/ascii_brush_mapping.json`
+
+Use the texture palette for hatching, crosshatching, charcoal, dry-brush, and
+grain-like image passes. Use the spray palette for stipple/scatter passes.
 
 When passing the linework palette on the command line, use the equals form
 because the palette may begin with `-`:

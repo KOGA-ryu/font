@@ -345,16 +345,17 @@ Writes:
 - `out_ascii_bridge/layers/*.png`
 - `out_ascii_bridge/manifest.json`
 
-For v0, review-only linework bridge keys resolve through their `ascii_fallback`
-to active glyph tokens. That means an unpromoted bridge key like `A` can still
-render as `-` until the candidate is promoted into `glyphs.json`. The manifest
-records those fallbacks so the accuracy loop is visible:
+For v0, review-only linework and brush bridge keys resolve through their
+`ascii_fallback` to active glyph tokens. That means an unpromoted bridge key
+like `A` can still render as `-` until the candidate is promoted into a dry-run
+glyph pack. The manifest records those fallbacks so the accuracy loop is
+visible:
 
 ```text
 ASCII rough grid
 -> active custom glyph proof
 -> inspect fallback warnings
--> promote missing line glyphs
+-> promote missing line/brush glyphs
 -> rerun proof
 ```
 
@@ -379,6 +380,29 @@ python3 -m glyph_lab.cli promote-candidates \
 
 This writes `glyphs.promoted.json` without mutating `glyphs.json`. Use `--apply`
 only after inspecting the promoted pack and report.
+
+Brush promotions can be stacked on top of a linework dry-run by using that
+promoted file as the base. `suggest-ascii-promotions --base-glyphs` skips
+bridge keys that are already real tokens in the base pack:
+
+```sh
+python3 -m glyph_lab.cli suggest-ascii-promotions \
+  --manifest out_brush_texture_smoke/manifest.json \
+  --mapping packs/stone_architecture_4x4/ascii_brush_mapping.json \
+  --accepted packs/stone_architecture_4x4/brush_accepted_candidates.json \
+  --out packs/stone_architecture_4x4/brush_promote_candidates.json \
+  --limit 8 \
+  --base-glyphs packs/stone_architecture_4x4/glyphs.promoted.json
+
+python3 -m glyph_lab.cli promote-candidates \
+  --pack packs/stone_architecture_4x4 \
+  --base-glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --accepted packs/stone_architecture_4x4/brush_accepted_candidates.json \
+  --request packs/stone_architecture_4x4/brush_promote_candidates.json
+```
+
+That cumulative dry-run keeps active `glyphs.json` untouched while letting the
+proof pack contain linework and texture brush glyphs at the same time.
 
 Build an atlas for the dry-run promoted pack:
 
@@ -457,6 +481,18 @@ generate candidates
 
 Dry-run does not mutate `glyphs.json`. `--apply` backs up the old file as
 `glyphs.backup.<timestamp>.json` before writing the promoted pack.
+
+Use `--base-glyphs` when a promotion request should build from an existing
+dry-run file instead of the active pack. This is useful for review passes such
+as:
+
+```text
+active glyphs
+-> linework dry-run promotions
+-> brush dry-run promotions using linework as the base
+-> promoted atlas
+-> ASCII proof with fewer bridge fallbacks
+```
 
 ## Compile the example grid
 

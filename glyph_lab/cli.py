@@ -119,11 +119,13 @@ def main() -> None:
     suggest_parser.add_argument("--accepted", required=True)
     suggest_parser.add_argument("--out", required=True)
     suggest_parser.add_argument("--limit", type=int)
+    suggest_parser.add_argument("--base-glyphs")
 
     promote_parser = subparsers.add_parser("promote-candidates", help="promote reviewed candidates")
     promote_parser.add_argument("--pack", default=str(DEFAULT_PACK))
     promote_parser.add_argument("--request", required=True)
     promote_parser.add_argument("--accepted")
+    promote_parser.add_argument("--base-glyphs")
     promote_parser.add_argument("--apply", action="store_true")
 
     args = parser.parse_args()
@@ -211,11 +213,24 @@ def main() -> None:
         return
 
     if args.command == "suggest-ascii-promotions":
-        write_ascii_promotion_request(args.manifest, args.mapping, args.accepted, args.out, limit=args.limit)
+        write_ascii_promotion_request(
+            args.manifest,
+            args.mapping,
+            args.accepted,
+            args.out,
+            limit=args.limit,
+            base_glyphs_path=args.base_glyphs,
+        )
         return
 
     if args.command == "promote-candidates":
-        promote_candidates(pack, args.request, apply=args.apply, accepted_path=args.accepted)
+        promote_candidates(
+            pack,
+            args.request,
+            apply=args.apply,
+            accepted_path=args.accepted,
+            base_glyphs_path=args.base_glyphs,
+        )
 
 
 def _load_json(path: str) -> dict:

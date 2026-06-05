@@ -11,5 +11,6 @@ out_ascii_bridge/
 out_linework_stress/
 out_linework_stress_promoted/
 out_brush_texture_smoke/
+out_brush_texture_promoted/
 __pycache__/
 *.pyc

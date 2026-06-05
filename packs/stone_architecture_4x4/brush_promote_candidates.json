@@ -1,0 +1,99 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.dry_brush.dry_brush_horizontal_light_4066",
+      "token": "=",
+      "notes": "Promote ASCII bridge key '='; used 536 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.dry_brush.dry_brush_vertical_light_4069",
+      "token": "?",
+      "notes": "Promote ASCII bridge key '?'; used 67 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal.charcoal_top_medium_4058",
+      "token": "$",
+      "notes": "Promote ASCII bridge key '$'; used 24 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_vertical_light_broken_4007",
+      "token": "I",
+      "notes": "Promote ASCII bridge key 'I'; used 23 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_diagonal_fall_light_broken_4019",
+      "token": "U",
+      "notes": "Promote ASCII bridge key 'U'; used 20 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_diagonal_rise_light_4012",
+      "token": "N",
+      "notes": "Promote ASCII bridge key 'N'; used 20 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.crosshatch.crosshatch_grid_dense_4029",
+      "token": "j",
+      "notes": "Promote ASCII bridge key 'j'; used 19 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.brush.hatch.hatch_diagonal_fall_medium_4020",
+      "token": "V",
+      "notes": "Promote ASCII bridge key 'V'; used 16 times as ASCII bridge fallback."
+    }
+  ],
+  "metadata": {
+    "source": "ascii_bridge_fallback_warnings",
+    "fallback_counts": {
+      "=": 536,
+      "?": 67,
+      "$": 24,
+      "I": 23,
+      "U": 20,
+      "N": 20,
+      "j": 19,
+      "H": 17,
+      "V": 16,
+      "M": 16,
+      "f": 15,
+      "A": 13,
+      "&": 11,
+      "W": 10,
+      "X": 10,
+      "@": 10,
+      "Y": 10,
+      ")": 10,
+      "O": 9,
+      "g": 9,
+      "Z": 9,
+      "B": 8,
+      "6": 8,
+      "k": 8,
+      "R": 8,
+      "Q": 7,
+      "4": 7,
+      "8": 7,
+      "E": 6,
+      "m": 6,
+      "K": 6,
+      "!": 6,
+      "'": 5,
+      "7": 5,
+      "5": 5,
+      "D": 4,
+      "P": 3,
+      "G": 2,
+      "J": 2,
+      "l": 1,
+      "9": 1,
+      "%": 1
+    },
+    "skipped": [
+      {
+        "char": "H",
+        "count": 17,
+        "candidate_id": "4.stone.brush.hatch.hatch_vertical_light_4006",
+        "reason": "token-already-used"
+      }
+    ]
+  }
+}

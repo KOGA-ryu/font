@@ -11,8 +11,10 @@ def promotion_request_from_ascii_manifest(
     mapping: dict[str, Any],
     accepted_candidates: list[dict[str, Any]],
     limit: int | None = None,
+    used_tokens: set[str] | None = None,
 ) -> dict[str, Any]:
     accepted_ids = {candidate["id"] for candidate in accepted_candidates}
+    used_tokens = used_tokens or set()
     bridge_mapping = mapping.get("mapping", mapping)
     fallback_counts = Counter(
         warning["char"]
@@ -35,11 +37,14 @@ def promotion_request_from_ascii_manifest(
         if len(char) != 1 or char == " ":
             skipped.append({"char": char, "count": count, "candidate_id": candidate_id, "reason": "invalid-token"})
             continue
+        if char in used_tokens:
+            skipped.append({"char": char, "count": count, "candidate_id": candidate_id, "reason": "token-already-used"})
+            continue
         promote.append(
             {
                 "candidate_id": candidate_id,
                 "token": char,
-                "notes": f"Promote linework bridge key {char!r}; used {count} times as ASCII bridge fallback.",
+                "notes": f"Promote ASCII bridge key {char!r}; used {count} times as ASCII bridge fallback.",
             }
         )
     return {
@@ -58,12 +63,14 @@ def write_ascii_promotion_request(
     accepted_path: str | Path,
     output_path: str | Path,
     limit: int | None = None,
+    base_glyphs_path: str | Path | None = None,
 ) -> dict[str, Any]:
     manifest = _load_json(manifest_path)
     mapping = _load_json(mapping_path)
     accepted_payload = _load_json(accepted_path)
     accepted = accepted_payload.get("accepted_candidates", accepted_payload)
-    request = promotion_request_from_ascii_manifest(manifest, mapping, accepted, limit=limit)
+    used_tokens = _load_tokens(base_glyphs_path) if base_glyphs_path is not None else set()
+    request = promotion_request_from_ascii_manifest(manifest, mapping, accepted, limit=limit, used_tokens=used_tokens)
     _write_json(output_path, request)
     return request
 
@@ -78,3 +85,9 @@ def _write_json(path: str | Path, payload: dict[str, Any]) -> None:
     with Path(path).open("w", encoding="utf-8") as handle:
         json.dump(payload, handle, indent=2)
         handle.write("\n")
+
+
+def _load_tokens(path: str | Path) -> set[str]:
+    payload = _load_json(path)
+    records = payload.get("glyphs", payload)
+    return {record.get("token") for record in records if record.get("token")}

@@ -1,25 +1,30 @@
 {
-  "promoted_count": 6,
+  "promoted_count": 8,
   "rejected_count": 0,
   "promoted_candidate_ids": [
-    "4.stone.linework.line.horizontal_broken_3004",
-    "4.stone.linework.line.horizontal_middle_thick_3003",
-    "4.stone.linework.line.horizontal_top_thin_3000",
-    "4.stone.linework.line.vertical_broken_3009",
-    "4.stone.linework.line.horizontal_middle_thin_3001",
-    "4.stone.linework.cap.cap_horizontal_right_3029"
+    "4.stone.brush.dry_brush.dry_brush_horizontal_light_4066",
+    "4.stone.brush.dry_brush.dry_brush_vertical_light_4069",
+    "4.stone.brush.charcoal.charcoal_top_medium_4058",
+    "4.stone.brush.hatch.hatch_vertical_light_broken_4007",
+    "4.stone.brush.hatch.hatch_diagonal_fall_light_broken_4019",
+    "4.stone.brush.hatch.hatch_diagonal_rise_light_4012",
+    "4.stone.brush.crosshatch.crosshatch_grid_dense_4029",
+    "4.stone.brush.hatch.hatch_diagonal_fall_medium_4020"
   ],
   "rejected_candidate_ids": [],
   "token_assignments": {
-    "4.stone.linework.line.horizontal_broken_3004": "E",
-    "4.stone.linework.line.horizontal_middle_thick_3003": "D",
-    "4.stone.linework.line.horizontal_top_thin_3000": "A",
-    "4.stone.linework.line.vertical_broken_3009": "F",
-    "4.stone.linework.line.horizontal_middle_thin_3001": "B",
-    "4.stone.linework.cap.cap_horizontal_right_3029": "H"
+    "4.stone.brush.dry_brush.dry_brush_horizontal_light_4066": "=",
+    "4.stone.brush.dry_brush.dry_brush_vertical_light_4069": "?",
+    "4.stone.brush.charcoal.charcoal_top_medium_4058": "$",
+    "4.stone.brush.hatch.hatch_vertical_light_broken_4007": "I",
+    "4.stone.brush.hatch.hatch_diagonal_fall_light_broken_4019": "U",
+    "4.stone.brush.hatch.hatch_diagonal_rise_light_4012": "N",
+    "4.stone.brush.crosshatch.crosshatch_grid_dense_4029": "j",
+    "4.stone.brush.hatch.hatch_diagonal_fall_medium_4020": "V"
   },
   "apply": false,
   "backup_path": null,
   "output_path": "packs/stone_architecture_4x4/glyphs.promoted.json",
-  "accepted_source": "packs/stone_architecture_4x4/linework_accepted_candidates.json"
+  "accepted_source": "packs/stone_architecture_4x4/brush_accepted_candidates.json",
+  "base_glyphs_path": "packs/stone_architecture_4x4/glyphs.promoted.json"
 }

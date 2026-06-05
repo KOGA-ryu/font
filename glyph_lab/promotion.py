@@ -25,11 +25,13 @@ def promote_candidates(
     request_path: str | Path,
     apply: bool = False,
     accepted_path: str | Path | None = None,
+    base_glyphs_path: str | Path | None = None,
 ) -> dict[str, Any]:
     pack = Path(pack_dir)
     accepted_source = Path(accepted_path) if accepted_path is not None else pack / "primitive_accepted_candidates.json"
+    base_glyphs = Path(base_glyphs_path) if base_glyphs_path is not None else pack / "glyphs.json"
     request = _load_request(request_path)
-    active_records = _load_records(pack / "glyphs.json")
+    active_records = _load_records(base_glyphs)
     accepted = {
         candidate["id"]: candidate
         for candidate in _load_accepted(accepted_source)
@@ -101,6 +103,7 @@ def promote_candidates(
         "backup_path": str(backup_path) if backup_path else None,
         "output_path": str(promoted_path),
         "accepted_source": str(accepted_source),
+        "base_glyphs_path": str(base_glyphs),
     }
     _write_json(pack / "promotion_report.json", report)
     return report
@@ -139,7 +142,18 @@ def _promoted_record(
     }
     if notes is not None:
         record["notes"] = notes
-    for key in ("linework_kind", "angle_degrees", "connector_sides", "thickness", "variant", "ascii_fallback"):
+    for key in (
+        "linework_kind",
+        "angle_degrees",
+        "connector_sides",
+        "thickness",
+        "variant",
+        "ascii_fallback",
+        "brush_family",
+        "brush_params",
+        "brush_engine",
+        "density_class",
+    ):
         if key in candidate:
             record[key] = candidate[key]
     return record

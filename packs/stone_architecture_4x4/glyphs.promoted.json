@@ -2082,6 +2082,570 @@
       "thickness": 1,
       "variant": "horizontal_right",
       "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.promoted.detail.dry_brush.dry_brush_horizontal_light_4066_38",
+      "token": "=",
+      "index": 38,
+      "role": "detail",
+      "family": "dry_brush",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 2,
+          "top": 1,
+          "right": 2,
+          "bottom": 1
+        },
+        "centroid_x": 2.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 64
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "horizontal",
+        "coverage": "light"
+      },
+      "source_candidate_id": "4.stone.brush.dry_brush.dry_brush_horizontal_light_4066",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key '='; used 536 times as ASCII bridge fallback.",
+      "ascii_fallback": "-",
+      "brush_family": "dry_brush",
+      "brush_params": {
+        "direction": "horizontal",
+        "coverage": "light"
+      },
+      "brush_engine": "broken-stroke",
+      "density_class": "light"
+    },
+    {
+      "id": "4.stone.promoted.detail.dry_brush.dry_brush_vertical_light_4069_39",
+      "token": "?",
+      "index": 39,
+      "role": "detail",
+      "family": "dry_brush",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 1,
+          "top": 2,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 512
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "vertical",
+        "coverage": "light"
+      },
+      "source_candidate_id": "4.stone.brush.dry_brush.dry_brush_vertical_light_4069",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key '?'; used 67 times as ASCII bridge fallback.",
+      "ascii_fallback": "|",
+      "brush_family": "dry_brush",
+      "brush_params": {
+        "direction": "vertical",
+        "coverage": "light"
+      },
+      "brush_engine": "broken-stroke",
+      "density_class": "light"
+    },
+    {
+      "id": "4.stone.promoted.detail.charcoal.charcoal_top_medium_4058_40",
+      "token": "$",
+      "index": 40,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 95
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "top",
+        "roughness": "medium"
+      },
+      "source_candidate_id": "4.stone.brush.charcoal.charcoal_top_medium_4058",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key '$'; used 24 times as ASCII bridge fallback.",
+      "ascii_fallback": "x",
+      "brush_family": "charcoal",
+      "brush_params": {
+        "edge": "top",
+        "roughness": "medium"
+      },
+      "brush_engine": "broken-stroke",
+      "density_class": "medium"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.hatch_vertical_light_broken_4007_41",
+      "token": "I",
+      "index": 41,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 544
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "angle": "vertical",
+        "density": "light",
+        "broken": true
+      },
+      "source_candidate_id": "4.stone.brush.hatch.hatch_vertical_light_broken_4007",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key 'I'; used 23 times as ASCII bridge fallback.",
+      "ascii_fallback": "|",
+      "brush_family": "hatch",
+      "brush_params": {
+        "angle": "vertical",
+        "density": "light",
+        "broken": true
+      },
+      "brush_engine": "directional-stroke",
+      "density_class": "light"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.hatch_diagonal_fall_light_broken_4019_42",
+      "token": "U",
+      "index": 42,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 32801
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "angle": "diagonal_fall",
+        "density": "light",
+        "broken": true
+      },
+      "source_candidate_id": "4.stone.brush.hatch.hatch_diagonal_fall_light_broken_4019",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key 'U'; used 20 times as ASCII bridge fallback.",
+      "ascii_fallback": "\\",
+      "brush_family": "hatch",
+      "brush_params": {
+        "angle": "diagonal_fall",
+        "density": "light",
+        "broken": true
+      },
+      "brush_engine": "directional-stroke",
+      "density_class": "light"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.hatch_diagonal_rise_light_4012_43",
+      "token": "N",
+      "index": 43,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 4680
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "angle": "diagonal_rise",
+        "density": "light"
+      },
+      "source_candidate_id": "4.stone.brush.hatch.hatch_diagonal_rise_light_4012",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key 'N'; used 20 times as ASCII bridge fallback.",
+      "ascii_fallback": "/",
+      "brush_family": "hatch",
+      "brush_params": {
+        "angle": "diagonal_rise",
+        "density": "light"
+      },
+      "brush_engine": "directional-stroke",
+      "density_class": "light"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.crosshatch_grid_dense_4029_44",
+      "token": "j",
+      "index": 44,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.9375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.4666666666666666,
+        "centroid_y": 1.4666666666666666,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 1.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 64511
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "style": "grid",
+        "density": "dense"
+      },
+      "source_candidate_id": "4.stone.brush.crosshatch.crosshatch_grid_dense_4029",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key 'j'; used 19 times as ASCII bridge fallback.",
+      "ascii_fallback": "+",
+      "brush_family": "crosshatch",
+      "brush_params": {
+        "style": "grid",
+        "density": "dense"
+      },
+      "brush_engine": "directional-stroke",
+      "density_class": "dense"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.hatch_diagonal_fall_medium_4020_45",
+      "token": "V",
+      "index": 45,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 1.8333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 6,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 42273
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "angle": "diagonal_fall",
+        "density": "medium"
+      },
+      "source_candidate_id": "4.stone.brush.hatch.hatch_diagonal_fall_medium_4020",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote ASCII bridge key 'V'; used 16 times as ASCII bridge fallback.",
+      "ascii_fallback": "\\",
+      "brush_family": "hatch",
+      "brush_params": {
+        "angle": "diagonal_fall",
+        "density": "medium"
+      },
+      "brush_engine": "directional-stroke",
+      "density_class": "medium"
     }
   ]
 }

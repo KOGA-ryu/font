@@ -6,6 +6,7 @@ import unittest
 
 from glyph_lab.ascii_promotion import promotion_request_from_ascii_manifest, write_ascii_promotion_request
 from glyph_lab.atlas import generate_pack
+from glyph_lab.brush_candidates import write_brush_review
 from glyph_lab.linework_candidates import write_linework_review
 from glyph_lab.promotion import promote_candidates
 
@@ -26,6 +27,17 @@ class AsciiPromotionTests(unittest.TestCase):
 
         self.assertEqual([item["candidate_id"] for item in request["promote"]], ["candidate.A"])
         self.assertEqual(request["metadata"]["skipped"][0]["reason"], "candidate-not-accepted")
+
+    def test_suggestion_skips_tokens_already_used_by_base_glyphs(self):
+        request = promotion_request_from_ascii_manifest(
+            manifest_fixture(),
+            mapping_fixture(),
+            [{"id": "candidate.E"}, {"id": "candidate.A"}],
+            used_tokens={"E"},
+        )
+
+        self.assertEqual([item["candidate_id"] for item in request["promote"]], ["candidate.A"])
+        self.assertEqual(request["metadata"]["skipped"][0]["reason"], "token-already-used")
 
     def test_write_ascii_promotion_request_writes_json(self):
         with TemporaryDirectory() as tmp:
@@ -66,6 +78,50 @@ class AsciiPromotionTests(unittest.TestCase):
             self.assertEqual(promoted["promoted_from"], "linework_accepted_candidates.json")
             self.assertIn("angle_degrees", promoted)
             self.assertIn("connector_sides", promoted)
+
+    def test_promote_candidates_can_use_promoted_glyphs_as_base(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            write_linework_review(pack)
+            linework_candidate = json.loads(
+                (pack / "linework_accepted_candidates.json").read_text(encoding="utf-8")
+            )["accepted_candidates"][0]
+            linework_request = pack / "linework_promote_candidates.json"
+            linework_request.write_text(
+                json.dumps({"promote": [{"candidate_id": linework_candidate["id"], "token": "A"}]}, indent=2)
+                + "\n",
+                encoding="utf-8",
+            )
+            promote_candidates(pack, linework_request, accepted_path=pack / "linework_accepted_candidates.json")
+
+            write_brush_review(pack)
+            brush_candidate = json.loads((pack / "brush_accepted_candidates.json").read_text(encoding="utf-8"))[
+                "accepted_candidates"
+            ][0]
+            brush_request = pack / "brush_promote_candidates.json"
+            brush_request.write_text(
+                json.dumps({"promote": [{"candidate_id": brush_candidate["id"], "token": "B"}]}, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+            report = promote_candidates(
+                pack,
+                brush_request,
+                accepted_path=pack / "brush_accepted_candidates.json",
+                base_glyphs_path=pack / "glyphs.promoted.json",
+            )
+
+            promoted = json.loads((pack / "glyphs.promoted.json").read_text(encoding="utf-8"))["glyphs"]
+            self.assertEqual(report["promoted_count"], 1)
+            self.assertEqual(report["base_glyphs_path"], str(pack / "glyphs.promoted.json"))
+            self.assertIn("A", {record["token"] for record in promoted})
+            self.assertIn("B", {record["token"] for record in promoted})
+            brush_record = promoted[-1]
+            self.assertEqual(brush_record["promoted_from"], "brush_accepted_candidates.json")
+            self.assertIn("brush_family", brush_record)
+            self.assertIn("brush_engine", brush_record)
+            self.assertIn("density_class", brush_record)
 
     def test_cli_suggest_ascii_promotions_writes_request(self):
         with TemporaryDirectory() as tmp:

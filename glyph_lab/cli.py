@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from .ascii_bridge import import_ascii_grid
+from .ascii_promotion import write_ascii_promotion_request
 from .atlas import generate_pack
 from .compiler import compile_grid
 from .compositor import compile_layered_grid
@@ -97,9 +98,20 @@ def main() -> None:
     ascii_parser.add_argument("--mapping", required=True)
     ascii_parser.add_argument("--out", default="out_ascii_bridge")
 
+    suggest_parser = subparsers.add_parser(
+        "suggest-ascii-promotions",
+        help="write a promotion request from ASCII bridge fallback warnings",
+    )
+    suggest_parser.add_argument("--manifest", required=True)
+    suggest_parser.add_argument("--mapping", required=True)
+    suggest_parser.add_argument("--accepted", required=True)
+    suggest_parser.add_argument("--out", required=True)
+    suggest_parser.add_argument("--limit", type=int)
+
     promote_parser = subparsers.add_parser("promote-candidates", help="promote reviewed candidates")
     promote_parser.add_argument("--pack", default=str(DEFAULT_PACK))
     promote_parser.add_argument("--request", required=True)
+    promote_parser.add_argument("--accepted")
     promote_parser.add_argument("--apply", action="store_true")
 
     args = parser.parse_args()
@@ -178,8 +190,12 @@ def main() -> None:
         import_ascii_grid(pack, args.ascii, args.mapping, args.out)
         return
 
+    if args.command == "suggest-ascii-promotions":
+        write_ascii_promotion_request(args.manifest, args.mapping, args.accepted, args.out, limit=args.limit)
+        return
+
     if args.command == "promote-candidates":
-        promote_candidates(pack, args.request, apply=args.apply)
+        promote_candidates(pack, args.request, apply=args.apply, accepted_path=args.accepted)
 
 
 def _load_json(path: str) -> dict:

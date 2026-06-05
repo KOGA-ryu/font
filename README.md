@@ -317,6 +317,28 @@ ASCII rough grid
 -> rerun proof
 ```
 
+Generate a promotion request from the fallback warnings:
+
+```sh
+python3 -m glyph_lab.cli suggest-ascii-promotions \
+  --manifest out_ascii_bridge/manifest.json \
+  --mapping packs/stone_architecture_4x4/ascii_glyph_mapping.json \
+  --accepted packs/stone_architecture_4x4/linework_accepted_candidates.json \
+  --out packs/stone_architecture_4x4/linework_promote_candidates.json
+```
+
+Then dry-run promotion from the linework accepted file:
+
+```sh
+python3 -m glyph_lab.cli promote-candidates \
+  --pack packs/stone_architecture_4x4 \
+  --accepted packs/stone_architecture_4x4/linework_accepted_candidates.json \
+  --request packs/stone_architecture_4x4/linework_promote_candidates.json
+```
+
+This writes `glyphs.promoted.json` without mutating `glyphs.json`. Use `--apply`
+only after inspecting the promoted pack and report.
+
 ## Promote reviewed candidates
 
 Promotion is dry-run first. Write a request file such as

@@ -24,13 +24,15 @@ def promote_candidates(
     pack_dir: str | Path,
     request_path: str | Path,
     apply: bool = False,
+    accepted_path: str | Path | None = None,
 ) -> dict[str, Any]:
     pack = Path(pack_dir)
+    accepted_source = Path(accepted_path) if accepted_path is not None else pack / "primitive_accepted_candidates.json"
     request = _load_request(request_path)
     active_records = _load_records(pack / "glyphs.json")
     accepted = {
         candidate["id"]: candidate
-        for candidate in _load_accepted(pack / "primitive_accepted_candidates.json")
+        for candidate in _load_accepted(accepted_source)
     }
     active_canonicals = _active_canonical_keys(active_records, pack / "atlas.png")
     used_tokens = {record["token"] for record in active_records}
@@ -72,7 +74,7 @@ def promote_candidates(
 
         used_tokens.add(token)
         glyph_id = item.get("id") or _stable_glyph_id(candidate, next_index)
-        promoted = _promoted_record(candidate, token, glyph_id, next_index, item.get("notes"))
+        promoted = _promoted_record(candidate, token, glyph_id, next_index, item.get("notes"), accepted_source.name)
         promoted_records.append(promoted)
         token_assignments[candidate_id] = token
         active_canonicals.add(canonical_key)
@@ -98,6 +100,7 @@ def promote_candidates(
         "apply": apply,
         "backup_path": str(backup_path) if backup_path else None,
         "output_path": str(promoted_path),
+        "accepted_source": str(accepted_source),
     }
     _write_json(pack / "promotion_report.json", report)
     return report
@@ -109,6 +112,7 @@ def _promoted_record(
     glyph_id: str,
     index: int,
     notes: str | None,
+    promoted_from: str,
 ) -> dict[str, Any]:
     bitmask = int(candidate.get("features", {}).get("bitmask", 0))
     stamp = bitmask_to_stamp(bitmask)
@@ -130,11 +134,14 @@ def _promoted_record(
         "primitive_family": candidate.get("primitive_family"),
         "primitive_params": candidate.get("primitive_params", {}),
         "source_candidate_id": candidate["id"],
-        "promoted_from": "primitive_accepted_candidates.json",
+        "promoted_from": promoted_from,
         "promoted_at_version": PROMOTION_VERSION,
     }
     if notes is not None:
         record["notes"] = notes
+    for key in ("linework_kind", "angle_degrees", "connector_sides", "thickness", "variant", "ascii_fallback"):
+        if key in candidate:
+            record[key] = candidate[key]
     return record
 
 

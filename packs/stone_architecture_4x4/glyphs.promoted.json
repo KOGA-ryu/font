@@ -1667,57 +1667,353 @@
       }
     },
     {
-      "id": "4.stone.promoted.detail.damage.dot_1_2_2000_32",
-      "token": "A",
+      "id": "4.stone.promoted.edge.linework.horizontal_broken_3004_32",
+      "token": "E",
       "index": 32,
-      "role": "detail",
-      "family": "damage",
-      "layer": "detail",
-      "palette_role": "crack",
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
       "cell_size": 4,
       "features": {
-        "density": 0.0625,
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 176
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "middle",
+        "broken": true
+      },
+      "source_candidate_id": "4.stone.linework.line.horizontal_broken_3004",
+      "promoted_from": "linework_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote linework bridge key 'E'; used 114 times as ASCII bridge fallback.",
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.promoted.edge.linework.horizontal_middle_thick_3003_33",
+      "token": "D",
+      "index": 33,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 1.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 255
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "middle",
+        "thickness": 2
+      },
+      "source_candidate_id": "4.stone.linework.line.horizontal_middle_thick_3003",
+      "promoted_from": "linework_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote linework bridge key 'D'; used 34 times as ASCII bridge fallback.",
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 2,
+      "variant": "middle",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.promoted.edge.linework.horizontal_top_thin_3000_34",
+      "token": "A",
+      "index": 34,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 0
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 15
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "top"
+      },
+      "source_candidate_id": "4.stone.linework.line.horizontal_top_thin_3000",
+      "promoted_from": "linework_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote linework bridge key 'A'; used 21 times as ASCII bridge fallback.",
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top"
+      ],
+      "thickness": 1,
+      "variant": "top",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.promoted.edge.linework.vertical_broken_3009_35",
+      "token": "F",
+      "index": 35,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
         "bounding_box": {
           "left": 1,
-          "top": 2,
+          "top": 0,
           "right": 1,
-          "bottom": 2
+          "bottom": 3
         },
         "centroid_x": 1.0,
-        "centroid_y": 2.0,
+        "centroid_y": 1.3333333333333333,
         "quadrant_densities": {
-          "top_left": 0.0,
+          "top_left": 0.5,
           "top_right": 0.0,
           "bottom_left": 0.25,
           "bottom_right": 0.0
         },
         "edge_contacts": {
-          "top": false,
+          "top": true,
           "right": false,
-          "bottom": false,
+          "bottom": true,
           "left": false
         },
-        "connected_component_count": 1,
+        "connected_component_count": 2,
         "symmetry": {
           "horizontal": false,
           "vertical": false,
           "diagonal_a": false,
-          "diagonal_b": true
+          "diagonal_b": false
         },
-        "bitmask": 512
+        "bitmask": 8226
       },
-      "constraints": {},
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
       "generated": true,
-      "source": "primitive",
-      "primitive_family": "point",
+      "source": "geometry",
+      "primitive_family": "linework",
       "primitive_params": {
-        "x": 1,
-        "y": 2
+        "direction": "vertical",
+        "offset": "center",
+        "broken": true
       },
-      "source_candidate_id": "4.stone.primitive.point.dot_1_2_2000",
-      "promoted_from": "primitive_accepted_candidates.json",
+      "source_candidate_id": "4.stone.linework.line.vertical_broken_3009",
+      "promoted_from": "linework_accepted_candidates.json",
       "promoted_at_version": "glyph_lab_v0",
-      "notes": "Promote a small primitive damage dot after review."
+      "notes": "Promote linework bridge key 'F'; used 19 times as ASCII bridge fallback.",
+      "linework_kind": "line",
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "center",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.promoted.edge.linework.horizontal_middle_thin_3001_36",
+      "token": "B",
+      "index": 36,
+      "role": "edge",
+      "family": "linework",
+      "layer": "edge",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 240
+      },
+      "constraints": {
+        "allowed_layers": [
+          "edge"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "direction": "horizontal",
+        "offset": "middle"
+      },
+      "source_candidate_id": "4.stone.linework.line.horizontal_middle_thin_3001",
+      "promoted_from": "linework_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote linework bridge key 'B'; used 1 times as ASCII bridge fallback.",
+      "linework_kind": "line",
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "middle",
+      "ascii_fallback": "-"
     }
   ]
 }

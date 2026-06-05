@@ -1,0 +1,40 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.linework.line.horizontal_broken_3004",
+      "token": "E",
+      "notes": "Promote linework bridge key 'E'; used 114 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.linework.line.horizontal_middle_thick_3003",
+      "token": "D",
+      "notes": "Promote linework bridge key 'D'; used 34 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.linework.line.horizontal_top_thin_3000",
+      "token": "A",
+      "notes": "Promote linework bridge key 'A'; used 21 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.linework.line.vertical_broken_3009",
+      "token": "F",
+      "notes": "Promote linework bridge key 'F'; used 19 times as ASCII bridge fallback."
+    },
+    {
+      "candidate_id": "4.stone.linework.line.horizontal_middle_thin_3001",
+      "token": "B",
+      "notes": "Promote linework bridge key 'B'; used 1 times as ASCII bridge fallback."
+    }
+  ],
+  "metadata": {
+    "source": "ascii_bridge_fallback_warnings",
+    "fallback_counts": {
+      "E": 114,
+      "D": 34,
+      "A": 21,
+      "F": 19,
+      "B": 1
+    },
+    "skipped": []
+  }
+}

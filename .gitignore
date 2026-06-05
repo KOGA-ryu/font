@@ -13,5 +13,6 @@ out_linework_stress_promoted/
 out_brush_texture_smoke/
 out_brush_texture_promoted/
 out_brush_compare/
+out_cracked_slab*/
 __pycache__/
 *.pyc

@@ -56,6 +56,20 @@
         "offset": "top"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "top",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "top",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -64,7 +78,17 @@
       ],
       "thickness": 1,
       "variant": "top",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
       "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -132,6 +156,20 @@
         "offset": "middle"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -139,7 +177,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
       "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel",
       "usefulness_score": 0.985,
       "rejection_reason": null,
       "review_tags": [
@@ -208,6 +256,20 @@
         "thickness": 2
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -215,7 +277,17 @@
       ],
       "thickness": 2,
       "variant": "middle",
+      "weight_profile": "medium",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
       "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "double_pixel",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -284,6 +356,20 @@
         "broken": true
       },
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -291,7 +377,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
       "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel",
       "usefulness_score": 0.7963,
       "rejection_reason": null,
       "review_tags": [
@@ -359,6 +455,20 @@
         "broken": true
       },
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top",
@@ -366,7 +476,17 @@
       ],
       "thickness": 1,
       "variant": "center",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
       "ascii_fallback": "|",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel",
       "usefulness_score": 0.7963,
       "rejection_reason": null,
       "review_tags": [
@@ -433,13 +553,42 @@
         "side": "left"
       },
       "linework_kind": "cap",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "terminal"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "entry"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left"
       ],
       "thickness": 1,
       "variant": "horizontal_left",
+      "weight_profile": "thin",
+      "cap_style": "blunt",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "terminates",
       "ascii_fallback": "-",
+      "coverage": "single_pixel",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
       "usefulness_score": 0.7563,
       "rejection_reason": null,
       "review_tags": [
@@ -506,13 +655,42 @@
         "side": "right"
       },
       "linework_kind": "cap",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "right"
       ],
       "thickness": 1,
       "variant": "horizontal_right",
+      "weight_profile": "thin",
+      "cap_style": "blunt",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "terminates",
       "ascii_fallback": "-",
+      "coverage": "single_pixel",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
       "usefulness_score": 0.7563,
       "rejection_reason": null,
       "review_tags": [
@@ -579,11 +757,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 0.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": 0.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean",
       "usefulness_score": 0.99,
       "rejection_reason": null,
       "review_tags": [
@@ -651,11 +842,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 0.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": 0.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -723,11 +927,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 90.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": 90.0,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean",
       "usefulness_score": 0.905,
       "rejection_reason": null,
       "review_tags": [
@@ -795,11 +1012,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 90.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": 90.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean",
       "usefulness_score": 0.99,
       "rejection_reason": null,
       "review_tags": [
@@ -867,11 +1097,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 90.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": 90.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -939,11 +1182,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 45.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "/",
+      "repeat_angle_degrees": 45.0,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1010,11 +1266,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 45.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "/",
+      "repeat_angle_degrees": 45.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1081,11 +1350,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 45.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "/",
+      "repeat_angle_degrees": 45.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1152,11 +1434,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 135.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "\\",
+      "repeat_angle_degrees": 135.0,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1223,11 +1518,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 135.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "\\",
+      "repeat_angle_degrees": 135.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1294,11 +1602,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 135.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "\\",
+      "repeat_angle_degrees": 135.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1365,11 +1686,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": null,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": null,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1437,11 +1771,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": null,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": null,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [
@@ -1509,11 +1856,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": null,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
       "ascii_fallback": "x",
+      "repeat_angle_degrees": null,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean",
       "usefulness_score": 1.0,
       "rejection_reason": null,
       "review_tags": [

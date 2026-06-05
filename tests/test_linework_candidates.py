@@ -17,6 +17,15 @@ class LineworkCandidateTests(unittest.TestCase):
         self.assertEqual(candidate["primitive_family"], "linework")
         self.assertIn("angle_degrees", candidate)
         self.assertIn("connector_sides", candidate)
+        self.assertIn("linework_package", candidate)
+        self.assertIn("stroke_topology", candidate)
+        self.assertIn("stroke_ports", candidate)
+        self.assertIn("weight_profile", candidate)
+        self.assertIn("cap_style", candidate)
+        self.assertIn("join_style", candidate)
+        self.assertIn("break_rhythm", candidate)
+        self.assertIn("roughness", candidate)
+        self.assertIn("continuity", candidate)
         self.assertIn("ascii_fallback", candidate)
 
     def test_linework_review_produces_accepted_and_rejected_candidates(self):

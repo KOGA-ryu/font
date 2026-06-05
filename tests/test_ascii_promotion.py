@@ -78,6 +78,9 @@ class AsciiPromotionTests(unittest.TestCase):
             self.assertEqual(promoted["promoted_from"], "linework_accepted_candidates.json")
             self.assertIn("angle_degrees", promoted)
             self.assertIn("connector_sides", promoted)
+            self.assertIn("linework_package", promoted)
+            self.assertIn("stroke_ports", promoted)
+            self.assertIn("continuity", promoted)
 
     def test_promote_candidates_can_use_promoted_glyphs_as_base(self):
         with TemporaryDirectory() as tmp:

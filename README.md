@@ -141,6 +141,13 @@ being hand-authored one at a time. Normal ASCII characters such as `-`, `|`,
 `/`, `\`, `+`, and temporary bridge keys can piggyback on the ASCII engine while
 the rendered mark comes from the custom glyph pack.
 
+Linework means stroke grammar, not object meaning. A crack, contour, fold,
+edge, or shadow is an interpretation built from reusable stroke atoms. The
+doctrine is locked in [LINEWORK_DOCTRINE.md](LINEWORK_DOCTRINE.md): generated
+linework candidates record ports, topology, weight, cap/join behavior, break
+rhythm, roughness, and continuity so packages can be reused across layers and
+objects.
+
 The brush glyph kit applies the same idea to digital-painting brush behavior:
 
 ```text
@@ -324,6 +331,10 @@ and `─`, back to the active custom vertical and horizontal glyphs.
 `examples/probe_linework_stress.png` is a deterministic high-contrast linework
 fixture for this loop. It stresses horizontal bands, broken bands, top cap
 lines, broken vertical grooves, and diagonal scratches.
+
+`examples/probe_cracked_stone_slab.png` is a reusable linework/texture stress
+fixture. It is meant to exercise stroke grammar, hatching, stipple, and rough
+ink behavior, not to justify object-specific glyph packages.
 
 ## Import ASCII as custom glyph layers
 

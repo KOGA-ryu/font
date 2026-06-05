@@ -38,6 +38,54 @@ class LineworkPrimitiveTests(unittest.TestCase):
 
         self.assertEqual(metadata["angle_degrees"], 90.0)
         self.assertEqual(metadata["connector_sides"], ["top", "bottom", "left"])
+        self.assertEqual(metadata["linework_package"], "linework.stroke")
+        self.assertEqual(metadata["stroke_topology"], "pass_through_segment")
+        self.assertEqual(
+            metadata["stroke_ports"],
+            [
+                {"side": "top", "lane": "left", "role": "entry"},
+                {"side": "bottom", "lane": "left", "role": "exit"},
+            ],
+        )
+        self.assertEqual(metadata["continuity"], "continuous")
+
+    def test_broken_linework_metadata_records_implied_continuity(self):
+        metadata = linework_metadata(
+            {
+                "kind": "line",
+                "params": {"direction": "horizontal", "offset": "middle", "broken": True},
+            }
+        )
+
+        self.assertEqual(metadata["linework_package"], "linework.break")
+        self.assertEqual(metadata["break_rhythm"], "middle_dropout")
+        self.assertEqual(metadata["continuity"], "implied_through_gap")
+        self.assertEqual(metadata["visible_fragments"], 2)
+        self.assertGreater(metadata["dropout_ratio"], 0.0)
+
+    def test_hatch_metadata_records_pattern_fields(self):
+        metadata = linework_metadata(
+            {
+                "kind": "hatch",
+                "params": {"kind": "diagonal_rise", "density": "dense"},
+            }
+        )
+
+        self.assertEqual(metadata["linework_package"], "linework.pattern")
+        self.assertEqual(metadata["repeat_angle_degrees"], 45.0)
+        self.assertEqual(metadata["density_class"], "dense")
+        self.assertEqual(metadata["stroke_style"], "clean")
+
+    def test_cap_metadata_records_terminal_port(self):
+        metadata = linework_metadata(
+            {
+                "kind": "cap",
+                "params": {"direction": "horizontal", "side": "left"},
+            }
+        )
+
+        self.assertEqual(metadata["linework_package"], "linework.terminal")
+        self.assertEqual(metadata["terminal_ports"], [{"side": "left", "lane": "center", "role": "terminal"}])
 
 
 if __name__ == "__main__":

@@ -56,6 +56,20 @@
         "offset": "top"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "top",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "top",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -64,7 +78,17 @@
       ],
       "thickness": 1,
       "variant": "top",
-      "ascii_fallback": "-"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.horizontal_middle_thin_3001",
@@ -122,6 +146,20 @@
         "offset": "middle"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -129,7 +167,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
-      "ascii_fallback": "-"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.horizontal_bottom_thin_3002",
@@ -187,6 +235,20 @@
         "offset": "bottom"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "bottom",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "bottom",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -195,7 +257,17 @@
       ],
       "thickness": 1,
       "variant": "bottom",
-      "ascii_fallback": "-"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.horizontal_middle_thick_3003",
@@ -254,6 +326,20 @@
         "thickness": 2
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -261,7 +347,17 @@
       ],
       "thickness": 2,
       "variant": "middle",
-      "ascii_fallback": "-"
+      "weight_profile": "medium",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "double_pixel"
     },
     {
       "id": "4.stone.linework.line.horizontal_broken_3004",
@@ -320,6 +416,20 @@
         "broken": true
       },
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -327,7 +437,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
-      "ascii_fallback": "-"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
+      "ascii_fallback": "-",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.vertical_left_thin_3005",
@@ -385,6 +505,20 @@
         "offset": "left"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "left",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "left",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top",
@@ -393,7 +527,17 @@
       ],
       "thickness": 1,
       "variant": "left",
-      "ascii_fallback": "|"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "|",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.vertical_center_thin_3006",
@@ -451,6 +595,20 @@
         "offset": "center"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top",
@@ -458,7 +616,17 @@
       ],
       "thickness": 1,
       "variant": "center",
-      "ascii_fallback": "|"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "|",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.vertical_right_thin_3007",
@@ -516,6 +684,20 @@
         "offset": "right"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "right",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "right",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top",
@@ -524,7 +706,17 @@
       ],
       "thickness": 1,
       "variant": "right",
-      "ascii_fallback": "|"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "|",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.vertical_middle_thick_3008",
@@ -583,6 +775,20 @@
         "thickness": 2
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top",
@@ -590,7 +796,17 @@
       ],
       "thickness": 2,
       "variant": "center",
-      "ascii_fallback": "|"
+      "weight_profile": "medium",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "|",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "double_pixel"
     },
     {
       "id": "4.stone.linework.line.vertical_broken_3009",
@@ -649,6 +865,20 @@
         "broken": true
       },
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top",
@@ -656,7 +886,17 @@
       ],
       "thickness": 1,
       "variant": "center",
-      "ascii_fallback": "|"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
+      "ascii_fallback": "|",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_rise_left_3010",
@@ -714,6 +954,20 @@
         "offset": "left"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "low",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "low",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 45.0,
       "connector_sides": [
         "left",
@@ -723,7 +977,17 @@
       ],
       "thickness": 1,
       "variant": "left",
-      "ascii_fallback": "/"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "/",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_rise_middle_3011",
@@ -781,6 +1045,20 @@
         "offset": "middle"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 45.0,
       "connector_sides": [
         "left",
@@ -790,7 +1068,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
-      "ascii_fallback": "/"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "/",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_rise_right_3012",
@@ -848,6 +1136,20 @@
         "offset": "right"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "high",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "high",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 45.0,
       "connector_sides": [
         "left",
@@ -857,7 +1159,17 @@
       ],
       "thickness": 1,
       "variant": "right",
-      "ascii_fallback": "/"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "/",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_rise_thick_3013",
@@ -916,6 +1228,20 @@
         "thickness": 2
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 45.0,
       "connector_sides": [
         "left",
@@ -925,7 +1251,17 @@
       ],
       "thickness": 2,
       "variant": "middle",
-      "ascii_fallback": "/"
+      "weight_profile": "medium",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "/",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "double_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_rise_broken_3014",
@@ -984,6 +1320,20 @@
         "broken": true
       },
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 45.0,
       "connector_sides": [
         "left",
@@ -993,7 +1343,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
-      "ascii_fallback": "/"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
+      "ascii_fallback": "/",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_fall_left_3015",
@@ -1051,6 +1411,20 @@
         "offset": "left"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "high",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "high",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 135.0,
       "connector_sides": [
         "left",
@@ -1060,7 +1434,17 @@
       ],
       "thickness": 1,
       "variant": "left",
-      "ascii_fallback": "\\"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "\\",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_fall_middle_3016",
@@ -1118,6 +1502,20 @@
         "offset": "middle"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 135.0,
       "connector_sides": [
         "left",
@@ -1127,7 +1525,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
-      "ascii_fallback": "\\"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "\\",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_fall_right_3017",
@@ -1185,6 +1593,20 @@
         "offset": "right"
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "low",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "low",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 135.0,
       "connector_sides": [
         "left",
@@ -1194,7 +1616,17 @@
       ],
       "thickness": 1,
       "variant": "right",
-      "ascii_fallback": "\\"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "\\",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_fall_thick_3018",
@@ -1253,6 +1685,20 @@
         "thickness": 2
       },
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 135.0,
       "connector_sides": [
         "left",
@@ -1262,7 +1708,17 @@
       ],
       "thickness": 2,
       "variant": "middle",
-      "ascii_fallback": "\\"
+      "weight_profile": "medium",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "\\",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "double_pixel"
     },
     {
       "id": "4.stone.linework.line.diagonal_fall_broken_3019",
@@ -1321,6 +1777,20 @@
         "broken": true
       },
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 135.0,
       "connector_sides": [
         "left",
@@ -1330,7 +1800,17 @@
       ],
       "thickness": 1,
       "variant": "middle",
-      "ascii_fallback": "\\"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
+      "ascii_fallback": "\\",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel"
     },
     {
       "id": "4.stone.linework.corner.corner_bottom_left_sharp_3020",
@@ -1388,6 +1868,20 @@
         "radius": "sharp"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.join",
+      "stroke_topology": "corner_join",
+      "stroke_ports": [
+        {
+          "side": "bottom",
+          "lane": "left",
+          "role": "entry"
+        },
+        {
+          "side": "left",
+          "lane": "bottom",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "bottom",
@@ -1395,7 +1889,19 @@
       ],
       "thickness": 1,
       "variant": "sharp",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "sharp_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": null,
+      "exit_tangent_degrees": null,
+      "curvature": "hard_turn"
     },
     {
       "id": "4.stone.linework.corner.corner_bottom_left_soft_3021",
@@ -1453,6 +1959,20 @@
         "radius": "soft"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.curve",
+      "stroke_topology": "soft_corner",
+      "stroke_ports": [
+        {
+          "side": "bottom",
+          "lane": "left",
+          "role": "entry"
+        },
+        {
+          "side": "left",
+          "lane": "bottom",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "bottom",
@@ -1460,7 +1980,19 @@
       ],
       "thickness": 1,
       "variant": "soft",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "soft_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": 0.0,
+      "exit_tangent_degrees": 270.0,
+      "curvature": "quarter_turn"
     },
     {
       "id": "4.stone.linework.corner.corner_bottom_right_sharp_3022",
@@ -1518,6 +2050,20 @@
         "radius": "sharp"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.join",
+      "stroke_topology": "corner_join",
+      "stroke_ports": [
+        {
+          "side": "bottom",
+          "lane": "right",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "bottom",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "bottom",
@@ -1525,7 +2071,19 @@
       ],
       "thickness": 1,
       "variant": "sharp",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "sharp_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": null,
+      "exit_tangent_degrees": null,
+      "curvature": "hard_turn"
     },
     {
       "id": "4.stone.linework.corner.corner_bottom_right_soft_3023",
@@ -1583,6 +2141,20 @@
         "radius": "soft"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.curve",
+      "stroke_topology": "soft_corner",
+      "stroke_ports": [
+        {
+          "side": "bottom",
+          "lane": "right",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "bottom",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "bottom",
@@ -1590,7 +2162,19 @@
       ],
       "thickness": 1,
       "variant": "soft",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "soft_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": 180.0,
+      "exit_tangent_degrees": 270.0,
+      "curvature": "quarter_turn"
     },
     {
       "id": "4.stone.linework.corner.corner_top_left_sharp_3024",
@@ -1648,6 +2232,20 @@
         "radius": "sharp"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.join",
+      "stroke_topology": "corner_join",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "left",
+          "role": "entry"
+        },
+        {
+          "side": "left",
+          "lane": "top",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "top",
@@ -1655,7 +2253,19 @@
       ],
       "thickness": 1,
       "variant": "sharp",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "sharp_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": null,
+      "exit_tangent_degrees": null,
+      "curvature": "hard_turn"
     },
     {
       "id": "4.stone.linework.corner.corner_top_left_soft_3025",
@@ -1713,6 +2323,20 @@
         "radius": "soft"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.curve",
+      "stroke_topology": "soft_corner",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "left",
+          "role": "entry"
+        },
+        {
+          "side": "left",
+          "lane": "top",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "top",
@@ -1720,7 +2344,19 @@
       ],
       "thickness": 1,
       "variant": "soft",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "soft_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": 0.0,
+      "exit_tangent_degrees": 90.0,
+      "curvature": "quarter_turn"
     },
     {
       "id": "4.stone.linework.corner.corner_top_right_sharp_3026",
@@ -1778,6 +2414,20 @@
         "radius": "sharp"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.join",
+      "stroke_topology": "corner_join",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "right",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "top",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "top",
@@ -1785,7 +2435,19 @@
       ],
       "thickness": 1,
       "variant": "sharp",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "sharp_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": null,
+      "exit_tangent_degrees": null,
+      "curvature": "hard_turn"
     },
     {
       "id": "4.stone.linework.corner.corner_top_right_soft_3027",
@@ -1843,6 +2505,20 @@
         "radius": "soft"
       },
       "linework_kind": "corner",
+      "linework_package": "linework.curve",
+      "stroke_topology": "soft_corner",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "right",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "top",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": null,
       "connector_sides": [
         "top",
@@ -1850,7 +2526,19 @@
       ],
       "thickness": 1,
       "variant": "soft",
-      "ascii_fallback": "+"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "soft_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "joined",
+      "ascii_fallback": "+",
+      "coverage": "single_pixel",
+      "branch_count": 2,
+      "dominant_angle_degrees": null,
+      "entry_tangent_degrees": 180.0,
+      "exit_tangent_degrees": 90.0,
+      "curvature": "quarter_turn"
     },
     {
       "id": "4.stone.linework.cap.cap_horizontal_left_3028",
@@ -1908,13 +2596,42 @@
         "side": "left"
       },
       "linework_kind": "cap",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "terminal"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "entry"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left"
       ],
       "thickness": 1,
       "variant": "horizontal_left",
-      "ascii_fallback": "-"
+      "weight_profile": "thin",
+      "cap_style": "blunt",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "terminates",
+      "ascii_fallback": "-",
+      "coverage": "single_pixel",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ]
     },
     {
       "id": "4.stone.linework.cap.cap_horizontal_right_3029",
@@ -1972,13 +2689,42 @@
         "side": "right"
       },
       "linework_kind": "cap",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "right"
       ],
       "thickness": 1,
       "variant": "horizontal_right",
-      "ascii_fallback": "-"
+      "weight_profile": "thin",
+      "cap_style": "blunt",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "terminates",
+      "ascii_fallback": "-",
+      "coverage": "single_pixel",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ]
     },
     {
       "id": "4.stone.linework.cap.cap_vertical_top_3030",
@@ -2036,13 +2782,42 @@
         "side": "top"
       },
       "linework_kind": "cap",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "terminal"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "entry"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top"
       ],
       "thickness": 1,
       "variant": "vertical_top",
-      "ascii_fallback": "|"
+      "weight_profile": "thin",
+      "cap_style": "blunt",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "terminates",
+      "ascii_fallback": "|",
+      "coverage": "single_pixel",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ]
     },
     {
       "id": "4.stone.linework.cap.cap_vertical_bottom_3031",
@@ -2100,13 +2875,42 @@
         "side": "bottom"
       },
       "linework_kind": "cap",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "bottom"
       ],
       "thickness": 1,
       "variant": "vertical_bottom",
-      "ascii_fallback": "|"
+      "weight_profile": "thin",
+      "cap_style": "blunt",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "terminates",
+      "ascii_fallback": "|",
+      "coverage": "single_pixel",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ]
     },
     {
       "id": "4.stone.linework.hatch.hatch_horizontal_light_3032",
@@ -2164,11 +2968,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 0.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": 0.0,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_horizontal_medium_3033",
@@ -2226,11 +3043,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 0.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": 0.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_horizontal_dense_3034",
@@ -2288,11 +3118,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 0.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": 0.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_vertical_light_3035",
@@ -2350,11 +3193,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 90.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": 90.0,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_vertical_medium_3036",
@@ -2412,11 +3268,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 90.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": 90.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_vertical_dense_3037",
@@ -2474,11 +3343,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 90.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": 90.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_diagonal_rise_light_3038",
@@ -2536,11 +3418,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 45.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
-      "ascii_fallback": "/"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "/",
+      "repeat_angle_degrees": 45.0,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_diagonal_rise_medium_3039",
@@ -2598,11 +3493,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 45.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
-      "ascii_fallback": "/"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "/",
+      "repeat_angle_degrees": 45.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_diagonal_rise_dense_3040",
@@ -2660,11 +3568,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 45.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
-      "ascii_fallback": "/"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "/",
+      "repeat_angle_degrees": 45.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_diagonal_fall_light_3041",
@@ -2722,11 +3643,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 135.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
-      "ascii_fallback": "\\"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "\\",
+      "repeat_angle_degrees": 135.0,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_diagonal_fall_medium_3042",
@@ -2784,11 +3718,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 135.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
-      "ascii_fallback": "\\"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "\\",
+      "repeat_angle_degrees": 135.0,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_diagonal_fall_dense_3043",
@@ -2846,11 +3793,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": 135.0,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
-      "ascii_fallback": "\\"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "\\",
+      "repeat_angle_degrees": 135.0,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_cross_light_3044",
@@ -2908,11 +3868,24 @@
         "density": "light"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": null,
       "connector_sides": [],
       "thickness": 1,
       "variant": "light",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": null,
+      "spacing_class": "light",
+      "density_class": "light",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_cross_medium_3045",
@@ -2970,11 +3943,24 @@
         "density": "medium"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": null,
       "connector_sides": [],
       "thickness": 1,
       "variant": "medium",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": null,
+      "spacing_class": "medium",
+      "density_class": "medium",
+      "stroke_style": "clean"
     },
     {
       "id": "4.stone.linework.hatch.hatch_cross_dense_3046",
@@ -3032,11 +4018,24 @@
         "density": "dense"
       },
       "linework_kind": "hatch",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
       "angle_degrees": null,
       "connector_sides": [],
       "thickness": 1,
       "variant": "dense",
-      "ascii_fallback": "x"
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "x",
+      "repeat_angle_degrees": null,
+      "spacing_class": "dense",
+      "density_class": "dense",
+      "stroke_style": "clean"
     }
   ]
 }

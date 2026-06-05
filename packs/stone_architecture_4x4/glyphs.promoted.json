@@ -1727,6 +1727,20 @@
       "promoted_at_version": "glyph_lab_v0",
       "notes": "Promote linework bridge key 'E'; used 114 times as ASCII bridge fallback.",
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -1734,6 +1748,16 @@
       ],
       "thickness": 1,
       "variant": "middle",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel",
       "ascii_fallback": "-"
     },
     {
@@ -1797,6 +1821,20 @@
       "promoted_at_version": "glyph_lab_v0",
       "notes": "Promote linework bridge key 'D'; used 34 times as ASCII bridge fallback.",
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -1804,6 +1842,16 @@
       ],
       "thickness": 2,
       "variant": "middle",
+      "weight_profile": "medium",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "double_pixel",
       "ascii_fallback": "-"
     },
     {
@@ -1866,6 +1914,20 @@
       "promoted_at_version": "glyph_lab_v0",
       "notes": "Promote linework bridge key 'A'; used 21 times as ASCII bridge fallback.",
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "top",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "top",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -1874,6 +1936,16 @@
       ],
       "thickness": 1,
       "variant": "top",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel",
       "ascii_fallback": "-"
     },
     {
@@ -1937,6 +2009,20 @@
       "promoted_at_version": "glyph_lab_v0",
       "notes": "Promote linework bridge key 'F'; used 19 times as ASCII bridge fallback.",
       "linework_kind": "line",
+      "linework_package": "linework.break",
+      "stroke_topology": "broken_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 90.0,
       "connector_sides": [
         "top",
@@ -1944,6 +2030,16 @@
       ],
       "thickness": 1,
       "variant": "center",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "middle_dropout",
+      "roughness": "clean",
+      "continuity": "implied_through_gap",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 2,
+      "dropout_ratio": 0.25,
+      "coverage": "single_pixel",
       "ascii_fallback": "|"
     },
     {
@@ -2006,6 +2102,20 @@
       "promoted_at_version": "glyph_lab_v0",
       "notes": "Promote linework bridge key 'B'; used 1 times as ASCII bridge fallback.",
       "linework_kind": "line",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "left",
@@ -2013,6 +2123,16 @@
       ],
       "thickness": 1,
       "variant": "middle",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "intended_continuity": "pass_through",
+      "visible_fragments": 1,
+      "dropout_ratio": 0.0,
+      "coverage": "single_pixel",
       "ascii_fallback": "-"
     },
     {
@@ -2075,12 +2195,41 @@
       "promoted_at_version": "glyph_lab_v0",
       "notes": "Promote linework bridge key 'H'; used 14 times as ASCII bridge fallback in probe_linework_stress.",
       "linework_kind": "cap",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
       "angle_degrees": 0.0,
       "connector_sides": [
         "right"
       ],
       "thickness": 1,
       "variant": "horizontal_right",
+      "weight_profile": "thin",
+      "cap_style": "blunt",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "terminates",
+      "coverage": "single_pixel",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
       "ascii_fallback": "-"
     },
     {

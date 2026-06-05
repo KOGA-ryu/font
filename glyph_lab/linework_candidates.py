@@ -39,30 +39,56 @@ def generate_linework_candidates() -> list[dict[str, Any]]:
         features = measure_stamp(stamp)
         features["bitmask"] = stamp_to_bitmask(stamp)
         metadata = linework_metadata(spec)
-        candidates.append(
-            {
-                "id": f"4.stone.linework.{spec['kind']}.{spec['name']}_{index}",
-                "token": "",
-                "index": index,
-                "role": spec["role"],
-                "family": spec["family"],
-                "layer": spec["layer"],
-                "palette_role": spec["palette_role"],
-                "cell_size": CELL_SIZE,
-                "features": features,
-                "constraints": {"allowed_layers": [spec["layer"]], "forbidden_regions": ["background"]},
-                "generated": True,
-                "source": "geometry",
-                "primitive_family": "linework",
-                "primitive_params": spec["params"],
-                "linework_kind": spec["kind"],
-                "angle_degrees": metadata["angle_degrees"],
-                "connector_sides": metadata["connector_sides"],
-                "thickness": metadata["thickness"],
-                "variant": metadata["variant"],
-                "ascii_fallback": _ascii_fallback(spec, metadata),
-            }
-        )
+        candidate = {
+            "id": f"4.stone.linework.{spec['kind']}.{spec['name']}_{index}",
+            "token": "",
+            "index": index,
+            "role": spec["role"],
+            "family": spec["family"],
+            "layer": spec["layer"],
+            "palette_role": spec["palette_role"],
+            "cell_size": CELL_SIZE,
+            "features": features,
+            "constraints": {"allowed_layers": [spec["layer"]], "forbidden_regions": ["background"]},
+            "generated": True,
+            "source": "geometry",
+            "primitive_family": "linework",
+            "primitive_params": spec["params"],
+            "linework_kind": spec["kind"],
+            "linework_package": metadata["linework_package"],
+            "stroke_topology": metadata["stroke_topology"],
+            "stroke_ports": metadata["stroke_ports"],
+            "angle_degrees": metadata["angle_degrees"],
+            "connector_sides": metadata["connector_sides"],
+            "thickness": metadata["thickness"],
+            "variant": metadata["variant"],
+            "weight_profile": metadata["weight_profile"],
+            "cap_style": metadata["cap_style"],
+            "join_style": metadata["join_style"],
+            "break_rhythm": metadata["break_rhythm"],
+            "roughness": metadata["roughness"],
+            "continuity": metadata["continuity"],
+            "ascii_fallback": _ascii_fallback(spec, metadata),
+        }
+        for key in ("repeat_angle_degrees", "spacing_class", "density_class"):
+            if key in metadata:
+                candidate[key] = metadata[key]
+        for key in (
+            "intended_continuity",
+            "visible_fragments",
+            "dropout_ratio",
+            "coverage",
+            "branch_count",
+            "dominant_angle_degrees",
+            "entry_tangent_degrees",
+            "exit_tangent_degrees",
+            "curvature",
+            "terminal_ports",
+            "stroke_style",
+        ):
+            if key in metadata:
+                candidate[key] = metadata[key]
+        candidates.append(candidate)
     return candidates
 
 

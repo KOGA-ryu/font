@@ -104,31 +104,92 @@ def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
     kind = spec["kind"]
     params = spec.get("params", {})
     if kind == "line":
+        broken = bool(params.get("broken", False))
+        direction = params["direction"]
+        thickness = params.get("thickness", 1)
+        variant = params.get("offset", "middle")
         return {
-            "angle_degrees": _angle(params["direction"]),
-            "connector_sides": _line_connector_sides(params["direction"], params.get("offset", "middle")),
-            "thickness": params.get("thickness", 1),
-            "variant": params.get("offset", "middle"),
+            "linework_package": "linework.break" if broken else "linework.stroke",
+            "stroke_topology": "broken_segment" if broken else "pass_through_segment",
+            "stroke_ports": _line_ports(direction, variant),
+            "angle_degrees": _angle(direction),
+            "connector_sides": _line_connector_sides(direction, variant),
+            "thickness": thickness,
+            "variant": variant,
+            "weight_profile": _weight_profile(thickness),
+            "cap_style": "none",
+            "join_style": "none",
+            "break_rhythm": "middle_dropout" if broken else "solid",
+            "roughness": "clean",
+            "continuity": "implied_through_gap" if broken else "continuous",
+            "intended_continuity": "pass_through",
+            "visible_fragments": 2 if broken else 1,
+            "dropout_ratio": 0.25 if broken else 0.0,
+            "coverage": _coverage_class(thickness),
         }
     if kind == "corner":
+        radius = params.get("radius", "sharp")
+        thickness = params.get("thickness", 1)
         return {
+            "linework_package": "linework.curve" if radius == "soft" else "linework.join",
+            "stroke_topology": "soft_corner" if radius == "soft" else "corner_join",
+            "stroke_ports": _corner_ports(params["position"]),
             "angle_degrees": None,
             "connector_sides": _corner_sides(params["position"]),
-            "thickness": params.get("thickness", 1),
-            "variant": params.get("radius", "sharp"),
+            "thickness": thickness,
+            "variant": radius,
+            "weight_profile": _weight_profile(thickness),
+            "cap_style": "none",
+            "join_style": "soft_corner" if radius == "soft" else "sharp_corner",
+            "break_rhythm": "solid",
+            "roughness": "clean",
+            "continuity": "joined",
+            "branch_count": 2,
+            "dominant_angle_degrees": None,
+            "entry_tangent_degrees": None if radius == "sharp" else _corner_tangents(params["position"])[0],
+            "exit_tangent_degrees": None if radius == "sharp" else _corner_tangents(params["position"])[1],
+            "curvature": "quarter_turn" if radius == "soft" else "hard_turn",
+            "coverage": _coverage_class(thickness),
         }
     if kind == "cap":
+        thickness = params.get("thickness", 1)
         return {
+            "linework_package": "linework.terminal",
+            "stroke_topology": "terminal_segment",
+            "stroke_ports": _cap_ports(params["direction"], params["side"]),
             "angle_degrees": _angle(params["direction"]),
             "connector_sides": [params["side"]],
-            "thickness": params.get("thickness", 1),
+            "thickness": thickness,
             "variant": f"{params['direction']}_{params['side']}",
+            "weight_profile": _weight_profile(thickness),
+            "cap_style": "blunt",
+            "join_style": "none",
+            "break_rhythm": "solid",
+            "roughness": "clean",
+            "continuity": "terminates",
+            "terminal_ports": [port for port in _cap_ports(params["direction"], params["side"]) if port["role"] == "terminal"],
+            "branch_count": 1,
+            "coverage": _coverage_class(thickness),
         }
+    angle = _angle(params["kind"]) if params["kind"] != "cross" else None
     return {
-        "angle_degrees": _angle(params["kind"]) if params["kind"] != "cross" else None,
+        "linework_package": "linework.pattern",
+        "stroke_topology": "repeated_strokes",
+        "stroke_ports": [],
+        "angle_degrees": angle,
         "connector_sides": [],
         "thickness": 1,
         "variant": params["density"],
+        "weight_profile": "thin",
+        "cap_style": "none",
+        "join_style": "overlap" if params["kind"] == "cross" else "none",
+        "break_rhythm": "patterned",
+        "roughness": "clean",
+        "continuity": "repeated",
+        "repeat_angle_degrees": angle,
+        "spacing_class": params["density"],
+        "density_class": params["density"],
+        "stroke_style": "clean",
     }
 
 
@@ -287,6 +348,60 @@ def _line_connector_sides(direction: str, offset: str) -> list[str]:
             sides.append("right")
         return sides
     return ["left", "right", "top", "bottom"]
+
+
+def _line_ports(direction: str, offset: str) -> list[dict[str, str]]:
+    if direction == "horizontal":
+        lane = {"top": "top", "middle": "center", "bottom": "bottom"}[offset]
+        return [_port("left", lane, "entry"), _port("right", lane, "exit")]
+    if direction == "vertical":
+        lane = {"left": "left", "center": "center", "right": "right"}[offset]
+        return [_port("top", lane, "entry"), _port("bottom", lane, "exit")]
+    if direction == "diagonal_rise":
+        lane = {"left": "low", "middle": "center", "right": "high"}[offset]
+        return [_port("left", lane, "entry"), _port("right", lane, "exit")]
+    lane = {"left": "high", "middle": "center", "right": "low"}[offset]
+    return [_port("left", lane, "entry"), _port("right", lane, "exit")]
+
+
+def _corner_ports(position: str) -> list[dict[str, str]]:
+    return {
+        "top_left": [_port("top", "left", "entry"), _port("left", "top", "exit")],
+        "top_right": [_port("top", "right", "entry"), _port("right", "top", "exit")],
+        "bottom_left": [_port("bottom", "left", "entry"), _port("left", "bottom", "exit")],
+        "bottom_right": [_port("bottom", "right", "entry"), _port("right", "bottom", "exit")],
+    }[position]
+
+
+def _cap_ports(direction: str, side: str) -> list[dict[str, str]]:
+    if direction == "horizontal":
+        role = "terminal" if side == "left" else "entry"
+        other_role = "entry" if side == "left" else "terminal"
+        return [_port("left", "center", role), _port("right", "center", other_role)]
+    role = "terminal" if side == "top" else "entry"
+    other_role = "entry" if side == "top" else "terminal"
+    return [_port("top", "center", role), _port("bottom", "center", other_role)]
+
+
+def _port(side: str, lane: str, role: str) -> dict[str, str]:
+    return {"side": side, "lane": lane, "role": role}
+
+
+def _weight_profile(thickness: int) -> str:
+    return "thin" if thickness == 1 else "medium"
+
+
+def _coverage_class(thickness: int) -> str:
+    return "single_pixel" if thickness == 1 else "double_pixel"
+
+
+def _corner_tangents(position: str) -> tuple[float, float]:
+    return {
+        "top_left": (0.0, 90.0),
+        "top_right": (180.0, 90.0),
+        "bottom_left": (0.0, 270.0),
+        "bottom_right": (180.0, 270.0),
+    }[position]
 
 
 def _corner_sides(position: str) -> list[str]:

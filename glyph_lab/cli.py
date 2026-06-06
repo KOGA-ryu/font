@@ -10,13 +10,17 @@ from .ascii_glyph_renderer import render_ascii_glyphs
 from .ascii_promotion import write_ascii_promotion_request
 from .atlas import generate_pack
 from .brush_candidates import write_brush_review
+from .color_family_layers import render_color_family_layers
 from .compiler import compile_grid
 from .compositor import compile_layered_grid
 from .contact_sheet import generate_contact_sheet
 from .candidate_filter import write_candidate_review
 from .eyedropper import parse_grid_size, parse_point, write_eyedropper_json
+from .extraction_sequence import render_extraction_sequence
+from .foreground_mask import FOREGROUND_MODES
 from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
+from .humanoid_regions import classify_humanoid_regions
 from .image_to_layers import probe_image_to_layers
 from .layer_breakdown import write_layer_breakdown
 from .layer_recipe import render_layer_recipe
@@ -29,8 +33,11 @@ from .profiles import measure_profile_image
 from .promotion import promote_candidates
 from .promoted_contact_sheet import generate_promoted_contact_sheet
 from .promoted_atlas import build_promoted_atlas
+from .reference_style import build_reference_style_recipe
 from .review_export import generate_review_contact_sheet
 from .scaffold import measure_scaffold_image
+from .sprite_parts import classify_sprite_parts
+from .threshold_layers import DEFAULT_THRESHOLDS, parse_thresholds, render_threshold_color_layers
 
 
 DEFAULT_PACK = Path("packs/stone_architecture_4x4")
@@ -185,9 +192,13 @@ def main() -> None:
     )
     ascii_render_parser.add_argument(
         "--ink-mode",
-        choices=["atlas", "solid", "sampled", "sampled-local"],
+        choices=["atlas", "solid", "sampled", "sampled-local", "threshold-sampled"],
         default="atlas",
-        help="atlas keeps glyph colors, solid uses --ink-color, sampled uses the gate image cell color, sampled-local searches nearby non-black source pixels",
+        help=(
+            "atlas keeps glyph colors, solid uses --ink-color, sampled uses the gate image cell color, "
+            "sampled-local searches nearby non-black source pixels, threshold-sampled samples source pixels "
+            "inside the current gate threshold cell"
+        ),
     )
     ascii_render_parser.add_argument("--ink-color", help="solid ink color as #RRGGBB")
     ascii_render_parser.add_argument("--ink-sample-radius", type=int, default=6)
@@ -196,6 +207,11 @@ def main() -> None:
         "--ink-palette-threshold",
         type=int,
         help="for sampled-local, keep nearby colors within this RGB distance of --gate-samples colors",
+    )
+    ascii_render_parser.add_argument(
+        "--ink-palette-size",
+        type=int,
+        help="reduce sampled ink to this many deterministic colors before rendering",
     )
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
@@ -206,6 +222,115 @@ def main() -> None:
     )
     layer_recipe_parser.add_argument("--recipe", required=True)
     layer_recipe_parser.add_argument("--out", required=True)
+
+    threshold_layers_parser = subparsers.add_parser(
+        "render-threshold-color-layers",
+        help="render cumulative and delta threshold layers color-sampled from the source image",
+    )
+    threshold_layers_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    threshold_layers_parser.add_argument("--image", required=True)
+    threshold_layers_parser.add_argument("--out", required=True)
+    threshold_layers_parser.add_argument("--thresholds", default=",".join(str(value) for value in DEFAULT_THRESHOLDS))
+    threshold_layers_parser.add_argument("--width", type=int, default=128)
+    threshold_layers_parser.add_argument("--height", type=int, default=128)
+    threshold_layers_parser.add_argument("--fill-token", default="#")
+    threshold_layers_parser.add_argument("--glyphs")
+    threshold_layers_parser.add_argument("--atlas")
+    threshold_layers_parser.add_argument("--mapping")
+    threshold_layers_parser.add_argument("--foreground-mode", choices=sorted(FOREGROUND_MODES), default="auto")
+    threshold_layers_parser.add_argument("--foreground-alpha-threshold", type=int, default=1)
+    threshold_layers_parser.add_argument("--foreground-background-threshold", type=int, default=28)
+    threshold_layers_parser.add_argument("--scale", type=int, default=2)
+
+    color_family_parser = subparsers.add_parser(
+        "render-color-family-layers",
+        help="render generic color-family masks and source-colored glyph layers",
+    )
+    color_family_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    color_family_parser.add_argument("--image", required=True)
+    color_family_parser.add_argument("--out", required=True)
+    color_family_parser.add_argument("--families", default="auto")
+    color_family_parser.add_argument("--width", type=int, default=128)
+    color_family_parser.add_argument("--height", type=int, default=128)
+    color_family_parser.add_argument("--fill-token", default="#")
+    color_family_parser.add_argument("--glyphs")
+    color_family_parser.add_argument("--atlas")
+    color_family_parser.add_argument("--mapping")
+    color_family_parser.add_argument("--background-threshold", type=int, default=28)
+    color_family_parser.add_argument("--min-cell-coverage", type=float, default=0.18)
+    color_family_parser.add_argument("--foreground-mode", choices=sorted(FOREGROUND_MODES), default="auto")
+    color_family_parser.add_argument("--foreground-alpha-threshold", type=int, default=1)
+    color_family_parser.add_argument("--foreground-background-threshold", type=int)
+    color_family_parser.add_argument("--scale", type=int, default=2)
+
+    sequence_parser = subparsers.add_parser(
+        "render-extraction-sequence",
+        help="run foreground, threshold, and color-family extraction in one repeatable pass",
+    )
+    sequence_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    sequence_parser.add_argument("--image", required=True)
+    sequence_parser.add_argument("--out", required=True)
+    sequence_parser.add_argument("--thresholds", default=",".join(str(value) for value in DEFAULT_THRESHOLDS))
+    sequence_parser.add_argument("--families", default="auto")
+    sequence_parser.add_argument("--width", type=int, default=128)
+    sequence_parser.add_argument("--height", type=int, default=128)
+    sequence_parser.add_argument("--fill-token", default="#")
+    sequence_parser.add_argument("--glyphs")
+    sequence_parser.add_argument("--atlas")
+    sequence_parser.add_argument("--mapping")
+    sequence_parser.add_argument("--background-threshold", type=int, default=28)
+    sequence_parser.add_argument("--min-cell-coverage", type=float, default=0.18)
+    sequence_parser.add_argument("--foreground-mode", choices=sorted(FOREGROUND_MODES), default="auto")
+    sequence_parser.add_argument("--foreground-alpha-threshold", type=int, default=1)
+    sequence_parser.add_argument("--foreground-background-threshold", type=int)
+    sequence_parser.add_argument("--scale", type=int, default=2)
+
+    reference_style_parser = subparsers.add_parser(
+        "reference-style-recipe",
+        help="convert a reference image into an editable glyph style recipe",
+    )
+    reference_style_parser.add_argument("--image", required=True)
+    reference_style_parser.add_argument("--out", required=True)
+    reference_style_parser.add_argument("--width", type=int, default=128)
+    reference_style_parser.add_argument("--height", type=int, default=128)
+    reference_style_parser.add_argument("--grid-size", type=int)
+    reference_style_parser.add_argument("--families", default="auto")
+    reference_style_parser.add_argument("--palette-size", type=int, default=3)
+    reference_style_parser.add_argument("--outline-threshold", type=int, default=48)
+    reference_style_parser.add_argument("--background-threshold", type=int, default=28)
+    reference_style_parser.add_argument("--foreground-mode", choices=sorted(FOREGROUND_MODES), default="auto")
+    reference_style_parser.add_argument("--foreground-alpha-threshold", type=int, default=1)
+    reference_style_parser.add_argument("--foreground-background-threshold", type=int)
+    reference_style_parser.add_argument("--fill-token", default="#")
+    reference_style_parser.add_argument("--min-layer-cells", type=int, default=1)
+
+    sprite_parts_parser = subparsers.add_parser(
+        "classify-sprite-parts",
+        help="classify generic humanoid sprite part layers from color and geometry evidence",
+    )
+    sprite_parts_parser.add_argument("--image", required=True)
+    sprite_parts_parser.add_argument("--out", required=True)
+    sprite_parts_parser.add_argument("--width", type=int, default=128)
+    sprite_parts_parser.add_argument("--height", type=int, default=128)
+    sprite_parts_parser.add_argument("--grid-size", type=int)
+    sprite_parts_parser.add_argument("--foreground-mode", choices=sorted(FOREGROUND_MODES), default="auto")
+    sprite_parts_parser.add_argument("--foreground-alpha-threshold", type=int, default=1)
+    sprite_parts_parser.add_argument("--foreground-background-threshold", type=int, default=28)
+    sprite_parts_parser.add_argument("--background-threshold", type=int, default=28)
+    sprite_parts_parser.add_argument("--min-cell-coverage", type=float, default=0.14)
+    sprite_parts_parser.add_argument("--scale", type=int, default=2)
+
+    humanoid_regions_parser = subparsers.add_parser(
+        "classify-humanoid-regions",
+        help="extract humanoid body-object lanes from a region-color mannequin image",
+    )
+    humanoid_regions_parser.add_argument("--image", required=True)
+    humanoid_regions_parser.add_argument("--out", required=True)
+    humanoid_regions_parser.add_argument("--foreground-mode", choices=sorted(FOREGROUND_MODES), default="auto")
+    humanoid_regions_parser.add_argument("--foreground-alpha-threshold", type=int, default=1)
+    humanoid_regions_parser.add_argument("--foreground-background-threshold", type=int, default=22)
+    humanoid_regions_parser.add_argument("--background-threshold", type=int, default=22)
+    humanoid_regions_parser.add_argument("--scale", type=int, default=2)
 
     promoted_atlas_parser = subparsers.add_parser("build-promoted-atlas", help="build an atlas for promoted glyphs")
     promoted_atlas_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -387,12 +512,128 @@ def main() -> None:
             ink_sample_radius=args.ink_sample_radius,
             ink_ignore_luminance=args.ink_ignore_luminance,
             ink_palette_threshold=args.ink_palette_threshold,
+            ink_palette_size=args.ink_palette_size,
             scale=args.scale,
         )
         return
 
     if args.command == "render-layer-recipe":
         render_layer_recipe(args.recipe, args.out)
+        return
+
+    if args.command == "render-threshold-color-layers":
+        glyphs_path = Path(args.glyphs) if args.glyphs else _preferred_pack_file(pack, "glyphs.promoted.json", "glyphs.json")
+        atlas_path = Path(args.atlas) if args.atlas else _preferred_pack_file(pack, "atlas.promoted.png", "atlas.png")
+        mapping_path = Path(args.mapping) if args.mapping else _optional_pack_file(pack, "ascii_brush_mapping.json")
+        render_threshold_color_layers(
+            args.image,
+            glyphs_path,
+            atlas_path,
+            args.out,
+            thresholds=parse_thresholds(args.thresholds),
+            grid_width=args.width,
+            grid_height=args.height,
+            fill_token=args.fill_token,
+            mapping_path=mapping_path,
+            foreground_mode=args.foreground_mode,
+            foreground_alpha_threshold=args.foreground_alpha_threshold,
+            foreground_background_threshold=args.foreground_background_threshold,
+            scale=args.scale,
+        )
+        return
+
+    if args.command == "render-color-family-layers":
+        glyphs_path = Path(args.glyphs) if args.glyphs else _preferred_pack_file(pack, "glyphs.promoted.json", "glyphs.json")
+        atlas_path = Path(args.atlas) if args.atlas else _preferred_pack_file(pack, "atlas.promoted.png", "atlas.png")
+        mapping_path = Path(args.mapping) if args.mapping else _optional_pack_file(pack, "ascii_brush_mapping.json")
+        render_color_family_layers(
+            args.image,
+            glyphs_path,
+            atlas_path,
+            args.out,
+            families=args.families,
+            grid_width=args.width,
+            grid_height=args.height,
+            fill_token=args.fill_token,
+            mapping_path=mapping_path,
+            background_threshold=args.background_threshold,
+            min_cell_coverage=args.min_cell_coverage,
+            foreground_mode=args.foreground_mode,
+            foreground_alpha_threshold=args.foreground_alpha_threshold,
+            foreground_background_threshold=args.foreground_background_threshold,
+            scale=args.scale,
+        )
+        return
+
+    if args.command == "render-extraction-sequence":
+        render_extraction_sequence(
+            args.image,
+            pack,
+            args.out,
+            thresholds=args.thresholds,
+            families=args.families,
+            grid_width=args.width,
+            grid_height=args.height,
+            fill_token=args.fill_token,
+            glyphs_path=args.glyphs,
+            atlas_path=args.atlas,
+            mapping_path=args.mapping,
+            background_threshold=args.background_threshold,
+            min_cell_coverage=args.min_cell_coverage,
+            foreground_mode=args.foreground_mode,
+            foreground_alpha_threshold=args.foreground_alpha_threshold,
+            foreground_background_threshold=args.foreground_background_threshold,
+            scale=args.scale,
+        )
+        return
+
+    if args.command == "reference-style-recipe":
+        grid_width = args.grid_size if args.grid_size else args.width
+        grid_height = args.grid_size if args.grid_size else args.height
+        build_reference_style_recipe(
+            args.image,
+            args.out,
+            grid_width=grid_width,
+            grid_height=grid_height,
+            families=args.families,
+            palette_size=args.palette_size,
+            outline_threshold=args.outline_threshold,
+            background_threshold=args.background_threshold,
+            foreground_mode=args.foreground_mode,
+            foreground_alpha_threshold=args.foreground_alpha_threshold,
+            foreground_background_threshold=args.foreground_background_threshold,
+            fill_token=args.fill_token,
+            min_layer_cells=args.min_layer_cells,
+        )
+        return
+
+    if args.command == "classify-sprite-parts":
+        grid_width = args.grid_size if args.grid_size else args.width
+        grid_height = args.grid_size if args.grid_size else args.height
+        classify_sprite_parts(
+            args.image,
+            args.out,
+            grid_width=grid_width,
+            grid_height=grid_height,
+            foreground_mode=args.foreground_mode,
+            foreground_alpha_threshold=args.foreground_alpha_threshold,
+            foreground_background_threshold=args.foreground_background_threshold,
+            background_threshold=args.background_threshold,
+            min_cell_coverage=args.min_cell_coverage,
+            scale=args.scale,
+        )
+        return
+
+    if args.command == "classify-humanoid-regions":
+        classify_humanoid_regions(
+            args.image,
+            args.out,
+            foreground_mode=args.foreground_mode,
+            foreground_alpha_threshold=args.foreground_alpha_threshold,
+            foreground_background_threshold=args.foreground_background_threshold,
+            background_threshold=args.background_threshold,
+            scale=args.scale,
+        )
         return
 
     if args.command == "build-promoted-atlas":
@@ -439,6 +680,16 @@ def main() -> None:
 def _load_json(path: str) -> dict:
     with Path(path).open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def _preferred_pack_file(pack: Path, preferred_name: str, fallback_name: str) -> Path:
+    preferred = pack / preferred_name
+    return preferred if preferred.exists() else pack / fallback_name
+
+
+def _optional_pack_file(pack: Path, name: str) -> Path | None:
+    path = pack / name
+    return path if path.exists() else None
 
 
 def parse_box(value: str) -> tuple[int, int, int, int]:

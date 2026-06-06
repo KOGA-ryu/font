@@ -551,6 +551,293 @@ but the color should come from nearby non-black pixels in the original image.
 This is the mask-first, color-second workflow: the `t40` black pass says where
 to draw, then local sampled ink identifies the visible color around each selected
 cell instead of reusing the black outline pixel.
+Add `--ink-palette-size N` with any sampled ink mode when the teardrop pass is
+copying too many near-identical RGB values. The renderer samples colors from the
+source, builds a deterministic small palette from mask-kept cells, and maps every
+selected glyph cell to the nearest allowed color. This keeps coverage from the
+threshold mask while turning the result into a controlled brush palette instead
+of an exact replica.
+Use `--ink-mode threshold-sampled` when the threshold layer itself should point
+the color dropper. The gate still decides where glyph cells exist, then each
+kept cell samples the original source pixels inside that same cell that satisfy
+the current gate rule. For a black `t40` layer, the renderer samples the median
+RGB from source pixels in that cell whose luminance is below `40`, then paints
+the glyph stamp with that sampled color:
+
+```text
+black t-layer cell
+-> matching source-image cell
+-> pixels inside that cell below the same threshold
+-> median RGB
+-> colored glyph stamp
+```
+
+This keeps the layer generic. The renderer does not need to know whether a dark
+cell is hair, cloth, leather, metal, or outline.
+
+For the repeatable version, use `render-threshold-color-layers`. It renders both
+cumulative masks and non-overlapping delta layers, then colors each delta layer
+from the source image:
+
+```sh
+python3 -m glyph_lab.cli render-threshold-color-layers \
+  --pack packs/stone_architecture_4x4 \
+  --image input.png \
+  --out out_threshold_layers \
+  --thresholds 16,24,32,40,48,56 \
+  --width 128 \
+  --height 128
+```
+
+Both threshold and color-family layer commands apply a foreground evidence mask
+before extracting layers. `--foreground-mode auto` uses alpha when the image has
+transparent pixels, otherwise it uses border/background distance. This prevents
+transparent pixels with dark RGB values from becoming fake black threshold cells.
+Use `--foreground-mode none` only when you intentionally want to process the
+entire canvas.
+
+The delta bands are independent:
+
+```text
+t16 = luminance 0..15
+t24 = luminance 16..23
+t32 = luminance 24..31
+t40 = luminance 32..39
+```
+
+Writes:
+
+- `masks/t*_cumulative_mask.png`
+- `masks/t*_delta_mask.png`
+- `black/t*_delta_black.png`
+- `colorized/t*_delta_color.png`
+- `composites/stacked_delta_color.png`
+- `threshold_color_layers_contact_sheet.png`
+- `manifest.json`
+
+Use `render-color-family-layers` to split the image by generic sampled color
+families instead of darkness. This is still not object recognition. The pass
+does not decide what a pixel belongs to; it only groups source pixels by hue,
+saturation, luminance, and distance from the background color:
+
+```sh
+python3 -m glyph_lab.cli render-color-family-layers \
+  --pack packs/stone_architecture_4x4 \
+  --image input.png \
+  --out out_color_families \
+  --families auto \
+  --width 128 \
+  --height 128
+```
+
+`--families auto` currently means:
+
+```text
+dark
+brown
+red
+orange
+gold
+lime
+green
+cyan
+blue
+violet
+pink
+skin
+gray
+highlight
+```
+
+Each family writes:
+
+- `masks/<family>_mask.png`
+- `black/<family>_black.png`
+- `colorized/<family>_color.png`
+
+The command also writes `composites/stacked_color_families.png`,
+`color_family_layers_contact_sheet.png`, and `manifest.json`. The stack order
+keeps the dark pass on top so outlines and hard shadow pixels remain visible.
+The pass estimates the background from the image border and skips pixels close
+to that border color, so black-background sprites can still extract colored
+glow layers instead of turning the whole background into a dark layer.
+When alpha is present, alpha is the foreground authority and background-color
+matching is not allowed to erase valid foreground pixels that happen to have the
+same RGB as transparent pixels.
+
+For a whole-image proof pass, use `render-extraction-sequence`. It runs the same
+foreground-aware threshold and color-family extractors in one deterministic
+sequence and writes a single report that points at every child artifact:
+
+```sh
+python3 -m glyph_lab.cli render-extraction-sequence \
+  --pack packs/stone_architecture_4x4 \
+  --image input.png \
+  --out out_sequence \
+  --thresholds 16,24,32,40,48,56,72 \
+  --width 160 \
+  --height 160
+```
+
+Writes:
+
+- `threshold_layers/manifest.json`
+- `threshold_layers/threshold_color_layers_contact_sheet.png`
+- `color_families/manifest.json`
+- `color_families/color_family_layers_contact_sheet.png`
+- `sequence_contact_sheet.png`
+- `sequence_report.json`
+
+This is the current repeatable app path:
+
+```text
+source image
+-> foreground evidence mask
+-> threshold value-band layers
+-> generic color-family layers
+-> source-sampled glyph rendering
+-> sequence report and proof sheets
+```
+
+The important rule is still mask first, color second. The layer mask says where
+glyphs are allowed to exist; the original image supplies the RGB for each kept
+cell; the glyph package supplies the mark language.
+
+Use `reference-style-recipe` when the goal is to generate new images from a
+reference instead of copying the reference. It samples generic evidence, reduces
+each lane to a small palette, assigns reusable glyph package names, and writes an
+editable style recipe:
+
+```sh
+python3 -m glyph_lab.cli reference-style-recipe \
+  --image reference.png \
+  --out out_reference_style \
+  --grid-size 128 \
+  --palette-size 3
+```
+
+Writes:
+
+- `reference_style_recipe.json`
+
+The recipe records:
+
+- source image and foreground/background evidence
+- outline threshold evidence
+- generic color-family layers
+- reduced palette per layer
+- suggested glyph package per layer
+- safe mutation knobs for future generation
+
+This is the reference-driven generation lane:
+
+```text
+reference image
+-> evidence layers
+-> reduced palettes
+-> glyph package hints
+-> editable recipe
+-> future generated variants
+```
+
+The recipe is intentionally not exact pixel truth. It keeps shape/color evidence
+from the reference while forcing the result into the project's glyph and brush
+language.
+
+For humanoid sprite references, `classify-sprite-parts` adds a semantic review
+pass on top of the same evidence. It does not identify a specific character.
+It uses generic color families and occupied-bbox geometry to split common sprite
+materials and body evidence:
+
+```sh
+python3 -m glyph_lab.cli classify-sprite-parts \
+  --image referenceguy.png \
+  --out out_sprite_parts \
+  --grid-size 128
+```
+
+Current part layers:
+
+```text
+outline
+hair
+skin
+clothing
+leather
+metal
+gold
+highlight
+```
+
+The important split is that brown is not a single answer. Brown near the upper
+head evidence is classified as `hair`; brown lower on the occupied body is
+classified as `leather`. Blue/violet become `clothing`, skin-colored cells
+become `skin`, gray becomes `metal`, gold remains `gold`, and dark cells become
+`outline`.
+
+Writes:
+
+- `masks/<part>_mask.png`
+- `colorized/<part>_color.png`
+- `composites/stacked_sprite_parts.png`
+- `sprite_part_contact_sheet.png`
+- `sprite_part_layers.json`
+
+For a mannequin region-ID image, use `classify-humanoid-regions` to split the
+body into object lanes instead of broad materials:
+
+```sh
+python3 -m glyph_lab.cli classify-humanoid-regions \
+  --image region_rainbow_body_user_crop.png \
+  --out out_humanoid_regions
+```
+
+Current lanes:
+
+```text
+outline
+head
+neck
+torso
+pelvis
+upper_arm_left
+lower_arm_left
+hand_left
+upper_arm_right
+lower_arm_right
+hand_right
+upper_leg_left
+lower_leg_left
+foot_left
+upper_leg_right
+lower_leg_right
+foot_right
+unassigned_foreground
+```
+
+The pass also writes aggregate object groups:
+
+```text
+body_core
+arm_left
+arm_right
+arms
+leg_left
+leg_right
+legs
+body_without_outline
+```
+
+Writes:
+
+- `masks/<lane>_mask.png`
+- `cutouts/<lane>_cutout.png`
+- `groups/<group>_mask.png`
+- `groups/<group>_cutout.png`
+- `composites/stacked_humanoid_regions.png`
+- `humanoid_region_contact_sheet.png`
+- `humanoid_regions.json`
+
 Add repeated `--gate-include-box x0,y0,x1,y1` arguments when a sampled color
 should only apply inside source-image regions. This is useful for clothing:
 brown leather boots and brown hair can share colors, so the color gate needs a
@@ -601,7 +888,8 @@ A recipe has shared render defaults, named layers, and composites:
       "ink_mode": "sampled-local",
       "ink_sample_radius": 8,
       "ink_ignore_luminance": 40,
-      "ink_palette_threshold": 28
+      "ink_palette_threshold": 28,
+      "ink_palette_size": 3
     }
   ],
   "composites": [

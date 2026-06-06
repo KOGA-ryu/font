@@ -49,6 +49,7 @@ def render_layer_recipe(recipe_path: str | Path, output_dir: str | Path) -> dict
             ink_sample_radius=render_args.get("ink_sample_radius", 6),
             ink_ignore_luminance=render_args.get("ink_ignore_luminance", 40),
             ink_palette_threshold=render_args.get("ink_palette_threshold"),
+            ink_palette_size=render_args.get("ink_palette_size"),
             scale=render_args.get("scale", 4),
         )
         layer_results[name] = {

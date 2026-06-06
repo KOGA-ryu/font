@@ -33,6 +33,7 @@ from .profiles import measure_profile_image
 from .promotion import promote_candidates
 from .promoted_contact_sheet import generate_promoted_contact_sheet
 from .promoted_atlas import build_promoted_atlas
+from .reference_render import render_reference_style
 from .reference_style import build_reference_style_recipe
 from .review_export import generate_review_contact_sheet
 from .scaffold import measure_scaffold_image
@@ -303,6 +304,18 @@ def main() -> None:
     reference_style_parser.add_argument("--foreground-background-threshold", type=int)
     reference_style_parser.add_argument("--fill-token", default="#")
     reference_style_parser.add_argument("--min-layer-cells", type=int, default=1)
+
+    reference_render_parser = subparsers.add_parser(
+        "render-reference-style",
+        help="render a reference style recipe into glyph layers and a final PNG",
+    )
+    reference_render_parser.add_argument("--recipe", required=True)
+    reference_render_parser.add_argument("--out", required=True)
+    reference_render_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    reference_render_parser.add_argument("--glyphs")
+    reference_render_parser.add_argument("--atlas")
+    reference_render_parser.add_argument("--mapping")
+    reference_render_parser.add_argument("--scale", type=int, default=2)
 
     sprite_parts_parser = subparsers.add_parser(
         "classify-sprite-parts",
@@ -604,6 +617,20 @@ def main() -> None:
             foreground_background_threshold=args.foreground_background_threshold,
             fill_token=args.fill_token,
             min_layer_cells=args.min_layer_cells,
+        )
+        return
+
+    if args.command == "render-reference-style":
+        glyphs_path = Path(args.glyphs) if args.glyphs else _preferred_pack_file(pack, "glyphs.promoted.json", "glyphs.json")
+        atlas_path = Path(args.atlas) if args.atlas else _preferred_pack_file(pack, "atlas.promoted.png", "atlas.png")
+        mapping_path = Path(args.mapping) if args.mapping else _optional_pack_file(pack, "ascii_brush_mapping.json")
+        render_reference_style(
+            args.recipe,
+            args.out,
+            glyphs_path,
+            atlas_path,
+            mapping_path=mapping_path,
+            scale=args.scale,
         )
         return
 

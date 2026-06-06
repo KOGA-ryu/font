@@ -744,6 +744,36 @@ The recipe is intentionally not exact pixel truth. It keeps shape/color evidence
 from the reference while forcing the result into the project's glyph and brush
 language.
 
+Use `render-reference-style` to turn that recipe into actual glyph-rendered
+artifacts:
+
+```sh
+python3 -m glyph_lab.cli render-reference-style \
+  --recipe out_reference_style/reference_style_recipe.json \
+  --out out_reference_render
+```
+
+Writes:
+
+- `masks/<layer>_mask.png`
+- `layers/<layer>.png`
+- `final.png`
+- `render_manifest.json`
+
+The renderer resolves each `mask_source`, applies deterministic coverage, maps
+source evidence to the nearest recipe palette color, renders the selected glyph
+stamp, and composites the final image with `outline` last. This is the first
+complete reference-to-new-glyph-image loop:
+
+```text
+reference image
+-> editable style recipe
+-> resolved masks
+-> reduced palette rendering
+-> glyph layer PNGs
+-> final generated PNG
+```
+
 For humanoid sprite references, `classify-sprite-parts` adds a semantic review
 pass on top of the same evidence. It does not identify a specific character.
 It uses generic color families and occupied-bbox geometry to split common sprite

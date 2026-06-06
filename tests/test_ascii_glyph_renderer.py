@@ -6,7 +6,7 @@ import unittest
 
 from PIL import Image
 
-from glyph_lab.ascii_glyph_renderer import render_ascii_glyphs
+from glyph_lab.ascii_glyph_renderer import image_gate_mask, render_ascii_glyphs
 from glyph_lab.atlas import generate_pack, load_atlas_stamps
 from glyph_lab.linework_candidates import write_linework_review
 from glyph_lab.promoted_atlas import build_promoted_atlas
@@ -108,6 +108,68 @@ class AsciiGlyphRendererTests(unittest.TestCase):
             with Image.open(out) as rendered:
                 self.assertEqual(rendered.size, (24, 24))
 
+    def test_border_difference_gate_blanks_background_cells(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            gate_image = Path(tmp) / "gate.png"
+            ascii_path = Path(tmp) / "grid.txt"
+            out = Path(tmp) / "render.png"
+            _write_gate_fixture(gate_image)
+            ascii_path.write_text("----\n----\n----\n----\n", encoding="utf-8")
+
+            result = render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                gate_image_path=gate_image,
+                gate_threshold=30,
+                gate_dilate=0,
+                scale=1,
+            )
+
+            self.assertLess(result["token_counts"]["-"], 16)
+            self.assertGreater(result["gate"]["gated_token_cells"], 0)
+            self.assertEqual(result["gate"]["kept_cells"], 4)
+
+    def test_gate_skips_unknown_tokens_outside_mask(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            gate_image = Path(tmp) / "gate.png"
+            ascii_path = Path(tmp) / "grid.txt"
+            out = Path(tmp) / "render.png"
+            _write_gate_fixture(gate_image)
+            ascii_path.write_text("????\n?--?\n?--?\n????\n", encoding="utf-8")
+
+            result = render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                gate_image_path=gate_image,
+                gate_threshold=30,
+                gate_dilate=0,
+                scale=1,
+            )
+
+            self.assertEqual(result["token_counts"], {"-": 4})
+            self.assertEqual(result["gate"]["gated_token_cells"], 12)
+
+    def test_image_gate_mask_can_use_alpha(self):
+        with TemporaryDirectory() as tmp:
+            gate_image = Path(tmp) / "alpha.png"
+            image = Image.new("RGBA", (4, 4), (0, 0, 0, 0))
+            pixels = image.load()
+            pixels[1, 1] = (255, 255, 255, 255)
+            image.save(gate_image)
+
+            mask = image_gate_mask(gate_image, 4, 4, mode="alpha", threshold=1, dilate=0)
+
+            self.assertTrue(mask[1][1])
+            self.assertEqual(sum(1 for row in mask for value in row if value), 1)
+
     def test_promoted_token_renders_from_promoted_atlas(self):
         with promoted_linework_pack() as pack:
             ascii_path = pack / "grid.txt"
@@ -143,6 +205,10 @@ class AsciiGlyphRendererTests(unittest.TestCase):
                     str(pack / "glyphs.json"),
                     "--atlas",
                     str(pack / "atlas.png"),
+                    "--gate-image",
+                    str(_write_gate_fixture(Path(tmp) / "gate.png")),
+                    "--gate-mask-out",
+                    str(Path(tmp) / "gate_mask.png"),
                     "--out",
                     str(out),
                     "--scale",
@@ -153,6 +219,7 @@ class AsciiGlyphRendererTests(unittest.TestCase):
             )
 
             self.assertTrue(out.exists())
+            self.assertTrue((Path(tmp) / "gate_mask.png").exists())
             with Image.open(out) as rendered:
                 self.assertEqual(rendered.size, (16, 8))
 
@@ -187,6 +254,16 @@ def _pixels(image: Image.Image) -> list[tuple[int, int, int, int]]:
     rgba = image.convert("RGBA")
     data = rgba.tobytes()
     return [tuple(data[index : index + 4]) for index in range(0, len(data), 4)]
+
+
+def _write_gate_fixture(path: Path) -> Path:
+    image = Image.new("RGB", (4, 4), (20, 30, 40))
+    pixels = image.load()
+    for y in (1, 2):
+        for x in (1, 2):
+            pixels[x, y] = (220, 190, 80)
+    image.save(path)
+    return path
 
 
 if __name__ == "__main__":

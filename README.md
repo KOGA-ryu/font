@@ -485,6 +485,11 @@ python3 -m glyph_lab.cli render-ascii-glyphs \
   --glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
   --atlas packs/stone_architecture_4x4/atlas.promoted.png \
   --mapping packs/stone_architecture_4x4/ascii_brush_mapping.json \
+  --gate-image input.png \
+  --gate-mode border-difference \
+  --gate-threshold 36 \
+  --gate-dilate 1 \
+  --gate-mask-out out_brush_test/gate_mask.png \
   --out out_brush_test/custom_glyph_render.png \
   --scale 4
 ```
@@ -493,6 +498,12 @@ This bypasses font rendering. Every non-space token is resolved through the
 optional mapping file, looked up in `glyphs.promoted.json`, cropped from
 `atlas.promoted.png`, and painted as a 4x4 stamp. Unknown non-space tokens fail
 with row and column so bad bridge output cannot silently become a fake proof.
+When `--gate-image` is provided, cells outside the sampled object/evidence mask
+are blanked before token lookup. This keeps texture, spray, and hatch packages
+from filling background cells just because the ASCII engine emitted a dense
+character there. The first useful opaque-image mode is `border-difference`,
+which compares sampled cells against the image border color; `alpha` and
+`luminance` are available for transparent or thresholded inputs.
 
 ```text
 image

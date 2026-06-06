@@ -147,6 +147,15 @@ def main() -> None:
     ascii_render_parser.add_argument("--glyphs", required=True)
     ascii_render_parser.add_argument("--atlas", required=True)
     ascii_render_parser.add_argument("--mapping")
+    ascii_render_parser.add_argument("--gate-image")
+    ascii_render_parser.add_argument(
+        "--gate-mode",
+        choices=["alpha", "luminance", "border-difference"],
+        default="border-difference",
+    )
+    ascii_render_parser.add_argument("--gate-threshold", type=int, default=32)
+    ascii_render_parser.add_argument("--gate-dilate", type=int, default=1)
+    ascii_render_parser.add_argument("--gate-mask-out")
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
 
@@ -299,7 +308,19 @@ def main() -> None:
         return
 
     if args.command == "render-ascii-glyphs":
-        render_ascii_glyphs(args.ascii, args.glyphs, args.atlas, args.out, mapping_path=args.mapping, scale=args.scale)
+        render_ascii_glyphs(
+            args.ascii,
+            args.glyphs,
+            args.atlas,
+            args.out,
+            mapping_path=args.mapping,
+            gate_image_path=args.gate_image,
+            gate_mode=args.gate_mode,
+            gate_threshold=args.gate_threshold,
+            gate_dilate=args.gate_dilate,
+            gate_mask_output_path=args.gate_mask_out,
+            scale=args.scale,
+        )
         return
 
     if args.command == "build-promoted-atlas":

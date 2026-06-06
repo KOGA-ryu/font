@@ -16,6 +16,7 @@ from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
+from .layer_breakdown import write_layer_breakdown
 from .linework_analyzer import analyze_linework_image
 from .linework_candidates import write_linework_review
 from .measurement_pass import write_art_pass_measurements
@@ -68,6 +69,16 @@ def main() -> None:
     linework_image_parser.add_argument("--grid-size", type=int, default=32)
     linework_image_parser.add_argument("--glyphs")
     linework_image_parser.add_argument("--atlas")
+
+    breakdown_parser = subparsers.add_parser(
+        "layer-breakdown",
+        help="render a visual breakdown of image evidence and glyph layers",
+    )
+    breakdown_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    breakdown_parser.add_argument("--image", required=True)
+    breakdown_parser.add_argument("--motion-out")
+    breakdown_parser.add_argument("--out", default="out_layer_breakdown")
+    breakdown_parser.add_argument("--grid-size", type=int, default=32)
 
     profile_parser = subparsers.add_parser("measure-profile", help="measure a silhouette profile from an image")
     profile_parser.add_argument("--image", required=True)
@@ -202,6 +213,16 @@ def main() -> None:
             grid_size=args.grid_size,
             glyphs_path=args.glyphs,
             atlas_path=args.atlas,
+        )
+        return
+
+    if args.command == "layer-breakdown":
+        write_layer_breakdown(
+            args.image,
+            pack,
+            args.out,
+            motion_out_dir=args.motion_out,
+            grid_size=args.grid_size,
         )
         return
 

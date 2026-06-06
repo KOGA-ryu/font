@@ -15,5 +15,6 @@ out_brush_texture_promoted/
 out_brush_compare/
 out_cracked_slab*/
 out_linework_motion*/
+out_layer_breakdown*/
 __pycache__/
 *.pyc

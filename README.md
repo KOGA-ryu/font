@@ -350,6 +350,27 @@ If `glyphs.promoted.json` and `atlas.promoted.png` exist, this command uses
 them by default. Otherwise it falls back to the active `glyphs.json` and
 `atlas.png`. Use `--glyphs` and `--atlas` to override that choice.
 
+Generate a visual layer breakdown for deciding what glyph package to build next:
+
+```sh
+python3 -m glyph_lab.cli layer-breakdown \
+  --pack packs/stone_architecture_4x4 \
+  --image examples/probe_cracked_stone_slab.png \
+  --motion-out out_linework_motion_slab \
+  --out out_layer_breakdown \
+  --grid-size 32
+```
+
+Writes:
+
+- `out_layer_breakdown/layer_breakdown.png`
+- `out_layer_breakdown/layer_breakdown.json`
+
+The sheet shows the original, crop, luminance grid, mass mask, edge evidence,
+linework layer, linework pressure layer, and final glyph proof. The JSON records
+counts, top motion profiles, selected tokens, pressure intensities, and warning
+counts. Use this to choose glyph work from layer failures instead of guessing.
+
 The palette files are meant for
 `/Users/kogaryu/gameguy-3d-lab/image_to_ascii_workbench_v3`. Use them with
 `--palette custom --custom-palette ...` so the ASCII output can act as a rough

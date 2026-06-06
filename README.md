@@ -49,6 +49,7 @@ image
 -> per-cell motion declarations
 -> motion-aware glyph selection
 -> linework layered grid
+-> linework pressure layer
 -> compositor proof
 ```
 
@@ -57,6 +58,11 @@ motion it asks for: topology, angle, speed, pressure, stress, dwell, release,
 rhythm, continuity, confidence, selected token, and selected glyph. The image
 processor declares the motion; the glyph pack answers with the closest reusable
 stroke atom.
+
+The same pass derives `linework_pressure`, a second layer for stroke weight. It
+marks cells where motion evidence indicates heavier pressure, slower movement,
+dwell, terminal stress, corner stress, or repeated accent. It is still
+linework, not object shading.
 
 The first profile measurement pass stays grid-based:
 
@@ -332,10 +338,12 @@ python3 -m glyph_lab.cli analyze-linework-image \
 Writes:
 
 - `out_linework_motion/linework_evidence.json`
+- `out_linework_motion/linework_pressure_evidence.json`
 - `out_linework_motion/generated_motion_layered_grid.json`
 - `out_linework_motion/motion_selection_report.json`
 - `out_linework_motion/proof_128.png`
 - `out_linework_motion/layers/linework.png`
+- `out_linework_motion/layers/linework_pressure.png`
 - `out_linework_motion/manifest.json`
 
 If `glyphs.promoted.json` and `atlas.promoted.png` exist, this command uses

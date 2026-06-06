@@ -7,7 +7,12 @@ import unittest
 from PIL import Image, ImageDraw
 
 from glyph_lab.atlas import generate_pack
-from glyph_lab.linework_analyzer import analyze_linework_grid, analyze_linework_image, evidence_to_layered_grid
+from glyph_lab.linework_analyzer import (
+    analyze_linework_grid,
+    analyze_linework_image,
+    evidence_to_layered_grid,
+    pressure_evidence_from_linework,
+)
 
 
 class LineworkAnalyzerTests(unittest.TestCase):
@@ -64,8 +69,45 @@ class LineworkAnalyzerTests(unittest.TestCase):
         layered, report = evidence_to_layered_grid(evidence, [{"id": "line", "token": "-", "linework_kind": "line"}])
 
         self.assertEqual(layered["layers"][0]["name"], "linework")
+        self.assertEqual(layered["layers"][1]["name"], "linework_pressure")
         self.assertEqual(layered["layers"][0]["cell_metadata"][0]["motion_profile"], "steady_pull")
         self.assertEqual(report["linework_cell_count"], 1)
+        self.assertEqual(report["pressure_cell_count"], 0)
+
+    def test_pressure_evidence_marks_heavy_and_stressed_cells(self):
+        evidence = {
+            "grid_width": 2,
+            "grid_height": 1,
+            "linework_cells": [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "motion_profile": "direction_change",
+                    "angle_degrees": 0.0,
+                    "pressure_curve": "heavy",
+                    "stress_points": ["corner"],
+                    "neighbor_count": 5,
+                    "confidence": 0.9,
+                },
+                {
+                    "x": 1,
+                    "y": 0,
+                    "motion_profile": "steady_pull",
+                    "angle_degrees": 0.0,
+                    "pressure_curve": "medium",
+                    "stress_points": [],
+                    "neighbor_count": 2,
+                    "confidence": 0.8,
+                },
+            ],
+        }
+
+        pressure = pressure_evidence_from_linework(evidence)
+
+        self.assertEqual(pressure["pressure_cell_count"], 1)
+        self.assertEqual(pressure["pressure_cells"][0]["layer"], "linework_pressure")
+        self.assertEqual(pressure["pressure_cells"][0]["motion_profile"], "pressed_pull")
+        self.assertEqual(pressure["pressure_cells"][0]["pressure_intensity"], "heavy")
 
     def test_analyze_linework_image_writes_outputs(self):
         with TemporaryDirectory() as tmp:
@@ -79,10 +121,12 @@ class LineworkAnalyzerTests(unittest.TestCase):
             result = analyze_linework_image(image, pack, out, grid_size=8)
 
             self.assertTrue((out / "linework_evidence.json").exists())
+            self.assertTrue((out / "linework_pressure_evidence.json").exists())
             self.assertTrue((out / "generated_motion_layered_grid.json").exists())
             self.assertTrue((out / "motion_selection_report.json").exists())
             self.assertTrue((out / "proof_128.png").exists())
             self.assertIn("linework_motion", result["manifest"])
+            self.assertIn("pressure_cell_count", result["manifest"]["linework_motion"])
 
     def test_cli_analyze_linework_image_writes_outputs(self):
         with TemporaryDirectory() as tmp:
@@ -113,6 +157,7 @@ class LineworkAnalyzerTests(unittest.TestCase):
             )
 
             self.assertTrue((out / "linework_evidence.json").exists())
+            self.assertTrue((out / "linework_pressure_evidence.json").exists())
             self.assertTrue((out / "proof_128.png").exists())
 
 

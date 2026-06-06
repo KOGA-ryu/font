@@ -149,7 +149,7 @@ def _constraint_warning(
     token: str,
 ) -> dict[str, Any] | None:
     allowed = glyph.constraints.get("allowed_layers", [])
-    if layer_name == "linework" and any(layer in allowed for layer in ("edge", "detail")):
+    if layer_name in {"linework", "linework_pressure"} and any(layer in allowed for layer in ("edge", "detail")):
         return None
     if allowed and layer_name not in allowed:
         return {

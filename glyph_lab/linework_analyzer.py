@@ -11,6 +11,7 @@ from .motion_select import load_glyph_records, select_motion_glyph
 
 
 LINEWORK_LAYER_NAME = "linework"
+PRESSURE_LAYER_NAME = "linework_pressure"
 
 
 def analyze_linework_image(
@@ -31,24 +32,32 @@ def analyze_linework_image(
     evidence = analyze_linework_grid(probe["luminance_grid"], probe["edge_map"])
     glyph_records = load_glyph_records(glyphs_file)
     layered, selection_report = evidence_to_layered_grid(evidence, glyph_records)
+    pressure_evidence = pressure_evidence_from_linework(evidence)
 
     layered_path = out / "generated_motion_layered_grid.json"
     evidence_path = out / "linework_evidence.json"
+    pressure_path = out / "linework_pressure_evidence.json"
     report_path = out / "motion_selection_report.json"
     _write_json(layered_path, layered)
     _write_json(evidence_path, evidence)
+    _write_json(pressure_path, pressure_evidence)
     _write_json(report_path, selection_report)
     manifest = compile_layered_grid(atlas_file, glyphs_file, layered_path, out)
     manifest["linework_motion"] = {
         "evidence_path": str(evidence_path),
+        "pressure_evidence_path": str(pressure_path),
         "selection_report_path": str(report_path),
         "motion_profile_counts": selection_report["motion_profile_counts"],
         "selected_token_counts": selection_report["selected_token_counts"],
+        "pressure_cell_count": selection_report["pressure_cell_count"],
+        "pressure_profile_counts": selection_report["pressure_profile_counts"],
+        "selected_pressure_token_counts": selection_report["selected_pressure_token_counts"],
     }
     _write_json(out / "manifest.json", manifest)
     return {
         "layered_grid_path": str(layered_path),
         "evidence_path": str(evidence_path),
+        "pressure_evidence_path": str(pressure_path),
         "selection_report_path": str(report_path),
         "manifest": manifest,
     }
@@ -92,9 +101,13 @@ def evidence_to_layered_grid(
     width = int(evidence["grid_width"])
     height = int(evidence["grid_height"])
     grid = [[" " for _ in range(width)] for _ in range(height)]
+    pressure_grid = [[" " for _ in range(width)] for _ in range(height)]
     metadata = []
+    pressure_metadata = []
     selected_counts: Counter[str] = Counter()
+    selected_pressure_counts: Counter[str] = Counter()
     reasons: Counter[str] = Counter()
+    pressure_reasons: Counter[str] = Counter()
 
     for cell in evidence["linework_cells"]:
         selected = select_motion_glyph(cell, glyph_records)
@@ -114,6 +127,25 @@ def evidence_to_layered_grid(
             }
         )
 
+    pressure_evidence = pressure_evidence_from_linework(evidence)
+    for cell in pressure_evidence["pressure_cells"]:
+        selected = select_motion_glyph(cell, glyph_records)
+        token = selected["token"]
+        x = int(cell["x"])
+        y = int(cell["y"])
+        pressure_grid[y][x] = token
+        selected_pressure_counts[token] += 1
+        pressure_reasons[selected["selection_reason"]] += 1
+        pressure_metadata.append(
+            {
+                **cell,
+                "token": token,
+                "glyph_id": selected["glyph_id"],
+                "selection_score": selected["score"],
+                "selection_reason": selected["selection_reason"],
+            }
+        )
+
     layered = {
         "grid_width": width,
         "grid_height": height,
@@ -122,11 +154,17 @@ def evidence_to_layered_grid(
                 "name": LINEWORK_LAYER_NAME,
                 "grid": ["".join(row) for row in grid],
                 "cell_metadata": metadata,
+            },
+            {
+                "name": PRESSURE_LAYER_NAME,
+                "grid": ["".join(row) for row in pressure_grid],
+                "cell_metadata": pressure_metadata,
             }
         ],
         "metadata": {
             "source": "linework_motion_analyzer",
             "linework_cell_count": len(metadata),
+            "pressure_cell_count": len(pressure_metadata),
         },
     }
     report = {
@@ -135,9 +173,69 @@ def evidence_to_layered_grid(
         "stroke_topology_counts": dict(Counter(item["stroke_topology"] for item in metadata)),
         "selected_token_counts": dict(selected_counts),
         "selection_reason_counts": dict(reasons),
+        "pressure_cell_count": len(pressure_metadata),
+        "pressure_profile_counts": dict(Counter(item["motion_profile"] for item in pressure_metadata)),
+        "pressure_intensity_counts": dict(Counter(item["pressure_intensity"] for item in pressure_metadata)),
+        "selected_pressure_token_counts": dict(selected_pressure_counts),
+        "pressure_selection_reason_counts": dict(pressure_reasons),
         "cell_metadata": metadata,
+        "pressure_cell_metadata": pressure_metadata,
     }
     return layered, report
+
+
+def pressure_evidence_from_linework(evidence: dict[str, Any]) -> dict[str, Any]:
+    cells = [_pressure_cell(cell) for cell in evidence["linework_cells"] if _is_pressure_cell(cell)]
+    return {
+        "grid_width": evidence["grid_width"],
+        "grid_height": evidence["grid_height"],
+        "source": "linework_pressure_from_motion",
+        "pressure_cells": cells,
+        "pressure_cell_count": len(cells),
+        "pressure_profile_counts": dict(Counter(cell["motion_profile"] for cell in cells)),
+        "pressure_intensity_counts": dict(Counter(cell["pressure_intensity"] for cell in cells)),
+    }
+
+
+def _is_pressure_cell(cell: dict[str, Any]) -> bool:
+    pressure = cell.get("pressure_curve")
+    if pressure == "heavy":
+        return True
+    if cell.get("motion_profile") in {"press_and_stop", "interrupted_pull"}:
+        return True
+    if "corner" in cell.get("stress_points", []) and pressure in {"medium", "heavy"}:
+        return True
+    if "repeat_accent" in cell.get("stress_points", []) and pressure == "heavy" and int(cell.get("neighbor_count", 0)) >= 5:
+        return True
+    return False
+
+
+def _pressure_cell(cell: dict[str, Any]) -> dict[str, Any]:
+    pressure = cell.get("pressure_curve", "thin")
+    intensity = "heavy" if pressure == "heavy" or int(cell.get("neighbor_count", 0)) >= 5 else "medium"
+    stress_points = sorted(set(cell.get("stress_points", []) + ["pressure"]))
+    return {
+        "x": cell["x"],
+        "y": cell["y"],
+        "layer": PRESSURE_LAYER_NAME,
+        "source_layer": LINEWORK_LAYER_NAME,
+        "source_motion_profile": cell["motion_profile"],
+        "linework_package": "linework.stroke",
+        "stroke_topology": "pass_through_segment",
+        "motion_profile": "pressed_pull",
+        "angle_degrees": cell.get("angle_degrees"),
+        "speed_class": "slow" if intensity == "heavy" else "medium",
+        "pressure_curve": intensity,
+        "pressure_intensity": intensity,
+        "stress_points": stress_points,
+        "release_style": "clean_exit",
+        "dwell": "slight" if intensity == "medium" else "linger",
+        "stroke_confidence": cell.get("stroke_confidence", "decisive"),
+        "rhythm_role": cell.get("rhythm_role", "single"),
+        "continuity": "continuous",
+        "neighbor_count": cell.get("neighbor_count", 0),
+        "confidence": cell.get("confidence", 0.0),
+    }
 
 
 def _cell_evidence(

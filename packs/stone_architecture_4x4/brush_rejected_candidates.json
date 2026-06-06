@@ -4184,6 +4184,235 @@
       "equivalence_group": "translations_normalized",
       "canonical_id": 42405,
       "duplicate_of": "4.stone.fill.texture.mid_fill_checker_11"
+    },
+    {
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_light_4142",
+      "token": "",
+      "index": 4142,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 4672
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "pressure": "light"
+      },
+      "brush_family": "charcoal_drag",
+      "brush_params": {
+        "direction": "diagonal_rise",
+        "pressure": "light"
+      },
+      "brush_engine": "charcoal-drag",
+      "density_class": "light",
+      "ascii_fallback": "/",
+      "usefulness_score": 0.25,
+      "rejection_reason": "too-many-components-for-non-texture",
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 4672
+    },
+    {
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_light_4145",
+      "token": "",
+      "index": 4145,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 1057
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "pressure": "light"
+      },
+      "brush_family": "charcoal_drag",
+      "brush_params": {
+        "direction": "diagonal_fall",
+        "pressure": "light"
+      },
+      "brush_engine": "charcoal-drag",
+      "density_class": "light",
+      "ascii_fallback": "\\",
+      "usefulness_score": 0.25,
+      "rejection_reason": "too-many-components-for-non-texture",
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1057
+    },
+    {
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_medium_4149",
+      "token": "",
+      "index": 4149,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 1632
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "smudge",
+        "pressure": "medium"
+      },
+      "brush_family": "charcoal_drag",
+      "brush_params": {
+        "direction": "smudge",
+        "pressure": "medium"
+      },
+      "brush_engine": "charcoal-drag",
+      "density_class": "medium",
+      "ascii_fallback": "x",
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "shape",
+        "symmetric",
+        "contacts:0",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1632,
+      "duplicate_of": "4.stone.brush.stipple.stipple_cluster_4034"
     }
   ]
 }

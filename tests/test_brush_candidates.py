@@ -74,6 +74,15 @@ class BrushCandidateTests(unittest.TestCase):
         self.assertEqual(dot["brush_engine"], "dot-field")
         self.assertIn("pattern", dot["brush_params"])
 
+    def test_brush_candidates_include_charcoal_drag_package(self):
+        candidates = generate_brush_candidates()
+        drag = next(candidate for candidate in candidates if candidate["brush_family"] == "charcoal_drag")
+
+        self.assertEqual(drag["family"], "charcoal")
+        self.assertEqual(drag["role"], "detail")
+        self.assertEqual(drag["brush_engine"], "charcoal-drag")
+        self.assertIn("pressure", drag["brush_params"])
+
     def test_cli_generate_brushes_writes_review_artifacts(self):
         with TemporaryDirectory() as tmp:
             pack = Path(tmp) / "pack"

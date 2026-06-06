@@ -90,14 +90,15 @@ def _group_sort_key(group: str) -> tuple[int, str]:
         "brush:hatch": 1,
         "brush:crosshatch": 2,
         "brush:charcoal": 3,
-        "brush:dry_brush": 4,
-        "brush:grain": 5,
-        "brush:stipple": 6,
-        "brush:spray": 7,
-        "brush:scratch": 8,
-        "brush:chip": 9,
-        "brush:tone_hatch": 10,
-        "brush:dot_field": 11,
+        "brush:charcoal_drag": 4,
+        "brush:dry_brush": 5,
+        "brush:grain": 6,
+        "brush:stipple": 7,
+        "brush:spray": 8,
+        "brush:scratch": 9,
+        "brush:chip": 10,
+        "brush:tone_hatch": 11,
+        "brush:dot_field": 12,
     }
     return (order.get(group, 100), group)
 

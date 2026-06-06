@@ -1,0 +1,24 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+      "token": "i",
+      "notes": "Promote reusable charcoal drag package: heavy horizontal drag."
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+      "token": "k",
+      "notes": "Promote reusable charcoal drag package: heavy vertical drag."
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
+      "token": "Z",
+      "notes": "Promote reusable charcoal drag package: heavy smudge block."
+    }
+  ],
+  "metadata": {
+    "source": "charcoal_drag_package_v0",
+    "scope": "generic charcoal drag, pressure smear, and smudge glyph packages",
+    "not_object_specific": true
+  }
+}

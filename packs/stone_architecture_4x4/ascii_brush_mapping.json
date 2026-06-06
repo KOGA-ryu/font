@@ -1,5 +1,5 @@
 {
-  "texture_palette": "=?`*BI@~,U{}/xAHNRW47!&)EKOV58$'+QYgk69%(:DGJMZPlXm;FLeifj",
+  "texture_palette": "=?`*BI@~x,U{}/-|AHNRW47!&)\\EKOV58$'+QYgk69%(:DGJMZPlXm;FLeifj",
   "spray_palette": "rzo0vw13y2",
   "mapping": {
     "#": {
@@ -213,16 +213,16 @@
       "bridge_only": true
     },
     "x": {
-      "glyph_id": "4.stone.brush.chip.chip_right_large_4103",
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
       "token": "",
       "role": "detail",
-      "family": "damage",
+      "family": "charcoal",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "chip",
-      "brush_engine": "edge-damage",
-      "density_class": "large",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
       "ascii_fallback": "x",
       "bridge_only": true
     },
@@ -1081,16 +1081,16 @@
       "bridge_only": true
     },
     "/": {
-      "glyph_id": "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4144",
       "token": "",
       "role": "detail",
-      "family": "damage",
+      "family": "charcoal",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "scratch",
-      "brush_engine": "incised-mark",
-      "density_class": "long",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
       "ascii_fallback": "/",
       "bridge_only": true
     },
@@ -1106,6 +1106,48 @@
       "brush_engine": "tone-hatch",
       "density_class": "parallel_staggered",
       "ascii_fallback": "+",
+      "bridge_only": true
+    },
+    "-": {
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+      "token": "",
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
+      "ascii_fallback": "-",
+      "bridge_only": true
+    },
+    "|": {
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+      "token": "",
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
+      "ascii_fallback": "|",
+      "bridge_only": true
+    },
+    "\\": {
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4147",
+      "token": "",
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
+      "ascii_fallback": "\\",
       "bridge_only": true
     }
   },
@@ -1192,6 +1234,54 @@
     },
     {
       "candidate_id": "4.stone.brush.dot_field.dot_field_scattered_large_4135",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4136",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4137",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4139",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4140",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4143",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4144",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4146",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4147",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_light_4148",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
       "reason": "ascii-bridge-pool-exhausted"
     }
   ],

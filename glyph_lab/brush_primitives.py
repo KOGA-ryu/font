@@ -16,6 +16,7 @@ BRUSH_FAMILIES = {
     "spray",
     "charcoal",
     "dry_brush",
+    "charcoal_drag",
     "grain",
     "scratch",
     "chip",
@@ -42,6 +43,8 @@ def brush_stamp(
         return charcoal(**params, color=color)
     if brush_family == "dry_brush":
         return dry_brush(**params, color=color)
+    if brush_family == "charcoal_drag":
+        return charcoal_drag(**params, color=color)
     if brush_family == "scratch":
         return scratch(**params, color=color)
     if brush_family == "chip":
@@ -177,6 +180,46 @@ def dry_brush(
         "heavy": {(3, 3)},
     }[coverage]
     return _stamp(sorted(base - gaps), color)
+
+
+def charcoal_drag(
+    direction: str = "horizontal",
+    pressure: str = "medium",
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice("direction", direction, {"horizontal", "vertical", "diagonal_rise", "diagonal_fall", "smudge"})
+    _require_choice("pressure", pressure, {"light", "medium", "heavy"})
+    if direction == "horizontal":
+        coords = {(0, 1), (1, 1), (2, 1)}
+        if pressure in {"medium", "heavy"}:
+            coords |= {(0, 2), (1, 2)}
+        if pressure == "heavy":
+            coords |= {(2, 2), (3, 1)}
+    elif direction == "vertical":
+        coords = {(1, 0), (1, 1), (1, 2)}
+        if pressure in {"medium", "heavy"}:
+            coords |= {(2, 0), (2, 1)}
+        if pressure == "heavy":
+            coords |= {(2, 2), (1, 3)}
+    elif direction == "diagonal_rise":
+        coords = {(0, 3), (1, 2), (2, 1)}
+        if pressure in {"medium", "heavy"}:
+            coords |= {(1, 3), (2, 2)}
+        if pressure == "heavy":
+            coords |= {(3, 0), (3, 1)}
+    elif direction == "diagonal_fall":
+        coords = {(0, 0), (1, 1), (2, 2)}
+        if pressure in {"medium", "heavy"}:
+            coords |= {(1, 0), (2, 1)}
+        if pressure == "heavy":
+            coords |= {(3, 2), (3, 3)}
+    else:
+        coords = {(1, 1), (2, 1), (1, 2), (2, 2)}
+        if pressure == "light":
+            coords = {(1, 1), (2, 2)}
+        elif pressure == "heavy":
+            coords |= {(0, 1), (1, 0), (2, 3), (3, 2)}
+    return _stamp(sorted(coords), color)
 
 
 def grain(
@@ -393,6 +436,16 @@ def default_brush_specs() -> list[dict[str, Any]]:
         "scattered_large",
     ):
         specs.append(_spec("dot_field", f"dot_field_{pattern}", {"pattern": pattern}, family="texture"))
+    for direction in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall", "smudge"):
+        for pressure in ("light", "medium", "heavy"):
+            specs.append(
+                _spec(
+                    "charcoal_drag",
+                    f"charcoal_drag_{direction}_{pressure}",
+                    {"direction": direction, "pressure": pressure},
+                    family="charcoal",
+                )
+            )
     return specs
 
 
@@ -406,6 +459,7 @@ def brush_metadata(spec: dict[str, Any]) -> dict[str, Any]:
             params.get("density")
             or params.get("coverage")
             or params.get("roughness")
+            or params.get("pressure")
             or params.get("kind")
             or params.get("length")
             or params.get("size")
@@ -438,6 +492,8 @@ def _spec(
 def _engine_for(brush_family: str) -> str:
     if brush_family in {"stipple", "spray"}:
         return "scatter"
+    if brush_family == "charcoal_drag":
+        return "charcoal-drag"
     if brush_family in {"charcoal", "dry_brush"}:
         return "broken-stroke"
     if brush_family == "scratch":
@@ -456,7 +512,7 @@ def _engine_for(brush_family: str) -> str:
 def _fallback_for(spec: dict[str, Any]) -> str:
     family = spec["brush_family"]
     params = spec["params"]
-    if family in {"hatch", "dry_brush", "scratch"}:
+    if family in {"hatch", "dry_brush", "scratch", "charcoal_drag"}:
         angle = params.get("angle") or params.get("direction")
         return {"horizontal": "-", "vertical": "|", "diagonal_rise": "/", "diagonal_fall": "\\"}.get(angle, "x")
     if family == "crosshatch":

@@ -3,6 +3,7 @@ import unittest
 from glyph_lab.brush_primitives import (
     brush_metadata,
     brush_stamp,
+    charcoal_drag,
     chip,
     default_brush_specs,
     dot_field,
@@ -122,6 +123,30 @@ class BrushPrimitiveTests(unittest.TestCase):
         self.assertEqual(metadata["brush_engine"], "dot-field")
         self.assertEqual(metadata["density_class"], "speckle_even")
         self.assertEqual(metadata["ascii_fallback"], "*")
+
+    def test_charcoal_drag_heavy_has_more_density_than_light(self):
+        light = measure_stamp(charcoal_drag("horizontal", "light"))["density"]
+        heavy = measure_stamp(charcoal_drag("horizontal", "heavy"))["density"]
+
+        self.assertGreater(heavy, light)
+
+    def test_charcoal_drag_is_deterministic(self):
+        first = stamp_to_bitmask(charcoal_drag("diagonal_rise", "medium"))
+        second = stamp_to_bitmask(charcoal_drag("diagonal_rise", "medium"))
+
+        self.assertEqual(first, second)
+
+    def test_charcoal_drag_metadata_records_engine(self):
+        metadata = brush_metadata(
+            {
+                "brush_family": "charcoal_drag",
+                "params": {"direction": "vertical", "pressure": "medium"},
+            }
+        )
+
+        self.assertEqual(metadata["brush_engine"], "charcoal-drag")
+        self.assertEqual(metadata["density_class"], "medium")
+        self.assertEqual(metadata["ascii_fallback"], "|")
 
 
 if __name__ == "__main__":

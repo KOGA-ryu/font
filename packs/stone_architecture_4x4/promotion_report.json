@@ -1,20 +1,16 @@
 {
-  "promoted_count": 5,
+  "promoted_count": 3,
   "rejected_count": 0,
   "promoted_candidate_ids": [
-    "4.stone.brush.dot_field.dot_field_dust_light_4126",
-    "4.stone.brush.dot_field.dot_field_dust_medium_4127",
-    "4.stone.brush.dot_field.dot_field_dust_dense_4128",
-    "4.stone.brush.dot_field.dot_field_speckle_even_4129",
-    "4.stone.brush.dot_field.dot_field_pitted_surface_4134"
+    "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+    "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+    "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150"
   ],
   "rejected_candidate_ids": [],
   "token_assignments": {
-    "4.stone.brush.dot_field.dot_field_dust_light_4126": "5",
-    "4.stone.brush.dot_field.dot_field_dust_medium_4127": "6",
-    "4.stone.brush.dot_field.dot_field_dust_dense_4128": "7",
-    "4.stone.brush.dot_field.dot_field_speckle_even_4129": "8",
-    "4.stone.brush.dot_field.dot_field_pitted_surface_4134": "9"
+    "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138": "i",
+    "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141": "k",
+    "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150": "Z"
   },
   "apply": false,
   "backup_path": null,

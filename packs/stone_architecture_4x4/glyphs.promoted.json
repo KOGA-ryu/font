@@ -5563,6 +5563,216 @@
       },
       "brush_engine": "dot-field",
       "density_class": "pitted_surface"
+    },
+    {
+      "id": "4.stone.promoted.detail.charcoal.charcoal_drag_horizontal_heavy_4138_80",
+      "token": "i",
+      "index": 80,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.2857142857142858,
+        "centroid_y": 1.4285714285714286,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 2032
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "horizontal",
+        "pressure": "heavy"
+      },
+      "source_candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable charcoal drag package: heavy horizontal drag.",
+      "ascii_fallback": "-",
+      "brush_family": "charcoal_drag",
+      "brush_params": {
+        "direction": "horizontal",
+        "pressure": "heavy"
+      },
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy"
+    },
+    {
+      "id": "4.stone.promoted.detail.charcoal.charcoal_drag_vertical_heavy_4141_81",
+      "token": "k",
+      "index": 81,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.4285714285714286,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 9830
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "vertical",
+        "pressure": "heavy"
+      },
+      "source_candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable charcoal drag package: heavy vertical drag.",
+      "ascii_fallback": "|",
+      "brush_family": "charcoal_drag",
+      "brush_params": {
+        "direction": "vertical",
+        "pressure": "heavy"
+      },
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy"
+    },
+    {
+      "id": "4.stone.promoted.detail.charcoal.charcoal_drag_smudge_heavy_4150_82",
+      "token": "Z",
+      "index": 82,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 20082
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "smudge",
+        "pressure": "heavy"
+      },
+      "source_candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable charcoal drag package: heavy smudge block.",
+      "ascii_fallback": "x",
+      "brush_family": "charcoal_drag",
+      "brush_params": {
+        "direction": "smudge",
+        "pressure": "heavy"
+      },
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy"
     }
   ]
 }

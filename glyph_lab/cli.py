@@ -247,6 +247,7 @@ def main() -> None:
     body_ascii_parser.add_argument("--grid-width", type=int, default=128)
     body_ascii_parser.add_argument("--grid-height", type=int, default=192)
     body_ascii_parser.add_argument("--palette-size", type=int, default=8)
+    body_ascii_parser.add_argument("--palette-theme", choices=["source", "maroon"], default="source")
     body_ascii_parser.add_argument("--min-cell-coverage", type=float, default=0.05)
     body_ascii_parser.add_argument("--scale", type=int, default=2)
 
@@ -614,6 +615,7 @@ def main() -> None:
             grid_width=args.grid_width,
             grid_height=args.grid_height,
             palette_size=args.palette_size,
+            palette_theme=args.palette_theme,
             min_cell_coverage=args.min_cell_coverage,
             scale=args.scale,
         )

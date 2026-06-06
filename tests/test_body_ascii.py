@@ -28,16 +28,23 @@ class BodyAsciiTests(unittest.TestCase):
                 grid_width=16,
                 grid_height=24,
                 palette_size=4,
+                palette_theme="maroon",
                 scale=1,
             )
 
             self.assertEqual(manifest["schema"], "glyph_lab.body_ascii_proof.v0")
+            self.assertEqual(manifest["palette_theme"], "maroon")
             self.assertGreater(manifest["occupied_cells"], 0)
             self.assertTrue((root / "body_ascii" / "body_ascii.txt").exists())
+            self.assertTrue((root / "body_ascii" / "body_ink_source.png").exists())
             self.assertTrue((root / "body_ascii" / "body_palette.json").exists())
             self.assertTrue((root / "body_ascii" / "body_ascii_glyph_proof.png").exists())
+            self.assertTrue((root / "body_ascii" / "body_ascii_solid_proof.png").exists())
             self.assertTrue((root / "body_ascii" / "body_ascii_contact_sheet.png").exists())
+            self.assertIn("solid_render_result", manifest)
+            self.assertGreater(manifest["solid_render_result"]["gate"]["filled_cells"], 0)
             palette = json.loads((root / "body_ascii" / "body_palette.json").read_text(encoding="utf-8"))
+            self.assertEqual(palette["palette_theme"], "maroon")
             self.assertLessEqual(len(palette["palette"]), 4)
 
     def test_body_ascii_grid_uses_spaces_outside_body(self):
@@ -85,6 +92,8 @@ class BodyAsciiTests(unittest.TestCase):
                     "24",
                     "--palette-size",
                     "4",
+                    "--palette-theme",
+                    "maroon",
                     "--scale",
                     "1",
                 ],
@@ -94,7 +103,9 @@ class BodyAsciiTests(unittest.TestCase):
 
             payload = json.loads((out / "body_ascii_manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(payload["schema"], "glyph_lab.body_ascii_proof.v0")
+            self.assertEqual(payload["palette_theme"], "maroon")
             self.assertTrue((out / "body_ascii_glyph_proof.png").exists())
+            self.assertTrue((out / "body_ascii_solid_proof.png").exists())
 
 
 def _write_body_recipe(root: Path) -> Path:

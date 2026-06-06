@@ -954,7 +954,8 @@ language before attempting 3D volume work:
 python3 -m glyph_lab.cli render-body-ascii-proof \
   --mannequin out_mannequin/mannequin_recipe.json \
   --out out_body_ascii \
-  --palette-size 8
+  --palette-size 8 \
+  --palette-theme source
 ```
 
 Writes:
@@ -964,13 +965,19 @@ Writes:
 - `body_ascii_palette.txt`
 - `body_palette.json`
 - `body_ascii_glyph_proof.png`
+- `body_ascii_solid_proof.png`
 - `body_ascii_contact_sheet.png`
 - `body_ascii_manifest.json`
 
 This pass uses the original shaded mannequin cutouts, not the region-ID colors.
 The ASCII grid stores body tone/shape, and the glyph renderer samples a reduced
 mannequin palette for ink. That gives a 2D proof of silhouette, shading, and
-body readability before using the measurements for Blender-style blocking.
+body readability before using the measurements for Blender-style blocking. The
+contact sheet includes both a tonal glyph proof and a solid-cell proof that
+forces occupied body cells through the solid fill glyph.
+
+Use `--palette-theme maroon` to remap the source luminance into maroon and red
+tones while preserving the relative shadow/highlight structure.
 
 Use `fit-skeleton` when the skeleton needs to be measured instead of merely
 drawn:

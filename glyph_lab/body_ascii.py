@@ -10,6 +10,19 @@ from .ascii_glyph_renderer import render_ascii_glyphs
 
 
 DEFAULT_SHADE_RAMP = ".*,qpbdxChs^_[]:S;#"
+PALETTE_THEMES = {
+    "source": None,
+    "maroon": (
+        (42, 6, 16),
+        (74, 11, 24),
+        (110, 16, 34),
+        (140, 29, 45),
+        (168, 50, 62),
+        (197, 83, 90),
+        (223, 133, 128),
+        (241, 187, 176),
+    ),
+}
 
 
 def render_body_ascii_proof(
@@ -23,6 +36,7 @@ def render_body_ascii_proof(
     grid_width: int = 128,
     grid_height: int = 192,
     palette_size: int = 8,
+    palette_theme: str = "source",
     min_cell_coverage: float = 0.05,
     scale: int = 2,
 ) -> dict[str, Any]:
@@ -34,6 +48,8 @@ def render_body_ascii_proof(
         raise ValueError("min cell coverage must be greater than 0 and at most 1")
     if scale < 1:
         raise ValueError("scale must be at least 1")
+    if palette_theme not in PALETTE_THEMES:
+        raise ValueError(f"unknown palette theme {palette_theme!r}; expected one of {sorted(PALETTE_THEMES)}")
 
     output = Path(output_path)
     output.mkdir(parents=True, exist_ok=True)
@@ -50,6 +66,7 @@ def render_body_ascii_proof(
 
     shade_ramp = _load_shade_ramp(shade_ramp_path)
     shaded_source = _render_shaded_source(width, height, parts)
+    ink_source = _recolor_by_luminance(shaded_source, PALETTE_THEMES[palette_theme]) if palette_theme != "source" else shaded_source
     ascii_rows, ascii_summary = _image_to_ascii_rows(
         shaded_source,
         shade_ramp,
@@ -59,14 +76,17 @@ def render_body_ascii_proof(
     )
 
     shaded_source_path = output / "body_shaded_source.png"
+    ink_source_path = output / "body_ink_source.png"
     ascii_path = output / "body_ascii.txt"
     ascii_palette_path = output / "body_ascii_palette.txt"
     proof_path = output / "body_ascii_glyph_proof.png"
+    solid_proof_path = output / "body_ascii_solid_proof.png"
     contact_sheet_path = output / "body_ascii_contact_sheet.png"
     palette_json_path = output / "body_palette.json"
     manifest_path = output / "body_ascii_manifest.json"
 
     shaded_source.save(shaded_source_path)
+    ink_source.save(ink_source_path)
     ascii_path.write_text("\n".join(ascii_rows) + "\n", encoding="utf-8")
     ascii_palette_path.write_text(shade_ramp + "\n", encoding="utf-8")
 
@@ -76,7 +96,7 @@ def render_body_ascii_proof(
         atlas_path,
         proof_path,
         mapping_path=mapping_path,
-        gate_image_path=shaded_source_path,
+        gate_image_path=ink_source_path,
         gate_mode="alpha",
         gate_threshold=1,
         gate_dilate=0,
@@ -85,10 +105,26 @@ def render_body_ascii_proof(
         ink_palette_size=palette_size,
         scale=scale,
     )
+    solid_render_result = render_ascii_glyphs(
+        ascii_path,
+        glyphs_path,
+        atlas_path,
+        solid_proof_path,
+        mapping_path=mapping_path,
+        gate_image_path=ink_source_path,
+        gate_mode="alpha",
+        gate_threshold=1,
+        gate_dilate=0,
+        gate_fill_token="#",
+        ink_mode="threshold-sampled",
+        ink_palette_size=palette_size,
+        scale=scale,
+    )
     reduced_palette = render_result.get("ink", {}).get("reduced_palette", [])
     palette_payload = {
         "schema": "glyph_lab.body_palette.v0",
-        "source_image": str(shaded_source_path),
+        "source_image": str(ink_source_path),
+        "palette_theme": palette_theme,
         "palette_size_requested": palette_size,
         "palette": reduced_palette,
         "rule": "palette is reduced from shaded mannequin cutouts, not from region-id colors",
@@ -98,7 +134,9 @@ def render_body_ascii_proof(
     _write_contact_sheet(
         [
             ("shaded source", shaded_source),
-            ("glyph body proof", Image.open(proof_path).convert("RGBA")),
+            ("ink source", ink_source),
+            ("tonal glyph proof", Image.open(proof_path).convert("RGBA")),
+            ("solid cell proof", Image.open(solid_proof_path).convert("RGBA")),
         ],
         contact_sheet_path,
     )
@@ -108,6 +146,7 @@ def render_body_ascii_proof(
         "source_mannequin": str(recipe_path),
         "grid": {"width": grid_width, "height": grid_height},
         "shade_ramp": shade_ramp,
+        "palette_theme": palette_theme,
         "min_cell_coverage": min_cell_coverage,
         "occupied_cells": ascii_summary["occupied_cells"],
         "luminance_range": ascii_summary["luminance_range"],
@@ -115,12 +154,15 @@ def render_body_ascii_proof(
         "atlas": str(atlas_path),
         "mapping": str(mapping_path) if mapping_path is not None else None,
         "render_result": render_result,
+        "solid_render_result": solid_render_result,
         "outputs": {
             "shaded_source": str(shaded_source_path),
+            "ink_source": str(ink_source_path),
             "ascii": str(ascii_path),
             "ascii_palette": str(ascii_palette_path),
             "palette": str(palette_json_path),
             "glyph_proof": str(proof_path),
+            "solid_proof": str(solid_proof_path),
             "contact_sheet": str(contact_sheet_path),
             "manifest": str(manifest_path),
         },
@@ -204,6 +246,47 @@ def _image_to_ascii_rows(
         "occupied_cells": occupied_cells,
         "luminance_range": [round(low, 2), round(high, 2)],
     }
+
+
+def _recolor_by_luminance(image: Image.Image, palette: tuple[tuple[int, int, int], ...] | None) -> Image.Image:
+    if palette is None:
+        return image
+    luminances = []
+    source = image.convert("RGBA")
+    pixels = source.load()
+    for y in range(source.height):
+        for x in range(source.width):
+            red, green, blue, alpha = pixels[x, y]
+            if alpha:
+                luminances.append(_luminance((red, green, blue)))
+    if not luminances:
+        return source
+    low = min(luminances)
+    high = max(luminances)
+    output = Image.new("RGBA", source.size, (255, 255, 255, 0))
+    target = output.load()
+    for y in range(source.height):
+        for x in range(source.width):
+            red, green, blue, alpha = pixels[x, y]
+            if not alpha:
+                continue
+            luminance = _luminance((red, green, blue))
+            color = _palette_color(luminance, palette, low, high)
+            target[x, y] = (*color, alpha)
+    return output
+
+
+def _palette_color(
+    luminance: float,
+    palette: tuple[tuple[int, int, int], ...],
+    low: float,
+    high: float,
+) -> tuple[int, int, int]:
+    if len(palette) == 1 or high <= low:
+        return palette[-1]
+    normalized_lightness = (luminance - low) / (high - low)
+    index = int(round(normalized_lightness * (len(palette) - 1)))
+    return palette[max(0, min(len(palette) - 1, index))]
 
 
 def _shade_char(luminance: float, shade_ramp: str, low: float, high: float) -> str:

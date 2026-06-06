@@ -16,6 +16,7 @@ from .candidate_filter import write_candidate_review
 from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
+from .linework_analyzer import analyze_linework_image
 from .linework_candidates import write_linework_review
 from .measurement_pass import write_art_pass_measurements
 from .motion_taxonomy import write_linework_motion_coverage
@@ -56,6 +57,17 @@ def main() -> None:
     probe_parser.add_argument("--image", required=True)
     probe_parser.add_argument("--out", default="out_probe")
     probe_parser.add_argument("--grid-size", type=int, default=32)
+
+    linework_image_parser = subparsers.add_parser(
+        "analyze-linework-image",
+        help="analyze image linework into a motion-declared layered grid",
+    )
+    linework_image_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    linework_image_parser.add_argument("--image", required=True)
+    linework_image_parser.add_argument("--out", default="out_linework_motion")
+    linework_image_parser.add_argument("--grid-size", type=int, default=32)
+    linework_image_parser.add_argument("--glyphs")
+    linework_image_parser.add_argument("--atlas")
 
     profile_parser = subparsers.add_parser("measure-profile", help="measure a silhouette profile from an image")
     profile_parser.add_argument("--image", required=True)
@@ -180,6 +192,17 @@ def main() -> None:
 
     if args.command == "probe-image":
         probe_image_to_layers(args.image, pack, args.out, grid_size=args.grid_size)
+        return
+
+    if args.command == "analyze-linework-image":
+        analyze_linework_image(
+            args.image,
+            pack,
+            args.out,
+            grid_size=args.grid_size,
+            glyphs_path=args.glyphs,
+            atlas_path=args.atlas,
+        )
         return
 
     if args.command == "measure-profile":

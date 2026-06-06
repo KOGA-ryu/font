@@ -117,6 +117,15 @@ class CompositorTests(unittest.TestCase):
             self.assertEqual(manifest["constraint_warnings"][0]["layer"], "edge")
             self.assertEqual(manifest["constraint_warnings"][0]["token"], "#")
 
+    def test_linework_layer_accepts_edge_glyphs_without_warning(self):
+        with prepared_pack() as pack:
+            path = write_layered(pack, 1, 1, [{"name": "linework", "grid": ["-"]}])
+
+            manifest = compile_layered_grid(pack / "atlas.png", pack / "glyphs.json", path, pack / "out")
+
+            self.assertEqual(manifest["constraint_warnings"], [])
+            self.assertTrue((pack / "out" / "layers" / "linework.png").exists())
+
     def test_old_flat_compile_still_works(self):
         with prepared_pack() as pack:
             grid = pack / "flat.txt"

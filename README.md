@@ -41,6 +41,23 @@ grayscale or RGB image into mass, value, and edge evidence layers, maps those
 layers to existing glyph tokens, and compiles the generated layered grid through
 the same compositor.
 
+The linework image analyzer declares stroke motion during image processing:
+
+```text
+image
+-> sampled linework evidence
+-> per-cell motion declarations
+-> motion-aware glyph selection
+-> linework layered grid
+-> compositor proof
+```
+
+This path writes a dedicated `linework` layer. Each non-empty cell records the
+motion it asks for: topology, angle, speed, pressure, stress, dwell, release,
+rhythm, continuity, confidence, selected token, and selected glyph. The image
+processor declares the motion; the glyph pack answers with the closest reusable
+stroke atom.
+
 The first profile measurement pass stays grid-based:
 
 ```text
@@ -301,6 +318,29 @@ python3 -m glyph_lab.cli linework-coverage \
 
 This writes a coverage report grouped by motion package and motion profile. Use
 that report before adding package generators or proposing an 8x8 escalation.
+
+## Analyze Image Linework Motion
+
+```sh
+python3 -m glyph_lab.cli analyze-linework-image \
+  --pack packs/stone_architecture_4x4 \
+  --image examples/probe_cracked_stone_slab.png \
+  --out out_linework_motion \
+  --grid-size 32
+```
+
+Writes:
+
+- `out_linework_motion/linework_evidence.json`
+- `out_linework_motion/generated_motion_layered_grid.json`
+- `out_linework_motion/motion_selection_report.json`
+- `out_linework_motion/proof_128.png`
+- `out_linework_motion/layers/linework.png`
+- `out_linework_motion/manifest.json`
+
+If `glyphs.promoted.json` and `atlas.promoted.png` exist, this command uses
+them by default. Otherwise it falls back to the active `glyphs.json` and
+`atlas.png`. Use `--glyphs` and `--atlas` to override that choice.
 
 The palette files are meant for
 `/Users/kogaryu/gameguy-3d-lab/image_to_ascii_workbench_v3`. Use them with

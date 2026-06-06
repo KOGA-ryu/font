@@ -41,6 +41,20 @@ class BrushCandidateTests(unittest.TestCase):
             self.assertEqual(len(bridge["spray_palette"]), len(set(bridge["spray_palette"])))
             self.assertGreaterEqual(len(bridge["texture_palette"]), len(bridge["spray_palette"]))
             self.assertIn("mapping", bridge)
+            self.assertIn("skipped_bridge_candidates", bridge)
+
+    def test_brush_candidates_include_damage_detail_packages(self):
+        candidates = generate_brush_candidates()
+        families = {candidate["brush_family"] for candidate in candidates}
+        scratch = next(candidate for candidate in candidates if candidate["brush_family"] == "scratch")
+        chip = next(candidate for candidate in candidates if candidate["brush_family"] == "chip")
+
+        self.assertIn("scratch", families)
+        self.assertIn("chip", families)
+        self.assertEqual(scratch["family"], "damage")
+        self.assertEqual(scratch["brush_engine"], "incised-mark")
+        self.assertEqual(chip["family"], "damage")
+        self.assertEqual(chip["brush_engine"], "edge-damage")
 
     def test_cli_generate_brushes_writes_review_artifacts(self):
         with TemporaryDirectory() as tmp:

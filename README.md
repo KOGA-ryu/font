@@ -197,9 +197,11 @@ brush tip / shape
 ```
 
 The generated brush families are `hatch`, `crosshatch`, `stipple`, `spray`,
-`charcoal`, `dry_brush`, and `grain`. These are modeled after common digital
-brush controls: tip shape, density, scatter direction, roughness, coverage, and
-grain. They are still deterministic 4x4 glyph stamps, not a paint engine.
+`charcoal`, `dry_brush`, `grain`, `scratch`, and `chip`. These are modeled
+after common digital brush controls: tip shape, density, scatter direction,
+roughness, coverage, grain, incised marks, and chipped-edge damage. They are
+still deterministic 4x4 glyph stamps, not a paint engine, and they are not
+hardcoded to a slab, crack, column, or single object.
 
 ## Transform and equivalence model
 
@@ -403,8 +405,11 @@ Writes review-only brush artifacts:
 - `packs/stone_architecture_4x4/ascii_spray_palette.txt`
 - `packs/stone_architecture_4x4/ascii_brush_mapping.json`
 
-Use the texture palette for hatching, crosshatching, charcoal, dry-brush, and
-grain-like image passes. Use the spray palette for stipple/scatter passes.
+Use the texture palette for hatching, crosshatching, charcoal, dry-brush, grain,
+scratch, and chipped-edge detail passes. Use the spray palette for
+stipple/scatter passes. If the accepted brush set exceeds the printable ASCII
+bridge pool, the overflow remains in `brush_accepted_candidates.json` and is
+listed under `skipped_bridge_candidates` in `ascii_brush_mapping.json`.
 
 When passing the linework palette on the command line, use the equals form
 because the palette may begin with `-`:
@@ -523,6 +528,20 @@ python3 -m glyph_lab.cli promote-candidates \
 
 That cumulative dry-run keeps active `glyphs.json` untouched while letting the
 proof pack contain linework and texture brush glyphs at the same time.
+
+Texture/detail package promotions can be stacked after the brush promotion
+rounds:
+
+```sh
+python3 -m glyph_lab.cli promote-candidates \
+  --pack packs/stone_architecture_4x4 \
+  --base-glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --accepted packs/stone_architecture_4x4/brush_accepted_candidates.json \
+  --request packs/stone_architecture_4x4/texture_detail_promote_candidates.json
+```
+
+This promotes representative scratch and chip glyphs into the dry-run pack
+without mutating `glyphs.json`.
 
 Build an atlas for the dry-run promoted pack:
 

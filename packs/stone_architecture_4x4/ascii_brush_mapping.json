@@ -1,5 +1,5 @@
 {
-  "texture_palette": "=?*BI@,UxAHNRW47!&)EKOV58$'QYgk69%(:DGJMZPlXm;FLeifj",
+  "texture_palette": "=?`*BI@~,U{}/xAHNRW47!&)EKOV58$'QYgk69%(:DGJMZPlXm;FLeifj",
   "spray_palette": "rzo0vw13y2",
   "mapping": {
     "#": {
@@ -213,18 +213,18 @@
       "bridge_only": false
     },
     "x": {
-      "glyph_id": "4.stone.detail.damage.crack_short_30",
-      "token": "x",
+      "glyph_id": "4.stone.brush.chip.chip_right_large_4103",
+      "token": "",
       "role": "detail",
       "family": "damage",
       "layer": "detail",
       "palette_role": "crack",
-      "source": "active_pack",
-      "brush_family": null,
-      "brush_engine": null,
-      "density_class": null,
+      "source": "brush_geometry",
+      "brush_family": "chip",
+      "brush_engine": "edge-damage",
+      "density_class": "large",
       "ascii_fallback": "x",
-      "bridge_only": false
+      "bridge_only": true
     },
     "A": {
       "glyph_id": "4.stone.brush.hatch.hatch_horizontal_light_4000",
@@ -1023,11 +1023,108 @@
       "density_class": "light",
       "ascii_fallback": "\\",
       "bridge_only": true
+    },
+    "`": {
+      "glyph_id": "4.stone.brush.scratch.scratch_horizontal_short_broken_4083",
+      "token": "",
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "scratch",
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "-",
+      "bridge_only": true
+    },
+    "{": {
+      "glyph_id": "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
+      "token": "",
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "scratch",
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "-",
+      "bridge_only": true
+    },
+    "}": {
+      "glyph_id": "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
+      "token": "",
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "scratch",
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "|",
+      "bridge_only": true
+    },
+    "~": {
+      "glyph_id": "4.stone.brush.scratch.scratch_diagonal_rise_short_4090",
+      "token": "",
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "scratch",
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "/",
+      "bridge_only": true
+    },
+    "/": {
+      "glyph_id": "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
+      "token": "",
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "scratch",
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "/",
+      "bridge_only": true
     }
   },
+  "skipped_bridge_candidates": [
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_left_small_4098",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_left_medium_4099",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_left_large_4100",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_right_small_4101",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_right_large_4103",
+      "reason": "ascii-bridge-pool-exhausted"
+    }
+  ],
   "notes": [
     "Brush palettes model digital brush concepts as 4x4 glyph stamps.",
     "Texture palettes cover hatch, crosshatch, charcoal, dry brush, and grain.",
-    "Spray palettes cover stipple and scatter-style glyphs."
+    "Spray palettes cover stipple and scatter-style glyphs.",
+    "Accepted candidates can exceed the printable ASCII bridge pool; skipped bridge candidates remain reviewable."
   ]
 }

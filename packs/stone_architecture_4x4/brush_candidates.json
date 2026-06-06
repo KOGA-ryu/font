@@ -5465,6 +5465,2266 @@
       "brush_engine": "grain",
       "density_class": "checker",
       "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_horizontal_short_4082",
+      "token": "",
+      "index": 4082,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 96
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "horizontal",
+        "length": "short"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "horizontal",
+        "length": "short"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_horizontal_short_broken_4083",
+      "token": "",
+      "index": 4083,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 1,
+          "bottom": 1
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 32
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "horizontal",
+        "length": "short",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "horizontal",
+        "length": "short",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_horizontal_long_4084",
+      "token": "",
+      "index": 4084,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 240
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "horizontal",
+        "length": "long"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "horizontal",
+        "length": "long"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
+      "token": "",
+      "index": 4085,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 176
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "horizontal",
+        "length": "long",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "horizontal",
+        "length": "long",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "-"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_vertical_short_4086",
+      "token": "",
+      "index": 4086,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 544
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "vertical",
+        "length": "short"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "vertical",
+        "length": "short"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_vertical_short_broken_4087",
+      "token": "",
+      "index": 4087,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 1,
+          "bottom": 1
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 32
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "vertical",
+        "length": "short",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "vertical",
+        "length": "short",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_vertical_long_4088",
+      "token": "",
+      "index": 4088,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8738
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "vertical",
+        "length": "long"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "vertical",
+        "length": "long"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
+      "token": "",
+      "index": 4089,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8226
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "vertical",
+        "length": "long",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "vertical",
+        "length": "long",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "|"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_rise_short_4090",
+      "token": "",
+      "index": 4090,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 576
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "length": "short"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_rise",
+        "length": "short"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_rise_short_broken_4091",
+      "token": "",
+      "index": 4091,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 1,
+          "top": 2,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 512
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "length": "short",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_rise",
+        "length": "short",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_rise_long_4092",
+      "token": "",
+      "index": 4092,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 4680
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "length": "long"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_rise",
+        "length": "long"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
+      "token": "",
+      "index": 4093,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 4616
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "length": "long",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_rise",
+        "length": "long",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "/"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_fall_short_4094",
+      "token": "",
+      "index": 4094,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 1056
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "length": "short"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_fall",
+        "length": "short"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_fall_short_broken_4095",
+      "token": "",
+      "index": 4095,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 1,
+          "bottom": 1
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 32
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "length": "short",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_fall",
+        "length": "short",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "short",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_fall_long_4096",
+      "token": "",
+      "index": 4096,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 33825
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "length": "long"
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_fall",
+        "length": "long"
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.brush.scratch.scratch_diagonal_fall_long_broken_4097",
+      "token": "",
+      "index": 4097,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 32801
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_fall",
+        "length": "long",
+        "broken": true
+      },
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_fall",
+        "length": "long",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long",
+      "ascii_fallback": "\\"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_left_small_4098",
+      "token": "",
+      "index": 4098,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 0.3333333333333333,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 304
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "left",
+        "size": "small"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "left",
+        "size": "small"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "small",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_left_medium_4099",
+      "token": "",
+      "index": 4099,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 816
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "left",
+        "size": "medium"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "left",
+        "size": "medium"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_left_large_4100",
+      "token": "",
+      "index": 4100,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 0.6666666666666666,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 4976
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "left",
+        "size": "large"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "left",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_right_small_4101",
+      "token": "",
+      "index": 4101,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 2,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 2.6666666666666665,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3200
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "right",
+        "size": "small"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "right",
+        "size": "small"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "small",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_right_medium_4102",
+      "token": "",
+      "index": 4102,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 2,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3264
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "right",
+        "size": "medium"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "right",
+        "size": "medium"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_right_large_4103",
+      "token": "",
+      "index": 4103,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 2.3333333333333335,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.75,
+          "bottom_left": 0.25,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3784
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "right",
+        "size": "large"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "right",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_top_small_4104",
+      "token": "",
+      "index": 4104,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 1
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 38
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "top",
+        "size": "small"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "top",
+        "size": "small"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "small",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_top_medium_4105",
+      "token": "",
+      "index": 4105,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 102
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "top",
+        "size": "medium"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "top",
+        "size": "medium"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_top_large_4106",
+      "token": "",
+      "index": 4106,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 0.6666666666666666,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 622
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "top",
+        "size": "large"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "top",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_bottom_small_4107",
+      "token": "",
+      "index": 4107,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 2,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 2.6666666666666665,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 25600
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "bottom",
+        "size": "small"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "bottom",
+        "size": "small"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "small",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_bottom_medium_4108",
+      "token": "",
+      "index": 4108,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 2,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 26112
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "bottom",
+        "size": "medium"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "bottom",
+        "size": "medium"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_bottom_large_4109",
+      "token": "",
+      "index": 4109,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 2.3333333333333335,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.75,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 30272
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "bottom",
+        "size": "large"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "bottom",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_corner_top_left_small_4110",
+      "token": "",
+      "index": 4110,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 1
+        },
+        "centroid_x": 0.3333333333333333,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 19
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "corner_top_left",
+        "size": "small"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "corner_top_left",
+        "size": "small"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "small",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_corner_top_left_medium_4111",
+      "token": "",
+      "index": 4111,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 1
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 51
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "corner_top_left",
+        "size": "medium"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "corner_top_left",
+        "size": "medium"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_corner_top_left_large_4112",
+      "token": "",
+      "index": 4112,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 0.6666666666666666,
+        "centroid_y": 0.6666666666666666,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 311
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "corner_top_left",
+        "size": "large"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "corner_top_left",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_corner_bottom_right_small_4113",
+      "token": "",
+      "index": 4113,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 2,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.6666666666666665,
+        "centroid_y": 2.6666666666666665,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 51200
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "corner_bottom_right",
+        "size": "small"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "corner_bottom_right",
+        "size": "small"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "small",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_corner_bottom_right_medium_4114",
+      "token": "",
+      "index": 4114,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 2,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 2.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 52224
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "corner_bottom_right",
+        "size": "medium"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "corner_bottom_right",
+        "size": "medium"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "medium",
+      "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.chip.chip_corner_bottom_right_large_4115",
+      "token": "",
+      "index": 4115,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.3333333333333335,
+        "centroid_y": 2.3333333333333335,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 60544
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "corner_bottom_right",
+        "size": "large"
+      },
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "corner_bottom_right",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large",
+      "ascii_fallback": "x"
     }
   ]
 }

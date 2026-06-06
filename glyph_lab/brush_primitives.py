@@ -9,7 +9,17 @@ from .primitives import INK
 from .schema import CELL_SIZE
 
 
-BRUSH_FAMILIES = {"hatch", "crosshatch", "stipple", "spray", "charcoal", "dry_brush", "grain"}
+BRUSH_FAMILIES = {
+    "hatch",
+    "crosshatch",
+    "stipple",
+    "spray",
+    "charcoal",
+    "dry_brush",
+    "grain",
+    "scratch",
+    "chip",
+}
 
 
 def brush_stamp(
@@ -30,6 +40,10 @@ def brush_stamp(
         return charcoal(**params, color=color)
     if brush_family == "dry_brush":
         return dry_brush(**params, color=color)
+    if brush_family == "scratch":
+        return scratch(**params, color=color)
+    if brush_family == "chip":
+        return chip(**params, color=color)
     return grain(**params, color=color)
 
 
@@ -177,6 +191,63 @@ def grain(
     return _stamp(coords, color)
 
 
+def scratch(
+    direction: str = "horizontal",
+    length: str = "short",
+    broken: bool = False,
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice("direction", direction, {"horizontal", "vertical", "diagonal_rise", "diagonal_fall"})
+    _require_choice("length", length, {"short", "long"})
+    if direction == "horizontal":
+        coords = {(1, 1), (2, 1)} if length == "short" else {(0, 1), (1, 1), (2, 1), (3, 1)}
+    elif direction == "vertical":
+        coords = {(1, 1), (1, 2)} if length == "short" else {(1, 0), (1, 1), (1, 2), (1, 3)}
+    elif direction == "diagonal_rise":
+        coords = {(1, 2), (2, 1)} if length == "short" else {(0, 3), (1, 2), (2, 1), (3, 0)}
+    else:
+        coords = {(1, 1), (2, 2)} if length == "short" else {(0, 0), (1, 1), (2, 2), (3, 3)}
+    if broken:
+        coords = _broken_scratch_coords(direction, coords)
+    return _stamp(sorted(coords), color)
+
+
+def chip(
+    edge: str = "left",
+    size: str = "small",
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice("edge", edge, {"left", "right", "top", "bottom", "corner_top_left", "corner_bottom_right"})
+    _require_choice("size", size, {"small", "medium", "large"})
+    coords = {
+        "left": {(0, 1), (0, 2), (1, 1)},
+        "right": {(3, 1), (3, 2), (2, 2)},
+        "top": {(1, 0), (2, 0), (1, 1)},
+        "bottom": {(1, 3), (2, 3), (2, 2)},
+        "corner_top_left": {(0, 0), (1, 0), (0, 1)},
+        "corner_bottom_right": {(3, 3), (2, 3), (3, 2)},
+    }[edge]
+    if size in {"medium", "large"}:
+        coords |= {
+            "left": {(1, 2)},
+            "right": {(2, 1)},
+            "top": {(2, 1)},
+            "bottom": {(1, 2)},
+            "corner_top_left": {(1, 1)},
+            "corner_bottom_right": {(2, 2)},
+        }[edge]
+    if size == "large":
+        coords |= {
+            "left": {(0, 3), (2, 1)},
+            "right": {(3, 0), (1, 2)},
+            "top": {(3, 0), (1, 2)},
+            "bottom": {(0, 3), (2, 1)},
+            "corner_top_left": {(2, 0), (0, 2)},
+            "corner_bottom_right": {(1, 3), (3, 1)},
+        }[edge]
+    return _stamp(sorted(coords), color)
+
+
 def default_brush_specs() -> list[dict[str, Any]]:
     specs = []
     for angle in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall"):
@@ -199,6 +270,27 @@ def default_brush_specs() -> list[dict[str, Any]]:
             specs.append(_spec("dry_brush", f"dry_brush_{direction}_{coverage}", {"direction": direction, "coverage": coverage}, family="dry_brush"))
     for kind in ("paper", "noise", "fibers", "checker"):
         specs.append(_spec("grain", f"grain_{kind}", {"kind": kind, "seed": 23}, family="grain"))
+    for direction in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall"):
+        for length in ("short", "long"):
+            specs.append(
+                _spec(
+                    "scratch",
+                    f"scratch_{direction}_{length}",
+                    {"direction": direction, "length": length},
+                    family="damage",
+                )
+            )
+            specs.append(
+                _spec(
+                    "scratch",
+                    f"scratch_{direction}_{length}_broken",
+                    {"direction": direction, "length": length, "broken": True},
+                    family="damage",
+                )
+            )
+    for edge in ("left", "right", "top", "bottom", "corner_top_left", "corner_bottom_right"):
+        for size in ("small", "medium", "large"):
+            specs.append(_spec("chip", f"chip_{edge}_{size}", {"edge": edge, "size": size}, family="damage"))
     return specs
 
 
@@ -208,7 +300,14 @@ def brush_metadata(spec: dict[str, Any]) -> dict[str, Any]:
         "brush_family": spec["brush_family"],
         "brush_params": params,
         "brush_engine": _engine_for(spec["brush_family"]),
-        "density_class": params.get("density") or params.get("coverage") or params.get("roughness") or params.get("kind"),
+        "density_class": (
+            params.get("density")
+            or params.get("coverage")
+            or params.get("roughness")
+            or params.get("kind")
+            or params.get("length")
+            or params.get("size")
+        ),
         "ascii_fallback": _fallback_for(spec),
     }
 
@@ -238,6 +337,10 @@ def _engine_for(brush_family: str) -> str:
         return "scatter"
     if brush_family in {"charcoal", "dry_brush"}:
         return "broken-stroke"
+    if brush_family == "scratch":
+        return "incised-mark"
+    if brush_family == "chip":
+        return "edge-damage"
     if brush_family in {"hatch", "crosshatch"}:
         return "directional-stroke"
     return "grain"
@@ -246,13 +349,15 @@ def _engine_for(brush_family: str) -> str:
 def _fallback_for(spec: dict[str, Any]) -> str:
     family = spec["brush_family"]
     params = spec["params"]
-    if family in {"hatch", "dry_brush"}:
+    if family in {"hatch", "dry_brush", "scratch"}:
         angle = params.get("angle") or params.get("direction")
         return {"horizontal": "-", "vertical": "|", "diagonal_rise": "/", "diagonal_fall": "\\"}.get(angle, "x")
     if family == "crosshatch":
         return "+"
     if family in {"stipple", "spray", "grain"}:
         return "*"
+    if family == "chip":
+        return "x"
     return "x"
 
 
@@ -271,6 +376,16 @@ def _direction_bias(x: int, y: int, direction: str) -> float:
 def _coords(stamp: Image.Image) -> set[tuple[int, int]]:
     pixels = stamp.load()
     return {(x, y) for y in range(CELL_SIZE) for x in range(CELL_SIZE) if pixels[x, y][3] > 0}
+
+
+def _broken_scratch_coords(direction: str, coords: set[tuple[int, int]]) -> set[tuple[int, int]]:
+    if len(coords) <= 2:
+        return {coord for index, coord in enumerate(sorted(coords)) if index == 0}
+    if direction == "horizontal":
+        return {coord for coord in coords if coord[0] != 2}
+    if direction == "vertical":
+        return {coord for coord in coords if coord[1] != 2}
+    return {coord for index, coord in enumerate(sorted(coords)) if index != 2}
 
 
 def _stamp(coords: list[tuple[int, int]] | set[tuple[int, int]], color: tuple[int, int, int, int]) -> Image.Image:

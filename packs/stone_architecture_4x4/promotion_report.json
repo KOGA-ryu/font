@@ -1,26 +1,22 @@
 {
-  "promoted_count": 8,
+  "promoted_count": 6,
   "rejected_count": 0,
   "promoted_candidate_ids": [
-    "4.stone.brush.hatch.hatch_vertical_dense_broken_4011",
-    "4.stone.brush.crosshatch.crosshatch_x_dense_4026",
-    "4.stone.brush.charcoal.charcoal_bottom_light_4060",
-    "4.stone.brush.hatch.hatch_diagonal_fall_medium_broken_4021",
-    "4.stone.brush.hatch.hatch_diagonal_fall_dense_4022",
-    "4.stone.brush.dry_brush.dry_brush_diagonal_fall_light_4075",
-    "4.stone.brush.hatch.hatch_diagonal_fall_dense_broken_4023",
-    "4.stone.brush.charcoal.charcoal_chunk_light_4063"
+    "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
+    "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
+    "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
+    "4.stone.brush.chip.chip_left_medium_4099",
+    "4.stone.brush.chip.chip_left_large_4100",
+    "4.stone.brush.chip.chip_right_large_4103"
   ],
   "rejected_candidate_ids": [],
   "token_assignments": {
-    "4.stone.brush.hatch.hatch_vertical_dense_broken_4011": "M",
-    "4.stone.brush.crosshatch.crosshatch_x_dense_4026": "f",
-    "4.stone.brush.charcoal.charcoal_bottom_light_4060": "&",
-    "4.stone.brush.hatch.hatch_diagonal_fall_medium_broken_4021": "W",
-    "4.stone.brush.hatch.hatch_diagonal_fall_dense_4022": "X",
-    "4.stone.brush.dry_brush.dry_brush_diagonal_fall_light_4075": "@",
-    "4.stone.brush.hatch.hatch_diagonal_fall_dense_broken_4023": "Y",
-    "4.stone.brush.charcoal.charcoal_chunk_light_4063": ")"
+    "4.stone.brush.scratch.scratch_horizontal_long_broken_4085": "G",
+    "4.stone.brush.scratch.scratch_vertical_long_broken_4089": "J",
+    "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093": "K",
+    "4.stone.brush.chip.chip_left_medium_4099": "P",
+    "4.stone.brush.chip.chip_left_large_4100": "Q",
+    "4.stone.brush.chip.chip_right_large_4103": "R"
   },
   "apply": false,
   "backup_path": null,

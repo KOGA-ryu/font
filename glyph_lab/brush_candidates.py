@@ -74,7 +74,7 @@ def brush_ascii_bridge_payload(
     accepted_brushes: list[dict[str, Any]],
 ) -> dict[str, Any]:
     used_tokens = {record.get("token") for record in active_records if record.get("token")}
-    bridge_chars = _bridge_chars(accepted_brushes, used_tokens)
+    bridge_chars, skipped_bridge = _bridge_chars(accepted_brushes, used_tokens)
     active_texture = [
         record
         for record in active_records
@@ -114,24 +114,32 @@ def brush_ascii_bridge_payload(
         "texture_palette": _density_palette(texture_records),
         "spray_palette": _density_palette(spray_records),
         "mapping": mapping,
+        "skipped_bridge_candidates": skipped_bridge,
         "notes": [
             "Brush palettes model digital brush concepts as 4x4 glyph stamps.",
             "Texture palettes cover hatch, crosshatch, charcoal, dry brush, and grain.",
             "Spray palettes cover stipple and scatter-style glyphs.",
+            "Accepted candidates can exceed the printable ASCII bridge pool; skipped bridge candidates remain reviewable.",
         ],
     }
 
 
-def _bridge_chars(records: list[dict[str, Any]], used_tokens: set[str]) -> dict[str, str]:
+def _bridge_chars(records: list[dict[str, Any]], used_tokens: set[str]) -> tuple[dict[str, str], list[dict[str, str]]]:
     preferred = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     punctuation = "!$%&'()+,-./:;<=>?@[]^_`{}~"
     pool = [char for char in preferred + punctuation if char not in used_tokens and char != " "]
     assigned: dict[str, str] = {}
-    for record, char in zip([record for record in records if not record.get("token")], pool):
+    unassigned = [record for record in records if not record.get("token")]
+    for record, char in zip(unassigned, pool):
         assigned[record["id"]] = char
-    if len(assigned) < sum(1 for record in records if not record.get("token")):
-        raise ValueError("not enough ASCII bridge characters for brush candidates")
-    return assigned
+    skipped = [
+        {
+            "candidate_id": record["id"],
+            "reason": "ascii-bridge-pool-exhausted",
+        }
+        for record in unassigned[len(assigned):]
+    ]
+    return assigned, skipped
 
 
 def _with_bridge_char(record: dict[str, Any], bridge_chars: dict[str, str]) -> dict[str, Any]:

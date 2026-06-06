@@ -4457,6 +4457,432 @@
       },
       "brush_engine": "broken-stroke",
       "density_class": "light"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.scratch_horizontal_long_broken_4085_64",
+      "token": "G",
+      "index": 64,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 176
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "horizontal",
+        "length": "long",
+        "broken": true
+      },
+      "source_candidate_id": "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable texture/detail package: broken horizontal scratch.",
+      "ascii_fallback": "-",
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "horizontal",
+        "length": "long",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.scratch_vertical_long_broken_4089_65",
+      "token": "J",
+      "index": 65,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 1.0,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8226
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "vertical",
+        "length": "long",
+        "broken": true
+      },
+      "source_candidate_id": "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable texture/detail package: broken vertical scratch.",
+      "ascii_fallback": "|",
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "vertical",
+        "length": "long",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.scratch_diagonal_rise_long_broken_4093_66",
+      "token": "K",
+      "index": 66,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 4616
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "diagonal_rise",
+        "length": "long",
+        "broken": true
+      },
+      "source_candidate_id": "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable texture/detail package: broken diagonal scratch.",
+      "ascii_fallback": "/",
+      "brush_family": "scratch",
+      "brush_params": {
+        "direction": "diagonal_rise",
+        "length": "long",
+        "broken": true
+      },
+      "brush_engine": "incised-mark",
+      "density_class": "long"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.chip_left_medium_4099_67",
+      "token": "P",
+      "index": 67,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 1,
+          "bottom": 2
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 816
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "left",
+        "size": "medium"
+      },
+      "source_candidate_id": "4.stone.brush.chip.chip_left_medium_4099",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable texture/detail package: medium left-edge chip.",
+      "ascii_fallback": "x",
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "left",
+        "size": "medium"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "medium"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.chip_left_large_4100_68",
+      "token": "Q",
+      "index": 68,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 0.6666666666666666,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 4976
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "left",
+        "size": "large"
+      },
+      "source_candidate_id": "4.stone.brush.chip.chip_left_large_4100",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable texture/detail package: large left-edge chip.",
+      "ascii_fallback": "x",
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "left",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.chip_right_large_4103_69",
+      "token": "R",
+      "index": 69,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 2.3333333333333335,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.75,
+          "bottom_left": 0.25,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3784
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "edge": "right",
+        "size": "large"
+      },
+      "source_candidate_id": "4.stone.brush.chip.chip_right_large_4103",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable texture/detail package: large right-edge chip.",
+      "ascii_fallback": "x",
+      "brush_family": "chip",
+      "brush_params": {
+        "edge": "right",
+        "size": "large"
+      },
+      "brush_engine": "edge-damage",
+      "density_class": "large"
     }
   ]
 }

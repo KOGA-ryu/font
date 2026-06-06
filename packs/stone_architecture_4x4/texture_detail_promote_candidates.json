@@ -1,0 +1,39 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
+      "token": "G",
+      "notes": "Promote reusable texture/detail package: broken horizontal scratch."
+    },
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
+      "token": "J",
+      "notes": "Promote reusable texture/detail package: broken vertical scratch."
+    },
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
+      "token": "K",
+      "notes": "Promote reusable texture/detail package: broken diagonal scratch."
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_left_medium_4099",
+      "token": "P",
+      "notes": "Promote reusable texture/detail package: medium left-edge chip."
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_left_large_4100",
+      "token": "Q",
+      "notes": "Promote reusable texture/detail package: large left-edge chip."
+    },
+    {
+      "candidate_id": "4.stone.brush.chip.chip_right_large_4103",
+      "token": "R",
+      "notes": "Promote reusable texture/detail package: large right-edge chip."
+    }
+  ],
+  "metadata": {
+    "source": "texture_detail_package_v0",
+    "scope": "generic scratch and chipped-edge detail glyph packages",
+    "not_object_specific": true
+  }
+}

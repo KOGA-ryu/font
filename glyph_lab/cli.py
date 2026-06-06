@@ -30,6 +30,7 @@ from .linework_analyzer import analyze_linework_image
 from .linework_candidates import write_linework_review
 from .mannequin import build_mannequin_recipe
 from .mannequin_proof import render_mannequin_proof
+from .mannequin_recolor import recolor_mannequin_from_reference
 from .mannequin_template import generate_mannequin_template
 from .measurement_pass import write_art_pass_measurements
 from .motion_taxonomy import write_linework_motion_coverage
@@ -39,6 +40,7 @@ from .promotion import promote_candidates
 from .promoted_contact_sheet import generate_promoted_contact_sheet
 from .promoted_atlas import build_promoted_atlas
 from .reference_render import render_reference_style
+from .reference_fit import fit_reference_to_mannequin
 from .reference_style import build_reference_style_recipe
 from .review_export import generate_review_contact_sheet
 from .scaffold import measure_scaffold_image
@@ -250,6 +252,29 @@ def main() -> None:
     body_ascii_parser.add_argument("--palette-theme", choices=["source", "maroon"], default="source")
     body_ascii_parser.add_argument("--min-cell-coverage", type=float, default=0.05)
     body_ascii_parser.add_argument("--scale", type=int, default=2)
+
+    reference_fit_parser = subparsers.add_parser(
+        "fit-reference-to-mannequin",
+        help="crop and scale a reference character onto a mannequin target bbox",
+    )
+    reference_fit_parser.add_argument("--reference", required=True)
+    reference_fit_parser.add_argument("--mannequin", required=True)
+    reference_fit_parser.add_argument("--out", required=True)
+    reference_fit_parser.add_argument("--foreground-mode", choices=sorted(FOREGROUND_MODES), default="auto")
+    reference_fit_parser.add_argument("--foreground-alpha-threshold", type=int, default=1)
+    reference_fit_parser.add_argument("--foreground-background-threshold", type=int, default=28)
+    reference_fit_parser.add_argument("--target-padding", type=int, default=0)
+    reference_fit_parser.add_argument("--contact-scale", type=int, default=1)
+
+    mannequin_recolor_parser = subparsers.add_parser(
+        "recolor-mannequin-from-reference",
+        help="copy a mannequin and recolor it from a reference style palette",
+    )
+    mannequin_recolor_parser.add_argument("--mannequin", required=True)
+    mannequin_recolor_parser.add_argument("--style-recipe", required=True)
+    mannequin_recolor_parser.add_argument("--sprite-parts")
+    mannequin_recolor_parser.add_argument("--out", required=True)
+    mannequin_recolor_parser.add_argument("--outline-threshold", type=int, default=72)
 
     layer_recipe_parser = subparsers.add_parser(
         "render-layer-recipe",
@@ -618,6 +643,29 @@ def main() -> None:
             palette_theme=args.palette_theme,
             min_cell_coverage=args.min_cell_coverage,
             scale=args.scale,
+        )
+        return
+
+    if args.command == "fit-reference-to-mannequin":
+        fit_reference_to_mannequin(
+            args.reference,
+            args.mannequin,
+            args.out,
+            foreground_mode=args.foreground_mode,
+            foreground_alpha_threshold=args.foreground_alpha_threshold,
+            foreground_background_threshold=args.foreground_background_threshold,
+            target_padding=args.target_padding,
+            contact_scale=args.contact_scale,
+        )
+        return
+
+    if args.command == "recolor-mannequin-from-reference":
+        recolor_mannequin_from_reference(
+            args.mannequin,
+            args.style_recipe,
+            args.out,
+            sprite_parts_path=args.sprite_parts,
+            outline_threshold=args.outline_threshold,
         )
         return
 

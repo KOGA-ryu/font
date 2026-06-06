@@ -979,6 +979,55 @@ forces occupied body cells through the solid fill glyph.
 Use `--palette-theme maroon` to remap the source luminance into maroon and red
 tones while preserving the relative shadow/highlight structure.
 
+Use `fit-reference-to-mannequin` to place a dressed/reference character onto a
+front mannequin target before extracting reusable asset lanes:
+
+```sh
+python3 -m glyph_lab.cli fit-reference-to-mannequin \
+  --reference referenceguy.png \
+  --mannequin out_mannequin/mannequin_recipe.json \
+  --out out_reference_fit
+```
+
+Writes:
+
+- `mannequin_base.png`
+- `reference_cutout.png`
+- `fitted_reference.png`
+- `fit_overlay.png`
+- `reference_fit_contact_sheet.png`
+- `reference_fit_manifest.json`
+
+The fit is deliberately simple: crop foreground, scale uniformly, and anchor
+bottom-center to the mannequin body bbox. The manifest records the crop box,
+target bbox, scale, and paste position so later asset extraction can reuse the
+same alignment instead of guessing.
+
+Use `recolor-mannequin-from-reference` when the reference palette should drive
+the mannequin proof without copying the reference pose or pixels directly:
+
+```sh
+python3 -m glyph_lab.cli recolor-mannequin-from-reference \
+  --mannequin out_mannequin/mannequin_recipe.json \
+  --style-recipe out_reference_style/reference_style_recipe.json \
+  --sprite-parts out_sprite_parts/sprite_part_layers.json \
+  --out out_mannequin_recolor
+```
+
+Writes:
+
+- `mannequin_source_copy.png`
+- `mannequin_reference_recolored.png`
+- `reference_palette_swatches.png`
+- `mannequin_recolor_contact_sheet.png`
+- `mannequin_recolor_manifest.json`
+
+The recolor pass maps mannequin body parts to generic reference materials
+(`skin`, `blue`, `brown`, `gray`, and outline/dark colors), then remaps each
+part's original luminance into that material palette. This keeps the mannequin
+shape and shading readable while proving the reference color library can be
+applied to a reusable body rig.
+
 Use `fit-skeleton` when the skeleton needs to be measured instead of merely
 drawn:
 

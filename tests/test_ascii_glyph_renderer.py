@@ -304,6 +304,79 @@ class AsciiGlyphRendererTests(unittest.TestCase):
                     gate_fill_token="-",
                 )
 
+    def test_solid_ink_mode_tints_stamp(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            out = Path(tmp) / "render.png"
+            ascii_path.write_text("#\n", encoding="utf-8")
+
+            result = render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                ink_mode="solid",
+                ink_color="#000000",
+                scale=1,
+            )
+
+            self.assertEqual(result["ink"]["mode"], "solid")
+            with Image.open(out) as rendered:
+                self.assertEqual(set(_pixels(rendered)), {(0, 0, 0, 255)})
+
+    def test_solid_ink_mode_requires_color(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            ascii_path.write_text("#\n", encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "solid ink mode requires --ink-color"):
+                render_ascii_glyphs(
+                    ascii_path,
+                    pack / "glyphs.json",
+                    pack / "atlas.png",
+                    Path(tmp) / "render.png",
+                    ink_mode="solid",
+                )
+
+    def test_sampled_ink_mode_uses_gate_image_cell_color(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            gate_image = Path(tmp) / "colors.png"
+            out = Path(tmp) / "render.png"
+            ascii_path.write_text("##\n##\n", encoding="utf-8")
+            image = Image.new("RGBA", (2, 2), (0, 0, 0, 255))
+            image.putpixel((0, 0), (70, 45, 21, 255))
+            image.putpixel((1, 0), (85, 61, 37, 255))
+            image.putpixel((0, 1), (52, 31, 21, 255))
+            image.putpixel((1, 1), (77, 53, 41, 255))
+            image.save(gate_image)
+
+            result = render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                gate_image_path=gate_image,
+                gate_mode="alpha",
+                gate_threshold=1,
+                gate_dilate=0,
+                ink_mode="sampled",
+                scale=1,
+            )
+
+            self.assertEqual(result["ink"]["mode"], "sampled")
+            with Image.open(out) as rendered:
+                self.assertEqual(rendered.getpixel((0, 0)), (70, 45, 21, 255))
+                self.assertEqual(rendered.getpixel((4, 0)), (85, 61, 37, 255))
+                self.assertEqual(rendered.getpixel((0, 4)), (52, 31, 21, 255))
+                self.assertEqual(rendered.getpixel((4, 4)), (77, 53, 41, 255))
+
     def test_promoted_token_renders_from_promoted_atlas(self):
         with promoted_linework_pack() as pack:
             ascii_path = pack / "grid.txt"

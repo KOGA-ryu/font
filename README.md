@@ -542,6 +542,10 @@ For coverage passes, add `--gate-fill-token TOKEN`. That ignores sparse ASCII
 choices inside the mask and forces the same glyph into every kept gate cell,
 including spaces. For black dot coverage, use `--gate-mode black` with the
 chosen active dot token so every sampled black cell receives a dot stamp.
+Use `--ink-mode solid --ink-color '#000000'` when that layer must render as
+true black. Use `--ink-mode sampled` when the glyph stamp should inherit the
+sampled source-image cell color; this lets a brown-shade mask render as several
+actual browns instead of one flat atlas ink color.
 
 ```text
 image

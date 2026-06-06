@@ -14,6 +14,7 @@ from .schema import CELL_SIZE, load_glyphs
 
 DEFAULT_EDGE_ALIASES = {"─": "-", "│": "|"}
 GATE_MODES = {"alpha", "black", "luminance", "border-difference", "sample-colors"}
+INK_MODES = {"atlas", "solid", "sampled"}
 
 
 def render_ascii_glyphs(
@@ -31,11 +32,15 @@ def render_ascii_glyphs(
     gate_samples_path: str | Path | None = None,
     gate_samples_key: str = "eyedropper_samples",
     gate_fill_token: str | None = None,
+    ink_mode: str = "atlas",
+    ink_color: str | None = None,
     scale: int = 4,
     background: tuple[int, int, int, int] = (255, 255, 255, 255),
 ) -> dict[str, Any]:
     if scale < 1:
         raise ValueError("scale must be at least 1")
+    if ink_mode not in INK_MODES:
+        raise ValueError(f"unknown ink mode {ink_mode!r}; expected one of {sorted(INK_MODES)}")
 
     rows = Path(ascii_path).read_text(encoding="utf-8").splitlines()
     if not rows:
@@ -53,6 +58,12 @@ def render_ascii_glyphs(
     normalized_rows = [row.ljust(width) for row in rows]
     gate_mask = None
     gate_fill_resolved = None
+    solid_ink_color = _parse_hex_rgb(ink_color) if ink_mode == "solid" else None
+    if ink_mode == "solid" and solid_ink_color is None:
+        raise ValueError("solid ink mode requires --ink-color")
+    if ink_mode == "sampled" and gate_image_path is None:
+        raise ValueError("sampled ink mode requires --gate-image")
+    sampled_ink_colors = _sample_rgb_grid(gate_image_path, width, height) if ink_mode == "sampled" else None
     gate_sample_colors = _load_sample_colors(gate_samples_path, gate_samples_key) if gate_samples_path else None
     if gate_image_path is not None:
         gate_mask = image_gate_mask(
@@ -99,7 +110,15 @@ def render_ascii_glyphs(
             stamp = stamps.get(token)
             if stamp is None:
                 raise ValueError(f"Unknown glyph token {token!r} at row {row_index}, column {column_index}")
-            image.alpha_composite(stamp, ((column_index - 1) * cell_size, (row_index - 1) * cell_size))
+            ink_rgb = _ink_rgb(
+                ink_mode,
+                solid_ink_color=solid_ink_color,
+                sampled_ink_colors=sampled_ink_colors,
+                row_index=row_index,
+                column_index=column_index,
+            )
+            draw_stamp = _tint_stamp(stamp, ink_rgb) if ink_rgb is not None else stamp
+            image.alpha_composite(draw_stamp, ((column_index - 1) * cell_size, (row_index - 1) * cell_size))
             token_counts[token] += 1
 
     if scale != 1:
@@ -122,6 +141,11 @@ def render_ascii_glyphs(
         "output_height": image.height,
         "token_counts": dict(sorted(token_counts.items())),
         "fallback_counts": dict(sorted(fallback_counts.items())),
+        "ink": {
+            "mode": ink_mode,
+            "color": ink_color,
+            "source": str(gate_image_path) if ink_mode == "sampled" else None,
+        },
         "gate": _gate_summary(
             gate_mask,
             gate_image_path=gate_image_path,
@@ -245,6 +269,54 @@ def _load_sample_colors(path: str | Path, key: str) -> list[tuple[int, int, int]
             raise ValueError(f"sample color at index {index} is missing rgba")
         colors.append((int(rgba[0]), int(rgba[1]), int(rgba[2])))
     return colors
+
+
+def _sample_rgb_grid(image_path: str | Path | None, grid_width: int, grid_height: int) -> list[list[tuple[int, int, int]]]:
+    if image_path is None:
+        raise ValueError("sampled ink mode requires --gate-image")
+    with Image.open(image_path) as source:
+        sampled = source.convert("RGBA").resize((grid_width, grid_height), Image.Resampling.BOX)
+    pixels = sampled.load()
+    return [[pixels[x, y][:3] for x in range(grid_width)] for y in range(grid_height)]
+
+
+def _ink_rgb(
+    ink_mode: str,
+    *,
+    solid_ink_color: tuple[int, int, int] | None,
+    sampled_ink_colors: list[list[tuple[int, int, int]]] | None,
+    row_index: int,
+    column_index: int,
+) -> tuple[int, int, int] | None:
+    if ink_mode == "solid":
+        return solid_ink_color
+    if ink_mode == "sampled":
+        if sampled_ink_colors is None:
+            raise ValueError("sampled ink mode requires sampled colors")
+        return sampled_ink_colors[row_index - 1][column_index - 1]
+    return None
+
+
+def _tint_stamp(stamp: Image.Image, rgb: tuple[int, int, int]) -> Image.Image:
+    rgba = stamp.convert("RGBA")
+    _, _, _, alpha = rgba.split()
+    tinted = Image.new("RGBA", rgba.size, (*rgb, 0))
+    tinted.putalpha(alpha)
+    return tinted
+
+
+def _parse_hex_rgb(value: str | None) -> tuple[int, int, int] | None:
+    if value is None:
+        return None
+    text = value.strip()
+    if text.startswith("#"):
+        text = text[1:]
+    if len(text) != 6:
+        raise ValueError(f"ink color must be #RRGGBB, got {value!r}")
+    try:
+        return tuple(int(text[index : index + 2], 16) for index in (0, 2, 4))
+    except ValueError as exc:
+        raise ValueError(f"ink color must be #RRGGBB, got {value!r}") from exc
 
 
 def _luminance(rgb: tuple[int, int, int]) -> int:

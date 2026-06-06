@@ -176,6 +176,13 @@ def main() -> None:
         "--gate-fill-token",
         help="force this glyph token into every kept gate-mask cell, including ASCII spaces",
     )
+    ascii_render_parser.add_argument(
+        "--ink-mode",
+        choices=["atlas", "solid", "sampled"],
+        default="atlas",
+        help="atlas keeps glyph colors, solid uses --ink-color, sampled uses the gate image cell color",
+    )
+    ascii_render_parser.add_argument("--ink-color", help="solid ink color as #RRGGBB")
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
 
@@ -353,6 +360,8 @@ def main() -> None:
             gate_samples_path=args.gate_samples,
             gate_samples_key=args.gate_sample_key,
             gate_fill_token=args.gate_fill_token,
+            ink_mode=args.ink_mode,
+            ink_color=args.ink_color,
             scale=args.scale,
         )
         return

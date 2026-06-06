@@ -62,6 +62,23 @@ DRAW_ORDER = (
     "hand_right",
 )
 
+SKELETON_EDGE_ORDER = (
+    ("neck", "chest"),
+    ("chest", "pelvis"),
+    ("chest", "shoulder_left"),
+    ("shoulder_left", "elbow_left"),
+    ("elbow_left", "wrist_left"),
+    ("chest", "shoulder_right"),
+    ("shoulder_right", "elbow_right"),
+    ("elbow_right", "wrist_right"),
+    ("pelvis", "hip_left"),
+    ("hip_left", "knee_left"),
+    ("knee_left", "ankle_left"),
+    ("pelvis", "hip_right"),
+    ("hip_right", "knee_right"),
+    ("knee_right", "ankle_right"),
+)
+
 
 def build_mannequin_recipe(
     humanoid_regions_path: str | Path,
@@ -112,6 +129,8 @@ def build_mannequin_recipe(
             "root": "pelvis",
             "parents": {part["name"]: part["parent"] for part in parts},
             "joints": joints,
+            "edges": _build_skeleton_edges(joints),
+            "joint_rule": "joint estimates are anatomical centers from neighboring body-part bboxes; pivots remain body-part ownership points",
         },
         "draw_order": [part["name"] for part in sorted(parts, key=lambda item: item["draw_order"])],
         "sockets": _build_sockets(parts, joints),
@@ -151,32 +170,63 @@ def _pivot_for_part(name: str, bbox: list[int]) -> list[int]:
 def _build_joints(parts: list[dict[str, Any]]) -> dict[str, list[int]]:
     by_name = {part["name"]: part for part in parts}
 
-    def pivot(name: str) -> list[int] | None:
+    def bbox(name: str) -> list[int] | None:
         part = by_name.get(name)
-        return part["pivot"] if part is not None else None
+        return part["bbox"] if part is not None else None
 
     joints = {}
     mapping = {
-        "neck": pivot("head") or pivot("neck"),
-        "chest": pivot("torso"),
-        "pelvis": pivot("pelvis"),
-        "shoulder_left": pivot("upper_arm_left"),
-        "elbow_left": pivot("lower_arm_left"),
-        "hand_left": pivot("hand_left"),
-        "shoulder_right": pivot("upper_arm_right"),
-        "elbow_right": pivot("lower_arm_right"),
-        "hand_right": pivot("hand_right"),
-        "hip_left": pivot("upper_leg_left"),
-        "knee_left": pivot("lower_leg_left"),
-        "foot_left": pivot("foot_left"),
-        "hip_right": pivot("upper_leg_right"),
-        "knee_right": pivot("lower_leg_right"),
-        "foot_right": pivot("foot_right"),
+        "neck": _joint_between(bbox("head"), bbox("neck"), "vertical") or _bbox_point(bbox("head"), 0.5, 1.0),
+        "chest": _bbox_point(bbox("torso"), 0.5, 0.28),
+        "pelvis": _bbox_point(bbox("pelvis"), 0.5, 0.45),
+        "shoulder_left": _bbox_point(bbox("upper_arm_left"), 0.5, 0.10),
+        "elbow_left": _joint_between(bbox("upper_arm_left"), bbox("lower_arm_left"), "vertical"),
+        "wrist_left": _joint_between(bbox("lower_arm_left"), bbox("hand_left"), "vertical"),
+        "hand_left": _bbox_point(bbox("hand_left"), 0.5, 0.5),
+        "shoulder_right": _bbox_point(bbox("upper_arm_right"), 0.5, 0.10),
+        "elbow_right": _joint_between(bbox("upper_arm_right"), bbox("lower_arm_right"), "vertical"),
+        "wrist_right": _joint_between(bbox("lower_arm_right"), bbox("hand_right"), "vertical"),
+        "hand_right": _bbox_point(bbox("hand_right"), 0.5, 0.5),
+        "hip_left": _bbox_point(bbox("upper_leg_left"), 0.5, 0.08),
+        "knee_left": _joint_between(bbox("upper_leg_left"), bbox("lower_leg_left"), "vertical"),
+        "ankle_left": _joint_between(bbox("lower_leg_left"), bbox("foot_left"), "vertical"),
+        "foot_left": _bbox_point(bbox("foot_left"), 0.55, 0.75),
+        "hip_right": _bbox_point(bbox("upper_leg_right"), 0.5, 0.08),
+        "knee_right": _joint_between(bbox("upper_leg_right"), bbox("lower_leg_right"), "vertical"),
+        "ankle_right": _joint_between(bbox("lower_leg_right"), bbox("foot_right"), "vertical"),
+        "foot_right": _bbox_point(bbox("foot_right"), 0.45, 0.75),
     }
     for name, point in mapping.items():
         if point is not None:
             joints[name] = point
     return joints
+
+
+def _build_skeleton_edges(joints: dict[str, list[int]]) -> list[list[str]]:
+    return [[a, b] for a, b in SKELETON_EDGE_ORDER if a in joints and b in joints]
+
+
+def _bbox_point(bbox: list[int] | None, x_fraction: float, y_fraction: float) -> list[int] | None:
+    if bbox is None:
+        return None
+    x0, y0, x1, y1 = bbox
+    return [
+        round(x0 + (x1 - x0) * x_fraction),
+        round(y0 + (y1 - y0) * y_fraction),
+    ]
+
+
+def _joint_between(a: list[int] | None, b: list[int] | None, orientation: str) -> list[int] | None:
+    if a is None or b is None:
+        return None
+    if orientation != "vertical":
+        raise ValueError(f"unknown joint orientation {orientation!r}")
+    ax0, ay0, ax1, ay1 = a
+    bx0, by0, bx1, by1 = b
+    return [
+        round((((ax0 + ax1) / 2) + ((bx0 + bx1) / 2)) / 2),
+        round((ay1 + by0) / 2),
+    ]
 
 
 def _build_sockets(parts: list[dict[str, Any]], joints: dict[str, list[int]]) -> list[dict[str, Any]]:

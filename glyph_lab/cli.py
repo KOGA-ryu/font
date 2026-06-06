@@ -8,7 +8,9 @@ from .ascii_bridge import import_ascii_grid
 from .ascii_compare import compare_ascii_fallbacks
 from .ascii_glyph_renderer import render_ascii_glyphs
 from .ascii_promotion import write_ascii_promotion_request
+from .attachments import build_attachment_recipe
 from .atlas import generate_pack
+from .body_ascii import render_body_ascii_proof
 from .brush_candidates import write_brush_review
 from .color_family_layers import render_color_family_layers
 from .compiler import compile_grid
@@ -26,6 +28,9 @@ from .layer_breakdown import write_layer_breakdown
 from .layer_recipe import render_layer_recipe
 from .linework_analyzer import analyze_linework_image
 from .linework_candidates import write_linework_review
+from .mannequin import build_mannequin_recipe
+from .mannequin_proof import render_mannequin_proof
+from .mannequin_template import generate_mannequin_template
 from .measurement_pass import write_art_pass_measurements
 from .motion_taxonomy import write_linework_motion_coverage
 from .object_hints import write_object_hints
@@ -37,6 +42,7 @@ from .reference_render import render_reference_style
 from .reference_style import build_reference_style_recipe
 from .review_export import generate_review_contact_sheet
 from .scaffold import measure_scaffold_image
+from .skeleton_fit import fit_skeleton
 from .sprite_parts import classify_sprite_parts
 from .threshold_layers import DEFAULT_THRESHOLDS, parse_thresholds, render_threshold_color_layers
 
@@ -138,6 +144,16 @@ def main() -> None:
     linework_coverage_parser.add_argument("--glyphs", required=True)
     linework_coverage_parser.add_argument("--out", required=True)
 
+    mannequin_template_parser = subparsers.add_parser(
+        "generate-mannequin-template",
+        help="generate a deterministic front-view mannequin template and region map",
+    )
+    mannequin_template_parser.add_argument("--out", required=True)
+    mannequin_template_parser.add_argument("--width", type=int, default=128)
+    mannequin_template_parser.add_argument("--height", type=int, default=192)
+    mannequin_template_parser.add_argument("--scale", type=int, default=2)
+    mannequin_template_parser.add_argument("--view", choices=["front", "side"], default="front")
+
     brush_parser = subparsers.add_parser("generate-brushes", help="generate texture brush glyph review artifacts")
     brush_parser.add_argument("--pack", default=str(DEFAULT_PACK))
 
@@ -216,6 +232,23 @@ def main() -> None:
     )
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
+
+    body_ascii_parser = subparsers.add_parser(
+        "render-body-ascii-proof",
+        help="render a shaded mannequin body through the ASCII glyph proof pipeline",
+    )
+    body_ascii_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+    body_ascii_parser.add_argument("--mannequin", required=True)
+    body_ascii_parser.add_argument("--out", required=True)
+    body_ascii_parser.add_argument("--glyphs")
+    body_ascii_parser.add_argument("--atlas")
+    body_ascii_parser.add_argument("--mapping")
+    body_ascii_parser.add_argument("--shade-ramp")
+    body_ascii_parser.add_argument("--grid-width", type=int, default=128)
+    body_ascii_parser.add_argument("--grid-height", type=int, default=192)
+    body_ascii_parser.add_argument("--palette-size", type=int, default=8)
+    body_ascii_parser.add_argument("--min-cell-coverage", type=float, default=0.05)
+    body_ascii_parser.add_argument("--scale", type=int, default=2)
 
     layer_recipe_parser = subparsers.add_parser(
         "render-layer-recipe",
@@ -344,6 +377,38 @@ def main() -> None:
     humanoid_regions_parser.add_argument("--foreground-background-threshold", type=int, default=22)
     humanoid_regions_parser.add_argument("--background-threshold", type=int, default=22)
     humanoid_regions_parser.add_argument("--scale", type=int, default=2)
+
+    mannequin_parser = subparsers.add_parser(
+        "build-mannequin",
+        help="build a reusable mannequin recipe from humanoid region lanes",
+    )
+    mannequin_parser.add_argument("--regions", required=True)
+    mannequin_parser.add_argument("--out", required=True)
+    mannequin_parser.add_argument("--pose", default="reference_pose")
+
+    mannequin_proof_parser = subparsers.add_parser(
+        "render-mannequin-proof",
+        help="render visual proof images from a mannequin recipe",
+    )
+    mannequin_proof_parser.add_argument("--mannequin", required=True)
+    mannequin_proof_parser.add_argument("--out", required=True)
+    mannequin_proof_parser.add_argument("--scale", type=int, default=2)
+
+    skeleton_fit_parser = subparsers.add_parser(
+        "fit-skeleton",
+        help="measure anatomical skeleton joints against mannequin body-part masks",
+    )
+    skeleton_fit_parser.add_argument("--mannequin", required=True)
+    skeleton_fit_parser.add_argument("--out", required=True)
+    skeleton_fit_parser.add_argument("--scale", type=int, default=1)
+
+    attachments_parser = subparsers.add_parser(
+        "build-attachments",
+        help="build attachment silhouettes from generic sprite part lanes",
+    )
+    attachments_parser.add_argument("--parts", required=True)
+    attachments_parser.add_argument("--out", required=True)
+    attachments_parser.add_argument("--mannequin")
 
     promoted_atlas_parser = subparsers.add_parser("build-promoted-atlas", help="build an atlas for promoted glyphs")
     promoted_atlas_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -485,6 +550,10 @@ def main() -> None:
         write_linework_motion_coverage(args.glyphs, args.out)
         return
 
+    if args.command == "generate-mannequin-template":
+        generate_mannequin_template(args.out, width=args.width, height=args.height, scale=args.scale, view=args.view)
+        return
+
     if args.command == "generate-brushes":
         write_brush_review(pack)
         return
@@ -526,6 +595,26 @@ def main() -> None:
             ink_ignore_luminance=args.ink_ignore_luminance,
             ink_palette_threshold=args.ink_palette_threshold,
             ink_palette_size=args.ink_palette_size,
+            scale=args.scale,
+        )
+        return
+
+    if args.command == "render-body-ascii-proof":
+        glyphs_path = Path(args.glyphs) if args.glyphs else _preferred_pack_file(pack, "glyphs.promoted.json", "glyphs.json")
+        atlas_path = Path(args.atlas) if args.atlas else _preferred_pack_file(pack, "atlas.promoted.png", "atlas.png")
+        mapping_path = Path(args.mapping) if args.mapping else _optional_pack_file(pack, "ascii_brush_mapping.json")
+        shade_ramp_path = Path(args.shade_ramp) if args.shade_ramp else _optional_pack_file(pack, "ascii_shade_palette.txt")
+        render_body_ascii_proof(
+            args.mannequin,
+            args.out,
+            glyphs_path=glyphs_path,
+            atlas_path=atlas_path,
+            mapping_path=mapping_path,
+            shade_ramp_path=shade_ramp_path,
+            grid_width=args.grid_width,
+            grid_height=args.grid_height,
+            palette_size=args.palette_size,
+            min_cell_coverage=args.min_cell_coverage,
             scale=args.scale,
         )
         return
@@ -661,6 +750,22 @@ def main() -> None:
             background_threshold=args.background_threshold,
             scale=args.scale,
         )
+        return
+
+    if args.command == "build-mannequin":
+        build_mannequin_recipe(args.regions, args.out, pose=args.pose)
+        return
+
+    if args.command == "render-mannequin-proof":
+        render_mannequin_proof(args.mannequin, args.out, scale=args.scale)
+        return
+
+    if args.command == "fit-skeleton":
+        fit_skeleton(args.mannequin, args.out, scale=args.scale)
+        return
+
+    if args.command == "build-attachments":
+        build_attachment_recipe(args.parts, args.out, mannequin_path=args.mannequin)
         return
 
     if args.command == "build-promoted-atlas":

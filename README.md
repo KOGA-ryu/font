@@ -868,6 +868,170 @@ Writes:
 - `humanoid_region_contact_sheet.png`
 - `humanoid_regions.json`
 
+The app can also create a deterministic front-view mannequin source instead of
+depending on image generation or a pasted crop:
+
+```sh
+python3 -m glyph_lab.cli generate-mannequin-template \
+  --out out_mannequin_template \
+  --width 128 \
+  --height 192 \
+  --view front
+```
+
+Writes:
+
+- `<view>_mannequin_template.png`
+- `<view>_mannequin_region_map.png`
+- `mannequin_template_manifest.json`
+
+The preview image is the readable front-view mannequin. The region map is the
+classifier-friendly source for the existing lane pipeline. The rule is:
+
+```text
+geometry recipe
+-> generated front-view mannequin source
+-> region lanes
+-> mannequin_recipe.json
+-> mannequin proof
+```
+
+Use `--view side` to generate a side-profile construction source from the same
+geometry system. The current side output is a source/proof target for view
+development; the existing 16-lane classifier remains front-view oriented.
+
+Use `build-mannequin` to convert those region lanes into a reusable body
+structure recipe:
+
+```sh
+python3 -m glyph_lab.cli build-mannequin \
+  --regions out_humanoid_regions/humanoid_regions.json \
+  --out out_mannequin \
+  --pose idle_front
+```
+
+Writes:
+
+- `mannequin_recipe.json`
+
+The mannequin recipe records body parts, masks, bboxes, pivots, parent links,
+sockets, skeleton joints, and draw order. It deliberately does not own clothing,
+hair, capes, weapons, texture, palette, or final linework. The rule is:
+
+```text
+mannequin = pose + body silhouettes + pivots + sockets
+```
+
+Use `render-mannequin-proof` when the recipe needs visual inspection:
+
+```sh
+python3 -m glyph_lab.cli render-mannequin-proof \
+  --mannequin out_mannequin/mannequin_recipe.json \
+  --out out_mannequin_proof
+```
+
+Writes:
+
+- `mannequin_silhouette.png`
+- `mannequin_shaded_parts.png`
+- `mannequin_parts_overlay.png`
+- `mannequin_skeleton_overlay.png`
+- `mannequin_contact_sheet.png`
+- `proof_manifest.json`
+
+The proof pass shows body-part masks, bounding boxes, pivots, parent links, and
+draw order. This is the quick check for bad crops, missing limbs, bad sockets,
+or a mannequin recipe that cannot support pose work yet.
+
+The shaded proof preserves the original source cutouts inside each body-part
+mask. `proof_manifest.json` also records per-part luminance summaries so the
+source shading remains available as shape evidence for later modeling passes.
+
+Use `render-body-ascii-proof` to prove the shaded body in the ASCII/glyph
+language before attempting 3D volume work:
+
+```sh
+python3 -m glyph_lab.cli render-body-ascii-proof \
+  --mannequin out_mannequin/mannequin_recipe.json \
+  --out out_body_ascii \
+  --palette-size 8
+```
+
+Writes:
+
+- `body_shaded_source.png`
+- `body_ascii.txt`
+- `body_ascii_palette.txt`
+- `body_palette.json`
+- `body_ascii_glyph_proof.png`
+- `body_ascii_contact_sheet.png`
+- `body_ascii_manifest.json`
+
+This pass uses the original shaded mannequin cutouts, not the region-ID colors.
+The ASCII grid stores body tone/shape, and the glyph renderer samples a reduced
+mannequin palette for ink. That gives a 2D proof of silhouette, shading, and
+body readability before using the measurements for Blender-style blocking.
+
+Use `fit-skeleton` when the skeleton needs to be measured instead of merely
+drawn:
+
+```sh
+python3 -m glyph_lab.cli fit-skeleton \
+  --mannequin out_mannequin/mannequin_recipe.json \
+  --out out_skeleton_fit
+```
+
+Writes:
+
+- `skeleton_fit.json`
+- `skeleton_fit_overlay.png`
+- `skeleton_fit_contact_sheet.png`
+
+The fit report keeps rigging concepts separate:
+
+```text
+part pivot = where a body cutout attaches or rotates
+joint landmark = anatomical rig point measured against body masks
+bone = connection between joint landmarks
+```
+
+Each joint records its point, source body parts, whether it lands inside the
+expected masks, nearest expected bbox distance, and confidence. This makes
+shoulder, elbow, wrist, hip, knee, and ankle placement reviewable instead of
+being a line drawn between arbitrary part pivots.
+
+Use `build-attachments` to convert generic sprite part lanes into attachable
+object silhouettes:
+
+```sh
+python3 -m glyph_lab.cli build-attachments \
+  --parts out_sprite_parts/sprite_part_layers.json \
+  --mannequin out_mannequin/mannequin_recipe.json \
+  --out out_attachments
+```
+
+Writes:
+
+- `attachment_recipe.json`
+
+Attachments include lanes such as hair, clothing, leather, metal, gold, and
+highlight. Each attachment records its mask, bbox, anchor, parent socket, draw
+order, motion behavior, and allowed pose warp. This keeps cloth, hair, cape,
+armor, belts, boots, props, and effects as separate objects attached to the
+mannequin instead of baking them into the body.
+
+The reusable character-generation split is:
+
+```text
+body reference / region map
+-> humanoid region lanes
+-> mannequin_recipe.json
+-> sprite/material lanes
+-> attachment_recipe.json
+-> reference_style_recipe.json
+-> render-reference-style
+```
+
 Add repeated `--gate-include-box x0,y0,x1,y1` arguments when a sampled color
 should only apply inside source-image regions. This is useful for clothing:
 brown leather boots and brown hair can share colors, so the color gate needs a

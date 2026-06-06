@@ -173,6 +173,12 @@ def main() -> None:
     ascii_render_parser.add_argument("--gate-samples", help="eyedropper JSON for sample-colors gate mode")
     ascii_render_parser.add_argument("--gate-sample-key", default="eyedropper_samples")
     ascii_render_parser.add_argument(
+        "--gate-include-box",
+        action="append",
+        default=[],
+        help="limit kept gate cells to source-image box x0,y0,x1,y1; repeat for multiple boxes",
+    )
+    ascii_render_parser.add_argument(
         "--gate-fill-token",
         help="force this glyph token into every kept gate-mask cell, including ASCII spaces",
     )
@@ -359,6 +365,7 @@ def main() -> None:
             gate_mask_output_path=args.gate_mask_out,
             gate_samples_path=args.gate_samples,
             gate_samples_key=args.gate_sample_key,
+            gate_include_boxes=[parse_box(box) for box in args.gate_include_box],
             gate_fill_token=args.gate_fill_token,
             ink_mode=args.ink_mode,
             ink_color=args.ink_color,
@@ -410,6 +417,19 @@ def main() -> None:
 def _load_json(path: str) -> dict:
     with Path(path).open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def parse_box(value: str) -> tuple[int, int, int, int]:
+    parts = value.split(",")
+    if len(parts) != 4:
+        raise ValueError(f"gate include box must be x0,y0,x1,y1, got {value!r}")
+    try:
+        x0, y0, x1, y1 = (int(part) for part in parts)
+    except ValueError as exc:
+        raise ValueError(f"gate include box values must be integers, got {value!r}") from exc
+    if x0 < 0 or y0 < 0 or x1 <= x0 or y1 <= y0:
+        raise ValueError(f"gate include box must have positive size, got {value!r}")
+    return x0, y0, x1, y1
 
 
 if __name__ == "__main__":

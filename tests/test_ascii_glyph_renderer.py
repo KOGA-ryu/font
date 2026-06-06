@@ -218,6 +218,43 @@ class AsciiGlyphRendererTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "requires at least one eyedropper sample color"):
                 image_gate_mask(gate_image, 4, 4, mode="sample-colors", threshold=12, dilate=0)
 
+    def test_image_gate_mask_can_use_include_boxes(self):
+        with TemporaryDirectory() as tmp:
+            gate_image = Path(tmp) / "colors.png"
+            Image.new("RGB", (4, 4), (30, 70, 150)).save(gate_image)
+
+            mask = image_gate_mask(
+                gate_image,
+                4,
+                4,
+                mode="sample-colors",
+                threshold=1,
+                dilate=0,
+                sample_colors=[(30, 70, 150)],
+                include_boxes=[(0, 0, 2, 4)],
+            )
+
+            self.assertTrue(all(row[0] and row[1] for row in mask))
+            self.assertTrue(all(not row[2] and not row[3] for row in mask))
+            self.assertEqual(sum(1 for row in mask for value in row if value), 8)
+
+    def test_image_gate_mask_rejects_invalid_include_box(self):
+        with TemporaryDirectory() as tmp:
+            gate_image = Path(tmp) / "colors.png"
+            Image.new("RGB", (4, 4), (30, 70, 150)).save(gate_image)
+
+            with self.assertRaisesRegex(ValueError, "gate include box"):
+                image_gate_mask(
+                    gate_image,
+                    4,
+                    4,
+                    mode="sample-colors",
+                    threshold=1,
+                    dilate=0,
+                    sample_colors=[(30, 70, 150)],
+                    include_boxes=[(2, 0, 2, 4)],
+                )
+
     def test_render_sample_colors_gate_loads_eyedropper_json(self):
         with TemporaryDirectory() as tmp:
             pack = Path(tmp) / "pack"

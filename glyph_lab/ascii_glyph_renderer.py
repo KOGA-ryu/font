@@ -31,6 +31,7 @@ def render_ascii_glyphs(
     gate_mask_output_path: str | Path | None = None,
     gate_samples_path: str | Path | None = None,
     gate_samples_key: str = "eyedropper_samples",
+    gate_include_boxes: list[tuple[int, int, int, int]] | None = None,
     gate_fill_token: str | None = None,
     ink_mode: str = "atlas",
     ink_color: str | None = None,
@@ -74,6 +75,7 @@ def render_ascii_glyphs(
             threshold=gate_threshold,
             dilate=gate_dilate,
             sample_colors=gate_sample_colors,
+            include_boxes=gate_include_boxes,
         )
         if gate_mask_output_path is not None:
             write_gate_mask(gate_mask, gate_mask_output_path, scale=scale)
@@ -156,6 +158,7 @@ def render_ascii_glyphs(
             gate_mask_output_path=gate_mask_output_path,
             gate_samples_path=gate_samples_path,
             gate_sample_count=len(gate_sample_colors or []),
+            gate_include_boxes=gate_include_boxes,
             gate_fill_token=gate_fill_token,
             gate_filled_count=gate_filled_count,
         ),
@@ -171,6 +174,7 @@ def image_gate_mask(
     threshold: int = 32,
     dilate: int = 1,
     sample_colors: list[tuple[int, int, int]] | None = None,
+    include_boxes: list[tuple[int, int, int, int]] | None = None,
 ) -> list[list[bool]]:
     if mode not in GATE_MODES:
         raise ValueError(f"unknown gate mode {mode!r}; expected one of {sorted(GATE_MODES)}")
@@ -180,9 +184,11 @@ def image_gate_mask(
         raise ValueError("gate dilate must be non-negative")
     if grid_width <= 0 or grid_height <= 0:
         raise ValueError("gate grid size must be positive")
+    include_boxes = _validate_include_boxes(include_boxes)
 
     with Image.open(image_path) as source:
         image = source.convert("RGBA")
+    source_width, source_height = image.size
     sampled = image.resize((grid_width, grid_height), Image.Resampling.BOX)
     pixels = sampled.load()
     if mode == "alpha":
@@ -208,6 +214,8 @@ def image_gate_mask(
             [_rgb_distance(pixels[x, y][:3], background) > threshold for x in range(grid_width)]
             for y in range(grid_height)
         ]
+    if include_boxes:
+        mask = _apply_include_boxes(mask, include_boxes, source_width, source_height)
     return _dilate_mask(mask, dilate) if dilate else mask
 
 
@@ -269,6 +277,38 @@ def _load_sample_colors(path: str | Path, key: str) -> list[tuple[int, int, int]
             raise ValueError(f"sample color at index {index} is missing rgba")
         colors.append((int(rgba[0]), int(rgba[1]), int(rgba[2])))
     return colors
+
+
+def _validate_include_boxes(
+    boxes: list[tuple[int, int, int, int]] | None,
+) -> list[tuple[int, int, int, int]]:
+    if not boxes:
+        return []
+    for box in boxes:
+        x0, y0, x1, y1 = box
+        if x0 < 0 or y0 < 0 or x1 <= x0 or y1 <= y0:
+            raise ValueError(f"gate include box must be x0,y0,x1,y1 with positive size, got {box!r}")
+    return boxes
+
+
+def _apply_include_boxes(
+    mask: list[list[bool]],
+    boxes: list[tuple[int, int, int, int]],
+    source_width: int,
+    source_height: int,
+) -> list[list[bool]]:
+    height = len(mask)
+    width = len(mask[0]) if height else 0
+    filtered = [[False for _ in range(width)] for _ in range(height)]
+    for y, row in enumerate(mask):
+        source_y = min(source_height - 1, int((y + 0.5) * source_height / height))
+        for x, value in enumerate(row):
+            if not value:
+                continue
+            source_x = min(source_width - 1, int((x + 0.5) * source_width / width))
+            if any(x0 <= source_x < x1 and y0 <= source_y < y1 for x0, y0, x1, y1 in boxes):
+                filtered[y][x] = True
+    return filtered
 
 
 def _sample_rgb_grid(image_path: str | Path | None, grid_width: int, grid_height: int) -> list[list[tuple[int, int, int]]]:
@@ -372,6 +412,7 @@ def _gate_summary(
     gate_mask_output_path: str | Path | None,
     gate_samples_path: str | Path | None,
     gate_sample_count: int,
+    gate_include_boxes: list[tuple[int, int, int, int]] | None,
     gate_fill_token: str | None,
     gate_filled_count: int,
 ) -> dict[str, Any] | None:
@@ -386,6 +427,7 @@ def _gate_summary(
         "dilate": gate_dilate,
         "samples": str(gate_samples_path) if gate_samples_path is not None else None,
         "sample_count": gate_sample_count,
+        "include_boxes": [list(box) for box in gate_include_boxes or []],
         "fill_token": gate_fill_token,
         "filled_cells": gate_filled_count,
         "kept_cells": kept,

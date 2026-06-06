@@ -546,6 +546,10 @@ Use `--ink-mode solid --ink-color '#000000'` when that layer must render as
 true black. Use `--ink-mode sampled` when the glyph stamp should inherit the
 sampled source-image cell color; this lets a brown-shade mask render as several
 actual browns instead of one flat atlas ink color.
+Add repeated `--gate-include-box x0,y0,x1,y1` arguments when a sampled color
+should only apply inside source-image regions. This is useful for clothing:
+brown leather boots and brown hair can share colors, so the color gate needs a
+spatial box when the layer is meant to be clothing only.
 
 ```text
 image

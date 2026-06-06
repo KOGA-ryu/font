@@ -1,6 +1,14 @@
 import unittest
 
-from glyph_lab.linework_primitives import hatch_pattern, linework_corner, linework_line, linework_metadata
+from glyph_lab.linework_primitives import (
+    default_linework_specs,
+    hatch_pattern,
+    linework_corner,
+    linework_line,
+    linework_metadata,
+    linework_stamp,
+    motion_shape,
+)
 from glyph_lab.measure import measure_stamp
 from glyph_lab.transforms import stamp_to_bitmask
 
@@ -86,6 +94,46 @@ class LineworkPrimitiveTests(unittest.TestCase):
 
         self.assertEqual(metadata["linework_package"], "linework.terminal")
         self.assertEqual(metadata["terminal_ports"], [{"side": "left", "lane": "center", "role": "terminal"}])
+
+    def test_motion_shape_renders_explicit_motion_atom(self):
+        stamp = motion_shape("pressed_horizontal_heavy")
+
+        self.assertEqual(measure_stamp(stamp)["density"], 6 / 16)
+
+    def test_motion_metadata_records_package_motion_profile(self):
+        metadata = linework_metadata(
+            {
+                "kind": "motion",
+                "params": {"shape": "rounded_turn_top_left"},
+            }
+        )
+
+        self.assertEqual(metadata["linework_package"], "linework.curve")
+        self.assertEqual(metadata["motion_profile"], "rounded_turn")
+        self.assertEqual(metadata["stroke_topology"], "soft_corner")
+        self.assertEqual(metadata["curvature"], "quarter_turn")
+
+    def test_default_specs_include_generic_motion_profiles(self):
+        motion_specs = [spec for spec in default_linework_specs() if spec["kind"] == "motion"]
+        profiles = {
+            linework_metadata({"kind": "motion", "params": spec["params"]})["motion_profile"]
+            for spec in motion_specs
+        }
+
+        self.assertIn("pressed_pull", profiles)
+        self.assertIn("angled_pull", profiles)
+        self.assertIn("direction_change", profiles)
+        self.assertIn("rounded_turn", profiles)
+        self.assertIn("press_and_stop", profiles)
+        self.assertIn("repeated_motion", profiles)
+
+    def test_motion_spec_uses_detail_layer_not_object_specific_edge_role(self):
+        spec = next(spec for spec in default_linework_specs() if spec["name"] == "join_corner_stressed")
+        stamp = linework_stamp(spec)
+
+        self.assertEqual(spec["role"], "detail")
+        self.assertEqual(spec["family"], "motion")
+        self.assertGreater(measure_stamp(stamp)["density"], 0)
 
 
 if __name__ == "__main__":

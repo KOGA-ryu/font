@@ -2900,6 +2900,199 @@
       ],
       "equivalence_group": "translations_normalized",
       "canonical_id": 15
+    },
+    {
+      "id": "4.stone.linework.motion.repeat_cross_dense_3056",
+      "token": "",
+      "index": 3056,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 5,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 38505
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "repeat_cross_dense"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
+      "angle_degrees": null,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "repeat_cross_dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "r",
+      "repeat_angle_degrees": null,
+      "spacing_class": "cross",
+      "density_class": "dense",
+      "coverage": "repeat_field",
+      "stroke_style": "cross_repeat",
+      "motion_profile": "repeated_motion",
+      "speed_class": "fast",
+      "pressure_curve": "medium",
+      "stress_points": [
+        "repeat_accent"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "repeat_dense",
+      "acceleration": "repeated",
+      "motion_family": "rhythmic_mark",
+      "usefulness_score": 0.25,
+      "rejection_reason": "too-many-components-for-non-texture",
+      "review_tags": [
+        "shape",
+        "symmetric",
+        "contacts:4",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 38505
+    },
+    {
+      "id": "4.stone.linework.motion.repeat_staggered_dense_3057",
+      "token": "",
+      "index": 3057,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 8,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 42405
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "repeat_staggered_dense"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
+      "angle_degrees": 0.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "repeat_staggered_dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "r",
+      "repeat_angle_degrees": 0.0,
+      "spacing_class": "staggered",
+      "density_class": "dense",
+      "coverage": "repeat_field",
+      "stroke_style": "staggered_repeat",
+      "motion_profile": "repeated_motion",
+      "speed_class": "fast",
+      "pressure_curve": "medium",
+      "stress_points": [
+        "repeat_accent"
+      ],
+      "release_style": "flick",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "repeat_dense",
+      "acceleration": "repeated",
+      "motion_family": "rhythmic_mark",
+      "usefulness_score": 0.25,
+      "rejection_reason": "too-many-components-for-non-texture",
+      "review_tags": [
+        "shape",
+        "contacts:4",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 42405
     }
   ]
 }

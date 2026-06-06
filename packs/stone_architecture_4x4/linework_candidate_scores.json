@@ -2111,6 +2111,1419 @@
       "canonical_id": 57215
     },
     {
+      "id": "4.stone.linework.motion.angled_pull_fall_fast_3047",
+      "token": "",
+      "index": 3047,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.7142857142857142,
+        "centroid_y": 1.2857142857142858,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 35939
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "angled_pull_fall_fast"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "high",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "low",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 135.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "angled_pull_fall_fast",
+      "weight_profile": "thin_with_drag",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "a",
+      "coverage": "angled_pull_stair",
+      "motion_profile": "angled_pull",
+      "speed_class": "fast",
+      "pressure_curve": "constant_light",
+      "stress_points": [
+        "exit"
+      ],
+      "release_style": "flick",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "accelerating",
+      "motion_family": "continuous_stroke",
+      "usefulness_score": 1.0,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 35939
+    },
+    {
+      "id": "4.stone.linework.motion.angled_pull_rise_fast_3048",
+      "token": "",
+      "index": 3048,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.4375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.7142857142857142,
+        "centroid_y": 1.7142857142857142,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 14024
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "angled_pull_rise_fast"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "low",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "high",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 45.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "angled_pull_rise_fast",
+      "weight_profile": "thin_with_drag",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "a",
+      "coverage": "angled_pull_stair",
+      "motion_profile": "angled_pull",
+      "speed_class": "fast",
+      "pressure_curve": "constant_light",
+      "stress_points": [
+        "exit"
+      ],
+      "release_style": "flick",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "accelerating",
+      "motion_family": "continuous_stroke",
+      "usefulness_score": 1.0,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 14024
+    },
+    {
+      "id": "4.stone.linework.motion.join_corner_stressed_3049",
+      "token": "",
+      "index": 3049,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 0.8333333333333334,
+        "centroid_y": 1.8333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 10032
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "join_corner_stressed"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.join",
+      "stroke_topology": "direction_change",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "left",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "join_corner_stressed",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "stressed_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "j",
+      "coverage": "pressure_corner",
+      "branch_count": 2,
+      "motion_profile": "direction_change",
+      "speed_class": "slow",
+      "pressure_curve": "heavy",
+      "stress_points": [
+        "corner"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "linger",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "corner_reset",
+      "motion_family": "join_motion",
+      "usefulness_score": 0.8925,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 10032
+    },
+    {
+      "id": "4.stone.linework.motion.join_diagonal_to_vertical_3050",
+      "token": "",
+      "index": 3050,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.3125,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.4,
+        "centroid_y": 2.2,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 22080
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "join_diagonal_to_vertical"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.join",
+      "stroke_topology": "direction_change",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "low",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 65.0,
+      "connector_sides": [
+        "left",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "join_diagonal_to_vertical",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "diagonal_to_vertical",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "j",
+      "coverage": "direction_change",
+      "branch_count": 2,
+      "motion_profile": "direction_change",
+      "speed_class": "slow",
+      "pressure_curve": "medium",
+      "stress_points": [
+        "corner"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "slight",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "corner_reset",
+      "motion_family": "join_motion",
+      "usefulness_score": 0.7537,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 22080
+    },
+    {
+      "id": "4.stone.linework.motion.join_horizontal_to_diagonal_3051",
+      "token": "",
+      "index": 3051,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.3125,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.6,
+        "centroid_y": 1.6,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 1984
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "join_horizontal_to_diagonal"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.join",
+      "stroke_topology": "direction_change",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "high",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 25.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "join_horizontal_to_diagonal",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "horizontal_to_diagonal",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "j",
+      "coverage": "direction_change",
+      "branch_count": 2,
+      "motion_profile": "direction_change",
+      "speed_class": "slow",
+      "pressure_curve": "medium",
+      "stress_points": [
+        "corner"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "slight",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "corner_reset",
+      "motion_family": "join_motion",
+      "usefulness_score": 0.8738,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1984
+    },
+    {
+      "id": "4.stone.linework.motion.pressed_diagonal_fall_heavy_3052",
+      "token": "",
+      "index": 3052,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.1666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 33891
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "pressed_diagonal_fall_heavy"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "high",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "low",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 135.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 2,
+      "variant": "pressed_diagonal_fall_heavy",
+      "weight_profile": "heavy_middle",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "p",
+      "coverage": "pressure_swell",
+      "motion_profile": "pressed_pull",
+      "speed_class": "slow",
+      "pressure_curve": "heavy",
+      "stress_points": [
+        "middle"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "linger",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "steady",
+      "motion_family": "pressure_weight",
+      "usefulness_score": 0.9325,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 33891
+    },
+    {
+      "id": "4.stone.linework.motion.pressed_diagonal_rise_heavy_3053",
+      "token": "",
+      "index": 3053,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.8333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.75,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 13896
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "pressed_diagonal_rise_heavy"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "low",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "high",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 45.0,
+      "connector_sides": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "thickness": 2,
+      "variant": "pressed_diagonal_rise_heavy",
+      "weight_profile": "heavy_middle",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "p",
+      "coverage": "pressure_swell",
+      "motion_profile": "pressed_pull",
+      "speed_class": "slow",
+      "pressure_curve": "heavy",
+      "stress_points": [
+        "middle"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "linger",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "steady",
+      "motion_family": "pressure_weight",
+      "usefulness_score": 0.9325,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 13896
+    },
+    {
+      "id": "4.stone.linework.motion.pressed_horizontal_heavy_3054",
+      "token": "",
+      "index": 3054,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 1776
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "pressed_horizontal_heavy"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "left",
+        "right"
+      ],
+      "thickness": 2,
+      "variant": "pressed_horizontal_heavy",
+      "weight_profile": "heavy_middle",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "p",
+      "coverage": "pressure_swell",
+      "motion_profile": "pressed_pull",
+      "speed_class": "slow",
+      "pressure_curve": "heavy",
+      "stress_points": [
+        "middle"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "linger",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "steady",
+      "motion_family": "pressure_weight",
+      "usefulness_score": 0.9425,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "symmetric",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1776
+    },
+    {
+      "id": "4.stone.linework.motion.pressed_vertical_heavy_3055",
+      "token": "",
+      "index": 3055,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.25,
+          "bottom_left": 0.5,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 9826
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "pressed_vertical_heavy"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.stroke",
+      "stroke_topology": "pass_through_segment",
+      "stroke_ports": [
+        {
+          "side": "top",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": 90.0,
+      "connector_sides": [
+        "top",
+        "bottom"
+      ],
+      "thickness": 2,
+      "variant": "pressed_vertical_heavy",
+      "weight_profile": "heavy_middle",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "p",
+      "coverage": "pressure_swell",
+      "motion_profile": "pressed_pull",
+      "speed_class": "slow",
+      "pressure_curve": "heavy",
+      "stress_points": [
+        "middle"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "linger",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "steady",
+      "motion_family": "pressure_weight",
+      "usefulness_score": 0.9425,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "symmetric",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 9826
+    },
+    {
+      "id": "4.stone.linework.motion.rounded_turn_top_left_3058",
+      "token": "",
+      "index": 3058,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.25,
+        "centroid_y": 1.75,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 17456
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "rounded_turn_top_left"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.curve",
+      "stroke_topology": "soft_corner",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": null,
+      "connector_sides": [
+        "left",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "rounded_turn_top_left",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "soft_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "r",
+      "coverage": "soft_turn",
+      "branch_count": 2,
+      "entry_tangent_degrees": 0.0,
+      "exit_tangent_degrees": 90.0,
+      "curvature": "quarter_turn",
+      "motion_profile": "rounded_turn",
+      "speed_class": "medium",
+      "pressure_curve": "constant_light",
+      "stress_points": [
+        "curve_apex"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "smooth_turn",
+      "motion_family": "turning_motion",
+      "usefulness_score": 0.735,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 17456
+    },
+    {
+      "id": "4.stone.linework.motion.rounded_turn_top_right_3059",
+      "token": "",
+      "index": 3059,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.75,
+        "centroid_y": 1.75,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 8896
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "rounded_turn_top_right"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.curve",
+      "stroke_topology": "soft_corner",
+      "stroke_ports": [
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "bottom",
+          "lane": "center",
+          "role": "exit"
+        }
+      ],
+      "angle_degrees": null,
+      "connector_sides": [
+        "right",
+        "bottom"
+      ],
+      "thickness": 1,
+      "variant": "rounded_turn_top_right",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "soft_corner",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "r",
+      "coverage": "soft_turn",
+      "branch_count": 2,
+      "entry_tangent_degrees": 180.0,
+      "exit_tangent_degrees": 90.0,
+      "curvature": "quarter_turn",
+      "motion_profile": "rounded_turn",
+      "speed_class": "medium",
+      "pressure_curve": "constant_light",
+      "stress_points": [
+        "curve_apex"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "smooth_turn",
+      "motion_family": "turning_motion",
+      "usefulness_score": 0.735,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 8896
+    },
+    {
+      "id": "4.stone.linework.motion.terminal_dark_stop_3060",
+      "token": "",
+      "index": 3060,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.8333333333333333,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3312
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "terminal_dark_stop"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "terminal_dark_stop",
+      "weight_profile": "thin",
+      "cap_style": "dark_terminal",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "t",
+      "coverage": "terminal_pool",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
+      "motion_profile": "press_and_stop",
+      "speed_class": "decelerating",
+      "pressure_curve": "heavy",
+      "stress_points": [
+        "terminal"
+      ],
+      "release_style": "blunt_stop",
+      "dwell": "linger",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "stop",
+      "motion_family": "terminal_motion",
+      "usefulness_score": 0.8925,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 3312
+    },
+    {
+      "id": "4.stone.linework.motion.terminal_taper_stop_3061",
+      "token": "",
+      "index": 3061,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.3125,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.6,
+        "centroid_y": 1.2,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 1264
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "terminal_taper_stop"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.terminal",
+      "stroke_topology": "terminal_segment",
+      "stroke_ports": [
+        {
+          "side": "left",
+          "lane": "center",
+          "role": "entry"
+        },
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
+      "angle_degrees": 0.0,
+      "connector_sides": [
+        "right"
+      ],
+      "thickness": 1,
+      "variant": "terminal_taper_stop",
+      "weight_profile": "thin",
+      "cap_style": "taper_stop",
+      "join_style": "none",
+      "break_rhythm": "solid",
+      "roughness": "clean",
+      "continuity": "continuous",
+      "ascii_fallback": "t",
+      "coverage": "terminal_taper",
+      "branch_count": 1,
+      "terminal_ports": [
+        {
+          "side": "right",
+          "lane": "center",
+          "role": "terminal"
+        }
+      ],
+      "motion_profile": "press_and_stop",
+      "speed_class": "decelerating",
+      "pressure_curve": "medium",
+      "stress_points": [
+        "terminal"
+      ],
+      "release_style": "tapered_exit",
+      "dwell": "slight",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "stop",
+      "motion_family": "terminal_motion",
+      "usefulness_score": 0.8738,
+      "rejection_reason": null,
+      "review_tags": [
+        "shape",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1264
+    },
+    {
       "id": "4.stone.linework.line.horizontal_bottom_thin_3002",
       "token": "",
       "index": 3002,
@@ -5010,6 +6423,199 @@
       ],
       "equivalence_group": "translations_normalized",
       "canonical_id": 15
+    },
+    {
+      "id": "4.stone.linework.motion.repeat_cross_dense_3056",
+      "token": "",
+      "index": 3056,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 5,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 38505
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "repeat_cross_dense"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
+      "angle_degrees": null,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "repeat_cross_dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "overlap",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "r",
+      "repeat_angle_degrees": null,
+      "spacing_class": "cross",
+      "density_class": "dense",
+      "coverage": "repeat_field",
+      "stroke_style": "cross_repeat",
+      "motion_profile": "repeated_motion",
+      "speed_class": "fast",
+      "pressure_curve": "medium",
+      "stress_points": [
+        "repeat_accent"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "repeat_dense",
+      "acceleration": "repeated",
+      "motion_family": "rhythmic_mark",
+      "usefulness_score": 0.25,
+      "rejection_reason": "too-many-components-for-non-texture",
+      "review_tags": [
+        "shape",
+        "symmetric",
+        "contacts:4",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 38505
+    },
+    {
+      "id": "4.stone.linework.motion.repeat_staggered_dense_3057",
+      "token": "",
+      "index": 3057,
+      "role": "detail",
+      "family": "motion",
+      "layer": "detail",
+      "palette_role": "ink",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 8,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 42405
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "forbidden_regions": [
+          "background"
+        ]
+      },
+      "generated": true,
+      "source": "geometry",
+      "primitive_family": "linework",
+      "primitive_params": {
+        "shape": "repeat_staggered_dense"
+      },
+      "linework_kind": "motion",
+      "linework_package": "linework.pattern",
+      "stroke_topology": "repeated_strokes",
+      "stroke_ports": [],
+      "angle_degrees": 0.0,
+      "connector_sides": [],
+      "thickness": 1,
+      "variant": "repeat_staggered_dense",
+      "weight_profile": "thin",
+      "cap_style": "none",
+      "join_style": "none",
+      "break_rhythm": "patterned",
+      "roughness": "clean",
+      "continuity": "repeated",
+      "ascii_fallback": "r",
+      "repeat_angle_degrees": 0.0,
+      "spacing_class": "staggered",
+      "density_class": "dense",
+      "coverage": "repeat_field",
+      "stroke_style": "staggered_repeat",
+      "motion_profile": "repeated_motion",
+      "speed_class": "fast",
+      "pressure_curve": "medium",
+      "stress_points": [
+        "repeat_accent"
+      ],
+      "release_style": "flick",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "repeat_dense",
+      "acceleration": "repeated",
+      "motion_family": "rhythmic_mark",
+      "usefulness_score": 0.25,
+      "rejection_reason": "too-many-components-for-non-texture",
+      "review_tags": [
+        "shape",
+        "contacts:4",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 42405
     }
   ]
 }

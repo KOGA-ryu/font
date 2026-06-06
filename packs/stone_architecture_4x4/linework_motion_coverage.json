@@ -1,44 +1,46 @@
 {
-  "linework_record_count": 21,
+  "linework_record_count": 34,
   "package_counts": {
     "linework.break": 2,
+    "linework.curve": 2,
+    "linework.join": 3,
     "linework.pattern": 14,
-    "linework.stroke": 3,
-    "linework.terminal": 2
+    "linework.stroke": 9,
+    "linework.terminal": 4
   },
   "motion_profile_counts": {
+    "angled_pull": 2,
+    "direction_change": 3,
     "interrupted_pull": 2,
-    "press_and_stop": 2,
-    "pressed_pull": 1,
+    "press_and_stop": 4,
+    "pressed_pull": 5,
     "repeated_motion": 14,
+    "rounded_turn": 2,
     "steady_pull": 2
   },
   "package_motion_matrix": {
     "linework.break": {
       "interrupted_pull": 2
     },
+    "linework.curve": {
+      "rounded_turn": 2
+    },
+    "linework.join": {
+      "direction_change": 3
+    },
     "linework.pattern": {
       "repeated_motion": 14
     },
     "linework.stroke": {
-      "pressed_pull": 1,
+      "angled_pull": 2,
+      "pressed_pull": 5,
       "steady_pull": 2
     },
     "linework.terminal": {
-      "press_and_stop": 2
+      "press_and_stop": 4
     }
   },
-  "missing_expected_motion_profiles": {
-    "linework.curve": [
-      "rounded_turn"
-    ],
-    "linework.join": [
-      "direction_change"
-    ],
-    "linework.stroke": [
-      "angled_pull"
-    ]
-  },
+  "missing_expected_motion_profiles": {},
   "records_missing_motion_fields": {},
   "research_sources": [
     {

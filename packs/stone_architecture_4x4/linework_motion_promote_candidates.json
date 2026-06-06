@@ -1,0 +1,59 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.linework.motion.angled_pull_fall_fast_3047",
+      "token": "e",
+      "notes": "Promote reusable motion glyph package: fast falling angled pull."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.angled_pull_rise_fast_3048",
+      "token": "g",
+      "notes": "Promote reusable motion glyph package: fast rising angled pull."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.join_corner_stressed_3049",
+      "token": "o",
+      "notes": "Promote reusable motion glyph package: stressed direction change."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.join_diagonal_to_vertical_3050",
+      "token": "r",
+      "notes": "Promote reusable motion glyph package: diagonal-to-vertical direction change."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.join_horizontal_to_diagonal_3051",
+      "token": "v",
+      "notes": "Promote reusable motion glyph package: horizontal-to-diagonal direction change."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.pressed_horizontal_heavy_3054",
+      "token": "w",
+      "notes": "Promote reusable motion glyph package: heavy horizontal pressure pull."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.pressed_vertical_heavy_3055",
+      "token": "y",
+      "notes": "Promote reusable motion glyph package: heavy vertical pressure pull."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.rounded_turn_top_left_3058",
+      "token": "z",
+      "notes": "Promote reusable motion glyph package: rounded turn."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.rounded_turn_top_right_3059",
+      "token": "L",
+      "notes": "Promote reusable motion glyph package: mirrored rounded turn."
+    },
+    {
+      "candidate_id": "4.stone.linework.motion.terminal_dark_stop_3060",
+      "token": "O",
+      "notes": "Promote reusable motion glyph package: dark press-and-stop terminal."
+    }
+  ],
+  "metadata": {
+    "source": "motion_glyph_expansion_v0",
+    "scope": "generic linework motion packages",
+    "not_object_specific": true
+  }
+}

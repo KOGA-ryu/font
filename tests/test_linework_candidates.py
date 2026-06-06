@@ -52,6 +52,24 @@ class LineworkCandidateTests(unittest.TestCase):
             self.assertEqual(bridge["mapping"]["│"]["token"], "|")
             self.assertEqual(bridge["mapping"]["─"]["token"], "-")
 
+    def test_linework_candidates_include_motion_packages(self):
+        candidates = generate_linework_candidates()
+        profiles = {candidate.get("motion_profile") for candidate in candidates if candidate["linework_kind"] == "motion"}
+        motion_candidate = next(
+            candidate
+            for candidate in candidates
+            if candidate["linework_kind"] == "motion" and candidate.get("motion_profile") == "direction_change"
+        )
+
+        self.assertIn("pressed_pull", profiles)
+        self.assertIn("direction_change", profiles)
+        self.assertIn("rounded_turn", profiles)
+        self.assertIn("press_and_stop", profiles)
+        self.assertIn("repeated_motion", profiles)
+        self.assertEqual(motion_candidate["role"], "detail")
+        self.assertEqual(motion_candidate["family"], "motion")
+        self.assertIn("stress_points", motion_candidate)
+
     def test_cli_generate_linework_writes_review_artifacts(self):
         with TemporaryDirectory() as tmp:
             pack = Path(tmp) / "pack"

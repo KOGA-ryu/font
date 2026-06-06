@@ -177,6 +177,14 @@ pressure, stress, dwell, release, rhythm, confidence, and acceleration. The
 target is not exact pixel copy; it is a reusable motion vocabulary that can
 compose convincing linework.
 
+Motion glyph expansion adds reusable pressure and gesture atoms on top of the
+basic line/corner/hatch kit. These candidates are intentionally packaged as
+generic `detail/motion` glyphs, not object-specific crack, slab, column, or
+stone glyphs. The v0 motion packages cover pressed pulls, angled pulls,
+direction changes, rounded turns, press-and-stop terminals, and repeated motion
+patterns. The image pass declares the motion it sees; the selector chooses the
+closest promoted glyph package for that layer.
+
 The brush glyph kit applies the same idea to digital-painting brush behavior:
 
 ```text
@@ -477,6 +485,21 @@ python3 -m glyph_lab.cli promote-candidates \
 
 This writes `glyphs.promoted.json` without mutating `glyphs.json`. Use `--apply`
 only after inspecting the promoted pack and report.
+
+Generic motion glyph packages can be stacked immediately after the base
+linework promotion:
+
+```sh
+python3 -m glyph_lab.cli promote-candidates \
+  --pack packs/stone_architecture_4x4 \
+  --base-glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --accepted packs/stone_architecture_4x4/linework_accepted_candidates.json \
+  --request packs/stone_architecture_4x4/linework_motion_promote_candidates.json
+```
+
+This adds reusable motion-package tokens for pressure pulls, angled pulls,
+direction changes, rounded turns, and terminal stops while keeping
+`glyphs.json` untouched.
 
 Brush promotions can be stacked on top of a linework dry-run by using that
 promoted file as the base. `suggest-ascii-promotions --base-glyphs` skips

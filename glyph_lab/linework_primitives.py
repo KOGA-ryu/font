@@ -101,6 +101,16 @@ def hatch_pattern(
     return _stamp(sorted(coords), color)
 
 
+def motion_shape(
+    shape: str,
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    if shape not in MOTION_SHAPES:
+        options = ", ".join(sorted(MOTION_SHAPES))
+        raise ValueError(f"shape must be one of {options}, got {shape!r}")
+    return _stamp(sorted(MOTION_SHAPES[shape]["coords"]), color)
+
+
 def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
     kind = spec["kind"]
     params = spec.get("params", {})
@@ -175,6 +185,46 @@ def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
             "coverage": _coverage_class(thickness),
         }
         return {**metadata, **motion_metadata(spec, metadata)}
+    if kind == "motion":
+        shape = params["shape"]
+        if shape not in MOTION_SHAPES:
+            options = ", ".join(sorted(MOTION_SHAPES))
+            raise ValueError(f"shape must be one of {options}, got {shape!r}")
+        shape_metadata = MOTION_SHAPES[shape]
+        metadata = {
+            "linework_package": shape_metadata["linework_package"],
+            "stroke_topology": shape_metadata["stroke_topology"],
+            "stroke_ports": shape_metadata.get("stroke_ports", []),
+            "angle_degrees": shape_metadata.get("angle_degrees"),
+            "connector_sides": shape_metadata.get("connector_sides", []),
+            "thickness": shape_metadata.get("thickness", 1),
+            "variant": shape,
+            "weight_profile": shape_metadata.get("weight_profile", "thin"),
+            "cap_style": shape_metadata.get("cap_style", "none"),
+            "join_style": shape_metadata.get("join_style", "none"),
+            "break_rhythm": shape_metadata.get("break_rhythm", "solid"),
+            "roughness": shape_metadata.get("roughness", "clean"),
+            "continuity": shape_metadata.get("continuity", "continuous"),
+            "coverage": shape_metadata.get("coverage", "single_pixel"),
+        }
+        for key in (
+            "repeat_angle_degrees",
+            "spacing_class",
+            "density_class",
+            "stroke_style",
+            "terminal_ports",
+            "branch_count",
+            "dominant_angle_degrees",
+            "entry_tangent_degrees",
+            "exit_tangent_degrees",
+            "curvature",
+            "intended_continuity",
+            "visible_fragments",
+            "dropout_ratio",
+        ):
+            if key in shape_metadata:
+                metadata[key] = shape_metadata[key]
+        return {**metadata, **shape_metadata["motion"]}
     angle = _angle(params["kind"]) if params["kind"] != "cross" else None
     metadata = {
         "linework_package": "linework.pattern",
@@ -210,6 +260,8 @@ def linework_stamp(spec: dict[str, Any], color: tuple[int, int, int, int] = INK)
         return linework_cap(**params)
     if kind == "hatch":
         return hatch_pattern(**params)
+    if kind == "motion":
+        return motion_shape(**params)
     raise ValueError(f"unknown linework primitive kind: {kind}")
 
 
@@ -235,6 +287,18 @@ def default_linework_specs() -> list[dict[str, Any]]:
     for kind in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall", "cross"):
         for density in ("light", "medium", "dense"):
             specs.append(_spec("hatch", f"hatch_{kind}_{density}", {"kind": kind, "density": density}, role="detail", family="texture", layer="detail", palette_role="crack"))
+    for shape in sorted(MOTION_SHAPES):
+        specs.append(
+            _spec(
+                "motion",
+                shape,
+                {"shape": shape},
+                role="detail",
+                family="motion",
+                layer="detail",
+                palette_role="ink",
+            )
+        )
     return specs
 
 
@@ -265,6 +329,236 @@ def _stamp(coords: list[tuple[int, int]], color: tuple[int, int, int, int]) -> I
         if 0 <= x < CELL_SIZE and 0 <= y < CELL_SIZE:
             pixels[x, y] = color
     return image
+
+
+def _port(side: str, lane: str, role: str) -> dict[str, str]:
+    return {"side": side, "lane": lane, "role": role}
+
+
+def _motion(
+    profile: str,
+    speed: str,
+    pressure: str,
+    stress: list[str],
+    release: str,
+    dwell: str,
+    confidence: str,
+    rhythm: str,
+    acceleration: str,
+    family: str,
+) -> dict[str, Any]:
+    return {
+        "motion_profile": profile,
+        "speed_class": speed,
+        "pressure_curve": pressure,
+        "stress_points": stress,
+        "release_style": release,
+        "dwell": dwell,
+        "stroke_confidence": confidence,
+        "rhythm_role": rhythm,
+        "acceleration": acceleration,
+        "motion_family": family,
+    }
+
+
+MOTION_SHAPES: dict[str, dict[str, Any]] = {
+    "pressed_horizontal_heavy": {
+        "coords": {(0, 1), (1, 1), (2, 1), (3, 1), (1, 2), (2, 2)},
+        "linework_package": "linework.stroke",
+        "stroke_topology": "pass_through_segment",
+        "stroke_ports": [_port("left", "center", "entry"), _port("right", "center", "exit")],
+        "angle_degrees": 0.0,
+        "connector_sides": ["left", "right"],
+        "thickness": 2,
+        "weight_profile": "heavy_middle",
+        "coverage": "pressure_swell",
+        "motion": _motion("pressed_pull", "slow", "heavy", ["middle"], "clean_exit", "linger", "decisive", "single", "steady", "pressure_weight"),
+    },
+    "pressed_vertical_heavy": {
+        "coords": {(1, 0), (1, 1), (1, 2), (1, 3), (2, 1), (2, 2)},
+        "linework_package": "linework.stroke",
+        "stroke_topology": "pass_through_segment",
+        "stroke_ports": [_port("top", "center", "entry"), _port("bottom", "center", "exit")],
+        "angle_degrees": 90.0,
+        "connector_sides": ["top", "bottom"],
+        "thickness": 2,
+        "weight_profile": "heavy_middle",
+        "coverage": "pressure_swell",
+        "motion": _motion("pressed_pull", "slow", "heavy", ["middle"], "clean_exit", "linger", "decisive", "single", "steady", "pressure_weight"),
+    },
+    "pressed_diagonal_rise_heavy": {
+        "coords": {(0, 3), (1, 2), (2, 1), (3, 0), (1, 3), (2, 2)},
+        "linework_package": "linework.stroke",
+        "stroke_topology": "pass_through_segment",
+        "stroke_ports": [_port("left", "low", "entry"), _port("right", "high", "exit")],
+        "angle_degrees": 45.0,
+        "connector_sides": ["left", "right", "top", "bottom"],
+        "thickness": 2,
+        "weight_profile": "heavy_middle",
+        "coverage": "pressure_swell",
+        "motion": _motion("pressed_pull", "slow", "heavy", ["middle"], "clean_exit", "linger", "decisive", "single", "steady", "pressure_weight"),
+    },
+    "pressed_diagonal_fall_heavy": {
+        "coords": {(0, 0), (1, 1), (2, 2), (3, 3), (1, 0), (2, 1)},
+        "linework_package": "linework.stroke",
+        "stroke_topology": "pass_through_segment",
+        "stroke_ports": [_port("left", "high", "entry"), _port("right", "low", "exit")],
+        "angle_degrees": 135.0,
+        "connector_sides": ["left", "right", "top", "bottom"],
+        "thickness": 2,
+        "weight_profile": "heavy_middle",
+        "coverage": "pressure_swell",
+        "motion": _motion("pressed_pull", "slow", "heavy", ["middle"], "clean_exit", "linger", "decisive", "single", "steady", "pressure_weight"),
+    },
+    "angled_pull_rise_fast": {
+        "coords": {(0, 3), (1, 3), (1, 2), (2, 2), (2, 1), (3, 1), (3, 0)},
+        "linework_package": "linework.stroke",
+        "stroke_topology": "pass_through_segment",
+        "stroke_ports": [_port("left", "low", "entry"), _port("right", "high", "exit")],
+        "angle_degrees": 45.0,
+        "connector_sides": ["left", "right", "top", "bottom"],
+        "thickness": 1,
+        "weight_profile": "thin_with_drag",
+        "coverage": "angled_pull_stair",
+        "motion": _motion("angled_pull", "fast", "constant_light", ["exit"], "flick", "none", "decisive", "single", "accelerating", "continuous_stroke"),
+    },
+    "angled_pull_fall_fast": {
+        "coords": {(0, 0), (1, 0), (1, 1), (2, 1), (2, 2), (3, 2), (3, 3)},
+        "linework_package": "linework.stroke",
+        "stroke_topology": "pass_through_segment",
+        "stroke_ports": [_port("left", "high", "entry"), _port("right", "low", "exit")],
+        "angle_degrees": 135.0,
+        "connector_sides": ["left", "right", "top", "bottom"],
+        "thickness": 1,
+        "weight_profile": "thin_with_drag",
+        "coverage": "angled_pull_stair",
+        "motion": _motion("angled_pull", "fast", "constant_light", ["exit"], "flick", "none", "decisive", "single", "accelerating", "continuous_stroke"),
+    },
+    "join_corner_stressed": {
+        "coords": {(0, 1), (1, 1), (1, 2), (1, 3), (0, 2), (2, 2)},
+        "linework_package": "linework.join",
+        "stroke_topology": "direction_change",
+        "stroke_ports": [_port("left", "center", "entry"), _port("bottom", "center", "exit")],
+        "angle_degrees": 90.0,
+        "connector_sides": ["left", "bottom"],
+        "join_style": "stressed_corner",
+        "branch_count": 2,
+        "coverage": "pressure_corner",
+        "motion": _motion("direction_change", "slow", "heavy", ["corner"], "clean_exit", "linger", "decisive", "single", "corner_reset", "join_motion"),
+    },
+    "join_diagonal_to_vertical": {
+        "coords": {(0, 3), (1, 2), (2, 1), (2, 2), (2, 3)},
+        "linework_package": "linework.join",
+        "stroke_topology": "direction_change",
+        "stroke_ports": [_port("left", "low", "entry"), _port("bottom", "center", "exit")],
+        "angle_degrees": 65.0,
+        "connector_sides": ["left", "bottom"],
+        "join_style": "diagonal_to_vertical",
+        "branch_count": 2,
+        "coverage": "direction_change",
+        "motion": _motion("direction_change", "slow", "medium", ["corner"], "clean_exit", "slight", "decisive", "single", "corner_reset", "join_motion"),
+    },
+    "join_horizontal_to_diagonal": {
+        "coords": {(0, 2), (1, 2), (2, 2), (3, 1), (2, 1)},
+        "linework_package": "linework.join",
+        "stroke_topology": "direction_change",
+        "stroke_ports": [_port("left", "center", "entry"), _port("right", "high", "exit")],
+        "angle_degrees": 25.0,
+        "connector_sides": ["left", "right"],
+        "join_style": "horizontal_to_diagonal",
+        "branch_count": 2,
+        "coverage": "direction_change",
+        "motion": _motion("direction_change", "slow", "medium", ["corner"], "clean_exit", "slight", "decisive", "single", "corner_reset", "join_motion"),
+    },
+    "rounded_turn_top_left": {
+        "coords": {(0, 1), (1, 1), (2, 2), (2, 3)},
+        "linework_package": "linework.curve",
+        "stroke_topology": "soft_corner",
+        "stroke_ports": [_port("left", "center", "entry"), _port("bottom", "center", "exit")],
+        "angle_degrees": None,
+        "connector_sides": ["left", "bottom"],
+        "join_style": "soft_corner",
+        "branch_count": 2,
+        "entry_tangent_degrees": 0.0,
+        "exit_tangent_degrees": 90.0,
+        "curvature": "quarter_turn",
+        "coverage": "soft_turn",
+        "motion": _motion("rounded_turn", "medium", "constant_light", ["curve_apex"], "clean_exit", "none", "decisive", "single", "smooth_turn", "turning_motion"),
+    },
+    "rounded_turn_top_right": {
+        "coords": {(3, 1), (2, 1), (1, 2), (1, 3)},
+        "linework_package": "linework.curve",
+        "stroke_topology": "soft_corner",
+        "stroke_ports": [_port("right", "center", "entry"), _port("bottom", "center", "exit")],
+        "angle_degrees": None,
+        "connector_sides": ["right", "bottom"],
+        "join_style": "soft_corner",
+        "branch_count": 2,
+        "entry_tangent_degrees": 180.0,
+        "exit_tangent_degrees": 90.0,
+        "curvature": "quarter_turn",
+        "coverage": "soft_turn",
+        "motion": _motion("rounded_turn", "medium", "constant_light", ["curve_apex"], "clean_exit", "none", "decisive", "single", "smooth_turn", "turning_motion"),
+    },
+    "terminal_dark_stop": {
+        "coords": {(0, 1), (1, 1), (2, 1), (2, 2), (3, 1), (3, 2)},
+        "linework_package": "linework.terminal",
+        "stroke_topology": "terminal_segment",
+        "stroke_ports": [_port("left", "center", "entry"), _port("right", "center", "terminal")],
+        "terminal_ports": [_port("right", "center", "terminal")],
+        "angle_degrees": 0.0,
+        "connector_sides": ["right"],
+        "cap_style": "dark_terminal",
+        "branch_count": 1,
+        "coverage": "terminal_pool",
+        "motion": _motion("press_and_stop", "decelerating", "heavy", ["terminal"], "blunt_stop", "linger", "decisive", "single", "stop", "terminal_motion"),
+    },
+    "terminal_taper_stop": {
+        "coords": {(0, 1), (1, 1), (2, 1), (3, 1), (2, 2)},
+        "linework_package": "linework.terminal",
+        "stroke_topology": "terminal_segment",
+        "stroke_ports": [_port("left", "center", "entry"), _port("right", "center", "terminal")],
+        "terminal_ports": [_port("right", "center", "terminal")],
+        "angle_degrees": 0.0,
+        "connector_sides": ["right"],
+        "cap_style": "taper_stop",
+        "branch_count": 1,
+        "coverage": "terminal_taper",
+        "motion": _motion("press_and_stop", "decelerating", "medium", ["terminal"], "tapered_exit", "slight", "decisive", "single", "stop", "terminal_motion"),
+    },
+    "repeat_staggered_dense": {
+        "coords": {(0, 0), (2, 0), (1, 1), (3, 1), (0, 2), (2, 2), (1, 3), (3, 3)},
+        "linework_package": "linework.pattern",
+        "stroke_topology": "repeated_strokes",
+        "stroke_ports": [],
+        "angle_degrees": 0.0,
+        "repeat_angle_degrees": 0.0,
+        "spacing_class": "staggered",
+        "density_class": "dense",
+        "stroke_style": "staggered_repeat",
+        "join_style": "none",
+        "break_rhythm": "patterned",
+        "continuity": "repeated",
+        "coverage": "repeat_field",
+        "motion": _motion("repeated_motion", "fast", "medium", ["repeat_accent"], "flick", "none", "decisive", "repeat_dense", "repeated", "rhythmic_mark"),
+    },
+    "repeat_cross_dense": {
+        "coords": {(0, 0), (3, 0), (1, 1), (2, 1), (1, 2), (2, 2), (0, 3), (3, 3)},
+        "linework_package": "linework.pattern",
+        "stroke_topology": "repeated_strokes",
+        "stroke_ports": [],
+        "angle_degrees": None,
+        "repeat_angle_degrees": None,
+        "spacing_class": "cross",
+        "density_class": "dense",
+        "stroke_style": "cross_repeat",
+        "join_style": "overlap",
+        "break_rhythm": "patterned",
+        "continuity": "repeated",
+        "coverage": "repeat_field",
+        "motion": _motion("repeated_motion", "fast", "medium", ["repeat_accent"], "clean_exit", "none", "decisive", "repeat_dense", "repeated", "rhythmic_mark"),
+    },
+}
 
 
 def _horizontal_row(offset: str) -> int:
@@ -386,10 +680,6 @@ def _cap_ports(direction: str, side: str) -> list[dict[str, str]]:
     role = "terminal" if side == "top" else "entry"
     other_role = "entry" if side == "top" else "terminal"
     return [_port("top", "center", role), _port("bottom", "center", other_role)]
-
-
-def _port(side: str, lane: str, role: str) -> dict[str, str]:
-    return {"side": side, "lane": lane, "role": role}
 
 
 def _weight_profile(thickness: int) -> str:

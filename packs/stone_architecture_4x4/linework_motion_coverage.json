@@ -1,0 +1,71 @@
+{
+  "linework_record_count": 21,
+  "package_counts": {
+    "linework.break": 2,
+    "linework.pattern": 14,
+    "linework.stroke": 3,
+    "linework.terminal": 2
+  },
+  "motion_profile_counts": {
+    "interrupted_pull": 2,
+    "press_and_stop": 2,
+    "pressed_pull": 1,
+    "repeated_motion": 14,
+    "steady_pull": 2
+  },
+  "package_motion_matrix": {
+    "linework.break": {
+      "interrupted_pull": 2
+    },
+    "linework.pattern": {
+      "repeated_motion": 14
+    },
+    "linework.stroke": {
+      "pressed_pull": 1,
+      "steady_pull": 2
+    },
+    "linework.terminal": {
+      "press_and_stop": 2
+    }
+  },
+  "missing_expected_motion_profiles": {
+    "linework.curve": [
+      "rounded_turn"
+    ],
+    "linework.join": [
+      "direction_change"
+    ],
+    "linework.stroke": [
+      "angled_pull"
+    ]
+  },
+  "records_missing_motion_fields": {},
+  "research_sources": [
+    {
+      "name": "Wacom WILL ink pipeline",
+      "url": "https://developer-docs.wacom.com/docs/sdk-for-ink/tech/pipeline/",
+      "use": "Position, timestamp, pressure/force, tilt, phase, and velocity map to stroke motion state."
+    },
+    {
+      "name": "Wacom WILL overview",
+      "url": "https://developer-docs.wacom.com/docs/sdk-for-ink/overview/",
+      "use": "Digital ink stores sensor data and rendered ink together."
+    },
+    {
+      "name": "Krita brush sensors",
+      "url": "https://docs.krita.org/en/reference_manual/brushes/brush_settings/tablet_sensors.html",
+      "use": "Pressure, speed, drawing angle, distance, time, fade, tilt, and rotation inform brush behavior."
+    },
+    {
+      "name": "MyPaint concepts",
+      "url": "https://www.mypaint.app/en/docs/manuals/v0.9.0/concepts/",
+      "use": "A stroke is a sequence of brush dabs that can respond to pressure, speed, direction, and canvas state."
+    },
+    {
+      "name": "MyPaint Brushlib",
+      "url": "https://github-wiki-see.page/m/mypaint/libmypaint/wiki/Using-Brushlib",
+      "use": "Brush input includes x/y position, pressure, tilt, and time delta."
+    }
+  ],
+  "glyphs_path": "packs/stone_architecture_4x4/linework_accepted_candidates.json"
+}

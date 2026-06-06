@@ -8,6 +8,7 @@ from .atlas import PALETTE
 from .candidate_filter import _records_with_bitmasks, filter_candidates
 from .linework_primitives import default_linework_specs, linework_metadata, linework_stamp
 from .measure import measure_stamp
+from .motion_taxonomy import MOTION_METADATA_FIELDS
 from .review_export import generate_review_contact_sheet
 from .schema import CELL_SIZE, load_glyphs
 from .transforms import stamp_to_bitmask
@@ -86,6 +87,9 @@ def generate_linework_candidates() -> list[dict[str, Any]]:
             "terminal_ports",
             "stroke_style",
         ):
+            if key in metadata:
+                candidate[key] = metadata[key]
+        for key in MOTION_METADATA_FIELDS:
             if key in metadata:
                 candidate[key] = metadata[key]
         candidates.append(candidate)

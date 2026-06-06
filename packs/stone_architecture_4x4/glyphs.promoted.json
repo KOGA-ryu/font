@@ -1758,7 +1758,17 @@
       "visible_fragments": 2,
       "dropout_ratio": 0.25,
       "coverage": "single_pixel",
-      "ascii_fallback": "-"
+      "ascii_fallback": "-",
+      "motion_profile": "interrupted_pull",
+      "speed_class": "fast",
+      "pressure_curve": "constant_light",
+      "stress_points": [],
+      "release_style": "dry_break",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single_with_gap",
+      "acceleration": "steady",
+      "motion_family": "interrupted_stroke"
     },
     {
       "id": "4.stone.promoted.edge.linework.horizontal_middle_thick_3003_33",
@@ -1852,7 +1862,19 @@
       "visible_fragments": 1,
       "dropout_ratio": 0.0,
       "coverage": "double_pixel",
-      "ascii_fallback": "-"
+      "ascii_fallback": "-",
+      "motion_profile": "pressed_pull",
+      "speed_class": "slow",
+      "pressure_curve": "constant_heavy",
+      "stress_points": [
+        "middle"
+      ],
+      "release_style": "clean_exit",
+      "dwell": "slight",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "steady",
+      "motion_family": "pressure_weight"
     },
     {
       "id": "4.stone.promoted.edge.linework.horizontal_top_thin_3000_34",
@@ -1946,7 +1968,17 @@
       "visible_fragments": 1,
       "dropout_ratio": 0.0,
       "coverage": "single_pixel",
-      "ascii_fallback": "-"
+      "ascii_fallback": "-",
+      "motion_profile": "steady_pull",
+      "speed_class": "medium",
+      "pressure_curve": "thin",
+      "stress_points": [],
+      "release_style": "clean_exit",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "steady",
+      "motion_family": "continuous_stroke"
     },
     {
       "id": "4.stone.promoted.edge.linework.vertical_broken_3009_35",
@@ -2040,7 +2072,17 @@
       "visible_fragments": 2,
       "dropout_ratio": 0.25,
       "coverage": "single_pixel",
-      "ascii_fallback": "|"
+      "ascii_fallback": "|",
+      "motion_profile": "interrupted_pull",
+      "speed_class": "fast",
+      "pressure_curve": "constant_light",
+      "stress_points": [],
+      "release_style": "dry_break",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single_with_gap",
+      "acceleration": "steady",
+      "motion_family": "interrupted_stroke"
     },
     {
       "id": "4.stone.promoted.edge.linework.horizontal_middle_thin_3001_36",
@@ -2133,7 +2175,17 @@
       "visible_fragments": 1,
       "dropout_ratio": 0.0,
       "coverage": "single_pixel",
-      "ascii_fallback": "-"
+      "ascii_fallback": "-",
+      "motion_profile": "steady_pull",
+      "speed_class": "medium",
+      "pressure_curve": "thin",
+      "stress_points": [],
+      "release_style": "clean_exit",
+      "dwell": "none",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "steady",
+      "motion_family": "continuous_stroke"
     },
     {
       "id": "4.stone.promoted.edge.linework.cap_horizontal_right_3029_37",
@@ -2230,7 +2282,19 @@
           "role": "terminal"
         }
       ],
-      "ascii_fallback": "-"
+      "ascii_fallback": "-",
+      "motion_profile": "press_and_stop",
+      "speed_class": "decelerating",
+      "pressure_curve": "constant_medium",
+      "stress_points": [
+        "terminal"
+      ],
+      "release_style": "blunt_stop",
+      "dwell": "slight",
+      "stroke_confidence": "decisive",
+      "rhythm_role": "single",
+      "acceleration": "stop",
+      "motion_family": "terminal_motion"
     },
     {
       "id": "4.stone.promoted.detail.dry_brush.dry_brush_horizontal_light_4066_38",

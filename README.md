@@ -148,6 +148,12 @@ linework candidates record ports, topology, weight, cap/join behavior, break
 rhythm, roughness, and continuity so packages can be reused across layers and
 objects.
 
+The motion research notes are in [docs/LINEWORK_RESEARCH.md](docs/LINEWORK_RESEARCH.md).
+The code treats each 4x4 glyph as a sample of practiced motion state: speed,
+pressure, stress, dwell, release, rhythm, confidence, and acceleration. The
+target is not exact pixel copy; it is a reusable motion vocabulary that can
+compose convincing linework.
+
 The brush glyph kit applies the same idea to digital-painting brush behavior:
 
 ```text
@@ -284,6 +290,17 @@ Writes review-only linework artifacts:
 - `packs/stone_architecture_4x4/ascii_linework_palette.txt`
 - `packs/stone_architecture_4x4/ascii_shade_palette.txt`
 - `packs/stone_architecture_4x4/ascii_glyph_mapping.json`
+
+Audit the generated motion vocabulary:
+
+```sh
+python3 -m glyph_lab.cli linework-coverage \
+  --glyphs packs/stone_architecture_4x4/linework_accepted_candidates.json \
+  --out packs/stone_architecture_4x4/linework_motion_coverage.json
+```
+
+This writes a coverage report grouped by motion package and motion profile. Use
+that report before adding package generators or proposing an 8x8 escalation.
 
 The palette files are meant for
 `/Users/kogaryu/gameguy-3d-lab/image_to_ascii_workbench_v3`. Use them with

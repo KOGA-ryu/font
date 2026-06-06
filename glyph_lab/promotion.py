@@ -12,6 +12,7 @@ from PIL import Image
 
 from .candidate_filter import _canonical_id, _equivalence_group
 from .measure import measure_stamp
+from .motion_taxonomy import MOTION_METADATA_FIELDS
 from .schema import CELL_SIZE
 from .token_allocator import allocate_token
 from .transforms import bitmask_to_stamp, stamp_to_bitmask
@@ -142,7 +143,7 @@ def _promoted_record(
     }
     if notes is not None:
         record["notes"] = notes
-    for key in (
+    lineage_keys = (
         "linework_kind",
         "linework_package",
         "stroke_topology",
@@ -175,7 +176,8 @@ def _promoted_record(
         "brush_params",
         "brush_engine",
         "density_class",
-    ):
+    ) + MOTION_METADATA_FIELDS
+    for key in lineage_keys:
         if key in candidate:
             record[key] = candidate[key]
     return record

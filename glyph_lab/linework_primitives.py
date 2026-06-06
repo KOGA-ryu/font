@@ -6,6 +6,7 @@ from PIL import Image
 
 from .primitives import INK
 from .schema import CELL_SIZE
+from .motion_taxonomy import motion_metadata
 
 
 LINEWORK_DIRECTIONS = {"horizontal", "vertical", "diagonal_rise", "diagonal_fall"}
@@ -108,7 +109,7 @@ def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
         direction = params["direction"]
         thickness = params.get("thickness", 1)
         variant = params.get("offset", "middle")
-        return {
+        metadata = {
             "linework_package": "linework.break" if broken else "linework.stroke",
             "stroke_topology": "broken_segment" if broken else "pass_through_segment",
             "stroke_ports": _line_ports(direction, variant),
@@ -127,10 +128,11 @@ def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
             "dropout_ratio": 0.25 if broken else 0.0,
             "coverage": _coverage_class(thickness),
         }
+        return {**metadata, **motion_metadata(spec, metadata)}
     if kind == "corner":
         radius = params.get("radius", "sharp")
         thickness = params.get("thickness", 1)
-        return {
+        metadata = {
             "linework_package": "linework.curve" if radius == "soft" else "linework.join",
             "stroke_topology": "soft_corner" if radius == "soft" else "corner_join",
             "stroke_ports": _corner_ports(params["position"]),
@@ -151,9 +153,10 @@ def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
             "curvature": "quarter_turn" if radius == "soft" else "hard_turn",
             "coverage": _coverage_class(thickness),
         }
+        return {**metadata, **motion_metadata(spec, metadata)}
     if kind == "cap":
         thickness = params.get("thickness", 1)
-        return {
+        metadata = {
             "linework_package": "linework.terminal",
             "stroke_topology": "terminal_segment",
             "stroke_ports": _cap_ports(params["direction"], params["side"]),
@@ -171,8 +174,9 @@ def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
             "branch_count": 1,
             "coverage": _coverage_class(thickness),
         }
+        return {**metadata, **motion_metadata(spec, metadata)}
     angle = _angle(params["kind"]) if params["kind"] != "cross" else None
-    return {
+    metadata = {
         "linework_package": "linework.pattern",
         "stroke_topology": "repeated_strokes",
         "stroke_ports": [],
@@ -191,6 +195,7 @@ def linework_metadata(spec: dict[str, Any]) -> dict[str, Any]:
         "density_class": params["density"],
         "stroke_style": "clean",
     }
+    return {**metadata, **motion_metadata(spec, metadata)}
 
 
 def linework_stamp(spec: dict[str, Any], color: tuple[int, int, int, int] = INK) -> Image.Image:

@@ -18,6 +18,7 @@ from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
 from .linework_candidates import write_linework_review
 from .measurement_pass import write_art_pass_measurements
+from .motion_taxonomy import write_linework_motion_coverage
 from .object_hints import write_object_hints
 from .profiles import measure_profile_image
 from .promotion import promote_candidates
@@ -95,6 +96,13 @@ def main() -> None:
 
     linework_parser = subparsers.add_parser("generate-linework", help="generate linework glyph kit review artifacts")
     linework_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+
+    linework_coverage_parser = subparsers.add_parser(
+        "linework-coverage",
+        help="write a motion-taxonomy coverage report for linework records",
+    )
+    linework_coverage_parser.add_argument("--glyphs", required=True)
+    linework_coverage_parser.add_argument("--out", required=True)
 
     brush_parser = subparsers.add_parser("generate-brushes", help="generate texture brush glyph review artifacts")
     brush_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -220,6 +228,10 @@ def main() -> None:
 
     if args.command == "generate-linework":
         write_linework_review(pack)
+        return
+
+    if args.command == "linework-coverage":
+        write_linework_motion_coverage(args.glyphs, args.out)
         return
 
     if args.command == "generate-brushes":

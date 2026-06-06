@@ -563,6 +563,62 @@ image
 -> PNG drawn from the promoted glyph atlas
 ```
 
+For repeated layer work, use a recipe instead of manual commands:
+
+```sh
+python3 -m glyph_lab.cli render-layer-recipe \
+  --recipe out_brush_test/pixel_hero_layers/recipe.json \
+  --out out_brush_test/pixel_hero_layers
+```
+
+A recipe has shared render defaults, named layers, and composites:
+
+```json
+{
+  "defaults": {
+    "ascii": "../pixel_hero_dot_density/ascii/pixel_hero_dot_density.txt",
+    "glyphs": "../../packs/stone_architecture_4x4/glyphs.promoted.json",
+    "atlas": "../../packs/stone_architecture_4x4/atlas.promoted.png",
+    "mapping": "../../packs/stone_architecture_4x4/ascii_brush_mapping.json",
+    "gate_image": "../pixel_hero_dot_density/input/pixel_hero.png",
+    "gate_mode": "black",
+    "gate_threshold": 40,
+    "gate_dilate": 0,
+    "gate_fill_token": "#",
+    "scale": 3
+  },
+  "layers": [
+    {
+      "name": "black_t40",
+      "ink_mode": "solid",
+      "ink_color": "#000000"
+    },
+    {
+      "name": "teardrop_blue",
+      "gate_include_boxes": [[18, 76, 68, 142]],
+      "gate_samples": "../pixel_hero_teardrop_cloth/samples/pixel_hero_teardrop_cloth_refined_samples.json",
+      "gate_sample_key": "teardrop_cloth_samples",
+      "ink_mode": "sampled-local",
+      "ink_sample_radius": 8,
+      "ink_ignore_luminance": 40,
+      "ink_palette_threshold": 28
+    }
+  ],
+  "composites": [
+    {
+      "name": "final",
+      "base": "black_t40",
+      "overlays": ["teardrop_blue"]
+    }
+  ]
+}
+```
+
+`render-layer-recipe` writes `layers/*.png`, `masks/*.png`,
+`composites/*.png`, and `manifest.json`. The important rule is that layer masks
+choose cells first, and ink sampling only colors those cells. Recolor passes do
+not create new geometry.
+
 Generate a promotion request from the fallback warnings:
 
 ```sh

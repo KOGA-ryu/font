@@ -19,6 +19,7 @@ from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
 from .layer_breakdown import write_layer_breakdown
+from .layer_recipe import render_layer_recipe
 from .linework_analyzer import analyze_linework_image
 from .linework_candidates import write_linework_review
 from .measurement_pass import write_art_pass_measurements
@@ -198,6 +199,13 @@ def main() -> None:
     )
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
+
+    layer_recipe_parser = subparsers.add_parser(
+        "render-layer-recipe",
+        help="render mask-first color layers from a JSON recipe",
+    )
+    layer_recipe_parser.add_argument("--recipe", required=True)
+    layer_recipe_parser.add_argument("--out", required=True)
 
     promoted_atlas_parser = subparsers.add_parser("build-promoted-atlas", help="build an atlas for promoted glyphs")
     promoted_atlas_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -381,6 +389,10 @@ def main() -> None:
             ink_palette_threshold=args.ink_palette_threshold,
             scale=args.scale,
         )
+        return
+
+    if args.command == "render-layer-recipe":
+        render_layer_recipe(args.recipe, args.out)
         return
 
     if args.command == "build-promoted-atlas":

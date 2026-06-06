@@ -1,0 +1,34 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+      "token": "l",
+      "notes": "Promote reusable value patch package: left-side shadow value."
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+      "token": "m",
+      "notes": "Promote reusable value patch package: top shadow value."
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_mid_block_4175",
+      "token": "`",
+      "notes": "Promote reusable value patch package: compact mid-tone block."
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
+      "token": "{",
+      "notes": "Promote reusable value patch package: top highlight edge."
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "token": "}",
+      "notes": "Promote reusable value patch package: left highlight edge."
+    }
+  ],
+  "metadata": {
+    "source": "value_patch_package_v0",
+    "scope": "generic shadow, mid-tone, and highlight value glyph packages",
+    "not_object_specific": true
+  }
+}

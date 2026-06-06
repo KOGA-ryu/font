@@ -198,13 +198,13 @@ brush tip / shape
 
 The generated brush families are `hatch`, `crosshatch`, `stipple`, `spray`,
 `charcoal`, `charcoal_drag`, `dry_brush`, `grain`, `scratch`, `chip`,
-`edge_wear`, `tone_hatch`, and `dot_field`. These
+`edge_wear`, `tone_hatch`, `dot_field`, and `value_patch`. These
 are modeled after common digital brush controls: tip shape, density, scatter
 direction, roughness, coverage, grain, incised marks, chipped-edge damage, tone
 gradients, contour hatching, stipple, speckle, pitting, dust, pressure drags,
-smudges, broken contour fragments, and rubbed edges. They are still
-deterministic 4x4 glyph stamps, not a paint engine, and they are not hardcoded
-to a slab, crack, column, or single object.
+smudges, broken contour fragments, rubbed edges, shadow cells, mid-tone cells,
+and highlight cells. They are still deterministic 4x4 glyph stamps, not a paint
+engine, and they are not hardcoded to a slab, crack, column, or single object.
 
 ## Transform and equivalence model
 
@@ -409,7 +409,7 @@ Writes review-only brush artifacts:
 - `packs/stone_architecture_4x4/ascii_brush_mapping.json`
 
 Use the texture palette for hatching, crosshatching, tone hatching, dot fields,
-charcoal, charcoal drags, dry-brush, grain, scratch, chipped-edge, and edge-wear detail passes. Use the spray palette for
+value patches, charcoal, charcoal drags, dry-brush, grain, scratch, chipped-edge, and edge-wear detail passes. Use the spray palette for
 stipple/scatter passes. If the accepted brush set exceeds the printable ASCII
 bridge pool, the overflow remains in `brush_accepted_candidates.json` and is
 listed under `skipped_bridge_candidates` in `ascii_brush_mapping.json`.
@@ -597,6 +597,19 @@ python3 -m glyph_lab.cli promote-candidates \
 
 This promotes representative broken and rubbed contour fragments into the
 dry-run pack without mutating `glyphs.json`.
+
+Value-patch package promotions can be stacked after edge wear:
+
+```sh
+python3 -m glyph_lab.cli promote-candidates \
+  --pack packs/stone_architecture_4x4 \
+  --base-glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --accepted packs/stone_architecture_4x4/brush_accepted_candidates.json \
+  --request packs/stone_architecture_4x4/value_patch_promote_candidates.json
+```
+
+This promotes representative shadow, mid-tone, and highlight value cells into
+the dry-run pack without mutating `glyphs.json`.
 
 Build an atlas for the dry-run promoted pack:
 

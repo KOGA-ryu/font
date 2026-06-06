@@ -6053,6 +6053,346 @@
       },
       "brush_engine": "edge-wear",
       "density_class": "rubbed"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.value_patch_shadow_left_4169_87",
+      "token": "l",
+      "index": 87,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.3333333333333333,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 12593
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_left"
+      },
+      "source_candidate_id": "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable value patch package: left-side shadow value.",
+      "ascii_fallback": ":",
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_left"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_left"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.value_patch_shadow_top_4171_88",
+      "token": "m",
+      "index": 88,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 175
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_top"
+      },
+      "source_candidate_id": "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable value patch package: top shadow value.",
+      "ascii_fallback": ":",
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_top"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_top"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.value_patch_mid_block_4175_89",
+      "token": "`",
+      "index": 89,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_mid",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 1782
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "mid_block"
+      },
+      "source_candidate_id": "4.stone.brush.value_patch.value_patch_mid_block_4175",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable value patch package: compact mid-tone block.",
+      "ascii_fallback": ":",
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "mid_block"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "mid_block"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.value_patch_highlight_top_edge_4177_90",
+      "token": "{",
+      "index": 90,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.3125,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.4,
+        "centroid_y": 0.2,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 47
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "highlight_top_edge"
+      },
+      "source_candidate_id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable value patch package: top highlight edge.",
+      "ascii_fallback": ":",
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "highlight_top_edge"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "highlight_top_edge"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.value_patch_highlight_left_edge_4178_91",
+      "token": "}",
+      "index": 91,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.3125,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.2,
+        "centroid_y": 1.4,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 4401
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "highlight_left_edge"
+      },
+      "source_candidate_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable value patch package: left highlight edge.",
+      "ascii_fallback": ":",
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "highlight_left_edge"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "highlight_left_edge"
     }
   ]
 }

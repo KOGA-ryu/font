@@ -1,5 +1,5 @@
 {
-  "texture_palette": "=?`*BI@~x,U{}/-|AHNRW47!&)\\EKOV58$'+QYgk69%(:DGJMZPlXm;FLeifj",
+  "texture_palette": "=?`*BI@~x,U{}/-|AHNRW47!&)\\:EKOV58$'+QYgk69%(DGJMZPlXm;FLeifj",
   "spray_palette": "rzo0vw13y2",
   "mapping": {
     "#": {
@@ -143,18 +143,18 @@
       "bridge_only": false
     },
     ":": {
-      "glyph_id": "4.stone.fill.texture.mid_fill_checker_11",
-      "token": ":",
-      "role": "fill",
+      "glyph_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "token": "",
+      "role": "detail",
       "family": "texture",
-      "layer": "base_fill",
-      "palette_role": "stone_mid",
-      "source": "active_pack",
-      "brush_family": null,
-      "brush_engine": null,
-      "density_class": null,
+      "layer": "detail",
+      "palette_role": "highlight",
+      "source": "brush_geometry",
+      "brush_family": "value_patch",
+      "brush_engine": "value-patch",
+      "density_class": "highlight_left_edge",
       "ascii_fallback": ":",
-      "bridge_only": false
+      "bridge_only": true
     },
     ";": {
       "glyph_id": "4.stone.fill.texture.dark_fill_dense_12",
@@ -1318,6 +1318,30 @@
     },
     {
       "candidate_id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_mid_block_4175",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_mid_pillar_4176",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
       "reason": "ascii-bridge-pool-exhausted"
     }
   ],

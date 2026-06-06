@@ -100,6 +100,7 @@ def _group_sort_key(group: str) -> tuple[int, str]:
         "brush:edge_wear": 11,
         "brush:tone_hatch": 12,
         "brush:dot_field": 13,
+        "brush:value_patch": 14,
     }
     return (order.get(group, 100), group)
 

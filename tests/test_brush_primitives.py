@@ -13,6 +13,7 @@ from glyph_lab.brush_primitives import (
     spray,
     stipple,
     tone_hatch,
+    value_patch,
 )
 from glyph_lab.measure import measure_stamp
 from glyph_lab.transforms import stamp_to_bitmask
@@ -172,6 +173,30 @@ class BrushPrimitiveTests(unittest.TestCase):
         self.assertEqual(metadata["brush_engine"], "edge-wear")
         self.assertEqual(metadata["density_class"], "rubbed")
         self.assertEqual(metadata["ascii_fallback"], "x")
+
+    def test_value_patch_mid_block_has_more_density_than_highlight_edge(self):
+        edge = measure_stamp(value_patch("highlight_top_edge"))["density"]
+        block = measure_stamp(value_patch("mid_block"))["density"]
+
+        self.assertGreater(block, edge)
+
+    def test_value_patch_is_deterministic(self):
+        first = stamp_to_bitmask(value_patch("shadow_corner_bottom_right"))
+        second = stamp_to_bitmask(value_patch("shadow_corner_bottom_right"))
+
+        self.assertEqual(first, second)
+
+    def test_value_patch_metadata_records_engine(self):
+        metadata = brush_metadata(
+            {
+                "brush_family": "value_patch",
+                "params": {"pattern": "shadow_left"},
+            }
+        )
+
+        self.assertEqual(metadata["brush_engine"], "value-patch")
+        self.assertEqual(metadata["density_class"], "shadow_left")
+        self.assertEqual(metadata["ascii_fallback"], ":")
 
 
 if __name__ == "__main__":

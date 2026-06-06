@@ -92,6 +92,15 @@ class BrushCandidateTests(unittest.TestCase):
         self.assertEqual(wear["brush_engine"], "edge-wear")
         self.assertIn("wear", wear["brush_params"])
 
+    def test_brush_candidates_include_value_patch_package(self):
+        candidates = generate_brush_candidates()
+        value = next(candidate for candidate in candidates if candidate["brush_family"] == "value_patch")
+
+        self.assertEqual(value["family"], "texture")
+        self.assertEqual(value["role"], "detail")
+        self.assertEqual(value["brush_engine"], "value-patch")
+        self.assertIn("pattern", value["brush_params"])
+
     def test_cli_generate_brushes_writes_review_artifacts(self):
         with TemporaryDirectory() as tmp:
             pack = Path(tmp) / "pack"

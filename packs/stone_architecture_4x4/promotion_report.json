@@ -1,18 +1,20 @@
 {
-  "promoted_count": 4,
+  "promoted_count": 5,
   "rejected_count": 0,
   "promoted_candidate_ids": [
-    "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
-    "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
-    "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
-    "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161"
+    "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+    "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+    "4.stone.brush.value_patch.value_patch_mid_block_4175",
+    "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
+    "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178"
   ],
   "rejected_candidate_ids": [],
   "token_assignments": {
-    "4.stone.brush.edge_wear.edge_wear_left_broken_4153": "!",
-    "4.stone.brush.edge_wear.edge_wear_right_broken_4156": "%",
-    "4.stone.brush.edge_wear.edge_wear_top_broken_4159": "'",
-    "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161": "("
+    "4.stone.brush.value_patch.value_patch_shadow_left_4169": "l",
+    "4.stone.brush.value_patch.value_patch_shadow_top_4171": "m",
+    "4.stone.brush.value_patch.value_patch_mid_block_4175": "`",
+    "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177": "{",
+    "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178": "}"
   },
   "apply": false,
   "backup_path": null,

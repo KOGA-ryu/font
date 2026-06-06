@@ -7758,6 +7758,446 @@
       "canonical_id": 116
     },
     {
+      "id": "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+      "token": "",
+      "index": 4169,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.3333333333333333,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 12593
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_left"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_left"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_left",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.9725,
+      "rejection_reason": null,
+      "review_tags": [
+        "texture",
+        "contacts:3",
+        "candidate"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 12593
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+      "token": "",
+      "index": 4171,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 175
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_top"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_top"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_top",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.9725,
+      "rejection_reason": null,
+      "review_tags": [
+        "texture",
+        "contacts:3",
+        "candidate"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 175
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_mid_block_4175",
+      "token": "",
+      "index": 4175,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_mid",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 1782
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "mid_block"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "mid_block"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "mid_block",
+      "ascii_fallback": ":",
+      "usefulness_score": 1.0,
+      "rejection_reason": null,
+      "review_tags": [
+        "texture",
+        "symmetric",
+        "contacts:3",
+        "candidate"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 1782
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_mid_pillar_4176",
+      "token": "",
+      "index": 4176,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_mid",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 1,
+          "top": 0,
+          "right": 2,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": true,
+          "vertical": true,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 26214
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "mid_pillar"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "mid_pillar"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "mid_pillar",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.91,
+      "rejection_reason": null,
+      "review_tags": [
+        "texture",
+        "symmetric",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 13107
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
+      "token": "",
+      "index": 4177,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.3125,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.4,
+        "centroid_y": 0.2,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 47
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "highlight_top_edge"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "highlight_top_edge"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "highlight_top_edge",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.9537,
+      "rejection_reason": null,
+      "review_tags": [
+        "texture",
+        "contacts:3",
+        "candidate"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 47
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "token": "",
+      "index": 4178,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.3125,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.2,
+        "centroid_y": 1.4,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 4401
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "highlight_left_edge"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "highlight_left_edge"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "highlight_left_edge",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.9537,
+      "rejection_reason": null,
+      "review_tags": [
+        "texture",
+        "contacts:3",
+        "candidate"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 4401
+    },
+    {
       "id": "4.stone.brush.hatch.hatch_diagonal_rise_light_broken_4013",
       "token": "",
       "index": 4013,
@@ -12872,6 +13312,460 @@
       "equivalence_group": "translations_normalized",
       "canonical_id": 1618,
       "duplicate_of": "4.stone.brush.dot_field.dot_field_spray_corner_bottom_right_4133"
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_shadow_right_4170",
+      "token": "",
+      "index": 4170,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.6666666666666665,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 35980
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_right"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_right"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_right",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.3,
+      "rejection_reason": "too-similar-to-existing-accepted-glyph",
+      "review_tags": [
+        "texture",
+        "contacts:3",
+        "candidate",
+        "similar",
+        "rejected"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 8995
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_shadow_bottom_4172",
+      "token": "",
+      "index": 4172,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 2.6666666666666665,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 62720
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_bottom"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_bottom"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_bottom",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.3,
+      "rejection_reason": "too-similar-to-existing-accepted-glyph",
+      "review_tags": [
+        "texture",
+        "contacts:3",
+        "candidate",
+        "similar",
+        "rejected"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 245
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_top_left_4173",
+      "token": "",
+      "index": 4173,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 0.6666666666666666,
+        "centroid_y": 0.6666666666666666,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 311
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_corner_top_left"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_corner_top_left"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_corner_top_left",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "texture",
+        "contacts:2",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 311,
+      "duplicate_of": "4.stone.brush.chip.chip_left_large_4100"
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_bottom_right_4174",
+      "token": "",
+      "index": 4174,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "stone_dark",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.3333333333333335,
+        "centroid_y": 2.3333333333333335,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 60544
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "shadow_corner_bottom_right"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "shadow_corner_bottom_right"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "shadow_corner_bottom_right",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "texture",
+        "contacts:2",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 1892,
+      "duplicate_of": "4.stone.brush.chip.chip_right_large_4103"
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_top_left_4179",
+      "token": "",
+      "index": 4179,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 1
+        },
+        "centroid_x": 0.75,
+        "centroid_y": 0.25,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 23
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "highlight_corner_top_left"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "highlight_corner_top_left"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "highlight_corner_top_left",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "texture",
+        "contacts:2",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 23,
+      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4164"
+    },
+    {
+      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_bottom_right_4180",
+      "token": "",
+      "index": 4180,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "highlight",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 1,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.25,
+        "centroid_y": 2.75,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 59392
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "highlight_corner_bottom_right"
+      },
+      "brush_family": "value_patch",
+      "brush_params": {
+        "pattern": "highlight_corner_bottom_right"
+      },
+      "brush_engine": "value-patch",
+      "density_class": "highlight_corner_bottom_right",
+      "ascii_fallback": ":",
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "texture",
+        "contacts:2",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "translations_normalized",
+      "canonical_id": 116,
+      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167"
     }
   ]
 }

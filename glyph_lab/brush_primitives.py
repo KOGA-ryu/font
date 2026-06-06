@@ -23,6 +23,7 @@ BRUSH_FAMILIES = {
     "tone_hatch",
     "dot_field",
     "edge_wear",
+    "value_patch",
 }
 
 
@@ -56,6 +57,8 @@ def brush_stamp(
         return dot_field(**params, color=color)
     if brush_family == "edge_wear":
         return edge_wear(**params, color=color)
+    if brush_family == "value_patch":
+        return value_patch(**params, color=color)
     return grain(**params, color=color)
 
 
@@ -416,6 +419,45 @@ def edge_wear(
     return _stamp(sorted(coords), color)
 
 
+def value_patch(
+    pattern: str = "shadow_left",
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice(
+        "pattern",
+        pattern,
+        {
+            "shadow_left",
+            "shadow_right",
+            "shadow_top",
+            "shadow_bottom",
+            "shadow_corner_top_left",
+            "shadow_corner_bottom_right",
+            "mid_block",
+            "mid_pillar",
+            "highlight_top_edge",
+            "highlight_left_edge",
+            "highlight_corner_top_left",
+            "highlight_corner_bottom_right",
+        },
+    )
+    coords = {
+        "shadow_left": {(0, y) for y in range(CELL_SIZE)} | {(1, 1), (1, 3)},
+        "shadow_right": {(3, y) for y in range(CELL_SIZE)} | {(2, 0), (2, 2)},
+        "shadow_top": {(x, 0) for x in range(CELL_SIZE)} | {(1, 1), (3, 1)},
+        "shadow_bottom": {(x, 3) for x in range(CELL_SIZE)} | {(0, 2), (2, 2)},
+        "shadow_corner_top_left": {(0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (0, 2)},
+        "shadow_corner_bottom_right": {(3, 3), (2, 3), (1, 3), (3, 2), (2, 2), (3, 1)},
+        "mid_block": {(1, 0), (2, 0), (0, 1), (1, 1), (2, 1), (3, 1), (1, 2), (2, 2)},
+        "mid_pillar": {(1, 0), (2, 0), (1, 1), (2, 1), (1, 2), (2, 2), (1, 3), (2, 3)},
+        "highlight_top_edge": {(0, 0), (1, 0), (2, 0), (3, 0), (1, 1)},
+        "highlight_left_edge": {(0, 0), (0, 1), (0, 2), (0, 3), (1, 1)},
+        "highlight_corner_top_left": {(0, 0), (1, 0), (0, 1), (2, 0)},
+        "highlight_corner_bottom_right": {(3, 3), (2, 3), (3, 2), (1, 3)},
+    }[pattern]
+    return _stamp(sorted(coords), color)
+
+
 def default_brush_specs() -> list[dict[str, Any]]:
     specs = []
     for angle in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall"):
@@ -498,6 +540,30 @@ def default_brush_specs() -> list[dict[str, Any]]:
     for side in ("left", "right", "top", "bottom", "corner_top_left", "corner_bottom_right"):
         for wear in ("nick", "rubbed", "broken"):
             specs.append(_spec("edge_wear", f"edge_wear_{side}_{wear}", {"side": side, "wear": wear}, family="damage"))
+    value_specs = {
+        "shadow_left": "stone_dark",
+        "shadow_right": "stone_dark",
+        "shadow_top": "stone_dark",
+        "shadow_bottom": "stone_dark",
+        "shadow_corner_top_left": "stone_dark",
+        "shadow_corner_bottom_right": "stone_dark",
+        "mid_block": "stone_mid",
+        "mid_pillar": "stone_mid",
+        "highlight_top_edge": "highlight",
+        "highlight_left_edge": "highlight",
+        "highlight_corner_top_left": "highlight",
+        "highlight_corner_bottom_right": "highlight",
+    }
+    for pattern, palette_role in value_specs.items():
+        specs.append(
+            _spec(
+                "value_patch",
+                f"value_patch_{pattern}",
+                {"pattern": pattern},
+                family="texture",
+                palette_role=palette_role,
+            )
+        )
     return specs
 
 
@@ -559,6 +625,8 @@ def _engine_for(brush_family: str) -> str:
         return "dot-field"
     if brush_family == "edge_wear":
         return "edge-wear"
+    if brush_family == "value_patch":
+        return "value-patch"
     if brush_family in {"hatch", "crosshatch"}:
         return "directional-stroke"
     return "grain"
@@ -578,6 +646,8 @@ def _fallback_for(spec: dict[str, Any]) -> str:
         return "x"
     if family == "tone_hatch":
         return "+"
+    if family == "value_patch":
+        return ":"
     return "x"
 
 

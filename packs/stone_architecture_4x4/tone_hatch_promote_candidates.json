@@ -1,0 +1,34 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_gradient_right_4117",
+      "token": "0",
+      "notes": "Promote reusable tone hatch package: right-side gradient tone cell."
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_gradient_bottom_4119",
+      "token": "1",
+      "notes": "Promote reusable tone hatch package: bottom gradient tone cell."
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_contour_rise_4122",
+      "token": "2",
+      "notes": "Promote reusable tone hatch package: rising contour hatch."
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_contour_fall_4123",
+      "token": "3",
+      "notes": "Promote reusable tone hatch package: falling contour hatch."
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124",
+      "token": "4",
+      "notes": "Promote reusable tone hatch package: staggered parallel hatch tone."
+    }
+  ],
+  "metadata": {
+    "source": "tone_hatch_package_v0",
+    "scope": "generic hatching tone, contour, and gradient glyph packages",
+    "not_object_specific": true
+  }
+}

@@ -56,6 +56,15 @@ class BrushCandidateTests(unittest.TestCase):
         self.assertEqual(chip["family"], "damage")
         self.assertEqual(chip["brush_engine"], "edge-damage")
 
+    def test_brush_candidates_include_tone_hatch_package(self):
+        candidates = generate_brush_candidates()
+        tone = next(candidate for candidate in candidates if candidate["brush_family"] == "tone_hatch")
+
+        self.assertEqual(tone["family"], "texture")
+        self.assertEqual(tone["role"], "detail")
+        self.assertEqual(tone["brush_engine"], "tone-hatch")
+        self.assertIn("pattern", tone["brush_params"])
+
     def test_cli_generate_brushes_writes_review_artifacts(self):
         with TemporaryDirectory() as tmp:
             pack = Path(tmp) / "pack"

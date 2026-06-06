@@ -1,6 +1,16 @@
 import unittest
 
-from glyph_lab.brush_primitives import brush_metadata, brush_stamp, chip, default_brush_specs, dry_brush, scratch, spray, stipple
+from glyph_lab.brush_primitives import (
+    brush_metadata,
+    brush_stamp,
+    chip,
+    default_brush_specs,
+    dry_brush,
+    scratch,
+    spray,
+    stipple,
+    tone_hatch,
+)
 from glyph_lab.measure import measure_stamp
 from glyph_lab.transforms import stamp_to_bitmask
 
@@ -64,6 +74,29 @@ class BrushPrimitiveTests(unittest.TestCase):
         self.assertEqual(families, {"scratch", "chip"})
         self.assertTrue(all(spec["role"] == "detail" for spec in specs))
         self.assertTrue(all(spec["family"] == "damage" for spec in specs))
+
+    def test_tone_hatch_gradient_has_mid_density(self):
+        density = measure_stamp(tone_hatch("gradient_left"))["density"]
+
+        self.assertEqual(density, 6 / 16)
+
+    def test_tone_hatch_contour_differs_from_straight_hatch(self):
+        contour = stamp_to_bitmask(tone_hatch("contour_rise"))
+        straight = stamp_to_bitmask(brush_stamp("hatch", angle="diagonal_rise", density="medium"))
+
+        self.assertNotEqual(contour, straight)
+
+    def test_tone_hatch_metadata_records_engine(self):
+        metadata = brush_metadata(
+            {
+                "brush_family": "tone_hatch",
+                "params": {"pattern": "woven"},
+            }
+        )
+
+        self.assertEqual(metadata["brush_engine"], "tone-hatch")
+        self.assertEqual(metadata["density_class"], "woven")
+        self.assertEqual(metadata["ascii_fallback"], "+")
 
 
 if __name__ == "__main__":

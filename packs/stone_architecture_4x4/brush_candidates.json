@@ -7725,6 +7725,646 @@
       "brush_engine": "edge-damage",
       "density_class": "large",
       "ascii_fallback": "x"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_gradient_left_4116",
+      "token": "",
+      "index": 4116,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.3333333333333333,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 4883
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "gradient_left"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "gradient_left"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "gradient_left",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_gradient_right_4117",
+      "token": "",
+      "index": 4117,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.6666666666666665,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 51400
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "gradient_right"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "gradient_right"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "gradient_right",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_gradient_top_4118",
+      "token": "",
+      "index": 4118,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.3333333333333333,
+        "centroid_y": 0.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 95
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "gradient_top"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "gradient_top"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "gradient_top",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_gradient_bottom_4119",
+      "token": "",
+      "index": 4119,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 2.6666666666666665,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 64000
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "gradient_bottom"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "gradient_bottom"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "gradient_bottom",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_corner_top_left_4120",
+      "token": "",
+      "index": 4120,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 0.6666666666666666,
+        "centroid_y": 0.6666666666666666,
+        "quadrant_densities": {
+          "top_left": 1.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 311
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "corner_top_left"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "corner_top_left"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "corner_top_left",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_corner_bottom_right_4121",
+      "token": "",
+      "index": 4121,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.3333333333333335,
+        "centroid_y": 2.3333333333333335,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 1.0
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 60544
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "corner_bottom_right"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "corner_bottom_right"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "corner_bottom_right",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_contour_rise_4122",
+      "token": "",
+      "index": 4122,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.75,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 14016
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "contour_rise"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "contour_rise"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "contour_rise",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_contour_fall_4123",
+      "token": "",
+      "index": 4123,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3171
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "contour_fall"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "contour_fall"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "contour_fall",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124",
+      "token": "",
+      "index": 4124,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 12483
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "parallel_staggered"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "parallel_staggered"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "parallel_staggered",
+      "ascii_fallback": "+"
+    },
+    {
+      "id": "4.stone.brush.tone_hatch.tone_hatch_woven_4125",
+      "token": "",
+      "index": 4125,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 8,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 42405
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "woven"
+      },
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "woven"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "woven",
+      "ascii_fallback": "+"
     }
   ]
 }

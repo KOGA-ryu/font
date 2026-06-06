@@ -1,22 +1,20 @@
 {
-  "promoted_count": 6,
+  "promoted_count": 5,
   "rejected_count": 0,
   "promoted_candidate_ids": [
-    "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
-    "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
-    "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
-    "4.stone.brush.chip.chip_left_medium_4099",
-    "4.stone.brush.chip.chip_left_large_4100",
-    "4.stone.brush.chip.chip_right_large_4103"
+    "4.stone.brush.tone_hatch.tone_hatch_gradient_right_4117",
+    "4.stone.brush.tone_hatch.tone_hatch_gradient_bottom_4119",
+    "4.stone.brush.tone_hatch.tone_hatch_contour_rise_4122",
+    "4.stone.brush.tone_hatch.tone_hatch_contour_fall_4123",
+    "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124"
   ],
   "rejected_candidate_ids": [],
   "token_assignments": {
-    "4.stone.brush.scratch.scratch_horizontal_long_broken_4085": "G",
-    "4.stone.brush.scratch.scratch_vertical_long_broken_4089": "J",
-    "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093": "K",
-    "4.stone.brush.chip.chip_left_medium_4099": "P",
-    "4.stone.brush.chip.chip_left_large_4100": "Q",
-    "4.stone.brush.chip.chip_right_large_4103": "R"
+    "4.stone.brush.tone_hatch.tone_hatch_gradient_right_4117": "0",
+    "4.stone.brush.tone_hatch.tone_hatch_gradient_bottom_4119": "1",
+    "4.stone.brush.tone_hatch.tone_hatch_contour_rise_4122": "2",
+    "4.stone.brush.tone_hatch.tone_hatch_contour_fall_4123": "3",
+    "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124": "4"
   },
   "apply": false,
   "backup_path": null,

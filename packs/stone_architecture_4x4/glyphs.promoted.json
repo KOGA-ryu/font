@@ -4883,6 +4883,346 @@
       },
       "brush_engine": "edge-damage",
       "density_class": "large"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.tone_hatch_gradient_right_4117_70",
+      "token": "0",
+      "index": 70,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.6666666666666665,
+        "centroid_y": 1.6666666666666667,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.75,
+          "bottom_left": 0.0,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 51400
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "gradient_right"
+      },
+      "source_candidate_id": "4.stone.brush.tone_hatch.tone_hatch_gradient_right_4117",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable tone hatch package: right-side gradient tone cell.",
+      "ascii_fallback": "+",
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "gradient_right"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "gradient_right"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.tone_hatch_gradient_bottom_4119_71",
+      "token": "1",
+      "index": 71,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 2.6666666666666665,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 64000
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "gradient_bottom"
+      },
+      "source_candidate_id": "4.stone.brush.tone_hatch.tone_hatch_gradient_bottom_4119",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable tone hatch package: bottom gradient tone cell.",
+      "ascii_fallback": "+",
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "gradient_bottom"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "gradient_bottom"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.tone_hatch_contour_rise_4122_72",
+      "token": "2",
+      "index": 72,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 1,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 2.0,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.75,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 14016
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "contour_rise"
+      },
+      "source_candidate_id": "4.stone.brush.tone_hatch.tone_hatch_contour_rise_4122",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable tone hatch package: rising contour hatch.",
+      "ascii_fallback": "+",
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "contour_rise"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "contour_rise"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.tone_hatch_contour_fall_4123_73",
+      "token": "3",
+      "index": 73,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 3171
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "contour_fall"
+      },
+      "source_candidate_id": "4.stone.brush.tone_hatch.tone_hatch_contour_fall_4123",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable tone hatch package: falling contour hatch.",
+      "ascii_fallback": "+",
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "contour_fall"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "contour_fall"
+    },
+    {
+      "id": "4.stone.promoted.detail.texture.tone_hatch_parallel_staggered_4124_74",
+      "token": "4",
+      "index": 74,
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.1666666666666667,
+        "centroid_y": 1.3333333333333333,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 12483
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "pattern": "parallel_staggered"
+      },
+      "source_candidate_id": "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable tone hatch package: staggered parallel hatch tone.",
+      "ascii_fallback": "+",
+      "brush_family": "tone_hatch",
+      "brush_params": {
+        "pattern": "parallel_staggered"
+      },
+      "brush_engine": "tone-hatch",
+      "density_class": "parallel_staggered"
     }
   ]
 }

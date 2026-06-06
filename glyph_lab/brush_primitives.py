@@ -19,6 +19,7 @@ BRUSH_FAMILIES = {
     "grain",
     "scratch",
     "chip",
+    "tone_hatch",
 }
 
 
@@ -44,6 +45,8 @@ def brush_stamp(
         return scratch(**params, color=color)
     if brush_family == "chip":
         return chip(**params, color=color)
+    if brush_family == "tone_hatch":
+        return tone_hatch(**params, color=color)
     return grain(**params, color=color)
 
 
@@ -248,6 +251,41 @@ def chip(
     return _stamp(sorted(coords), color)
 
 
+def tone_hatch(
+    pattern: str = "gradient_left",
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice(
+        "pattern",
+        pattern,
+        {
+            "gradient_left",
+            "gradient_right",
+            "gradient_top",
+            "gradient_bottom",
+            "corner_top_left",
+            "corner_bottom_right",
+            "contour_rise",
+            "contour_fall",
+            "parallel_staggered",
+            "woven",
+        },
+    )
+    coords = {
+        "gradient_left": {(0, y) for y in range(CELL_SIZE)} | {(1, 0), (1, 2)},
+        "gradient_right": {(3, y) for y in range(CELL_SIZE)} | {(2, 1), (2, 3)},
+        "gradient_top": {(x, 0) for x in range(CELL_SIZE)} | {(0, 1), (2, 1)},
+        "gradient_bottom": {(x, 3) for x in range(CELL_SIZE)} | {(1, 2), (3, 2)},
+        "corner_top_left": {(0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (0, 2)},
+        "corner_bottom_right": {(3, 3), (2, 3), (1, 3), (3, 2), (2, 2), (3, 1)},
+        "contour_rise": {(0, 3), (1, 3), (1, 2), (2, 2), (2, 1), (3, 1)},
+        "contour_fall": {(0, 0), (1, 0), (1, 1), (2, 1), (2, 2), (3, 2)},
+        "parallel_staggered": {(0, 0), (1, 0), (2, 1), (3, 1), (0, 3), (1, 3)},
+        "woven": {(0, 0), (2, 0), (1, 1), (3, 1), (0, 2), (2, 2), (1, 3), (3, 3)},
+    }[pattern]
+    return _stamp(sorted(coords), color)
+
+
 def default_brush_specs() -> list[dict[str, Any]]:
     specs = []
     for angle in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall"):
@@ -291,6 +329,19 @@ def default_brush_specs() -> list[dict[str, Any]]:
     for edge in ("left", "right", "top", "bottom", "corner_top_left", "corner_bottom_right"):
         for size in ("small", "medium", "large"):
             specs.append(_spec("chip", f"chip_{edge}_{size}", {"edge": edge, "size": size}, family="damage"))
+    for pattern in (
+        "gradient_left",
+        "gradient_right",
+        "gradient_top",
+        "gradient_bottom",
+        "corner_top_left",
+        "corner_bottom_right",
+        "contour_rise",
+        "contour_fall",
+        "parallel_staggered",
+        "woven",
+    ):
+        specs.append(_spec("tone_hatch", f"tone_hatch_{pattern}", {"pattern": pattern}, family="texture"))
     return specs
 
 
@@ -307,6 +358,7 @@ def brush_metadata(spec: dict[str, Any]) -> dict[str, Any]:
             or params.get("kind")
             or params.get("length")
             or params.get("size")
+            or params.get("pattern")
         ),
         "ascii_fallback": _fallback_for(spec),
     }
@@ -341,6 +393,8 @@ def _engine_for(brush_family: str) -> str:
         return "incised-mark"
     if brush_family == "chip":
         return "edge-damage"
+    if brush_family == "tone_hatch":
+        return "tone-hatch"
     if brush_family in {"hatch", "crosshatch"}:
         return "directional-stroke"
     return "grain"
@@ -358,6 +412,8 @@ def _fallback_for(spec: dict[str, Any]) -> str:
         return "*"
     if family == "chip":
         return "x"
+    if family == "tone_hatch":
+        return "+"
     return "x"
 
 

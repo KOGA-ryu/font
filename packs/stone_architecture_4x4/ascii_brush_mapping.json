@@ -1,5 +1,5 @@
 {
-  "texture_palette": "=?`*BI@~,U{}/xAHNRW47!&)EKOV58$'QYgk69%(:DGJMZPlXm;FLeifj",
+  "texture_palette": "=?`*BI@~,U{}/xAHNRW47!&)EKOV58$'+QYgk69%(:DGJMZPlXm;FLeifj",
   "spray_palette": "rzo0vw13y2",
   "mapping": {
     "#": {
@@ -1093,6 +1093,20 @@
       "density_class": "long",
       "ascii_fallback": "/",
       "bridge_only": true
+    },
+    "+": {
+      "glyph_id": "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124",
+      "token": "",
+      "role": "detail",
+      "family": "texture",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "tone_hatch",
+      "brush_engine": "tone-hatch",
+      "density_class": "parallel_staggered",
+      "ascii_fallback": "+",
+      "bridge_only": true
     }
   },
   "skipped_bridge_candidates": [
@@ -1118,6 +1132,26 @@
     },
     {
       "candidate_id": "4.stone.brush.chip.chip_right_large_4103",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_gradient_right_4117",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_gradient_bottom_4119",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_contour_rise_4122",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_contour_fall_4123",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124",
       "reason": "ascii-bridge-pool-exhausted"
     }
   ],

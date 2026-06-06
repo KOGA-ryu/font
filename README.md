@@ -538,6 +538,11 @@ set. `alpha`, `black`, `luminance`, `border-difference`, and `sample-colors`
 are available for transparent, black-only, thresholded, opaque-background, or
 eyedropper-driven inputs.
 
+For coverage passes, add `--gate-fill-token TOKEN`. That ignores sparse ASCII
+choices inside the mask and forces the same glyph into every kept gate cell,
+including spaces. For black dot coverage, use `--gate-mode black` with the
+chosen active dot token so every sampled black cell receives a dot stamp.
+
 ```text
 image
 -> image-to-ASCII token grid

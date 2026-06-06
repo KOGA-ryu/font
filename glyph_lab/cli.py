@@ -172,6 +172,10 @@ def main() -> None:
     ascii_render_parser.add_argument("--gate-mask-out")
     ascii_render_parser.add_argument("--gate-samples", help="eyedropper JSON for sample-colors gate mode")
     ascii_render_parser.add_argument("--gate-sample-key", default="eyedropper_samples")
+    ascii_render_parser.add_argument(
+        "--gate-fill-token",
+        help="force this glyph token into every kept gate-mask cell, including ASCII spaces",
+    )
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
 
@@ -348,6 +352,7 @@ def main() -> None:
             gate_mask_output_path=args.gate_mask_out,
             gate_samples_path=args.gate_samples,
             gate_samples_key=args.gate_sample_key,
+            gate_fill_token=args.gate_fill_token,
             scale=args.scale,
         )
         return

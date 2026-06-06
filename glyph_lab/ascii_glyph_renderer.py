@@ -30,6 +30,7 @@ def render_ascii_glyphs(
     gate_mask_output_path: str | Path | None = None,
     gate_samples_path: str | Path | None = None,
     gate_samples_key: str = "eyedropper_samples",
+    gate_fill_token: str | None = None,
     scale: int = 4,
     background: tuple[int, int, int, int] = (255, 255, 255, 255),
 ) -> dict[str, Any]:
@@ -51,6 +52,7 @@ def render_ascii_glyphs(
     cell_size = _single_cell_size(glyphs)
     normalized_rows = [row.ljust(width) for row in rows]
     gate_mask = None
+    gate_fill_resolved = None
     gate_sample_colors = _load_sample_colors(gate_samples_path, gate_samples_key) if gate_samples_path else None
     if gate_image_path is not None:
         gate_mask = image_gate_mask(
@@ -64,22 +66,35 @@ def render_ascii_glyphs(
         )
         if gate_mask_output_path is not None:
             write_gate_mask(gate_mask, gate_mask_output_path, scale=scale)
+    if gate_fill_token is not None:
+        if gate_mask is None:
+            raise ValueError("gate fill token requires --gate-image")
+        gate_fill_resolved = _resolve_token(gate_fill_token, mapping, active_tokens)
+        if gate_fill_resolved is None:
+            raise ValueError(f"Unknown gate fill token {gate_fill_token!r}")
 
     image = Image.new("RGBA", (width * cell_size, height * cell_size), background)
     token_counts: Counter[str] = Counter()
     fallback_counts: Counter[str] = Counter()
     gated_blank_count = 0
+    gate_filled_count = 0
     for row_index, row in enumerate(normalized_rows, start=1):
         for column_index, char in enumerate(row, start=1):
-            if char == " ":
+            gate_kept = gate_mask[row_index - 1][column_index - 1] if gate_mask is not None else True
+            if not gate_kept:
+                if char != " ":
+                    gated_blank_count += 1
                 continue
-            if gate_mask is not None and not gate_mask[row_index - 1][column_index - 1]:
-                gated_blank_count += 1
-                continue
-            token = _resolve_token(char, mapping, active_tokens)
+            if gate_fill_resolved is not None:
+                token = gate_fill_resolved
+                gate_filled_count += 1
+            else:
+                if char == " ":
+                    continue
+                token = _resolve_token(char, mapping, active_tokens)
             if token is None:
                 raise ValueError(f"Unknown glyph token {char!r} at row {row_index}, column {column_index}")
-            if token != char:
+            if char != " " and token != char:
                 fallback_counts[char] += 1
             stamp = stamps.get(token)
             if stamp is None:
@@ -117,6 +132,8 @@ def render_ascii_glyphs(
             gate_mask_output_path=gate_mask_output_path,
             gate_samples_path=gate_samples_path,
             gate_sample_count=len(gate_sample_colors or []),
+            gate_fill_token=gate_fill_token,
+            gate_filled_count=gate_filled_count,
         ),
     }
 
@@ -283,6 +300,8 @@ def _gate_summary(
     gate_mask_output_path: str | Path | None,
     gate_samples_path: str | Path | None,
     gate_sample_count: int,
+    gate_fill_token: str | None,
+    gate_filled_count: int,
 ) -> dict[str, Any] | None:
     if gate_mask is None:
         return None
@@ -295,6 +314,8 @@ def _gate_summary(
         "dilate": gate_dilate,
         "samples": str(gate_samples_path) if gate_samples_path is not None else None,
         "sample_count": gate_sample_count,
+        "fill_token": gate_fill_token,
+        "filled_cells": gate_filled_count,
         "kept_cells": kept,
         "blank_cells": total - kept,
         "gated_token_cells": gated_blank_count,

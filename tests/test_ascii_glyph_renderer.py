@@ -260,6 +260,50 @@ class AsciiGlyphRendererTests(unittest.TestCase):
             self.assertEqual(result["gate"]["sample_count"], 1)
             self.assertEqual(result["gate"]["samples"], str(samples_path))
 
+    def test_gate_fill_token_covers_all_kept_mask_cells(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            gate_image = Path(tmp) / "gate.png"
+            out = Path(tmp) / "render.png"
+            _write_gate_fixture(gate_image)
+            ascii_path.write_text("    \n    \n    \n    \n", encoding="utf-8")
+
+            result = render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                gate_image_path=gate_image,
+                gate_threshold=30,
+                gate_dilate=0,
+                gate_fill_token="-",
+                scale=1,
+            )
+
+            self.assertEqual(result["token_counts"], {"-": 4})
+            self.assertEqual(result["fallback_counts"], {})
+            self.assertEqual(result["gate"]["kept_cells"], 4)
+            self.assertEqual(result["gate"]["filled_cells"], 4)
+            self.assertEqual(result["gate"]["fill_token"], "-")
+
+    def test_gate_fill_token_requires_gate_image(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            ascii_path.write_text("    \n", encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "gate fill token requires --gate-image"):
+                render_ascii_glyphs(
+                    ascii_path,
+                    pack / "glyphs.json",
+                    pack / "atlas.png",
+                    Path(tmp) / "render.png",
+                    gate_fill_token="-",
+                )
+
     def test_promoted_token_renders_from_promoted_atlas(self):
         with promoted_linework_pack() as pack:
             ascii_path = pack / "grid.txt"

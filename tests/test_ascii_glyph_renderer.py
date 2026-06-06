@@ -185,6 +185,81 @@ class AsciiGlyphRendererTests(unittest.TestCase):
             self.assertFalse(mask[2][2])
             self.assertEqual(sum(1 for row in mask for value in row if value), 1)
 
+    def test_image_gate_mask_can_use_sample_colors(self):
+        with TemporaryDirectory() as tmp:
+            gate_image = Path(tmp) / "colors.png"
+            image = Image.new("RGB", (4, 4), (240, 240, 240))
+            pixels = image.load()
+            pixels[1, 1] = (30, 70, 150)
+            pixels[2, 2] = (118, 66, 34)
+            pixels[3, 3] = (80, 160, 80)
+            image.save(gate_image)
+
+            mask = image_gate_mask(
+                gate_image,
+                4,
+                4,
+                mode="sample-colors",
+                threshold=12,
+                dilate=0,
+                sample_colors=[(31, 72, 148), (120, 64, 32)],
+            )
+
+            self.assertTrue(mask[1][1])
+            self.assertTrue(mask[2][2])
+            self.assertFalse(mask[3][3])
+            self.assertEqual(sum(1 for row in mask for value in row if value), 2)
+
+    def test_sample_colors_gate_requires_samples(self):
+        with TemporaryDirectory() as tmp:
+            gate_image = Path(tmp) / "colors.png"
+            Image.new("RGB", (4, 4), (240, 240, 240)).save(gate_image)
+
+            with self.assertRaisesRegex(ValueError, "requires at least one eyedropper sample color"):
+                image_gate_mask(gate_image, 4, 4, mode="sample-colors", threshold=12, dilate=0)
+
+    def test_render_sample_colors_gate_loads_eyedropper_json(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            gate_image = Path(tmp) / "colors.png"
+            samples_path = Path(tmp) / "samples.json"
+            out = Path(tmp) / "render.png"
+            ascii_path.write_text("----\n----\n----\n----\n", encoding="utf-8")
+            image = Image.new("RGB", (4, 4), (240, 240, 240))
+            image.putpixel((1, 1), (30, 70, 150))
+            image.save(gate_image)
+            samples_path.write_text(
+                json.dumps(
+                    {
+                        "palette_samples": {
+                            "source_image": str(gate_image),
+                            "samples": [{"label": "blue", "rgba": [31, 72, 148, 255]}],
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            result = render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                gate_image_path=gate_image,
+                gate_mode="sample-colors",
+                gate_threshold=12,
+                gate_dilate=0,
+                gate_samples_path=samples_path,
+                gate_samples_key="palette_samples",
+                scale=1,
+            )
+
+            self.assertEqual(result["token_counts"]["-"], 1)
+            self.assertEqual(result["gate"]["sample_count"], 1)
+            self.assertEqual(result["gate"]["samples"], str(samples_path))
+
     def test_promoted_token_renders_from_promoted_atlas(self):
         with promoted_linework_pack() as pack:
             ascii_path = pack / "grid.txt"

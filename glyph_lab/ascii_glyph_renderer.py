@@ -13,7 +13,7 @@ from .schema import CELL_SIZE, load_glyphs
 
 
 DEFAULT_EDGE_ALIASES = {"─": "-", "│": "|"}
-GATE_MODES = {"alpha", "black", "luminance", "border-difference"}
+GATE_MODES = {"alpha", "black", "luminance", "border-difference", "sample-colors"}
 
 
 def render_ascii_glyphs(
@@ -28,6 +28,8 @@ def render_ascii_glyphs(
     gate_threshold: int = 32,
     gate_dilate: int = 1,
     gate_mask_output_path: str | Path | None = None,
+    gate_samples_path: str | Path | None = None,
+    gate_samples_key: str = "eyedropper_samples",
     scale: int = 4,
     background: tuple[int, int, int, int] = (255, 255, 255, 255),
 ) -> dict[str, Any]:
@@ -49,6 +51,7 @@ def render_ascii_glyphs(
     cell_size = _single_cell_size(glyphs)
     normalized_rows = [row.ljust(width) for row in rows]
     gate_mask = None
+    gate_sample_colors = _load_sample_colors(gate_samples_path, gate_samples_key) if gate_samples_path else None
     if gate_image_path is not None:
         gate_mask = image_gate_mask(
             gate_image_path,
@@ -57,6 +60,7 @@ def render_ascii_glyphs(
             mode=gate_mode,
             threshold=gate_threshold,
             dilate=gate_dilate,
+            sample_colors=gate_sample_colors,
         )
         if gate_mask_output_path is not None:
             write_gate_mask(gate_mask, gate_mask_output_path, scale=scale)
@@ -111,6 +115,8 @@ def render_ascii_glyphs(
             gate_dilate=gate_dilate,
             gated_blank_count=gated_blank_count,
             gate_mask_output_path=gate_mask_output_path,
+            gate_samples_path=gate_samples_path,
+            gate_sample_count=len(gate_sample_colors or []),
         ),
     }
 
@@ -123,6 +129,7 @@ def image_gate_mask(
     mode: str = "border-difference",
     threshold: int = 32,
     dilate: int = 1,
+    sample_colors: list[tuple[int, int, int]] | None = None,
 ) -> list[list[bool]]:
     if mode not in GATE_MODES:
         raise ValueError(f"unknown gate mode {mode!r}; expected one of {sorted(GATE_MODES)}")
@@ -142,6 +149,16 @@ def image_gate_mask(
     elif mode in {"black", "luminance"}:
         mask = [
             [_luminance(pixels[x, y][:3]) < threshold for x in range(grid_width)]
+            for y in range(grid_height)
+        ]
+    elif mode == "sample-colors":
+        if not sample_colors:
+            raise ValueError("sample-colors gate mode requires at least one eyedropper sample color")
+        mask = [
+            [
+                min(_rgb_distance(pixels[x, y][:3], sample) for sample in sample_colors) <= threshold
+                for x in range(grid_width)
+            ]
             for y in range(grid_height)
         ]
     else:
@@ -195,6 +212,24 @@ def _load_json(path: str | Path) -> dict[str, Any]:
         return json.load(handle)
 
 
+def _load_sample_colors(path: str | Path, key: str) -> list[tuple[int, int, int]]:
+    payload = _load_json(path)
+    sample_payload = payload.get(key)
+    if sample_payload is None:
+        raise ValueError(f"sample color JSON does not contain key {key!r}")
+    samples = sample_payload.get("samples") if isinstance(sample_payload, dict) else None
+    if not isinstance(samples, list) or not samples:
+        raise ValueError(f"sample color JSON key {key!r} must contain a non-empty samples list")
+
+    colors = []
+    for index, sample in enumerate(samples):
+        rgba = sample.get("rgba") if isinstance(sample, dict) else None
+        if not isinstance(rgba, list) or len(rgba) < 3:
+            raise ValueError(f"sample color at index {index} is missing rgba")
+        colors.append((int(rgba[0]), int(rgba[1]), int(rgba[2])))
+    return colors
+
+
 def _luminance(rgb: tuple[int, int, int]) -> int:
     red, green, blue = rgb
     return int(round(0.299 * red + 0.587 * green + 0.114 * blue))
@@ -246,6 +281,8 @@ def _gate_summary(
     gate_dilate: int,
     gated_blank_count: int,
     gate_mask_output_path: str | Path | None,
+    gate_samples_path: str | Path | None,
+    gate_sample_count: int,
 ) -> dict[str, Any] | None:
     if gate_mask is None:
         return None
@@ -256,6 +293,8 @@ def _gate_summary(
         "mode": gate_mode,
         "threshold": gate_threshold,
         "dilate": gate_dilate,
+        "samples": str(gate_samples_path) if gate_samples_path is not None else None,
+        "sample_count": gate_sample_count,
         "kept_cells": kept,
         "blank_cells": total - kept,
         "gated_token_cells": gated_blank_count,

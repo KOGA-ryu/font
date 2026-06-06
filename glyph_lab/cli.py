@@ -164,12 +164,14 @@ def main() -> None:
     ascii_render_parser.add_argument("--gate-image")
     ascii_render_parser.add_argument(
         "--gate-mode",
-        choices=["alpha", "black", "luminance", "border-difference"],
+        choices=["alpha", "black", "luminance", "border-difference", "sample-colors"],
         default="border-difference",
     )
     ascii_render_parser.add_argument("--gate-threshold", type=int, default=32)
     ascii_render_parser.add_argument("--gate-dilate", type=int, default=1)
     ascii_render_parser.add_argument("--gate-mask-out")
+    ascii_render_parser.add_argument("--gate-samples", help="eyedropper JSON for sample-colors gate mode")
+    ascii_render_parser.add_argument("--gate-sample-key", default="eyedropper_samples")
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
 
@@ -344,6 +346,8 @@ def main() -> None:
             gate_threshold=args.gate_threshold,
             gate_dilate=args.gate_dilate,
             gate_mask_output_path=args.gate_mask_out,
+            gate_samples_path=args.gate_samples,
+            gate_samples_key=args.gate_sample_key,
             scale=args.scale,
         )
         return

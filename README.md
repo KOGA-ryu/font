@@ -531,8 +531,12 @@ character there. The first useful opaque-image mode is `border-difference`,
 which compares sampled cells against the image border color. Use
 `--gate-mode black` when dot or ink passes should only copy cells sampled below
 `--gate-threshold`; this is the strict dark-line extraction pass for dot
-density brushes. `alpha`, `black`, `luminance`, and `border-difference` are
-available for transparent, black-only, thresholded, or opaque-background inputs.
+density brushes. Use `--gate-mode sample-colors --gate-samples samples.json`
+when an eyedropper pass should grab only cells close to one or more sampled
+colors; in that mode `--gate-threshold` is RGB distance from the sampled color
+set. `alpha`, `black`, `luminance`, `border-difference`, and `sample-colors`
+are available for transparent, black-only, thresholded, opaque-background, or
+eyedropper-driven inputs.
 
 ```text
 image

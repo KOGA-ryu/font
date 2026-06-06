@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .ascii_bridge import import_ascii_grid
 from .ascii_compare import compare_ascii_fallbacks
+from .ascii_glyph_renderer import render_ascii_glyphs
 from .ascii_promotion import write_ascii_promotion_request
 from .atlas import generate_pack
 from .brush_candidates import write_brush_review
@@ -137,6 +138,17 @@ def main() -> None:
     ascii_parser.add_argument("--glyphs")
     ascii_parser.add_argument("--atlas")
     ascii_parser.add_argument("--out", default="out_ascii_bridge")
+
+    ascii_render_parser = subparsers.add_parser(
+        "render-ascii-glyphs",
+        help="render an ASCII token grid directly with 4x4 glyph atlas stamps",
+    )
+    ascii_render_parser.add_argument("--ascii", required=True)
+    ascii_render_parser.add_argument("--glyphs", required=True)
+    ascii_render_parser.add_argument("--atlas", required=True)
+    ascii_render_parser.add_argument("--mapping")
+    ascii_render_parser.add_argument("--out", required=True)
+    ascii_render_parser.add_argument("--scale", type=int, default=4)
 
     promoted_atlas_parser = subparsers.add_parser("build-promoted-atlas", help="build an atlas for promoted glyphs")
     promoted_atlas_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -284,6 +296,10 @@ def main() -> None:
 
     if args.command == "import-ascii-grid":
         import_ascii_grid(pack, args.ascii, args.mapping, args.out, glyphs_path=args.glyphs, atlas_path=args.atlas)
+        return
+
+    if args.command == "render-ascii-glyphs":
+        render_ascii_glyphs(args.ascii, args.glyphs, args.atlas, args.out, mapping_path=args.mapping, scale=args.scale)
         return
 
     if args.command == "build-promoted-atlas":

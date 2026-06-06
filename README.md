@@ -155,6 +155,7 @@ math line primitives
 -> review/scoring
 -> ASCII bridge palettes
 -> image-to-ASCII rough grid
+-> custom glyph bitmap render
 -> custom glyph layered proof
 ```
 
@@ -470,6 +471,34 @@ ASCII rough grid
 -> inspect fallback warnings
 -> promote missing line/brush glyphs
 -> rerun proof
+```
+
+## Render ASCII with glyph stamps
+
+The external ASCII workbench can choose characters, but its PNG output uses a
+normal system font. To test the custom 4x4 glyphs themselves, render the
+workbench `.txt` grid with `glyph_lab`:
+
+```sh
+python3 -m glyph_lab.cli render-ascii-glyphs \
+  --ascii out_brush_test/ascii/probe_cracked_stone_slab_texture.txt \
+  --glyphs packs/stone_architecture_4x4/glyphs.promoted.json \
+  --atlas packs/stone_architecture_4x4/atlas.promoted.png \
+  --mapping packs/stone_architecture_4x4/ascii_brush_mapping.json \
+  --out out_brush_test/custom_glyph_render.png \
+  --scale 4
+```
+
+This bypasses font rendering. Every non-space token is resolved through the
+optional mapping file, looked up in `glyphs.promoted.json`, cropped from
+`atlas.promoted.png`, and painted as a 4x4 stamp. Unknown non-space tokens fail
+with row and column so bad bridge output cannot silently become a fake proof.
+
+```text
+image
+-> image-to-ASCII token grid
+-> render-ascii-glyphs
+-> PNG drawn from the promoted glyph atlas
 ```
 
 Generate a promotion request from the fallback warnings:

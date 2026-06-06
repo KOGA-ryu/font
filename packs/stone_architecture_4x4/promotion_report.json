@@ -1,16 +1,18 @@
 {
-  "promoted_count": 3,
+  "promoted_count": 4,
   "rejected_count": 0,
   "promoted_candidate_ids": [
-    "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
-    "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
-    "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150"
+    "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
+    "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
+    "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
+    "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161"
   ],
   "rejected_candidate_ids": [],
   "token_assignments": {
-    "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138": "i",
-    "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141": "k",
-    "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150": "Z"
+    "4.stone.brush.edge_wear.edge_wear_left_broken_4153": "!",
+    "4.stone.brush.edge_wear.edge_wear_right_broken_4156": "%",
+    "4.stone.brush.edge_wear.edge_wear_top_broken_4159": "'",
+    "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161": "("
   },
   "apply": false,
   "backup_path": null,

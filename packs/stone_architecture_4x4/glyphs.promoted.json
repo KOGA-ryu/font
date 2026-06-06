@@ -5773,6 +5773,286 @@
       },
       "brush_engine": "charcoal-drag",
       "density_class": "heavy"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.edge_wear_left_broken_4153_83",
+      "token": "!",
+      "index": 83,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 1,
+          "bottom": 3
+        },
+        "centroid_x": 0.5,
+        "centroid_y": 1.25,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.0,
+          "bottom_left": 0.5,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 8451
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "side": "left",
+        "wear": "broken"
+      },
+      "source_candidate_id": "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable edge-wear package: broken left contour fragment.",
+      "ascii_fallback": "x",
+      "brush_family": "edge_wear",
+      "brush_params": {
+        "side": "left",
+        "wear": "broken"
+      },
+      "brush_engine": "edge-wear",
+      "density_class": "broken"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.edge_wear_right_broken_4156_84",
+      "token": "%",
+      "index": 84,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 2,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 2.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": false
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 18504
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "side": "right",
+        "wear": "broken"
+      },
+      "source_candidate_id": "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable edge-wear package: broken right contour fragment.",
+      "ascii_fallback": "x",
+      "brush_family": "edge_wear",
+      "brush_params": {
+        "side": "right",
+        "wear": "broken"
+      },
+      "brush_engine": "edge-wear",
+      "density_class": "broken"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.edge_wear_top_broken_4159_85",
+      "token": "'",
+      "index": 85,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 1
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 0.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 165
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "side": "top",
+        "wear": "broken"
+      },
+      "source_candidate_id": "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable edge-wear package: broken top contour fragment.",
+      "ascii_fallback": "x",
+      "brush_family": "edge_wear",
+      "brush_params": {
+        "side": "top",
+        "wear": "broken"
+      },
+      "brush_engine": "edge-wear",
+      "density_class": "broken"
+    },
+    {
+      "id": "4.stone.promoted.detail.damage.edge_wear_bottom_rubbed_4161_86",
+      "token": "(",
+      "index": 86,
+      "role": "detail",
+      "family": "damage",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 2,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.75,
+        "centroid_y": 2.75,
+        "quadrant_densities": {
+          "top_left": 0.0,
+          "top_right": 0.0,
+          "bottom_left": 0.25,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 54272
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "side": "bottom",
+        "wear": "rubbed"
+      },
+      "source_candidate_id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161",
+      "promoted_from": "brush_accepted_candidates.json",
+      "promoted_at_version": "glyph_lab_v0",
+      "notes": "Promote reusable edge-wear package: rubbed bottom contour fragment.",
+      "ascii_fallback": "x",
+      "brush_family": "edge_wear",
+      "brush_params": {
+        "side": "bottom",
+        "wear": "rubbed"
+      },
+      "brush_engine": "edge-wear",
+      "density_class": "rubbed"
     }
   ]
 }

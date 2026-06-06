@@ -97,8 +97,9 @@ def _group_sort_key(group: str) -> tuple[int, str]:
         "brush:spray": 8,
         "brush:scratch": 9,
         "brush:chip": 10,
-        "brush:tone_hatch": 11,
-        "brush:dot_field": 12,
+        "brush:edge_wear": 11,
+        "brush:tone_hatch": 12,
+        "brush:dot_field": 13,
     }
     return (order.get(group, 100), group)
 

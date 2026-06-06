@@ -213,16 +213,16 @@
       "bridge_only": true
     },
     "x": {
-      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
+      "glyph_id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167",
       "token": "",
       "role": "detail",
-      "family": "charcoal",
+      "family": "damage",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "charcoal_drag",
-      "brush_engine": "charcoal-drag",
-      "density_class": "heavy",
+      "brush_family": "edge_wear",
+      "brush_engine": "edge-wear",
+      "density_class": "rubbed",
       "ascii_fallback": "x",
       "bridge_only": true
     },
@@ -1282,6 +1282,42 @@
     },
     {
       "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_left_rubbed_4152",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_right_rubbed_4155",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_top_rubbed_4158",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4164",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167",
       "reason": "ascii-bridge-pool-exhausted"
     }
   ],

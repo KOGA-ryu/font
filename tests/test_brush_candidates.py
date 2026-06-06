@@ -83,6 +83,15 @@ class BrushCandidateTests(unittest.TestCase):
         self.assertEqual(drag["brush_engine"], "charcoal-drag")
         self.assertIn("pressure", drag["brush_params"])
 
+    def test_brush_candidates_include_edge_wear_package(self):
+        candidates = generate_brush_candidates()
+        wear = next(candidate for candidate in candidates if candidate["brush_family"] == "edge_wear")
+
+        self.assertEqual(wear["family"], "damage")
+        self.assertEqual(wear["role"], "detail")
+        self.assertEqual(wear["brush_engine"], "edge-wear")
+        self.assertIn("wear", wear["brush_params"])
+
     def test_cli_generate_brushes_writes_review_artifacts(self):
         with TemporaryDirectory() as tmp:
             pack = Path(tmp) / "pack"

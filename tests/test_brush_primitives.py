@@ -8,6 +8,7 @@ from glyph_lab.brush_primitives import (
     default_brush_specs,
     dot_field,
     dry_brush,
+    edge_wear,
     scratch,
     spray,
     stipple,
@@ -147,6 +148,30 @@ class BrushPrimitiveTests(unittest.TestCase):
         self.assertEqual(metadata["brush_engine"], "charcoal-drag")
         self.assertEqual(metadata["density_class"], "medium")
         self.assertEqual(metadata["ascii_fallback"], "|")
+
+    def test_edge_wear_broken_has_more_density_than_nick(self):
+        nick = measure_stamp(edge_wear("left", "nick"))["density"]
+        broken = measure_stamp(edge_wear("left", "broken"))["density"]
+
+        self.assertGreater(broken, nick)
+
+    def test_edge_wear_is_deterministic(self):
+        first = stamp_to_bitmask(edge_wear("corner_bottom_right", "broken"))
+        second = stamp_to_bitmask(edge_wear("corner_bottom_right", "broken"))
+
+        self.assertEqual(first, second)
+
+    def test_edge_wear_metadata_records_engine(self):
+        metadata = brush_metadata(
+            {
+                "brush_family": "edge_wear",
+                "params": {"side": "top", "wear": "rubbed"},
+            }
+        )
+
+        self.assertEqual(metadata["brush_engine"], "edge-wear")
+        self.assertEqual(metadata["density_class"], "rubbed")
+        self.assertEqual(metadata["ascii_fallback"], "x")
 
 
 if __name__ == "__main__":

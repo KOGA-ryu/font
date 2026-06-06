@@ -22,6 +22,7 @@ BRUSH_FAMILIES = {
     "chip",
     "tone_hatch",
     "dot_field",
+    "edge_wear",
 }
 
 
@@ -53,6 +54,8 @@ def brush_stamp(
         return tone_hatch(**params, color=color)
     if brush_family == "dot_field":
         return dot_field(**params, color=color)
+    if brush_family == "edge_wear":
+        return edge_wear(**params, color=color)
     return grain(**params, color=color)
 
 
@@ -367,6 +370,52 @@ def dot_field(
     return _stamp(sorted(coords), color)
 
 
+def edge_wear(
+    side: str = "left",
+    wear: str = "nick",
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice("side", side, {"left", "right", "top", "bottom", "corner_top_left", "corner_bottom_right"})
+    _require_choice("wear", wear, {"nick", "rubbed", "broken"})
+    if side == "left":
+        coords = {
+            "nick": {(0, 1), (1, 1)},
+            "rubbed": {(0, 0), (0, 1), (1, 1), (0, 3)},
+            "broken": {(0, 0), (1, 0), (0, 2), (1, 3)},
+        }[wear]
+    elif side == "right":
+        coords = {
+            "nick": {(3, 2), (2, 2)},
+            "rubbed": {(3, 0), (3, 2), (2, 2), (3, 3)},
+            "broken": {(3, 0), (2, 1), (3, 2), (2, 3)},
+        }[wear]
+    elif side == "top":
+        coords = {
+            "nick": {(1, 0), (1, 1)},
+            "rubbed": {(0, 0), (1, 0), (1, 1), (3, 0)},
+            "broken": {(0, 0), (1, 1), (2, 0), (3, 1)},
+        }[wear]
+    elif side == "bottom":
+        coords = {
+            "nick": {(2, 3), (2, 2)},
+            "rubbed": {(0, 3), (2, 3), (2, 2), (3, 3)},
+            "broken": {(0, 2), (1, 3), (2, 2), (3, 3)},
+        }[wear]
+    elif side == "corner_top_left":
+        coords = {
+            "nick": {(0, 0), (1, 0), (0, 1)},
+            "rubbed": {(0, 0), (1, 0), (0, 1), (2, 0)},
+            "broken": {(0, 0), (1, 0), (0, 1), (2, 1), (1, 2)},
+        }[wear]
+    else:
+        coords = {
+            "nick": {(3, 3), (2, 3), (3, 2)},
+            "rubbed": {(3, 3), (2, 3), (3, 2), (1, 3)},
+            "broken": {(3, 3), (2, 3), (3, 2), (1, 2), (2, 1)},
+        }[wear]
+    return _stamp(sorted(coords), color)
+
+
 def default_brush_specs() -> list[dict[str, Any]]:
     specs = []
     for angle in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall"):
@@ -446,6 +495,9 @@ def default_brush_specs() -> list[dict[str, Any]]:
                     family="charcoal",
                 )
             )
+    for side in ("left", "right", "top", "bottom", "corner_top_left", "corner_bottom_right"):
+        for wear in ("nick", "rubbed", "broken"):
+            specs.append(_spec("edge_wear", f"edge_wear_{side}_{wear}", {"side": side, "wear": wear}, family="damage"))
     return specs
 
 
@@ -464,6 +516,7 @@ def brush_metadata(spec: dict[str, Any]) -> dict[str, Any]:
             or params.get("length")
             or params.get("size")
             or params.get("pattern")
+            or params.get("wear")
         ),
         "ascii_fallback": _fallback_for(spec),
     }
@@ -504,6 +557,8 @@ def _engine_for(brush_family: str) -> str:
         return "tone-hatch"
     if brush_family == "dot_field":
         return "dot-field"
+    if brush_family == "edge_wear":
+        return "edge-wear"
     if brush_family in {"hatch", "crosshatch"}:
         return "directional-stroke"
     return "grain"
@@ -519,7 +574,7 @@ def _fallback_for(spec: dict[str, Any]) -> str:
         return "+"
     if family in {"stipple", "spray", "grain", "dot_field"}:
         return "*"
-    if family == "chip":
+    if family in {"chip", "edge_wear"}:
         return "x"
     if family == "tone_hatch":
         return "+"

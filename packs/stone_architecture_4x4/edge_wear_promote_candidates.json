@@ -1,0 +1,29 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
+      "token": "!",
+      "notes": "Promote reusable edge-wear package: broken left contour fragment."
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
+      "token": "%",
+      "notes": "Promote reusable edge-wear package: broken right contour fragment."
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
+      "token": "'",
+      "notes": "Promote reusable edge-wear package: broken top contour fragment."
+    },
+    {
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161",
+      "token": "(",
+      "notes": "Promote reusable edge-wear package: rubbed bottom contour fragment."
+    }
+  ],
+  "metadata": {
+    "source": "edge_wear_package_v0",
+    "scope": "generic broken contour, rubbed edge, and nicked-edge glyph packages",
+    "not_object_specific": true
+  }
+}

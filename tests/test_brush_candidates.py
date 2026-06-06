@@ -74,6 +74,15 @@ class BrushCandidateTests(unittest.TestCase):
         self.assertEqual(dot["brush_engine"], "dot-field")
         self.assertIn("pattern", dot["brush_params"])
 
+    def test_brush_candidates_include_dot_density_package(self):
+        candidates = generate_brush_candidates()
+        dot = next(candidate for candidate in candidates if candidate["brush_family"] == "dot_density")
+
+        self.assertEqual(dot["family"], "dot_density")
+        self.assertEqual(dot["role"], "detail")
+        self.assertEqual(dot["brush_engine"], "dot-density")
+        self.assertIn("density", dot["brush_params"])
+
     def test_brush_candidates_include_charcoal_drag_package(self):
         candidates = generate_brush_candidates()
         drag = next(candidate for candidate in candidates if candidate["brush_family"] == "charcoal_drag")
@@ -128,6 +137,18 @@ class BrushCandidateTests(unittest.TestCase):
             self.assertTrue((pack / "ascii_spray_palette.txt").exists())
             mapping = json.loads((pack / "ascii_brush_mapping.json").read_text(encoding="utf-8"))
             self.assertIn("texture_palette", mapping)
+
+    def test_brush_bridge_prioritizes_dot_density_keys(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+
+            result = write_brush_review(pack)
+            bridge_mapping = result["ascii_bridge"]["mapping"]
+            dot_keys = [key for key, value in bridge_mapping.items() if value.get("brush_family") == "dot_density"]
+
+            self.assertGreaterEqual(len(dot_keys), 3)
+            self.assertTrue(any(key in result["ascii_bridge"]["spray_palette"] for key in dot_keys))
 
 
 if __name__ == "__main__":

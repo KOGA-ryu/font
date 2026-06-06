@@ -116,6 +116,8 @@ def _equivalence_group(record: dict[str, Any]) -> str:
     family = record.get("family", "")
     if family in {"texture", "damage"}:
         return "translations_normalized"
+    if family == "dot_density":
+        return "exact"
     if family in {"corner", "junction"}:
         return "dihedral8"
     if family == "diagonal":

@@ -6,6 +6,7 @@ from glyph_lab.brush_primitives import (
     charcoal_drag,
     chip,
     default_brush_specs,
+    dot_density,
     dot_field,
     dry_brush,
     edge_wear,
@@ -124,6 +125,30 @@ class BrushPrimitiveTests(unittest.TestCase):
 
         self.assertEqual(metadata["brush_engine"], "dot-field")
         self.assertEqual(metadata["density_class"], "speckle_even")
+        self.assertEqual(metadata["ascii_fallback"], "*")
+
+    def test_dot_density_ramp_increases_density(self):
+        single = measure_stamp(dot_density("single"))["density"]
+        packed = measure_stamp(dot_density("packed"))["density"]
+
+        self.assertLess(single, packed)
+
+    def test_dot_density_is_deterministic(self):
+        first = stamp_to_bitmask(dot_density("dense"))
+        second = stamp_to_bitmask(dot_density("dense"))
+
+        self.assertEqual(first, second)
+
+    def test_dot_density_metadata_records_engine(self):
+        metadata = brush_metadata(
+            {
+                "brush_family": "dot_density",
+                "params": {"density": "medium"},
+            }
+        )
+
+        self.assertEqual(metadata["brush_engine"], "dot-density")
+        self.assertEqual(metadata["density_class"], "medium")
         self.assertEqual(metadata["ascii_fallback"], "*")
 
     def test_charcoal_drag_heavy_has_more_density_than_light(self):

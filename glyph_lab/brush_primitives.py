@@ -22,6 +22,7 @@ BRUSH_FAMILIES = {
     "chip",
     "tone_hatch",
     "dot_field",
+    "dot_density",
     "edge_wear",
     "value_patch",
 }
@@ -55,6 +56,8 @@ def brush_stamp(
         return tone_hatch(**params, color=color)
     if brush_family == "dot_field":
         return dot_field(**params, color=color)
+    if brush_family == "dot_density":
+        return dot_density(**params, color=color)
     if brush_family == "edge_wear":
         return edge_wear(**params, color=color)
     if brush_family == "value_patch":
@@ -373,6 +376,28 @@ def dot_field(
     return _stamp(sorted(coords), color)
 
 
+def dot_density(
+    density: str = "light",
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice(
+        "density",
+        density,
+        {"single", "pair", "sparse", "light", "medium", "dense", "heavy", "packed"},
+    )
+    coords = {
+        "single": {(0, 0)},
+        "pair": {(1, 1), (2, 2)},
+        "sparse": {(0, 1), (2, 2), (3, 0)},
+        "light": {(0, 0), (3, 0), (1, 2), (2, 3)},
+        "medium": {(0, 0), (2, 0), (3, 1), (1, 2), (0, 3), (3, 3)},
+        "dense": {(0, 0), (2, 0), (1, 1), (3, 1), (0, 2), (2, 2), (1, 3), (3, 3)},
+        "heavy": {(0, 0), (1, 0), (3, 0), (0, 1), (2, 1), (1, 2), (3, 2), (0, 3), (2, 3), (3, 3)},
+        "packed": {(x, y) for y in range(CELL_SIZE) for x in range(CELL_SIZE) if (x + y) % 3 != 1},
+    }[density]
+    return _stamp(sorted(coords), color)
+
+
 def edge_wear(
     side: str = "left",
     wear: str = "nick",
@@ -527,6 +552,15 @@ def default_brush_specs() -> list[dict[str, Any]]:
         "scattered_large",
     ):
         specs.append(_spec("dot_field", f"dot_field_{pattern}", {"pattern": pattern}, family="texture"))
+    for density in ("single", "pair", "sparse", "light", "medium", "dense", "heavy", "packed"):
+        specs.append(
+            _spec(
+                "dot_density",
+                f"dot_density_{density}",
+                {"density": density},
+                family="dot_density",
+            )
+        )
     for direction in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall", "smudge"):
         for pressure in ("light", "medium", "heavy"):
             specs.append(
@@ -623,6 +657,8 @@ def _engine_for(brush_family: str) -> str:
         return "tone-hatch"
     if brush_family == "dot_field":
         return "dot-field"
+    if brush_family == "dot_density":
+        return "dot-density"
     if brush_family == "edge_wear":
         return "edge-wear"
     if brush_family == "value_patch":
@@ -640,7 +676,7 @@ def _fallback_for(spec: dict[str, Any]) -> str:
         return {"horizontal": "-", "vertical": "|", "diagonal_rise": "/", "diagonal_fall": "\\"}.get(angle, "x")
     if family == "crosshatch":
         return "+"
-    if family in {"stipple", "spray", "grain", "dot_field"}:
+    if family in {"stipple", "spray", "grain", "dot_field", "dot_density"}:
         return "*"
     if family in {"chip", "edge_wear"}:
         return "x"

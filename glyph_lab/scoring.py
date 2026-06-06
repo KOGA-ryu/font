@@ -5,7 +5,7 @@ from typing import Any
 
 
 SOLID_ROLES = {"solid", "mass", "shadow"}
-TEXTURE_FAMILIES = {"texture", "damage"}
+TEXTURE_FAMILIES = {"texture", "damage", "dot_density"}
 MEASUREMENT_ROLES = {"guide", "measurement"}
 
 

@@ -6183,9 +6183,593 @@
       "canonical_id": 41289
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4136",
+      "id": "4.stone.brush.dot_density.dot_density_single_4136",
       "token": "",
       "index": 4136,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "centroid_x": 0.0,
+        "centroid_y": 0.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 1
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "single"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "single"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "single",
+      "ascii_fallback": "*",
+      "usefulness_score": 0.7987,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:2",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_pair_4137",
+      "token": "",
+      "index": 4137,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 1056
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "pair"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "pair"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "pair",
+      "ascii_fallback": "*",
+      "usefulness_score": 0.6575,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:0",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1056
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_sparse_4138",
+      "token": "",
+      "index": 4138,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 1048
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "sparse"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "sparse"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "sparse",
+      "ascii_fallback": "*",
+      "usefulness_score": 0.9163,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:3",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1048
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_light_4139",
+      "token": "",
+      "index": 4139,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.25,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 16905
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "light"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "light"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "light",
+      "ascii_fallback": "*",
+      "usefulness_score": 0.945,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 16905
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_medium_4140",
+      "token": "",
+      "index": 4140,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 6,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 37509
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "medium"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "medium"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "medium",
+      "ascii_fallback": "*",
+      "usefulness_score": 1.0,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 37509
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_dense_4141",
+      "token": "",
+      "index": 4141,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 8,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 42405
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "dense"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "dense"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "dense",
+      "ascii_fallback": "*",
+      "usefulness_score": 1.0,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 42405
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_heavy_4142",
+      "token": "",
+      "index": 4142,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 6,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 55899
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "heavy"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "heavy"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "heavy",
+      "ascii_fallback": "*",
+      "usefulness_score": 1.0,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 55899
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_packed_4143",
+      "token": "",
+      "index": 4143,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.6875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5454545454545454,
+        "centroid_y": 1.5454545454545454,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 56173
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "packed"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "packed"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "packed",
+      "ascii_fallback": "*",
+      "usefulness_score": 1.0,
+      "rejection_reason": null,
+      "review_tags": [
+        "dot_density",
+        "contacts:4",
+        "candidate"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 56173
+    },
+    {
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4144",
+      "token": "",
+      "index": 4144,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6258,9 +6842,9 @@
       "canonical_id": 112
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4137",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4145",
       "token": "",
-      "index": 4137,
+      "index": 4145,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6333,9 +6917,9 @@
       "canonical_id": 880
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4146",
       "token": "",
-      "index": 4138,
+      "index": 4146,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6408,9 +6992,9 @@
       "canonical_id": 2032
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4139",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4147",
       "token": "",
-      "index": 4139,
+      "index": 4147,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6483,9 +7067,9 @@
       "canonical_id": 546
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4140",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4148",
       "token": "",
-      "index": 4140,
+      "index": 4148,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6558,9 +7142,9 @@
       "canonical_id": 614
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4149",
       "token": "",
-      "index": 4141,
+      "index": 4149,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6633,9 +7217,9 @@
       "canonical_id": 9830
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4143",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4151",
       "token": "",
-      "index": 4143,
+      "index": 4151,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6708,9 +7292,9 @@
       "canonical_id": 13888
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4144",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4152",
       "token": "",
-      "index": 4144,
+      "index": 4152,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6783,9 +7367,9 @@
       "canonical_id": 14024
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4146",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4154",
       "token": "",
-      "index": 4146,
+      "index": 4154,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6858,9 +7442,9 @@
       "canonical_id": 1123
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4147",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4155",
       "token": "",
-      "index": 4147,
+      "index": 4155,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -6933,84 +7517,9 @@
       "canonical_id": 35939
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_light_4148",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4158",
       "token": "",
-      "index": 4148,
-      "role": "detail",
-      "family": "charcoal",
-      "layer": "detail",
-      "palette_role": "crack",
-      "cell_size": 4,
-      "features": {
-        "density": 0.125,
-        "bounding_box": {
-          "left": 1,
-          "top": 1,
-          "right": 2,
-          "bottom": 2
-        },
-        "centroid_x": 1.5,
-        "centroid_y": 1.5,
-        "quadrant_densities": {
-          "top_left": 0.25,
-          "top_right": 0.0,
-          "bottom_left": 0.0,
-          "bottom_right": 0.25
-        },
-        "edge_contacts": {
-          "top": false,
-          "right": false,
-          "bottom": false,
-          "left": false
-        },
-        "connected_component_count": 2,
-        "symmetry": {
-          "horizontal": false,
-          "vertical": false,
-          "diagonal_a": true,
-          "diagonal_b": true
-        },
-        "bitmask": 1056
-      },
-      "constraints": {
-        "allowed_layers": [
-          "detail"
-        ],
-        "allowed_regions": [
-          "surface",
-          "shadow",
-          "detail"
-        ]
-      },
-      "generated": true,
-      "source": "brush_geometry",
-      "primitive_family": "brush",
-      "primitive_params": {
-        "direction": "smudge",
-        "pressure": "light"
-      },
-      "brush_family": "charcoal_drag",
-      "brush_params": {
-        "direction": "smudge",
-        "pressure": "light"
-      },
-      "brush_engine": "charcoal-drag",
-      "density_class": "light",
-      "ascii_fallback": "x",
-      "usefulness_score": 0.5375,
-      "rejection_reason": null,
-      "review_tags": [
-        "shape",
-        "contacts:0",
-        "candidate"
-      ],
-      "equivalence_group": "exact",
-      "canonical_id": 1056
-    },
-    {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
-      "token": "",
-      "index": 4150,
+      "index": 4158,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -7083,9 +7592,9 @@
       "canonical_id": 20082
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_left_rubbed_4152",
+      "id": "4.stone.brush.edge_wear.edge_wear_left_rubbed_4160",
       "token": "",
-      "index": 4152,
+      "index": 4160,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7158,9 +7667,9 @@
       "canonical_id": 4145
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
+      "id": "4.stone.brush.edge_wear.edge_wear_left_broken_4161",
       "token": "",
-      "index": 4153,
+      "index": 4161,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7233,9 +7742,9 @@
       "canonical_id": 8451
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_right_rubbed_4155",
+      "id": "4.stone.brush.edge_wear.edge_wear_right_rubbed_4163",
       "token": "",
-      "index": 4155,
+      "index": 4163,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7308,9 +7817,9 @@
       "canonical_id": 8962
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
+      "id": "4.stone.brush.edge_wear.edge_wear_right_broken_4164",
       "token": "",
-      "index": 4156,
+      "index": 4164,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7383,9 +7892,9 @@
       "canonical_id": 4626
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_top_rubbed_4158",
+      "id": "4.stone.brush.edge_wear.edge_wear_top_rubbed_4166",
       "token": "",
-      "index": 4158,
+      "index": 4166,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7458,9 +7967,9 @@
       "canonical_id": 43
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
+      "id": "4.stone.brush.edge_wear.edge_wear_top_broken_4167",
       "token": "",
-      "index": 4159,
+      "index": 4167,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7533,9 +8042,9 @@
       "canonical_id": 165
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161",
+      "id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4169",
       "token": "",
-      "index": 4161,
+      "index": 4169,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7608,9 +8117,9 @@
       "canonical_id": 212
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4164",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4172",
       "token": "",
-      "index": 4164,
+      "index": 4172,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7683,9 +8192,9 @@
       "canonical_id": 23
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4175",
       "token": "",
-      "index": 4167,
+      "index": 4175,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -7758,9 +8267,9 @@
       "canonical_id": 116
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_left_4177",
       "token": "",
-      "index": 4169,
+      "index": 4177,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -7831,9 +8340,9 @@
       "canonical_id": 12593
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_top_4179",
       "token": "",
-      "index": 4171,
+      "index": 4179,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -7904,9 +8413,9 @@
       "canonical_id": 175
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_mid_block_4175",
+      "id": "4.stone.brush.value_patch.value_patch_mid_block_4183",
       "token": "",
-      "index": 4175,
+      "index": 4183,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -7978,9 +8487,9 @@
       "canonical_id": 1782
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_mid_pillar_4176",
+      "id": "4.stone.brush.value_patch.value_patch_mid_pillar_4184",
       "token": "",
-      "index": 4176,
+      "index": 4184,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -8052,9 +8561,9 @@
       "canonical_id": 13107
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4185",
       "token": "",
-      "index": 4177,
+      "index": 4185,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -8125,9 +8634,9 @@
       "canonical_id": 47
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4186",
       "token": "",
-      "index": 4178,
+      "index": 4186,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -8246,12 +8755,12 @@
       "4.stone.brush.dot_field.dot_field_spray_corner_bottom_right_4133",
       "4.stone.brush.dot_field.dot_field_pitted_surface_4134",
       "4.stone.brush.dot_field.dot_field_scattered_large_4135",
-      "4.stone.brush.value_patch.value_patch_shadow_left_4169",
-      "4.stone.brush.value_patch.value_patch_shadow_top_4171",
-      "4.stone.brush.value_patch.value_patch_mid_block_4175",
-      "4.stone.brush.value_patch.value_patch_mid_pillar_4176",
-      "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
-      "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178"
+      "4.stone.brush.value_patch.value_patch_shadow_left_4177",
+      "4.stone.brush.value_patch.value_patch_shadow_top_4179",
+      "4.stone.brush.value_patch.value_patch_mid_block_4183",
+      "4.stone.brush.value_patch.value_patch_mid_pillar_4184",
+      "4.stone.brush.value_patch.value_patch_highlight_top_edge_4185",
+      "4.stone.brush.value_patch.value_patch_highlight_left_edge_4186"
     ],
     "detail/spray": [
       "4.stone.brush.stipple.stipple_cluster_4034",
@@ -8279,18 +8788,17 @@
       "4.stone.brush.charcoal.charcoal_bottom_medium_4061",
       "4.stone.brush.charcoal.charcoal_bottom_heavy_4062",
       "4.stone.brush.charcoal.charcoal_chunk_light_4063",
-      "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4136",
-      "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4137",
-      "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
-      "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4139",
-      "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4140",
-      "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
-      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4143",
-      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4144",
-      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4146",
-      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4147",
-      "4.stone.brush.charcoal_drag.charcoal_drag_smudge_light_4148",
-      "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150"
+      "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4144",
+      "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4145",
+      "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4146",
+      "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4147",
+      "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4148",
+      "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4149",
+      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4151",
+      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4152",
+      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4154",
+      "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4155",
+      "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4158"
     ],
     "detail/dry_brush": [
       "4.stone.brush.dry_brush.dry_brush_horizontal_light_4066",
@@ -8308,15 +8816,25 @@
       "4.stone.brush.chip.chip_left_large_4100",
       "4.stone.brush.chip.chip_right_small_4101",
       "4.stone.brush.chip.chip_right_large_4103",
-      "4.stone.brush.edge_wear.edge_wear_left_rubbed_4152",
-      "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
-      "4.stone.brush.edge_wear.edge_wear_right_rubbed_4155",
-      "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
-      "4.stone.brush.edge_wear.edge_wear_top_rubbed_4158",
-      "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
-      "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161",
-      "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4164",
-      "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167"
+      "4.stone.brush.edge_wear.edge_wear_left_rubbed_4160",
+      "4.stone.brush.edge_wear.edge_wear_left_broken_4161",
+      "4.stone.brush.edge_wear.edge_wear_right_rubbed_4163",
+      "4.stone.brush.edge_wear.edge_wear_right_broken_4164",
+      "4.stone.brush.edge_wear.edge_wear_top_rubbed_4166",
+      "4.stone.brush.edge_wear.edge_wear_top_broken_4167",
+      "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4169",
+      "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4172",
+      "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4175"
+    ],
+    "detail/dot_density": [
+      "4.stone.brush.dot_density.dot_density_single_4136",
+      "4.stone.brush.dot_density.dot_density_pair_4137",
+      "4.stone.brush.dot_density.dot_density_sparse_4138",
+      "4.stone.brush.dot_density.dot_density_light_4139",
+      "4.stone.brush.dot_density.dot_density_medium_4140",
+      "4.stone.brush.dot_density.dot_density_dense_4141",
+      "4.stone.brush.dot_density.dot_density_heavy_4142",
+      "4.stone.brush.dot_density.dot_density_packed_4143"
     ]
   }
 }

@@ -14,6 +14,7 @@ from .compiler import compile_grid
 from .compositor import compile_layered_grid
 from .contact_sheet import generate_contact_sheet
 from .candidate_filter import write_candidate_review
+from .eyedropper import parse_grid_size, parse_point, write_eyedropper_json
 from .generate_candidates import write_primitive_review
 from .grooves import measure_rhythm_image
 from .image_to_layers import probe_image_to_layers
@@ -130,6 +131,19 @@ def main() -> None:
 
     brush_parser = subparsers.add_parser("generate-brushes", help="generate texture brush glyph review artifacts")
     brush_parser.add_argument("--pack", default=str(DEFAULT_PACK))
+
+    eyedropper_parser = subparsers.add_parser("eyedropper-sample", help="sample image colors into JSON")
+    eyedropper_parser.add_argument("--image", required=True)
+    eyedropper_parser.add_argument("--out", required=True)
+    eyedropper_parser.add_argument(
+        "--point",
+        action="append",
+        default=[],
+        help="sample point as x,y or label:x,y; repeat for multiple samples",
+    )
+    eyedropper_parser.add_argument("--grid-size", help="also sample grid cell centers as WIDTHxHEIGHT")
+    eyedropper_parser.add_argument("--base-json", help="merge samples into an existing JSON object")
+    eyedropper_parser.add_argument("--json-key", default="eyedropper_samples")
 
     ascii_parser = subparsers.add_parser("import-ascii-grid", help="import ASCII output as a layered glyph grid")
     ascii_parser.add_argument("--pack", default=str(DEFAULT_PACK))
@@ -301,6 +315,17 @@ def main() -> None:
 
     if args.command == "generate-brushes":
         write_brush_review(pack)
+        return
+
+    if args.command == "eyedropper-sample":
+        write_eyedropper_json(
+            args.image,
+            args.out,
+            points=[parse_point(point) for point in args.point],
+            grid_size=parse_grid_size(args.grid_size) if args.grid_size else None,
+            base_json_path=args.base_json,
+            json_key=args.json_key,
+        )
         return
 
     if args.command == "import-ascii-grid":

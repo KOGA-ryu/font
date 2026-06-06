@@ -42,6 +42,22 @@ class CandidateFilterTests(unittest.TestCase):
         self.assertEqual(len(result["accepted_candidates"]), 1)
         self.assertEqual(result["accepted_candidates"][0]["rejection_reason"], None)
 
+    def test_disconnected_dots_are_accepted_as_dot_density(self):
+        dots = record("dot_density", "detail", "dot_density", bitmask_to_stamp((1 << 0) | (1 << 5) | (1 << 10)))
+
+        result = filter_candidates([dots])
+
+        self.assertEqual(len(result["accepted_candidates"]), 1)
+        self.assertEqual(result["accepted_candidates"][0]["rejection_reason"], None)
+
+    def test_dot_density_does_not_collapse_shifted_density_variants(self):
+        left = record("dot_density_left", "detail", "dot_density", bitmask_to_stamp((1 << 0) | (1 << 5)))
+        right = record("dot_density_right", "detail", "dot_density", bitmask_to_stamp((1 << 2) | (1 << 7)))
+
+        result = filter_candidates([left, right])
+
+        self.assertEqual(len(result["accepted_candidates"]), 2)
+
     def test_corner_top_left_is_accepted_as_corner(self):
         corner = record("corner", "edge", "corner", stamp_for_index(18))
 

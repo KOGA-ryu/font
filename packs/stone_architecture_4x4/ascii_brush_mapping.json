@@ -1,6 +1,6 @@
 {
-  "texture_palette": "=?`*BI@~x,U{}/-|AHNRW47!&)\\:EKOV58$'+QYgk69%(DGJMZPlXm;FLeifj",
-  "spray_palette": "rzo0vw13y2",
+  "texture_palette": "-|A*KQ\\/B,gxDJPXfj%(?{E:MUYi&)@}+Felvz'=`~LORWmGZ0k1HI;NVowry",
+  "spray_palette": "A3B7D28E4F59$G6!HI",
   "mapping": {
     "#": {
       "glyph_id": "4.stone.fill.solid.solid_01",
@@ -143,7 +143,7 @@
       "bridge_only": false
     },
     ":": {
-      "glyph_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "glyph_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4186",
       "token": "",
       "role": "detail",
       "family": "texture",
@@ -213,7 +213,7 @@
       "bridge_only": true
     },
     "x": {
-      "glyph_id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167",
+      "glyph_id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4175",
       "token": "",
       "role": "detail",
       "family": "damage",
@@ -226,7 +226,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "A": {
+    "J": {
       "glyph_id": "4.stone.brush.hatch.hatch_horizontal_light_4000",
       "token": "",
       "role": "detail",
@@ -240,7 +240,7 @@
       "ascii_fallback": "-",
       "bridge_only": true
     },
-    "B": {
+    "K": {
       "glyph_id": "4.stone.brush.hatch.hatch_horizontal_light_broken_4001",
       "token": "",
       "role": "detail",
@@ -254,7 +254,7 @@
       "ascii_fallback": "-",
       "bridge_only": true
     },
-    "D": {
+    "L": {
       "glyph_id": "4.stone.brush.hatch.hatch_horizontal_medium_4002",
       "token": "",
       "role": "detail",
@@ -268,7 +268,7 @@
       "ascii_fallback": "-",
       "bridge_only": true
     },
-    "E": {
+    "M": {
       "glyph_id": "4.stone.brush.hatch.hatch_horizontal_medium_broken_4003",
       "token": "",
       "role": "detail",
@@ -282,7 +282,7 @@
       "ascii_fallback": "-",
       "bridge_only": true
     },
-    "F": {
+    "N": {
       "glyph_id": "4.stone.brush.hatch.hatch_horizontal_dense_4004",
       "token": "",
       "role": "detail",
@@ -296,7 +296,7 @@
       "ascii_fallback": "-",
       "bridge_only": true
     },
-    "G": {
+    "O": {
       "glyph_id": "4.stone.brush.hatch.hatch_horizontal_dense_broken_4005",
       "token": "",
       "role": "detail",
@@ -310,7 +310,7 @@
       "ascii_fallback": "-",
       "bridge_only": true
     },
-    "H": {
+    "P": {
       "glyph_id": "4.stone.brush.hatch.hatch_vertical_light_4006",
       "token": "",
       "role": "detail",
@@ -324,7 +324,7 @@
       "ascii_fallback": "|",
       "bridge_only": true
     },
-    "I": {
+    "Q": {
       "glyph_id": "4.stone.brush.hatch.hatch_vertical_light_broken_4007",
       "token": "",
       "role": "detail",
@@ -338,7 +338,7 @@
       "ascii_fallback": "|",
       "bridge_only": true
     },
-    "J": {
+    "R": {
       "glyph_id": "4.stone.brush.hatch.hatch_vertical_medium_4008",
       "token": "",
       "role": "detail",
@@ -352,7 +352,7 @@
       "ascii_fallback": "|",
       "bridge_only": true
     },
-    "K": {
+    "U": {
       "glyph_id": "4.stone.brush.hatch.hatch_vertical_medium_broken_4009",
       "token": "",
       "role": "detail",
@@ -366,7 +366,7 @@
       "ascii_fallback": "|",
       "bridge_only": true
     },
-    "L": {
+    "V": {
       "glyph_id": "4.stone.brush.hatch.hatch_vertical_dense_4010",
       "token": "",
       "role": "detail",
@@ -380,7 +380,7 @@
       "ascii_fallback": "|",
       "bridge_only": true
     },
-    "M": {
+    "W": {
       "glyph_id": "4.stone.brush.hatch.hatch_vertical_dense_broken_4011",
       "token": "",
       "role": "detail",
@@ -394,7 +394,7 @@
       "ascii_fallback": "|",
       "bridge_only": true
     },
-    "N": {
+    "X": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_rise_light_4012",
       "token": "",
       "role": "detail",
@@ -408,7 +408,7 @@
       "ascii_fallback": "/",
       "bridge_only": true
     },
-    "O": {
+    "Y": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_rise_medium_4014",
       "token": "",
       "role": "detail",
@@ -422,7 +422,7 @@
       "ascii_fallback": "/",
       "bridge_only": true
     },
-    "P": {
+    "Z": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_rise_dense_4016",
       "token": "",
       "role": "detail",
@@ -436,7 +436,7 @@
       "ascii_fallback": "/",
       "bridge_only": true
     },
-    "Q": {
+    "e": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_rise_dense_broken_4017",
       "token": "",
       "role": "detail",
@@ -450,7 +450,7 @@
       "ascii_fallback": "/",
       "bridge_only": true
     },
-    "R": {
+    "f": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_fall_light_4018",
       "token": "",
       "role": "detail",
@@ -464,7 +464,7 @@
       "ascii_fallback": "\\",
       "bridge_only": true
     },
-    "U": {
+    "g": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_fall_light_broken_4019",
       "token": "",
       "role": "detail",
@@ -478,7 +478,7 @@
       "ascii_fallback": "\\",
       "bridge_only": true
     },
-    "V": {
+    "i": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_fall_medium_4020",
       "token": "",
       "role": "detail",
@@ -492,7 +492,7 @@
       "ascii_fallback": "\\",
       "bridge_only": true
     },
-    "W": {
+    "j": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_fall_medium_broken_4021",
       "token": "",
       "role": "detail",
@@ -506,7 +506,7 @@
       "ascii_fallback": "\\",
       "bridge_only": true
     },
-    "X": {
+    "k": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_fall_dense_4022",
       "token": "",
       "role": "detail",
@@ -520,7 +520,7 @@
       "ascii_fallback": "\\",
       "bridge_only": true
     },
-    "Y": {
+    "l": {
       "glyph_id": "4.stone.brush.hatch.hatch_diagonal_fall_dense_broken_4023",
       "token": "",
       "role": "detail",
@@ -534,7 +534,7 @@
       "ascii_fallback": "\\",
       "bridge_only": true
     },
-    "Z": {
+    "m": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_x_light_4024",
       "token": "",
       "role": "detail",
@@ -548,7 +548,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "e": {
+    "o": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_x_medium_4025",
       "token": "",
       "role": "detail",
@@ -562,7 +562,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "f": {
+    "r": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_x_dense_4026",
       "token": "",
       "role": "detail",
@@ -576,7 +576,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "g": {
+    "v": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_grid_light_4027",
       "token": "",
       "role": "detail",
@@ -590,7 +590,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "i": {
+    "w": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_grid_medium_4028",
       "token": "",
       "role": "detail",
@@ -604,7 +604,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "j": {
+    "y": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_grid_dense_4029",
       "token": "",
       "role": "detail",
@@ -618,7 +618,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "k": {
+    "z": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_uneven_light_4030",
       "token": "",
       "role": "detail",
@@ -632,7 +632,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "l": {
+    "0": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_uneven_medium_4031",
       "token": "",
       "role": "detail",
@@ -646,7 +646,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "m": {
+    "1": {
       "glyph_id": "4.stone.brush.crosshatch.crosshatch_uneven_dense_4032",
       "token": "",
       "role": "detail",
@@ -660,7 +660,7 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "o": {
+    "2": {
       "glyph_id": "4.stone.brush.stipple.stipple_cluster_4034",
       "token": "",
       "role": "detail",
@@ -674,7 +674,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "r": {
+    "3": {
       "glyph_id": "4.stone.brush.spray.spray_even_light_4036",
       "token": "",
       "role": "detail",
@@ -688,7 +688,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "v": {
+    "4": {
       "glyph_id": "4.stone.brush.spray.spray_even_medium_4037",
       "token": "",
       "role": "detail",
@@ -702,7 +702,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "w": {
+    "5": {
       "glyph_id": "4.stone.brush.spray.spray_left_medium_4040",
       "token": "",
       "role": "detail",
@@ -716,7 +716,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "y": {
+    "6": {
       "glyph_id": "4.stone.brush.spray.spray_left_dense_4041",
       "token": "",
       "role": "detail",
@@ -730,7 +730,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "z": {
+    "7": {
       "glyph_id": "4.stone.brush.spray.spray_right_light_4042",
       "token": "",
       "role": "detail",
@@ -744,7 +744,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "0": {
+    "8": {
       "glyph_id": "4.stone.brush.spray.spray_right_medium_4043",
       "token": "",
       "role": "detail",
@@ -758,7 +758,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "1": {
+    "9": {
       "glyph_id": "4.stone.brush.spray.spray_right_dense_4044",
       "token": "",
       "role": "detail",
@@ -772,7 +772,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "2": {
+    "!": {
       "glyph_id": "4.stone.brush.spray.spray_top_dense_4047",
       "token": "",
       "role": "detail",
@@ -786,7 +786,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "3": {
+    "$": {
       "glyph_id": "4.stone.brush.spray.spray_bottom_dense_4050",
       "token": "",
       "role": "detail",
@@ -800,7 +800,7 @@
       "ascii_fallback": "*",
       "bridge_only": true
     },
-    "4": {
+    "%": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_left_light_4051",
       "token": "",
       "role": "detail",
@@ -814,7 +814,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "5": {
+    "&": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_left_medium_4052",
       "token": "",
       "role": "detail",
@@ -828,7 +828,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "6": {
+    "'": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_left_heavy_4053",
       "token": "",
       "role": "detail",
@@ -842,7 +842,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "7": {
+    "(": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_right_light_4054",
       "token": "",
       "role": "detail",
@@ -856,7 +856,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "8": {
+    ")": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_right_medium_4055",
       "token": "",
       "role": "detail",
@@ -870,7 +870,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "9": {
+    "=": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_right_heavy_4056",
       "token": "",
       "role": "detail",
@@ -884,7 +884,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "!": {
+    "?": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_top_light_4057",
       "token": "",
       "role": "detail",
@@ -898,7 +898,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "$": {
+    "@": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_top_medium_4058",
       "token": "",
       "role": "detail",
@@ -912,7 +912,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "%": {
+    "`": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_top_heavy_4059",
       "token": "",
       "role": "detail",
@@ -926,7 +926,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "&": {
+    "{": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_bottom_light_4060",
       "token": "",
       "role": "detail",
@@ -940,7 +940,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "'": {
+    "}": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_bottom_medium_4061",
       "token": "",
       "role": "detail",
@@ -954,7 +954,7 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    "(": {
+    "~": {
       "glyph_id": "4.stone.brush.charcoal.charcoal_bottom_heavy_4062",
       "token": "",
       "role": "detail",
@@ -968,120 +968,50 @@
       "ascii_fallback": "x",
       "bridge_only": true
     },
-    ")": {
-      "glyph_id": "4.stone.brush.charcoal.charcoal_chunk_light_4063",
+    "-": {
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4146",
       "token": "",
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "charcoal",
-      "brush_engine": "broken-stroke",
-      "density_class": "light",
-      "ascii_fallback": "x",
-      "bridge_only": true
-    },
-    "=": {
-      "glyph_id": "4.stone.brush.dry_brush.dry_brush_horizontal_light_4066",
-      "token": "",
-      "role": "detail",
-      "family": "dry_brush",
-      "layer": "detail",
-      "palette_role": "crack",
-      "source": "brush_geometry",
-      "brush_family": "dry_brush",
-      "brush_engine": "broken-stroke",
-      "density_class": "light",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
       "ascii_fallback": "-",
       "bridge_only": true
     },
-    "?": {
-      "glyph_id": "4.stone.brush.dry_brush.dry_brush_vertical_light_4069",
+    "|": {
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4149",
       "token": "",
       "role": "detail",
-      "family": "dry_brush",
+      "family": "charcoal",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "dry_brush",
-      "brush_engine": "broken-stroke",
-      "density_class": "light",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
       "ascii_fallback": "|",
       "bridge_only": true
     },
-    "@": {
-      "glyph_id": "4.stone.brush.dry_brush.dry_brush_diagonal_fall_light_4075",
+    "\\": {
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4155",
       "token": "",
       "role": "detail",
-      "family": "dry_brush",
+      "family": "charcoal",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "dry_brush",
-      "brush_engine": "broken-stroke",
-      "density_class": "light",
+      "brush_family": "charcoal_drag",
+      "brush_engine": "charcoal-drag",
+      "density_class": "heavy",
       "ascii_fallback": "\\",
       "bridge_only": true
     },
-    "`": {
-      "glyph_id": "4.stone.brush.scratch.scratch_horizontal_short_broken_4083",
-      "token": "",
-      "role": "detail",
-      "family": "damage",
-      "layer": "detail",
-      "palette_role": "crack",
-      "source": "brush_geometry",
-      "brush_family": "scratch",
-      "brush_engine": "incised-mark",
-      "density_class": "short",
-      "ascii_fallback": "-",
-      "bridge_only": true
-    },
-    "{": {
-      "glyph_id": "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
-      "token": "",
-      "role": "detail",
-      "family": "damage",
-      "layer": "detail",
-      "palette_role": "crack",
-      "source": "brush_geometry",
-      "brush_family": "scratch",
-      "brush_engine": "incised-mark",
-      "density_class": "long",
-      "ascii_fallback": "-",
-      "bridge_only": true
-    },
-    "}": {
-      "glyph_id": "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
-      "token": "",
-      "role": "detail",
-      "family": "damage",
-      "layer": "detail",
-      "palette_role": "crack",
-      "source": "brush_geometry",
-      "brush_family": "scratch",
-      "brush_engine": "incised-mark",
-      "density_class": "long",
-      "ascii_fallback": "|",
-      "bridge_only": true
-    },
-    "~": {
-      "glyph_id": "4.stone.brush.scratch.scratch_diagonal_rise_short_4090",
-      "token": "",
-      "role": "detail",
-      "family": "damage",
-      "layer": "detail",
-      "palette_role": "crack",
-      "source": "brush_geometry",
-      "brush_family": "scratch",
-      "brush_engine": "incised-mark",
-      "density_class": "short",
-      "ascii_fallback": "/",
-      "bridge_only": true
-    },
     "/": {
-      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4144",
+      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4152",
       "token": "",
       "role": "detail",
       "family": "charcoal",
@@ -1108,50 +1038,152 @@
       "ascii_fallback": "+",
       "bridge_only": true
     },
-    "-": {
-      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+    "A": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_single_4136",
       "token": "",
       "role": "detail",
-      "family": "charcoal",
+      "family": "dot_density",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "charcoal_drag",
-      "brush_engine": "charcoal-drag",
-      "density_class": "heavy",
-      "ascii_fallback": "-",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
+      "density_class": "single",
+      "ascii_fallback": "*",
       "bridge_only": true
     },
-    "|": {
-      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+    "B": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_pair_4137",
       "token": "",
       "role": "detail",
-      "family": "charcoal",
+      "family": "dot_density",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "charcoal_drag",
-      "brush_engine": "charcoal-drag",
-      "density_class": "heavy",
-      "ascii_fallback": "|",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
+      "density_class": "pair",
+      "ascii_fallback": "*",
       "bridge_only": true
     },
-    "\\": {
-      "glyph_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4147",
+    "D": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_sparse_4138",
       "token": "",
       "role": "detail",
-      "family": "charcoal",
+      "family": "dot_density",
       "layer": "detail",
       "palette_role": "crack",
       "source": "brush_geometry",
-      "brush_family": "charcoal_drag",
-      "brush_engine": "charcoal-drag",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
+      "density_class": "sparse",
+      "ascii_fallback": "*",
+      "bridge_only": true
+    },
+    "E": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_light_4139",
+      "token": "",
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
+      "density_class": "light",
+      "ascii_fallback": "*",
+      "bridge_only": true
+    },
+    "F": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_medium_4140",
+      "token": "",
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
+      "density_class": "medium",
+      "ascii_fallback": "*",
+      "bridge_only": true
+    },
+    "G": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_dense_4141",
+      "token": "",
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
+      "density_class": "dense",
+      "ascii_fallback": "*",
+      "bridge_only": true
+    },
+    "H": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_heavy_4142",
+      "token": "",
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
       "density_class": "heavy",
-      "ascii_fallback": "\\",
+      "ascii_fallback": "*",
+      "bridge_only": true
+    },
+    "I": {
+      "glyph_id": "4.stone.brush.dot_density.dot_density_packed_4143",
+      "token": "",
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "source": "brush_geometry",
+      "brush_family": "dot_density",
+      "brush_engine": "dot-density",
+      "density_class": "packed",
+      "ascii_fallback": "*",
       "bridge_only": true
     }
   },
   "skipped_bridge_candidates": [
+    {
+      "candidate_id": "4.stone.brush.charcoal.charcoal_chunk_light_4063",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dry_brush.dry_brush_horizontal_light_4066",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dry_brush.dry_brush_vertical_light_4069",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dry_brush.dry_brush_diagonal_fall_light_4075",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_horizontal_short_broken_4083",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_horizontal_long_broken_4085",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_vertical_long_broken_4089",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.scratch.scratch_diagonal_rise_short_4090",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
     {
       "candidate_id": "4.stone.brush.scratch.scratch_diagonal_rise_long_broken_4093",
       "reason": "ascii-bridge-pool-exhausted"
@@ -1237,111 +1269,107 @@
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4136",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4144",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4137",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4145",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4146",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4139",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4147",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4140",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4148",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4149",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4143",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4151",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4144",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4152",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4146",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4154",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4147",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4155",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_light_4148",
+      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4158",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_left_rubbed_4160",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_left_rubbed_4152",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_left_broken_4161",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_right_rubbed_4163",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_right_rubbed_4155",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_right_broken_4164",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_top_rubbed_4166",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_top_rubbed_4158",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_top_broken_4167",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4169",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4172",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4164",
+      "candidate_id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4175",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167",
+      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_left_4177",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_top_4179",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+      "candidate_id": "4.stone.brush.value_patch.value_patch_mid_block_4183",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.value_patch.value_patch_mid_block_4175",
+      "candidate_id": "4.stone.brush.value_patch.value_patch_mid_pillar_4184",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.value_patch.value_patch_mid_pillar_4176",
+      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4185",
       "reason": "ascii-bridge-pool-exhausted"
     },
     {
-      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
-      "reason": "ascii-bridge-pool-exhausted"
-    },
-    {
-      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "candidate_id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4186",
       "reason": "ascii-bridge-pool-exhausted"
     }
   ],
@@ -1349,6 +1377,7 @@
     "Brush palettes model digital brush concepts as 4x4 glyph stamps.",
     "Texture palettes cover hatch, crosshatch, charcoal, dry brush, and grain.",
     "Spray palettes cover stipple and scatter-style glyphs.",
+    "Dot-density palettes provide plain dot count ramps for eyedropper/sample-driven texture passes.",
     "Accepted candidates can exceed the printable ASCII bridge pool; skipped bridge candidates remain reviewable."
   ]
 }

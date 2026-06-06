@@ -9007,9 +9007,521 @@
       "ascii_fallback": "*"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4136",
+      "id": "4.stone.brush.dot_density.dot_density_single_4136",
       "token": "",
       "index": 4136,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.0625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "centroid_x": 0.0,
+        "centroid_y": 0.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.0
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": false,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 1,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 1
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "single"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "single"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "single",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_pair_4137",
+      "token": "",
+      "index": 4137,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 1056
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "pair"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "pair"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "pair",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_sparse_4138",
+      "token": "",
+      "index": 4138,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.1875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 2
+        },
+        "centroid_x": 1.6666666666666667,
+        "centroid_y": 1.0,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": false,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 1048
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "sparse"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "sparse"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "sparse",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_light_4139",
+      "token": "",
+      "index": 4139,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.25,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.25,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.25,
+          "bottom_left": 0.25,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 4,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": false
+        },
+        "bitmask": 16905
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "light"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "light"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "light",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_medium_4140",
+      "token": "",
+      "index": 4140,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.375,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 6,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": false,
+          "diagonal_b": true
+        },
+        "bitmask": 37509
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "medium"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "medium"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "medium",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_dense_4141",
+      "token": "",
+      "index": 4141,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.5,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.5
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 8,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 42405
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "dense"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "dense"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "dense",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_heavy_4142",
+      "token": "",
+      "index": 4142,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.625,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.75,
+          "top_right": 0.5,
+          "bottom_left": 0.5,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 6,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 55899
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "heavy"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "heavy"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "heavy",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.dot_density.dot_density_packed_4143",
+      "token": "",
+      "index": 4143,
+      "role": "detail",
+      "family": "dot_density",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.6875,
+        "bounding_box": {
+          "left": 0,
+          "top": 0,
+          "right": 3,
+          "bottom": 3
+        },
+        "centroid_x": 1.5454545454545454,
+        "centroid_y": 1.5454545454545454,
+        "quadrant_densities": {
+          "top_left": 0.5,
+          "top_right": 0.75,
+          "bottom_left": 0.75,
+          "bottom_right": 0.75
+        },
+        "edge_contacts": {
+          "top": true,
+          "right": true,
+          "bottom": true,
+          "left": true
+        },
+        "connected_component_count": 3,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": false
+        },
+        "bitmask": 56173
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "density": "packed"
+      },
+      "brush_family": "dot_density",
+      "brush_params": {
+        "density": "packed"
+      },
+      "brush_engine": "dot-density",
+      "density_class": "packed",
+      "ascii_fallback": "*"
+    },
+    {
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_light_4144",
+      "token": "",
+      "index": 4144,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9073,9 +9585,9 @@
       "ascii_fallback": "-"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4137",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_medium_4145",
       "token": "",
-      "index": 4137,
+      "index": 4145,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9139,9 +9651,9 @@
       "ascii_fallback": "-"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4138",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_horizontal_heavy_4146",
       "token": "",
-      "index": 4138,
+      "index": 4146,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9205,9 +9717,9 @@
       "ascii_fallback": "-"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4139",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_light_4147",
       "token": "",
-      "index": 4139,
+      "index": 4147,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9271,9 +9783,9 @@
       "ascii_fallback": "|"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4140",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_medium_4148",
       "token": "",
-      "index": 4140,
+      "index": 4148,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9337,9 +9849,9 @@
       "ascii_fallback": "|"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4141",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_vertical_heavy_4149",
       "token": "",
-      "index": 4141,
+      "index": 4149,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9403,9 +9915,9 @@
       "ascii_fallback": "|"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_light_4142",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_light_4150",
       "token": "",
-      "index": 4142,
+      "index": 4150,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9469,9 +9981,9 @@
       "ascii_fallback": "/"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4143",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_medium_4151",
       "token": "",
-      "index": 4143,
+      "index": 4151,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9535,9 +10047,9 @@
       "ascii_fallback": "/"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4144",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_heavy_4152",
       "token": "",
-      "index": 4144,
+      "index": 4152,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9601,9 +10113,9 @@
       "ascii_fallback": "/"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_light_4145",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_light_4153",
       "token": "",
-      "index": 4145,
+      "index": 4153,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9667,9 +10179,9 @@
       "ascii_fallback": "\\"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4146",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_medium_4154",
       "token": "",
-      "index": 4146,
+      "index": 4154,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9733,9 +10245,9 @@
       "ascii_fallback": "\\"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4147",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_heavy_4155",
       "token": "",
-      "index": 4147,
+      "index": 4155,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9799,9 +10311,9 @@
       "ascii_fallback": "\\"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_light_4148",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_light_4156",
       "token": "",
-      "index": 4148,
+      "index": 4156,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9865,9 +10377,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_medium_4149",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_medium_4157",
       "token": "",
-      "index": 4149,
+      "index": 4157,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9931,9 +10443,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4150",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_heavy_4158",
       "token": "",
-      "index": 4150,
+      "index": 4158,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -9997,9 +10509,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_left_nick_4151",
+      "id": "4.stone.brush.edge_wear.edge_wear_left_nick_4159",
       "token": "",
-      "index": 4151,
+      "index": 4159,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10063,9 +10575,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_left_rubbed_4152",
+      "id": "4.stone.brush.edge_wear.edge_wear_left_rubbed_4160",
       "token": "",
-      "index": 4152,
+      "index": 4160,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10129,9 +10641,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_left_broken_4153",
+      "id": "4.stone.brush.edge_wear.edge_wear_left_broken_4161",
       "token": "",
-      "index": 4153,
+      "index": 4161,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10195,9 +10707,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_right_nick_4154",
+      "id": "4.stone.brush.edge_wear.edge_wear_right_nick_4162",
       "token": "",
-      "index": 4154,
+      "index": 4162,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10261,9 +10773,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_right_rubbed_4155",
+      "id": "4.stone.brush.edge_wear.edge_wear_right_rubbed_4163",
       "token": "",
-      "index": 4155,
+      "index": 4163,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10327,9 +10839,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_right_broken_4156",
+      "id": "4.stone.brush.edge_wear.edge_wear_right_broken_4164",
       "token": "",
-      "index": 4156,
+      "index": 4164,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10393,9 +10905,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_top_nick_4157",
+      "id": "4.stone.brush.edge_wear.edge_wear_top_nick_4165",
       "token": "",
-      "index": 4157,
+      "index": 4165,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10459,9 +10971,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_top_rubbed_4158",
+      "id": "4.stone.brush.edge_wear.edge_wear_top_rubbed_4166",
       "token": "",
-      "index": 4158,
+      "index": 4166,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10525,9 +11037,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_top_broken_4159",
+      "id": "4.stone.brush.edge_wear.edge_wear_top_broken_4167",
       "token": "",
-      "index": 4159,
+      "index": 4167,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10591,9 +11103,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_bottom_nick_4160",
+      "id": "4.stone.brush.edge_wear.edge_wear_bottom_nick_4168",
       "token": "",
-      "index": 4160,
+      "index": 4168,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10657,9 +11169,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4161",
+      "id": "4.stone.brush.edge_wear.edge_wear_bottom_rubbed_4169",
       "token": "",
-      "index": 4161,
+      "index": 4169,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10723,9 +11235,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_bottom_broken_4162",
+      "id": "4.stone.brush.edge_wear.edge_wear_bottom_broken_4170",
       "token": "",
-      "index": 4162,
+      "index": 4170,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10789,9 +11301,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_nick_4163",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_nick_4171",
       "token": "",
-      "index": 4163,
+      "index": 4171,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10855,9 +11367,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4164",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4172",
       "token": "",
-      "index": 4164,
+      "index": 4172,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10921,9 +11433,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_broken_4165",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_broken_4173",
       "token": "",
-      "index": 4165,
+      "index": 4173,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -10987,9 +11499,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_nick_4166",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_nick_4174",
       "token": "",
-      "index": 4166,
+      "index": 4174,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -11053,9 +11565,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4175",
       "token": "",
-      "index": 4167,
+      "index": 4175,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -11119,9 +11631,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_broken_4168",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_broken_4176",
       "token": "",
-      "index": 4168,
+      "index": 4176,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -11185,9 +11697,9 @@
       "ascii_fallback": "x"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_left_4169",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_left_4177",
       "token": "",
-      "index": 4169,
+      "index": 4177,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11249,9 +11761,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_right_4170",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_right_4178",
       "token": "",
-      "index": 4170,
+      "index": 4178,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11313,9 +11825,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_top_4171",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_top_4179",
       "token": "",
-      "index": 4171,
+      "index": 4179,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11377,9 +11889,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_bottom_4172",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_bottom_4180",
       "token": "",
-      "index": 4172,
+      "index": 4180,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11441,9 +11953,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_top_left_4173",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_top_left_4181",
       "token": "",
-      "index": 4173,
+      "index": 4181,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11505,9 +12017,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_bottom_right_4174",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_bottom_right_4182",
       "token": "",
-      "index": 4174,
+      "index": 4182,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11569,9 +12081,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_mid_block_4175",
+      "id": "4.stone.brush.value_patch.value_patch_mid_block_4183",
       "token": "",
-      "index": 4175,
+      "index": 4183,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11633,9 +12145,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_mid_pillar_4176",
+      "id": "4.stone.brush.value_patch.value_patch_mid_pillar_4184",
       "token": "",
-      "index": 4176,
+      "index": 4184,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11697,9 +12209,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4177",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_top_edge_4185",
       "token": "",
-      "index": 4177,
+      "index": 4185,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11761,9 +12273,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4178",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_left_edge_4186",
       "token": "",
-      "index": 4178,
+      "index": 4186,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11825,9 +12337,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_top_left_4179",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_top_left_4187",
       "token": "",
-      "index": 4179,
+      "index": 4187,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -11889,9 +12401,9 @@
       "ascii_fallback": ":"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_bottom_right_4180",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_bottom_right_4188",
       "token": "",
-      "index": 4180,
+      "index": 4188,
       "role": "detail",
       "family": "texture",
       "layer": "detail",

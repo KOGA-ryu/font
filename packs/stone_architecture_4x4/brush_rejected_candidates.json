@@ -4186,9 +4186,9 @@
       "duplicate_of": "4.stone.fill.texture.mid_fill_checker_11"
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_light_4142",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_rise_light_4150",
       "token": "",
-      "index": 4142,
+      "index": 4150,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -4261,9 +4261,9 @@
       "canonical_id": 4672
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_light_4145",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_diagonal_fall_light_4153",
       "token": "",
-      "index": 4145,
+      "index": 4153,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -4336,9 +4336,87 @@
       "canonical_id": 1057
     },
     {
-      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_medium_4149",
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_light_4156",
       "token": "",
-      "index": 4149,
+      "index": 4156,
+      "role": "detail",
+      "family": "charcoal",
+      "layer": "detail",
+      "palette_role": "crack",
+      "cell_size": 4,
+      "features": {
+        "density": 0.125,
+        "bounding_box": {
+          "left": 1,
+          "top": 1,
+          "right": 2,
+          "bottom": 2
+        },
+        "centroid_x": 1.5,
+        "centroid_y": 1.5,
+        "quadrant_densities": {
+          "top_left": 0.25,
+          "top_right": 0.0,
+          "bottom_left": 0.0,
+          "bottom_right": 0.25
+        },
+        "edge_contacts": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "connected_component_count": 2,
+        "symmetry": {
+          "horizontal": false,
+          "vertical": false,
+          "diagonal_a": true,
+          "diagonal_b": true
+        },
+        "bitmask": 1056
+      },
+      "constraints": {
+        "allowed_layers": [
+          "detail"
+        ],
+        "allowed_regions": [
+          "surface",
+          "shadow",
+          "detail"
+        ]
+      },
+      "generated": true,
+      "source": "brush_geometry",
+      "primitive_family": "brush",
+      "primitive_params": {
+        "direction": "smudge",
+        "pressure": "light"
+      },
+      "brush_family": "charcoal_drag",
+      "brush_params": {
+        "direction": "smudge",
+        "pressure": "light"
+      },
+      "brush_engine": "charcoal-drag",
+      "density_class": "light",
+      "ascii_fallback": "x",
+      "usefulness_score": 0.25,
+      "rejection_reason": "duplicate-canonical-id",
+      "review_tags": [
+        "shape",
+        "contacts:0",
+        "candidate",
+        "duplicate",
+        "rejected"
+      ],
+      "equivalence_group": "exact",
+      "canonical_id": 1056,
+      "duplicate_of": "4.stone.brush.dot_density.dot_density_pair_4137"
+    },
+    {
+      "id": "4.stone.brush.charcoal_drag.charcoal_drag_smudge_medium_4157",
+      "token": "",
+      "index": 4157,
       "role": "detail",
       "family": "charcoal",
       "layer": "detail",
@@ -4415,9 +4493,9 @@
       "duplicate_of": "4.stone.brush.stipple.stipple_cluster_4034"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_left_nick_4151",
+      "id": "4.stone.brush.edge_wear.edge_wear_left_nick_4159",
       "token": "",
-      "index": 4151,
+      "index": 4159,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -4493,9 +4571,9 @@
       "duplicate_of": "4.stone.brush.hatch.hatch_horizontal_light_broken_4001"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_right_nick_4154",
+      "id": "4.stone.brush.edge_wear.edge_wear_right_nick_4162",
       "token": "",
-      "index": 4154,
+      "index": 4162,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -4571,9 +4649,9 @@
       "duplicate_of": "4.stone.brush.hatch.hatch_horizontal_light_broken_4001"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_top_nick_4157",
+      "id": "4.stone.brush.edge_wear.edge_wear_top_nick_4165",
       "token": "",
-      "index": 4157,
+      "index": 4165,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -4649,9 +4727,9 @@
       "duplicate_of": "4.stone.brush.hatch.hatch_vertical_light_broken_4007"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_bottom_nick_4160",
+      "id": "4.stone.brush.edge_wear.edge_wear_bottom_nick_4168",
       "token": "",
-      "index": 4160,
+      "index": 4168,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -4727,9 +4805,9 @@
       "duplicate_of": "4.stone.brush.hatch.hatch_vertical_light_broken_4007"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_bottom_broken_4162",
+      "id": "4.stone.brush.edge_wear.edge_wear_bottom_broken_4170",
       "token": "",
-      "index": 4162,
+      "index": 4170,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -4802,12 +4880,12 @@
       ],
       "equivalence_group": "translations_normalized",
       "canonical_id": 165,
-      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_top_broken_4159"
+      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_top_broken_4167"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_nick_4163",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_nick_4171",
       "token": "",
-      "index": 4163,
+      "index": 4171,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -4883,9 +4961,9 @@
       "duplicate_of": "4.stone.brush.chip.chip_left_small_4098"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_broken_4165",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_top_left_broken_4173",
       "token": "",
-      "index": 4165,
+      "index": 4173,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -4961,9 +5039,9 @@
       "duplicate_of": "4.stone.brush.dot_field.dot_field_spray_corner_top_left_4132"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_nick_4166",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_nick_4174",
       "token": "",
-      "index": 4166,
+      "index": 4174,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -5039,9 +5117,9 @@
       "duplicate_of": "4.stone.brush.chip.chip_right_small_4101"
     },
     {
-      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_broken_4168",
+      "id": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_broken_4176",
       "token": "",
-      "index": 4168,
+      "index": 4176,
       "role": "detail",
       "family": "damage",
       "layer": "detail",
@@ -5117,9 +5195,9 @@
       "duplicate_of": "4.stone.brush.dot_field.dot_field_spray_corner_bottom_right_4133"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_right_4170",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_right_4178",
       "token": "",
-      "index": 4170,
+      "index": 4178,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -5192,9 +5270,9 @@
       "canonical_id": 8995
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_bottom_4172",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_bottom_4180",
       "token": "",
-      "index": 4172,
+      "index": 4180,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -5267,9 +5345,9 @@
       "canonical_id": 245
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_top_left_4173",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_top_left_4181",
       "token": "",
-      "index": 4173,
+      "index": 4181,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -5343,9 +5421,9 @@
       "duplicate_of": "4.stone.brush.chip.chip_left_large_4100"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_bottom_right_4174",
+      "id": "4.stone.brush.value_patch.value_patch_shadow_corner_bottom_right_4182",
       "token": "",
-      "index": 4174,
+      "index": 4182,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -5419,9 +5497,9 @@
       "duplicate_of": "4.stone.brush.chip.chip_right_large_4103"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_top_left_4179",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_top_left_4187",
       "token": "",
-      "index": 4179,
+      "index": 4187,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -5492,12 +5570,12 @@
       ],
       "equivalence_group": "translations_normalized",
       "canonical_id": 23,
-      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4164"
+      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_corner_top_left_rubbed_4172"
     },
     {
-      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_bottom_right_4180",
+      "id": "4.stone.brush.value_patch.value_patch_highlight_corner_bottom_right_4188",
       "token": "",
-      "index": 4180,
+      "index": 4188,
       "role": "detail",
       "family": "texture",
       "layer": "detail",
@@ -5568,7 +5646,7 @@
       ],
       "equivalence_group": "translations_normalized",
       "canonical_id": 116,
-      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4167"
+      "duplicate_of": "4.stone.brush.edge_wear.edge_wear_corner_bottom_right_rubbed_4175"
     }
   ]
 }

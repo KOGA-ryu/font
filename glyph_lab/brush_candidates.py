@@ -85,13 +85,13 @@ def brush_ascii_bridge_payload(
     texture_records = [
         record
         for record in all_records
-        if record.get("family") in {"texture", "charcoal", "dry_brush", "grain", "damage"}
-        or record.get("brush_family") in {"hatch", "crosshatch", "charcoal", "dry_brush", "grain"}
+        if record.get("family") in {"texture", "charcoal", "dry_brush", "grain", "damage", "dot_density"}
+        or record.get("brush_family") in {"hatch", "crosshatch", "charcoal", "dry_brush", "grain", "dot_density"}
     ]
     spray_records = [
         record
         for record in all_records
-        if record.get("family") == "spray" or record.get("brush_family") in {"stipple", "spray"}
+        if record.get("family") == "spray" or record.get("brush_family") in {"stipple", "spray", "dot_density"}
     ]
     mapping = {}
     for record in all_records:
@@ -119,6 +119,7 @@ def brush_ascii_bridge_payload(
             "Brush palettes model digital brush concepts as 4x4 glyph stamps.",
             "Texture palettes cover hatch, crosshatch, charcoal, dry brush, and grain.",
             "Spray palettes cover stipple and scatter-style glyphs.",
+            "Dot-density palettes provide plain dot count ramps for eyedropper/sample-driven texture passes.",
             "Accepted candidates can exceed the printable ASCII bridge pool; skipped bridge candidates remain reviewable.",
         ],
     }
@@ -129,7 +130,10 @@ def _bridge_chars(records: list[dict[str, Any]], used_tokens: set[str]) -> tuple
     punctuation = "!$%&'()+,-./:;<=>?@[]^_`{}~"
     pool = [char for char in preferred + punctuation if char not in used_tokens and char != " "]
     assigned: dict[str, str] = {}
-    unassigned = [record for record in records if not record.get("token")]
+    unassigned = sorted(
+        [record for record in records if not record.get("token")],
+        key=lambda record: (0 if record.get("brush_family") == "dot_density" else 1),
+    )
     for record, char in zip(unassigned, pool):
         assigned[record["id"]] = char
     skipped = [

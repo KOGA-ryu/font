@@ -199,13 +199,19 @@ brush tip / shape
 
 The generated brush families are `hatch`, `crosshatch`, `stipple`, `spray`,
 `charcoal`, `charcoal_drag`, `dry_brush`, `grain`, `scratch`, `chip`,
-`edge_wear`, `tone_hatch`, `dot_field`, and `value_patch`. These
+`edge_wear`, `tone_hatch`, `dot_field`, `dot_density`, and `value_patch`. These
 are modeled after common digital brush controls: tip shape, density, scatter
 direction, roughness, coverage, grain, incised marks, chipped-edge damage, tone
 gradients, contour hatching, stipple, speckle, pitting, dust, pressure drags,
 smudges, broken contour fragments, rubbed edges, shadow cells, mid-tone cells,
 and highlight cells. They are still deterministic 4x4 glyph stamps, not a paint
 engine, and they are not hardcoded to a slab, crack, column, or single object.
+
+`dot_density` is the plain dot ramp package: single/pair/sparse/light/medium/
+dense/heavy/packed dot layouts. It exists separately from `dot_field`, which
+contains directional or material-style speckle patterns. Use `dot_density` when
+the image evidence says “more or fewer dots here” rather than “this surface has
+a particular dirt, spray, or pitting behavior.”
 
 ## Transform and equivalence model
 
@@ -410,10 +416,30 @@ Writes review-only brush artifacts:
 - `packs/stone_architecture_4x4/ascii_brush_mapping.json`
 
 Use the texture palette for hatching, crosshatching, tone hatching, dot fields,
-value patches, charcoal, charcoal drags, dry-brush, grain, scratch, chipped-edge, and edge-wear detail passes. Use the spray palette for
-stipple/scatter passes. If the accepted brush set exceeds the printable ASCII
+dot-density ramps, value patches, charcoal, charcoal drags, dry-brush, grain,
+scratch, chipped-edge, and edge-wear detail passes. Use the spray palette for
+stipple/scatter/dot-density passes. If the accepted brush set exceeds the printable ASCII
 bridge pool, the overflow remains in `brush_accepted_candidates.json` and is
 listed under `skipped_bridge_candidates` in `ascii_brush_mapping.json`.
+
+## Eyedropper samples
+
+Use `eyedropper-sample` to sample colors from an image and write them into
+JSON. Points use `x,y` or `label:x,y`; `--grid-size` samples cell centers.
+
+```sh
+python3 -m glyph_lab.cli eyedropper-sample \
+  --image out_brush_test/pixel_hero/input/pixel_hero.png \
+  --point hair:84,47 \
+  --point scarf:62,92 \
+  --point skin:101,80 \
+  --grid-size 4x4 \
+  --out out_brush_test/pixel_hero/pixel_hero_eyedropper_samples.json
+```
+
+Each sample records `rgba`, `hex`, `alpha`, and `luminance`. Use
+`--base-json existing.json --json-key palette_samples` to merge samples into an
+existing JSON object instead of writing a standalone sample file.
 
 When passing the linework palette on the command line, use the equals form
 because the palette may begin with `-`:

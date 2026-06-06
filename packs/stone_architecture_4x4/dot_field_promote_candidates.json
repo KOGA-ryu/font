@@ -1,0 +1,34 @@
+{
+  "promote": [
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_dust_light_4126",
+      "token": "5",
+      "notes": "Promote reusable dot field package: light dust texture."
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_dust_medium_4127",
+      "token": "6",
+      "notes": "Promote reusable dot field package: medium dust texture."
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_dust_dense_4128",
+      "token": "7",
+      "notes": "Promote reusable dot field package: dense dust texture."
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_speckle_even_4129",
+      "token": "8",
+      "notes": "Promote reusable dot field package: even surface speckle."
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_pitted_surface_4134",
+      "token": "9",
+      "notes": "Promote reusable dot field package: pitted surface texture."
+    }
+  ],
+  "metadata": {
+    "source": "dot_field_package_v0",
+    "scope": "generic stipple, speckle, pitting, and dust texture glyph packages",
+    "not_object_specific": true
+  }
+}

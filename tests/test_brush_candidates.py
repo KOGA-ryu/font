@@ -65,6 +65,15 @@ class BrushCandidateTests(unittest.TestCase):
         self.assertEqual(tone["brush_engine"], "tone-hatch")
         self.assertIn("pattern", tone["brush_params"])
 
+    def test_brush_candidates_include_dot_field_package(self):
+        candidates = generate_brush_candidates()
+        dot = next(candidate for candidate in candidates if candidate["brush_family"] == "dot_field")
+
+        self.assertEqual(dot["family"], "texture")
+        self.assertEqual(dot["role"], "detail")
+        self.assertEqual(dot["brush_engine"], "dot-field")
+        self.assertIn("pattern", dot["brush_params"])
+
     def test_cli_generate_brushes_writes_review_artifacts(self):
         with TemporaryDirectory() as tmp:
             pack = Path(tmp) / "pack"

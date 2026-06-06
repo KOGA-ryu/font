@@ -5,6 +5,7 @@ from glyph_lab.brush_primitives import (
     brush_stamp,
     chip,
     default_brush_specs,
+    dot_field,
     dry_brush,
     scratch,
     spray,
@@ -97,6 +98,30 @@ class BrushPrimitiveTests(unittest.TestCase):
         self.assertEqual(metadata["brush_engine"], "tone-hatch")
         self.assertEqual(metadata["density_class"], "woven")
         self.assertEqual(metadata["ascii_fallback"], "+")
+
+    def test_dot_field_dense_has_more_density_than_light(self):
+        light = measure_stamp(dot_field("dust_light"))["density"]
+        dense = measure_stamp(dot_field("dust_dense"))["density"]
+
+        self.assertGreater(dense, light)
+
+    def test_dot_field_is_deterministic(self):
+        first = stamp_to_bitmask(dot_field("pitted_surface"))
+        second = stamp_to_bitmask(dot_field("pitted_surface"))
+
+        self.assertEqual(first, second)
+
+    def test_dot_field_metadata_records_engine(self):
+        metadata = brush_metadata(
+            {
+                "brush_family": "dot_field",
+                "params": {"pattern": "speckle_even"},
+            }
+        )
+
+        self.assertEqual(metadata["brush_engine"], "dot-field")
+        self.assertEqual(metadata["density_class"], "speckle_even")
+        self.assertEqual(metadata["ascii_fallback"], "*")
 
 
 if __name__ == "__main__":

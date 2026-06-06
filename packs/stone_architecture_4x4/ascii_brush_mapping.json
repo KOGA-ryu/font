@@ -199,18 +199,18 @@
       "bridge_only": false
     },
     "*": {
-      "glyph_id": "4.stone.detail.damage.chip_dot_29",
-      "token": "*",
+      "glyph_id": "4.stone.brush.dot_field.dot_field_scattered_large_4135",
+      "token": "",
       "role": "detail",
-      "family": "damage",
+      "family": "texture",
       "layer": "detail",
       "palette_role": "crack",
-      "source": "active_pack",
-      "brush_family": null,
-      "brush_engine": null,
-      "density_class": null,
+      "source": "brush_geometry",
+      "brush_family": "dot_field",
+      "brush_engine": "dot-field",
+      "density_class": "scattered_large",
       "ascii_fallback": "*",
-      "bridge_only": false
+      "bridge_only": true
     },
     "x": {
       "glyph_id": "4.stone.brush.chip.chip_right_large_4103",
@@ -1152,6 +1152,46 @@
     },
     {
       "candidate_id": "4.stone.brush.tone_hatch.tone_hatch_parallel_staggered_4124",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_dust_light_4126",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_dust_medium_4127",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_dust_dense_4128",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_speckle_even_4129",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_speckle_cluster_left_4130",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_speckle_cluster_right_4131",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_spray_corner_top_left_4132",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_spray_corner_bottom_right_4133",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_pitted_surface_4134",
+      "reason": "ascii-bridge-pool-exhausted"
+    },
+    {
+      "candidate_id": "4.stone.brush.dot_field.dot_field_scattered_large_4135",
       "reason": "ascii-bridge-pool-exhausted"
     }
   ],

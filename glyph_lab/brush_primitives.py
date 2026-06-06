@@ -20,6 +20,7 @@ BRUSH_FAMILIES = {
     "scratch",
     "chip",
     "tone_hatch",
+    "dot_field",
 }
 
 
@@ -47,6 +48,8 @@ def brush_stamp(
         return chip(**params, color=color)
     if brush_family == "tone_hatch":
         return tone_hatch(**params, color=color)
+    if brush_family == "dot_field":
+        return dot_field(**params, color=color)
     return grain(**params, color=color)
 
 
@@ -286,6 +289,41 @@ def tone_hatch(
     return _stamp(sorted(coords), color)
 
 
+def dot_field(
+    pattern: str = "dust_light",
+    color: tuple[int, int, int, int] = INK,
+) -> Image.Image:
+    _require_choice(
+        "pattern",
+        pattern,
+        {
+            "dust_light",
+            "dust_medium",
+            "dust_dense",
+            "speckle_even",
+            "speckle_cluster_left",
+            "speckle_cluster_right",
+            "spray_corner_top_left",
+            "spray_corner_bottom_right",
+            "pitted_surface",
+            "scattered_large",
+        },
+    )
+    coords = {
+        "dust_light": {(0, 1), (3, 2)},
+        "dust_medium": {(0, 0), (2, 1), (1, 2), (3, 3)},
+        "dust_dense": {(0, 0), (2, 0), (1, 1), (3, 1), (0, 3), (2, 3)},
+        "speckle_even": {(0, 0), (3, 0), (1, 1), (2, 2), (0, 3), (3, 3)},
+        "speckle_cluster_left": {(0, 0), (1, 0), (0, 1), (1, 2), (0, 3)},
+        "speckle_cluster_right": {(3, 0), (2, 1), (3, 1), (2, 3), (3, 3)},
+        "spray_corner_top_left": {(0, 0), (1, 0), (0, 1), (2, 1), (1, 2)},
+        "spray_corner_bottom_right": {(3, 3), (2, 3), (3, 2), (1, 2), (2, 1)},
+        "pitted_surface": {(0, 0), (2, 0), (1, 1), (3, 2), (0, 3), (2, 3), (3, 3)},
+        "scattered_large": {(0, 0), (3, 0), (2, 1), (0, 2), (1, 3), (3, 3)},
+    }[pattern]
+    return _stamp(sorted(coords), color)
+
+
 def default_brush_specs() -> list[dict[str, Any]]:
     specs = []
     for angle in ("horizontal", "vertical", "diagonal_rise", "diagonal_fall"):
@@ -342,6 +380,19 @@ def default_brush_specs() -> list[dict[str, Any]]:
         "woven",
     ):
         specs.append(_spec("tone_hatch", f"tone_hatch_{pattern}", {"pattern": pattern}, family="texture"))
+    for pattern in (
+        "dust_light",
+        "dust_medium",
+        "dust_dense",
+        "speckle_even",
+        "speckle_cluster_left",
+        "speckle_cluster_right",
+        "spray_corner_top_left",
+        "spray_corner_bottom_right",
+        "pitted_surface",
+        "scattered_large",
+    ):
+        specs.append(_spec("dot_field", f"dot_field_{pattern}", {"pattern": pattern}, family="texture"))
     return specs
 
 
@@ -395,6 +446,8 @@ def _engine_for(brush_family: str) -> str:
         return "edge-damage"
     if brush_family == "tone_hatch":
         return "tone-hatch"
+    if brush_family == "dot_field":
+        return "dot-field"
     if brush_family in {"hatch", "crosshatch"}:
         return "directional-stroke"
     return "grain"
@@ -408,7 +461,7 @@ def _fallback_for(spec: dict[str, Any]) -> str:
         return {"horizontal": "-", "vertical": "|", "diagonal_rise": "/", "diagonal_fall": "\\"}.get(angle, "x")
     if family == "crosshatch":
         return "+"
-    if family in {"stipple", "spray", "grain"}:
+    if family in {"stipple", "spray", "grain", "dot_field"}:
         return "*"
     if family == "chip":
         return "x"

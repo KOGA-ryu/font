@@ -546,6 +546,11 @@ Use `--ink-mode solid --ink-color '#000000'` when that layer must render as
 true black. Use `--ink-mode sampled` when the glyph stamp should inherit the
 sampled source-image cell color; this lets a brown-shade mask render as several
 actual browns instead of one flat atlas ink color.
+Use `--ink-mode sampled-local` when a black layout mask is the geometry source
+but the color should come from nearby non-black pixels in the original image.
+This is the mask-first, color-second workflow: the `t40` black pass says where
+to draw, then local sampled ink identifies the visible color around each selected
+cell instead of reusing the black outline pixel.
 Add repeated `--gate-include-box x0,y0,x1,y1` arguments when a sampled color
 should only apply inside source-image regions. This is useful for clothing:
 brown leather boots and brown hair can share colors, so the color gate needs a

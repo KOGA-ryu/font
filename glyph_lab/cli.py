@@ -184,11 +184,18 @@ def main() -> None:
     )
     ascii_render_parser.add_argument(
         "--ink-mode",
-        choices=["atlas", "solid", "sampled"],
+        choices=["atlas", "solid", "sampled", "sampled-local"],
         default="atlas",
-        help="atlas keeps glyph colors, solid uses --ink-color, sampled uses the gate image cell color",
+        help="atlas keeps glyph colors, solid uses --ink-color, sampled uses the gate image cell color, sampled-local searches nearby non-black source pixels",
     )
     ascii_render_parser.add_argument("--ink-color", help="solid ink color as #RRGGBB")
+    ascii_render_parser.add_argument("--ink-sample-radius", type=int, default=6)
+    ascii_render_parser.add_argument("--ink-ignore-luminance", type=int, default=40)
+    ascii_render_parser.add_argument(
+        "--ink-palette-threshold",
+        type=int,
+        help="for sampled-local, keep nearby colors within this RGB distance of --gate-samples colors",
+    )
     ascii_render_parser.add_argument("--out", required=True)
     ascii_render_parser.add_argument("--scale", type=int, default=4)
 
@@ -369,6 +376,9 @@ def main() -> None:
             gate_fill_token=args.gate_fill_token,
             ink_mode=args.ink_mode,
             ink_color=args.ink_color,
+            ink_sample_radius=args.ink_sample_radius,
+            ink_ignore_luminance=args.ink_ignore_luminance,
+            ink_palette_threshold=args.ink_palette_threshold,
             scale=args.scale,
         )
         return

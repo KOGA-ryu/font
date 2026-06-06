@@ -414,6 +414,83 @@ class AsciiGlyphRendererTests(unittest.TestCase):
                 self.assertEqual(rendered.getpixel((0, 4)), (52, 31, 21, 255))
                 self.assertEqual(rendered.getpixel((4, 4)), (77, 53, 41, 255))
 
+    def test_sampled_local_ink_ignores_black_and_uses_nearby_color(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            gate_image = Path(tmp) / "local.png"
+            out = Path(tmp) / "render.png"
+            ascii_path.write_text("#\n", encoding="utf-8")
+            image = Image.new("RGBA", (5, 5), (30, 70, 150, 255))
+            image.putpixel((2, 2), (0, 0, 0, 255))
+            image.save(gate_image)
+
+            result = render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                gate_image_path=gate_image,
+                gate_mode="alpha",
+                gate_threshold=1,
+                gate_dilate=0,
+                ink_mode="sampled-local",
+                ink_sample_radius=2,
+                ink_ignore_luminance=20,
+                scale=1,
+            )
+
+            self.assertEqual(result["ink"]["mode"], "sampled-local")
+            with Image.open(out) as rendered:
+                self.assertEqual(set(_pixels(rendered)), {(30, 70, 150, 255)})
+
+    def test_sampled_local_ink_can_filter_to_palette_colors(self):
+        with TemporaryDirectory() as tmp:
+            pack = Path(tmp) / "pack"
+            generate_pack(pack)
+            ascii_path = Path(tmp) / "grid.txt"
+            gate_image = Path(tmp) / "local.png"
+            samples_path = Path(tmp) / "samples.json"
+            out = Path(tmp) / "render.png"
+            ascii_path.write_text("#\n", encoding="utf-8")
+            image = Image.new("RGBA", (5, 5), (20, 120, 40, 255))
+            image.putpixel((2, 2), (0, 0, 0, 255))
+            image.putpixel((2, 1), (30, 70, 150, 255))
+            image.save(gate_image)
+            samples_path.write_text(
+                json.dumps(
+                    {
+                        "palette_samples": {
+                            "source_image": str(gate_image),
+                            "samples": [{"label": "blue", "rgba": [30, 70, 150, 255]}],
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            render_ascii_glyphs(
+                ascii_path,
+                pack / "glyphs.json",
+                pack / "atlas.png",
+                out,
+                gate_image_path=gate_image,
+                gate_mode="alpha",
+                gate_threshold=1,
+                gate_dilate=0,
+                gate_samples_path=samples_path,
+                gate_samples_key="palette_samples",
+                ink_mode="sampled-local",
+                ink_sample_radius=2,
+                ink_ignore_luminance=20,
+                ink_palette_threshold=4,
+                scale=1,
+            )
+
+            with Image.open(out) as rendered:
+                self.assertEqual(set(_pixels(rendered)), {(30, 70, 150, 255)})
+
     def test_promoted_token_renders_from_promoted_atlas(self):
         with promoted_linework_pack() as pack:
             ascii_path = pack / "grid.txt"

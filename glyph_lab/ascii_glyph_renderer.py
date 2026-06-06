@@ -14,7 +14,7 @@ from .schema import CELL_SIZE, load_glyphs
 
 DEFAULT_EDGE_ALIASES = {"─": "-", "│": "|"}
 GATE_MODES = {"alpha", "black", "luminance", "border-difference", "sample-colors"}
-INK_MODES = {"atlas", "solid", "sampled"}
+INK_MODES = {"atlas", "solid", "sampled", "sampled-local"}
 
 
 def render_ascii_glyphs(
@@ -35,6 +35,9 @@ def render_ascii_glyphs(
     gate_fill_token: str | None = None,
     ink_mode: str = "atlas",
     ink_color: str | None = None,
+    ink_sample_radius: int = 6,
+    ink_ignore_luminance: int = 40,
+    ink_palette_threshold: int | None = None,
     scale: int = 4,
     background: tuple[int, int, int, int] = (255, 255, 255, 255),
 ) -> dict[str, Any]:
@@ -42,6 +45,12 @@ def render_ascii_glyphs(
         raise ValueError("scale must be at least 1")
     if ink_mode not in INK_MODES:
         raise ValueError(f"unknown ink mode {ink_mode!r}; expected one of {sorted(INK_MODES)}")
+    if ink_sample_radius < 0:
+        raise ValueError("ink sample radius must be non-negative")
+    if not 0 <= ink_ignore_luminance <= 255:
+        raise ValueError("ink ignore luminance must be between 0 and 255")
+    if ink_palette_threshold is not None and ink_palette_threshold < 0:
+        raise ValueError("ink palette threshold must be non-negative")
 
     rows = Path(ascii_path).read_text(encoding="utf-8").splitlines()
     if not rows:
@@ -62,10 +71,22 @@ def render_ascii_glyphs(
     solid_ink_color = _parse_hex_rgb(ink_color) if ink_mode == "solid" else None
     if ink_mode == "solid" and solid_ink_color is None:
         raise ValueError("solid ink mode requires --ink-color")
-    if ink_mode == "sampled" and gate_image_path is None:
-        raise ValueError("sampled ink mode requires --gate-image")
-    sampled_ink_colors = _sample_rgb_grid(gate_image_path, width, height) if ink_mode == "sampled" else None
     gate_sample_colors = _load_sample_colors(gate_samples_path, gate_samples_key) if gate_samples_path else None
+    if ink_mode in {"sampled", "sampled-local"} and gate_image_path is None:
+        raise ValueError(f"{ink_mode} ink mode requires --gate-image")
+    sampled_ink_colors = None
+    if ink_mode == "sampled":
+        sampled_ink_colors = _sample_rgb_grid(gate_image_path, width, height)
+    elif ink_mode == "sampled-local":
+        sampled_ink_colors = _sample_local_rgb_grid(
+            gate_image_path,
+            width,
+            height,
+            radius=ink_sample_radius,
+            ignore_luminance=ink_ignore_luminance,
+            palette_colors=gate_sample_colors if ink_palette_threshold is not None else None,
+            palette_threshold=ink_palette_threshold,
+        )
     if gate_image_path is not None:
         gate_mask = image_gate_mask(
             gate_image_path,
@@ -146,7 +167,10 @@ def render_ascii_glyphs(
         "ink": {
             "mode": ink_mode,
             "color": ink_color,
-            "source": str(gate_image_path) if ink_mode == "sampled" else None,
+            "source": str(gate_image_path) if ink_mode in {"sampled", "sampled-local"} else None,
+            "sample_radius": ink_sample_radius if ink_mode == "sampled-local" else None,
+            "ignore_luminance": ink_ignore_luminance if ink_mode == "sampled-local" else None,
+            "palette_threshold": ink_palette_threshold if ink_mode == "sampled-local" else None,
         },
         "gate": _gate_summary(
             gate_mask,
@@ -320,6 +344,87 @@ def _sample_rgb_grid(image_path: str | Path | None, grid_width: int, grid_height
     return [[pixels[x, y][:3] for x in range(grid_width)] for y in range(grid_height)]
 
 
+def _sample_local_rgb_grid(
+    image_path: str | Path | None,
+    grid_width: int,
+    grid_height: int,
+    *,
+    radius: int,
+    ignore_luminance: int,
+    palette_colors: list[tuple[int, int, int]] | None = None,
+    palette_threshold: int | None = None,
+) -> list[list[tuple[int, int, int]]]:
+    if image_path is None:
+        raise ValueError("sampled-local ink mode requires --gate-image")
+    with Image.open(image_path) as source:
+        image = source.convert("RGBA")
+    pixels = image.load()
+    exact = image.resize((grid_width, grid_height), Image.Resampling.BOX).load()
+    rows = []
+    for grid_y in range(grid_height):
+        row = []
+        source_y = min(image.height - 1, int((grid_y + 0.5) * image.height / grid_height))
+        for grid_x in range(grid_width):
+            source_x = min(image.width - 1, int((grid_x + 0.5) * image.width / grid_width))
+            candidates = _local_color_candidates(
+                pixels,
+                image.width,
+                image.height,
+                source_x,
+                source_y,
+                radius,
+                ignore_luminance,
+                palette_colors,
+                palette_threshold,
+            )
+            if not candidates and palette_threshold is None:
+                candidates = _local_color_candidates(
+                    pixels,
+                    image.width,
+                    image.height,
+                    source_x,
+                    source_y,
+                    radius,
+                    ignore_luminance,
+                    None,
+                    None,
+                )
+            row.append(_average_rgb(candidates) if candidates else exact[grid_x, grid_y][:3])
+        rows.append(row)
+    return rows
+
+
+def _local_color_candidates(
+    pixels: Any,
+    width: int,
+    height: int,
+    source_x: int,
+    source_y: int,
+    radius: int,
+    ignore_luminance: int,
+    palette_colors: list[tuple[int, int, int]] | None,
+    palette_threshold: int | None,
+) -> list[tuple[int, int, int]]:
+    candidates = []
+    for y in range(max(0, source_y - radius), min(height, source_y + radius + 1)):
+        for x in range(max(0, source_x - radius), min(width, source_x + radius + 1)):
+            red, green, blue, alpha = pixels[x, y]
+            if alpha == 0:
+                continue
+            rgb = (red, green, blue)
+            if _luminance(rgb) <= ignore_luminance:
+                continue
+            if palette_colors is not None and palette_threshold is not None:
+                if min(_rgb_distance(rgb, palette) for palette in palette_colors) > palette_threshold:
+                    continue
+            candidates.append(rgb)
+    return candidates
+
+
+def _average_rgb(colors: list[tuple[int, int, int]]) -> tuple[int, int, int]:
+    return tuple(int(round(sum(color[channel] for color in colors) / len(colors))) for channel in range(3))
+
+
 def _ink_rgb(
     ink_mode: str,
     *,
@@ -330,7 +435,7 @@ def _ink_rgb(
 ) -> tuple[int, int, int] | None:
     if ink_mode == "solid":
         return solid_ink_color
-    if ink_mode == "sampled":
+    if ink_mode in {"sampled", "sampled-local"}:
         if sampled_ink_colors is None:
             raise ValueError("sampled ink mode requires sampled colors")
         return sampled_ink_colors[row_index - 1][column_index - 1]

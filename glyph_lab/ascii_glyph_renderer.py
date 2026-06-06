@@ -13,7 +13,7 @@ from .schema import CELL_SIZE, load_glyphs
 
 
 DEFAULT_EDGE_ALIASES = {"─": "-", "│": "|"}
-GATE_MODES = {"alpha", "luminance", "border-difference"}
+GATE_MODES = {"alpha", "black", "luminance", "border-difference"}
 
 
 def render_ascii_glyphs(
@@ -139,7 +139,7 @@ def image_gate_mask(
     pixels = sampled.load()
     if mode == "alpha":
         mask = [[pixels[x, y][3] > threshold for x in range(grid_width)] for y in range(grid_height)]
-    elif mode == "luminance":
+    elif mode in {"black", "luminance"}:
         mask = [
             [_luminance(pixels[x, y][:3]) < threshold for x in range(grid_width)]
             for y in range(grid_height)

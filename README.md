@@ -528,8 +528,11 @@ When `--gate-image` is provided, cells outside the sampled object/evidence mask
 are blanked before token lookup. This keeps texture, spray, and hatch packages
 from filling background cells just because the ASCII engine emitted a dense
 character there. The first useful opaque-image mode is `border-difference`,
-which compares sampled cells against the image border color; `alpha` and
-`luminance` are available for transparent or thresholded inputs.
+which compares sampled cells against the image border color. Use
+`--gate-mode black` when dot or ink passes should only copy cells sampled below
+`--gate-threshold`; this is the strict dark-line extraction pass for dot
+density brushes. `alpha`, `black`, `luminance`, and `border-difference` are
+available for transparent, black-only, thresholded, or opaque-background inputs.
 
 ```text
 image

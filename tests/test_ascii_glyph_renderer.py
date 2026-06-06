@@ -170,6 +170,21 @@ class AsciiGlyphRendererTests(unittest.TestCase):
             self.assertTrue(mask[1][1])
             self.assertEqual(sum(1 for row in mask for value in row if value), 1)
 
+    def test_image_gate_mask_can_use_black_mode(self):
+        with TemporaryDirectory() as tmp:
+            gate_image = Path(tmp) / "black.png"
+            image = Image.new("RGB", (4, 4), (230, 230, 230))
+            pixels = image.load()
+            pixels[1, 1] = (5, 5, 5)
+            pixels[2, 2] = (90, 90, 90)
+            image.save(gate_image)
+
+            mask = image_gate_mask(gate_image, 4, 4, mode="black", threshold=40, dilate=0)
+
+            self.assertTrue(mask[1][1])
+            self.assertFalse(mask[2][2])
+            self.assertEqual(sum(1 for row in mask for value in row if value), 1)
+
     def test_promoted_token_renders_from_promoted_atlas(self):
         with promoted_linework_pack() as pack:
             ascii_path = pack / "grid.txt"

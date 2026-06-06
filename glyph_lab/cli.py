@@ -164,7 +164,7 @@ def main() -> None:
     ascii_render_parser.add_argument("--gate-image")
     ascii_render_parser.add_argument(
         "--gate-mode",
-        choices=["alpha", "luminance", "border-difference"],
+        choices=["alpha", "black", "luminance", "border-difference"],
         default="border-difference",
     )
     ascii_render_parser.add_argument("--gate-threshold", type=int, default=32)
